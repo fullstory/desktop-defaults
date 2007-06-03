@@ -1,0 +1,49 @@
+#!/bin/sh
+
+# Should we offer our services?
+if [ -f /etc/default/fll-kde-desktop ]; then
+	. /etc/default/fll-kde-desktop
+fi
+
+if [ "${KDE_SERVICES_ENABLED}" = "false" ]; then
+	exit 0
+fi
+
+# Start krandrtray
+if [ -x /usr/bin/krandrtray ]; then
+	xrandr -q >/dev/null 2>/dev/null && krandrtray
+fi
+
+# Start mixer
+if [ -x /usr/bin/kmix ]; then
+	# kmix already started? sound system active?
+	if ! pgrep -x kmix >/dev/null && lsmod | egrep -q "snd|soundcore"; then
+		# be sure that kmix just starts in tray!
+		if grep -q ^Visible ~/.kde/share/config/kmixrc 2>/dev/null; then
+			sed -i 's/^Visible=.*/Visible=false/' ~/.kde/share/config/kmixrc
+		else
+			echo "Visible=false" > ~/.kde/share/config/kmixrc
+		fi
+		
+		kmix
+	fi
+fi
+
+# Start network monitor
+if [ -e /usr/share/services/kded/knemod.desktop ]; then
+	dcop kded kded loadModule knemod
+fi
+
+# Start kpowersave
+if [ -x /usr/bin/kpowersave ]; then
+	if ! pgrep -x kpowersave >/dev/null && pidof powersaved >/dev/null; then
+		kpowersave
+		# allow kpowersave to autostart (disabled by default)
+		if grep -q ^Autostart ~/.kde/share/config/kpowersaverc 2>/dev/null; then
+			sed -i 's/Autostart=.*/Autostart=true/' ~/.kde/share/config/kpowersaverc
+		else
+			echo "Autostart=true" > ~/.kde/share/config/kpowersaverc
+		fi
+	fi
+fi
+

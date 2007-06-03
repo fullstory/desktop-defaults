@@ -1,0 +1,9 @@
+# Defaults for kde desktop
+# sourced by /usr/bin/desktop-defaults-kde and /etc/init.d/fll-kde-desktop
+# installed at /etc/default/fll-kde-desktop by the maintainer scripts
+
+# specify KDM theme to be used
+KDE_KDM_THEME="/usr/share/apps/kdm/themes/sidux"
+
+# change to "false" to disable the automatic start of the KDE-Services
+KDE_SERVICES_ENABLED="true"

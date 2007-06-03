@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Autostart some KDE-Services
+Name[de]=Startet automatisch einige KDE-Dienste
+Exec=/usr/bin/desktop-defaults-kde; true
+Type=Application
+Icon=html
+Terminal=0

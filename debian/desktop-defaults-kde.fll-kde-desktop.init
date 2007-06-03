@@ -1,0 +1,206 @@
+#!/bin/sh
+
+### BEGIN INIT INFO
+# Provides:          fll-kde-desktop
+# Required-Start:    fll-adduser
+# Required-Stop:     
+# Default-Start:     S
+# Default-Stop:      
+# Short-Description: prepare live user for kde desktop
+# Description:       The purpose of this script is to preseed the live users
+#                    settings for the kde desktop.
+### END INIT INFO
+
+###
+# F.U.L.L.S.T.O.R.Y init script
+#
+# Copyright: (C) 2007 F.U.L.L.S.T.O.R.Y Project
+# License:   GPLv2
+#
+# F.U.L.L.S.T.O.R.Y Project Homepage:
+# http://developer.berlios.de/projects/fullstory
+###
+
+PATH=/sbin:/usr/sbin:/bin:/usr/bin
+NAME="fll-kde-desktop"
+
+if [ ! -x /usr/bin/kwin ]; then
+	exit 0
+fi
+
+###
+# source distro-defaults, no-op unless in live mode
+###
+FLL_DISTRO_MODE="installed"
+
+if [ -s /etc/default/distro ]; then
+	. /etc/default/distro
+fi
+
+if [ "${FLL_DISTRO_MODE}" != "live" ]; then
+	exit 0
+fi
+
+###
+# source lsb functions
+###
+. /lib/lsb/init-functions
+
+###
+# ANSI escape sequences (N, R, G, Y, B, M, C, W)
+###
+. /lib/fll/fll-init-cols
+
+###
+# read in variables from our default conffile
+###
+if [ -s "/etc/default/${NAME}" ]; then
+	. "/etc/default/${NAME}"
+fi
+
+###
+# read in variables from /etc/default/fll-locales
+###
+if [ -s /etc/default/fll-locales ]; then
+	. /etc/default/fll-locales
+fi
+
+###
+# cheatcode handling
+###
+for param in $(cat /proc/cmdline); do
+	case "${param}" in
+		flldebug=*)
+			[ "${param#flldebug=}" = "${NAME}" ] && set -x
+			;;
+		nointro)
+			NOINTRO="yes"
+			;;
+	esac
+done
+
+FLL_LIVE_USER_HOME=$(getent passwd ${FLL_LIVE_USER} | cut -d\: -f 6)
+
+if [ ! -d "${FLL_LIVE_USER_HOME}" ]; then
+	log_daemon_msg "${B}${NAME}${N}" "${R}directory '${Y}${FLL_LIVE_USER_HOME}${R} does not exist${N}"
+	log_end_msg 1
+fi
+
+do_start() {
+	# setup KDM theme
+	if [ -d "${KDE_KDM_THEME}" ]; then
+		echo "USETHEME=true"		>  /etc/default/kdm.d/kdmtheme
+		echo "THEME=${KDE_KDM_THEME}"	>> /etc/default/kdm.d/kdmtheme
+	fi
+
+	if [ ! -d "${FLL_LIVE_USER_HOME}/.kde/share/config" ]; then
+		install --directory --group="${FLL_LIVE_USER}" --owner="${FLL_LIVE_USER}" \
+			"${FLL_LIVE_USER_HOME}/.kde/share/config"
+	fi
+
+	if [ ! -d "${FLL_LIVE_USER_HOME}/Desktop" ]; then
+		install --directory --group="${FLL_LIVE_USER}" --owner="${FLL_LIVE_USER}" \
+			"${FLL_LIVE_USER_HOME}/Desktop"
+	fi
+
+	# set KDE wallpaper
+	touch "${FLL_LIVE_USER_HOME}/.kde/share/config/kdesktoprc"
+	if grep -q '^Wallpaper=' "${FLL_LIVE_USER_HOME}/.kde/share/config/kdesktoprc"; then
+		sed -i 's/^Wallpaper=.*/Wallpaper='"${FLL_WALLPAPER}"'/' \
+			"${FLL_LIVE_USER_HOME}/.kde/share/config/kdesktoprc"
+	else
+		cat >> "${FLL_LIVE_USER_HOME}/.kde/share/config/kdesktoprc" \
+<< EOF
+[Desktop0]
+BackgroundMode=Flat
+BlendBalance=100
+BlendMode=NoBlending
+ChangeInterval=60
+Color1=0,0,0
+Color2=255,255,255
+CurrentWallpaperName=
+LastChange=0
+MinOptimizationDepth=1
+MultiWallpaperMode=NoMulti
+Pattern=
+Program=
+ReverseBlending=false
+UseSHM=false
+Wallpaper=${FLL_WALLPAPER}
+WallpaperMode=Scaled
+EOF
+	fi
+
+	touch "${FLL_LIVE_USER_HOME}/.kde/share/config/kdesurc"
+	if ! grep -q -s '^super-user-command=' "${FLL_LIVE_USER_HOME}/.kde/share/config/kdesurc"; then
+		sed -i 's/^super-user-command=.*/super-user-command=sudo/' \
+			"${FLL_LIVE_USER_HOME}/.kde/share/config/kdesurc"
+	else
+		echo "[super-user-command]"	>> "${FLL_LIVE_USER_HOME}/.kde/share/config/kdesurc"
+		echo "super-user-command=sudo"	>> "${FLL_LIVE_USER_HOME}/.kde/share/config/kdesurc"
+	fi
+
+	###
+	# XXX: where the heck do these come from?!?
+	###
+	#touch "${FLL_LIVE_USER_HOME}/.kde/share/config/kdeglobals"
+	#sed -i	-e 's/^Charset=.*$/Charset='"${CHARSET}"'/' \
+	#	-e 's/^Country=.*$/Country='"${COUNTRY}"'/' \
+	#	-e 's/^Language=.*$/Language='"${LANGUAGE}"'/' \
+	#		"${FLL_LIVE_USER_HOME}/.kde/share/config/kdeglobals"
+	
+	touch "${FLL_LIVE_USER_HOME}/.kde/share/config/kxkbrc"
+	sed -i "s/^LayoutList=.*/LayoutList=${KDEKEYBOARDS:="us"}/" \
+		"${FLL_LIVE_USER_HOME}/.kde/share/config/kxkbrc"
+
+	# scan for index.html in fll specific live mountpoint directories
+	for mntpnt in /fll/*; do
+		if [ -d "${mntpnt}" ] && [ -f "${mntpnt}/index.html" ]; then
+			INDEXFILE="${mntpnt}/index.html"
+			for ext in gif ico png; do
+				if [ -f "${mntpnt}/${FLL_CDROM_INDEX_ICON}.${ext}" ]; then
+					INDEXICON="${mntpnt}/${FLL_CDROM_INDEX_ICON}.${ext}"
+					break
+				fi
+			done
+			break
+		fi
+	done
+
+	if [ "${INDEXFILE}" ]; then
+		cat > "${FLL_LIVE_USER_HOME}/Desktop/${FLL_DISTRO_NAME}.desktop" \
+<<EOF
+[Desktop Entry]
+Name=${FLL_CDROM_INDEX}
+Exec=konqueror --geometry 950x700+35+20 file:${INDEXFILE}
+Type=Application
+Icon=${INDEXICON}
+Terminal=0
+EOF
+	fi
+	
+	###
+	# fix ownership
+	###
+	chown -R "${FLL_LIVE_USER}:${FLL_LIVE_USER}" "${FLL_LIVE_USER_HOME}"
+}
+
+case "${1}" in
+	start)
+		log_daemon_msg "${B}${NAME}${N}" "${G}preparing ${Y}${FLL_LIVE_USER}${G} for ${Y}kde${N}"
+		do_start
+		log_end_msg 0
+		;;
+	stop)
+		;;
+	restart|force-reload)
+		echo "Error: argument '${1}' not supported" >&2
+		exit 3
+		;;
+	*)
+		echo "Usage: ${NAME} {start|stop|restart|force-reload}" >&2
+		exit 3
+		;;
+esac
+
+:
