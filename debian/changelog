@@ -1,3 +1,9 @@
+desktop-defaults (0.3) unstable; urgency=low
+
+  * Remove boilerplates from debian/copyright.
+
+ -- Kel Modderman <kel@otaku42.de>  Sun, 03 Jun 2007 19:43:00 +1000
+
 desktop-defaults (0.2) unstable; urgency=low
 
   * Import kde services scripts from kde-services-sidux. Conflict with that
