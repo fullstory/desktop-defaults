@@ -13,3 +13,10 @@ Conflicts: kde-services-sidux
 Description: defaults specific to the K desktop environment
  This package provides required infrastructure to tweak the KDE desktop
  of the F.U.L.L.S.T.O.R.Y. live linux media.
+
+Package: desktop-defaults-gnome
+Architecture: all
+Depends: distro-defaults, fll-live-initscripts
+Description: defaults specific to the gnome desktop environment
+ This package provides required infrastructure to tweak the gnome desktop
+ of the F.U.L.L.S.T.O.R.Y. live linux media.

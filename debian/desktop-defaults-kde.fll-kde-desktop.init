@@ -150,7 +150,7 @@ EOF
 	#		"${FLL_LIVE_USER_HOME}/.kde/share/config/kdeglobals"
 	
 	touch "${FLL_LIVE_USER_HOME}/.kde/share/config/kxkbrc"
-	sed -i "s/^LayoutList=.*/LayoutList=${KDEKEYBOARDS:="us"}/" \
+	sed -i "s/^LayoutList=.*/LayoutList=${KDEKEYBOARDS:=us}/" \
 		"${FLL_LIVE_USER_HOME}/.kde/share/config/kxkbrc"
 
 	# scan for index.html in fll specific live mountpoint directories
@@ -198,7 +198,7 @@ case "${1}" in
 		exit 3
 		;;
 	*)
-		echo "Usage: ${NAME} {start|stop|restart|force-reload}" >&2
+		echo "Usage: ${NAME} {start|stop}" >&2
 		exit 3
 		;;
 esac
