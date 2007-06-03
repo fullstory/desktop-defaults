@@ -1,4 +1,4 @@
-desktop-defaults (0.8) UNRELEASED; urgency=low
+desktop-defaults (0.8.0) unstable; urgency=low
 
   * Enforce policy of chmod'ing every user own file that is modified and/or
     created by these scripts.
