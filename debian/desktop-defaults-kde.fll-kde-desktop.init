@@ -132,7 +132,7 @@ EOF
 	fi
 
 	touch "${FLL_LIVE_USER_HOME}/.kde/share/config/kdesurc"
-	if ! grep -q -s '^super-user-command=' "${FLL_LIVE_USER_HOME}/.kde/share/config/kdesurc"; then
+	if ! grep -q '^super-user-command=' "${FLL_LIVE_USER_HOME}/.kde/share/config/kdesurc"; then
 		sed -i 's|^super-user-command=.*|super-user-command=sudo|' \
 			"${FLL_LIVE_USER_HOME}/.kde/share/config/kdesurc"
 	else
