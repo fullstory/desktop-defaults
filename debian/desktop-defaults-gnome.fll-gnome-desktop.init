@@ -86,6 +86,10 @@ if [ ! -d "${FLL_LIVE_USER_HOME}" ]; then
 	log_end_msg 1
 fi
 
+###
+# NOTE: every file you modify create, do not forget to chmod "${FLL_LIVE_USER}:${FLL_LIVE_USER}" it
+###
+
 do_start() {
 	###
 	# do stuff to files in FLL_LIVE_USER_HOME . . . 
@@ -107,11 +111,6 @@ do_start() {
 	###
 	# create desktop icon . . .
 	###
-
-	###
-	# fix ownership
-	###
-	chown -R "${FLL_LIVE_USER}:${FLL_LIVE_USER}" "${FLL_LIVE_USER_HOME}"
 }
 
 case "${1}" in

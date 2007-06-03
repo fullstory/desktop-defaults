@@ -130,6 +130,7 @@ Wallpaper=${FLL_WALLPAPER}
 WallpaperMode=Scaled
 EOF
 	fi
+	chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" "${FLL_LIVE_USER_HOME}/.kde/share/config/kdesktoprc"
 
 	touch "${FLL_LIVE_USER_HOME}/.kde/share/config/kdesurc"
 	if ! grep -q '^super-user-command=' "${FLL_LIVE_USER_HOME}/.kde/share/config/kdesurc"; then
@@ -139,6 +140,7 @@ EOF
 		echo "[super-user-command]"	>> "${FLL_LIVE_USER_HOME}/.kde/share/config/kdesurc"
 		echo "super-user-command=sudo"	>> "${FLL_LIVE_USER_HOME}/.kde/share/config/kdesurc"
 	fi
+	chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" "${FLL_LIVE_USER_HOME}/.kde/share/config/kdesurc"
 
 	###
 	# XXX: where the heck do these come from?!?
@@ -150,8 +152,13 @@ EOF
 	#		"${FLL_LIVE_USER_HOME}/.kde/share/config/kdeglobals"
 	
 	touch "${FLL_LIVE_USER_HOME}/.kde/share/config/kxkbrc"
-	sed -i "s|^LayoutList=.*|LayoutList=${KDEKEYBOARDS:=us}|" \
-		"${FLL_LIVE_USER_HOME}/.kde/share/config/kxkbrc"
+	if grep -q '^LayoutList=' "${FLL_LIVE_USER_HOME}/.kde/share/config/kxkbrc"; then
+		sed -i "s|^LayoutList=.*|LayoutList=${KDEKEYBOARDS:=us}|" \
+			"${FLL_LIVE_USER_HOME}/.kde/share/config/kxkbrc"
+	else
+		echo "LayoutList=${KDEKEYBOARDS:=us}" >> "${FLL_LIVE_USER_HOME}/.kde/share/config/kxkbrc"
+	fi
+	chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" "${FLL_LIVE_USER_HOME}/.kde/share/config/kxkbrc"
 
 	# scan for index.html in fll specific live mountpoint directories
 	for mntpnt in /fll/*; do
@@ -177,12 +184,9 @@ Type=Application
 Icon=${INDEXICON}
 Terminal=0
 EOF
+		chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" \
+			"${FLL_LIVE_USER_HOME}/Desktop/${FLL_DISTRO_NAME}.desktop"
 	fi
-	
-	###
-	# fix ownership
-	###
-	chown -R "${FLL_LIVE_USER}:${FLL_LIVE_USER}" "${FLL_LIVE_USER_HOME}"
 }
 
 case "${1}" in

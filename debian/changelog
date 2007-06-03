@@ -1,8 +1,9 @@
 desktop-defaults (0.8) UNRELEASED; urgency=low
 
-  * NOT RELEASED YET
+  * Enforce policy of chmod'ing every user own file that is modified and/or
+    created by these scripts.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 03 Jun 2007 13:47:31 +0200
+ -- Kel Modderman <kel@otaku42.de>  Sun, 03 Jun 2007 22:18:11 +1000
 
 desktop-defaults (0.7) unstable; urgency=low
 
