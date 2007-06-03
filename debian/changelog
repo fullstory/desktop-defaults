@@ -1,3 +1,9 @@
+desktop-defaults (0.8.1) UNRELEASED; urgency=low
+
+  * NOT RELEASED YET
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 03 Jun 2007 15:34:28 +0200
+
 desktop-defaults (0.8.0) unstable; urgency=low
 
   * Enforce policy of chmod'ing every user own file that is modified and/or
