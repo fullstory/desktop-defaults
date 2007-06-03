@@ -106,7 +106,7 @@ do_start() {
 	# set KDE wallpaper
 	touch "${FLL_LIVE_USER_HOME}/.kde/share/config/kdesktoprc"
 	if grep -q '^Wallpaper=' "${FLL_LIVE_USER_HOME}/.kde/share/config/kdesktoprc"; then
-		sed -i 's/^Wallpaper=.*/Wallpaper='"${FLL_WALLPAPER}"'/' \
+		sed -i 's|^Wallpaper=.*|Wallpaper='"${FLL_WALLPAPER}"'|' \
 			"${FLL_LIVE_USER_HOME}/.kde/share/config/kdesktoprc"
 	else
 		cat >> "${FLL_LIVE_USER_HOME}/.kde/share/config/kdesktoprc" \
@@ -133,7 +133,7 @@ EOF
 
 	touch "${FLL_LIVE_USER_HOME}/.kde/share/config/kdesurc"
 	if ! grep -q -s '^super-user-command=' "${FLL_LIVE_USER_HOME}/.kde/share/config/kdesurc"; then
-		sed -i 's/^super-user-command=.*/super-user-command=sudo/' \
+		sed -i 's|^super-user-command=.*|super-user-command=sudo|' \
 			"${FLL_LIVE_USER_HOME}/.kde/share/config/kdesurc"
 	else
 		echo "[super-user-command]"	>> "${FLL_LIVE_USER_HOME}/.kde/share/config/kdesurc"
@@ -150,7 +150,7 @@ EOF
 	#		"${FLL_LIVE_USER_HOME}/.kde/share/config/kdeglobals"
 	
 	touch "${FLL_LIVE_USER_HOME}/.kde/share/config/kxkbrc"
-	sed -i "s/^LayoutList=.*/LayoutList=${KDEKEYBOARDS:=us}/" \
+	sed -i "s|^LayoutList=.*|LayoutList=${KDEKEYBOARDS:=us}|" \
 		"${FLL_LIVE_USER_HOME}/.kde/share/config/kxkbrc"
 
 	# scan for index.html in fll specific live mountpoint directories
