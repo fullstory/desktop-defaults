@@ -1,0 +1,14 @@
+Source: desktop-defaults
+Section: base
+Priority: optional
+Maintainer: Kel Modderman <kel@otaku42.de>
+Uploaders: Stefan Lippers-Hollmann <s.l-h@gmx.de>
+Build-Depends: cdbs, debhelper (>= 5)
+Standards-Version: 3.7.2
+
+Package: desktop-defaults-kde
+Architecture: all
+Depends: distro-defaults
+Description: defaults specific to the K desktop environment
+ This package provides required infrastructure to tweak the KDE desktop
+ of the F.U.L.L.S.T.O.R.Y. live linux media.
