@@ -138,7 +138,7 @@ EOF
 		"${FLL_LIVE_USER_HOME}/.kde/share/config/kdeglobals"
 
 	###
-	# set KDE wallpaper and standard font
+	# set KDE wallpaper and standard font, enable media on desktop
 	###
 	if [ "${FLL_WALLPAPER}" ]; then
 		touch "${FLL_LIVE_USER_HOME}/.kde/share/config/kdesktoprc"
@@ -154,6 +154,10 @@ WallpaperMode=Scaled
 
 [FMSettings]
 StandardFont=${KDE_ACTIVE_FONT}
+
+[Media]
+enabled=true
+exclude=
 EOF
 		fi
 		chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" \
