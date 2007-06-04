@@ -169,6 +169,18 @@ EOF
 <<EOF
 [General]
 FirstLogin=false
+
+[DesktopIcons]
+Size=48
+
+[MainToolbarIcons]
+Size=22
+
+[ToolbarIcons]
+Size=22
+
+[SmallIcons]
+Size=16
 EOF
 	fi
 	chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" \
@@ -228,21 +240,34 @@ EOF
 	done
 
 	###
-	# kpowersave is the odd one out, stop it from starting by default
+	# kpowersave is the odd one out, stop it from starting by default, avoid first time wizard
 	###
-	touch "${FLL_LIVE_USER_HOME}/.kde/share/config/kpowersaverc"
-	if grep -q '^Autostart' "${FLL_LIVE_USER_HOME}/.kde/share/config/kpowersaverc"; then
-		sed -i 's|^Autostart=.*|Autostart=false|' \
-			"${FLL_LIVE_USER_HOME}/.kde/share/config/kpowersaverc"
-	else
-		cat > "${FLL_LIVE_USER_HOME}/.kde/share/config/kpowersaverc" \
+	if [ -x /usr/bin/kpowersave ]; then
+		touch "${FLL_LIVE_USER_HOME}/.kde/share/config/kpowersaverc"
+		if grep -q '^Autostart' "${FLL_LIVE_USER_HOME}/.kde/share/config/kpowersaverc"; then
+			sed -i 's|^Autostart=.*|Autostart=false|' \
+				"${FLL_LIVE_USER_HOME}/.kde/share/config/kpowersaverc"
+		else
+			cat > "${FLL_LIVE_USER_HOME}/.kde/share/config/kpowersaverc" \
 <<EOF
 Autostart=false
 AlreadyStarted=true
 EOF
+		fi
+		chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" \
+			"${FLL_LIVE_USER_HOME}/.kde/share/config/kpowersaverc"
+
+		###
+		# disable kcmlaptop when kpowersave is installed
+		###
+		cat > "${FLL_LIVE_USER_HOME}/.kde/share/config/kcmlaptoprc" \
+<<EOF
+[BatteryDefault]
+Enable=false
+EOF
+		chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" \
+			"${FLL_LIVE_USER_HOME}/.kde/share/config/kcmlaptoprc"
 	fi
-	chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" \
-		"${FLL_LIVE_USER_HOME}/.kde/share/config/kpowersaverc"
 
 	###
 	# disable ktip
@@ -261,19 +286,6 @@ EOF
 	chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" \
 		"${FLL_LIVE_USER_HOME}/.kde/share/config/ktiprc"
 	
-	###
-	# disable kcmlaptop when kpowersave is installed
-	###
-	if [ -x /usr/bin/kpowersave ]; then
-		cat > "${FLL_LIVE_USER_HOME}/.kde/share/config/kcmlaptoprc" \
-<<EOF
-[BatteryDefault]
-Enable=false
-EOF
-		chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" \
-			"${FLL_LIVE_USER_HOME}/.kde/share/config/kcmlaptoprc"
-	fi
-
 	###
 	# disable arts when no sound device is supported/present
 	###

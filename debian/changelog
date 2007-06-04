@@ -6,10 +6,11 @@ desktop-defaults (0.8.1) UNRELEASED; urgency=low
     - create and populate .kde/share/config of live user in fll-kde-desktop.init
   * Fix for loop that populated live user with rc template files.
   * Disable arts when no sound device is present/supported.
-  * Add kpersonalizerrc.
-  * Special handling of kpowersaverc.
+  * Special handling of kpowersaverc. Disable kcmlaptop when kpowersave is
+    installed.
+  * Add icon size defaults to kpersonalizerrc template.
 
- -- Kel Modderman <kel@otaku42.de>  Mon, 04 Jun 2007 17:24:35 +1000
+ -- Kel Modderman <kel@otaku42.de>  Mon, 04 Jun 2007 18:09:25 +1000
 
 desktop-defaults (0.8.0) unstable; urgency=low
 
