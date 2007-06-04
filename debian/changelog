@@ -1,7 +1,4 @@
-desktop-defaults (0.8.3) UNRELEASED; urgency=low
-
-  [ Stefan Lippers-Hollmann ]
-  * NOT RELEASED YET
+desktop-defaults (0.8.3) unstable; urgency=low
 
   [ Andreas Weber ]
   * Desktop Icon fixed
@@ -10,7 +7,7 @@ desktop-defaults (0.8.3) UNRELEASED; urgency=low
   [ Kel Modderman ]
   * Enable media:/ on desktop.
 
- -- Andreas Weber <webera@WFRKWEBERALIN>  Mon, 04 Jun 2007 16:50:26 +0200
+ -- Andreas Weber <andreas@it-weber.com>  Mon, 04 Jun 2007 16:50:26 +0200
 
 desktop-defaults (0.8.2) unstable; urgency=low
 
