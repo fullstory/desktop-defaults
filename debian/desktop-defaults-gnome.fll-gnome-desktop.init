@@ -111,6 +111,34 @@ do_start() {
 	###
 	# create desktop icon . . .
 	###
+        mkdir -p "${FLL_LIVE_USER_HOME}/.config/autostart"
+        cat > "${FLL_LIVE_USER_HOME}/.config/autostart/${FLL_DISTRO_NAME}-manual.desktop" \
+<<EOF
+[Desktop Entry]
+Name=${FLL_DISTRO_NAME}-manual
+Encoding=UTF-8
+Version=1.0
+Name[de_DE]=${FLL_DISTRO_NAME}-manual
+Exec=epiphany file:${INDEXFILE}
+X-GNOME-Autostart-enabled=true
+EOF
+
+	BASEDIR=".gconf/apps/nautilus"
+	[ ! -d "${FLL_LIVE_USER_HOME}/$BASEDIR/preferences" ] && mkdir -p ${FLL_LIVE_USER_HOME}/$BASEDIR/preferences
+
+	if [ ! -f "${FLL_LIVE_USER_HOME}/$BASEDIR/preferences" ]; then
+-               cat >> ${FLL_LIVE_USER_HOME}/$BASEDIR/preferences/%gconf.xml << EOF
+<?xml version="1.0"?>
+<gconf>
+	<entry name="always_use_browser" mtime="1179983929" type="bool" value="true">
+	</entry>
+</gconf>
+EOF
+	else
+                sed -i -e 's|always_use_browser\(.*\)value=\(.*\)|always_use_browser\1value="true"|' \
+                        ${FLL_LIVE_USER_HOME}/$BASEDIR/preferences/%gconf.xml
+        fi
+
 }
 
 case "${1}" in
