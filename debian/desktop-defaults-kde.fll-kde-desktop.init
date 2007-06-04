@@ -272,6 +272,7 @@ EOF
 		else
 			cat > "${FLL_LIVE_USER_HOME}/.kde/share/config/kpowersaverc" \
 <<EOF
+[General]
 Autostart=false
 AlreadyStarted=true
 EOF
