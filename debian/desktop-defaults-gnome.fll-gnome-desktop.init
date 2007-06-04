@@ -123,6 +123,11 @@ Exec=epiphany file:${INDEXFILE}
 X-GNOME-Autostart-enabled=true
 EOF
 
+	if [ -f ${FLL_LIVE_USER_HOME}/Desktop/${FLL_DISTRO_NAME}.desktop ]; then
+                sed -i -e 's|Exec=konqueror\(.*\)file:\(.*\)|Exec=epiphany \2|' \
+                        ${FLL_LIVE_USER_HOME}/Desktop/${FLL_DISTRO_NAME}.desktop
+        fi
+	
 	BASEDIR=".gconf/apps/nautilus"
 	[ ! -d "${FLL_LIVE_USER_HOME}/$BASEDIR/preferences" ] && mkdir -p ${FLL_LIVE_USER_HOME}/$BASEDIR/preferences
 

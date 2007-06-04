@@ -1,8 +1,12 @@
 desktop-defaults (0.8.3) UNRELEASED; urgency=low
 
+  [ Stefan Lippers-Hollmann ]
   * NOT RELEASED YET
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 04 Jun 2007 14:36:11 +0200
+  [ Andreas Weber ]
+  * Desktop Icon fixed 
+
+ -- Andreas Weber <webera@WFRKWEBERALIN>  Mon, 04 Jun 2007 15:38:49 +0200
 
 desktop-defaults (0.8.2) unstable; urgency=low
 
