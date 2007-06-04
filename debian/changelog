@@ -9,8 +9,9 @@ desktop-defaults (0.8.1) UNRELEASED; urgency=low
   * Special handling of kpowersaverc. Disable kcmlaptop when kpowersave is
     installed.
   * Add icon size defaults to kpersonalizerrc template.
+  * Add konsolerc handling to fll-kde-desktop.init. Remove template konsolerc.
 
- -- Kel Modderman <kel@otaku42.de>  Mon, 04 Jun 2007 18:09:25 +1000
+ -- Kel Modderman <kel@otaku42.de>  Mon, 04 Jun 2007 18:31:24 +1000
 
 desktop-defaults (0.8.0) unstable; urgency=low
 

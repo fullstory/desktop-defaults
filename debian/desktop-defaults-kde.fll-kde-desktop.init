@@ -158,7 +158,7 @@ EOF
 	fi
 
 	###
-	# disable first time login wizard
+	# disable first time login wizard, set icon sizes
 	###
 	touch "${FLL_LIVE_USER_HOME}/.kde/share/config/kpersonalizerrc"
 	if grep -q '^FirstLogin=' "${FLL_LIVE_USER_HOME}/.kde/share/config/kpersonalizerrc"; then
@@ -185,6 +185,28 @@ EOF
 	fi
 	chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" \
 		"${FLL_LIVE_USER_HOME}/.kde/share/config/kpersonalizerrc"
+	
+	###
+	# konsole defaults
+	###
+	touch "${FLL_LIVE_USER_HOME}/.kde/share/config/konsolerc"
+	if grep -q '^RunOnStart=' "${FLL_LIVE_USER_HOME}/.kde/share/config/konsolerc"; then
+		sed -i 's|^RunOnStart=.*|RunOnStart=false|' \
+			"${FLL_LIVE_USER_HOME}/.kde/share/config/konsolerc"
+	else
+		cat > "${FLL_LIVE_USER_HOME}/.kde/share/config/konsolerc" \
+<<EOF
+[Desktop Entry]
+defaultfont=Monospace,12,-1,5,50,0,0,0,0,0
+schema=Transparent_darkbg.schema
+#schema=WhiteOnBlack.schema
+
+[TipOfDay]
+RunOnStart=false
+EOF
+	fi
+	chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" \
+		"${FLL_LIVE_USER_HOME}/.kde/share/config/konsolerc"
 
 	###
 	# setup keyboard chooser
