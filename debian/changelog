@@ -5,11 +5,12 @@ desktop-defaults (0.8.3) UNRELEASED; urgency=low
 
   [ Andreas Weber ]
   * Desktop Icon fixed
+  * Desktop Icon code replaced with a better function
 
   [ Kel Modderman ]
   * Enable media:/ on desktop.
 
- -- Kel Modderman <kel@otaku42.de>  Tue, 05 Jun 2007 00:22:02 +1000
+ -- Andreas Weber <webera@WFRKWEBERALIN>  Mon, 04 Jun 2007 16:50:26 +0200
 
 desktop-defaults (0.8.2) unstable; urgency=low
 

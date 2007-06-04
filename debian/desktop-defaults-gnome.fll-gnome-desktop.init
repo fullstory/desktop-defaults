@@ -123,16 +123,22 @@ Exec=epiphany file:${INDEXFILE}
 X-GNOME-Autostart-enabled=true
 EOF
 
-	if [ -f ${FLL_LIVE_USER_HOME}/Desktop/${FLL_DISTRO_NAME}.desktop ]; then
-                sed -i -e 's|Exec=konqueror\(.*\)file:\(.*\)|Exec=epiphany \2|' \
-                        ${FLL_LIVE_USER_HOME}/Desktop/${FLL_DISTRO_NAME}.desktop
-        fi
+	if [ -f "${INDEXFILE}" ]; then
+		cat > "${FLL_LIVE_USER_HOME}/Desktop/${FLL_DISTRO_NAME}.desktop" \
+<<EOF
+[Desktop Entry]
+Name=${FLL_CDROM_INDEX}
+Exec=epiphany file:${INDEXFILE}
+Type=Application
+Icon=${INDEXICON}
+Terminal=0
+EOF
 	
 	BASEDIR=".gconf/apps/nautilus"
 	[ ! -d "${FLL_LIVE_USER_HOME}/$BASEDIR/preferences" ] && mkdir -p ${FLL_LIVE_USER_HOME}/$BASEDIR/preferences
 
 	if [ ! -f "${FLL_LIVE_USER_HOME}/$BASEDIR/preferences" ]; then
--               cat >> ${FLL_LIVE_USER_HOME}/$BASEDIR/preferences/%gconf.xml << EOF
+-               cat >> "${FLL_LIVE_USER_HOME}/$BASEDIR/preferences/%gconf.xml" << EOF
 <?xml version="1.0"?>
 <gconf>
 	<entry name="always_use_browser" mtime="1179983929" type="bool" value="true">
