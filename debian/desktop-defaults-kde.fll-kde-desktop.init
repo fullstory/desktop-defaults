@@ -111,10 +111,10 @@ EOF
 	###
 	for krc in /usr/share/desktop-defaults-kde/*rc; do
 		[ -f "${krc}" ] || continue
-		if [ ! -f "${FLL_LIVE_USER_HOME}/.kde/share/config/${krc}" ]; then
-			cat "${krc}" > "${FLL_LIVE_USER_HOME}/.kde/share/config/${krc}"
+		if [ ! -f "${FLL_LIVE_USER_HOME}/.kde/share/config/${krc##*/}" ]; then
+			cat "${krc}" > "${FLL_LIVE_USER_HOME}/.kde/share/config/${krc##*/}"
 			chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" \
-				"${FLL_LIVE_USER_HOME}/.kde/share/config/${krc}"
+				"${FLL_LIVE_USER_HOME}/.kde/share/config/${krc##*/}"
 		fi
 	done
 
