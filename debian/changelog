@@ -1,4 +1,4 @@
-desktop-defaults (0.8.1) UNRELEASED; urgency=low
+desktop-defaults (0.8.1) unstable; urgency=low
 
   * Take control of all kde defaults for live user.
     - keep large template rc files in /usr/share/desktop-defaults-kde/
