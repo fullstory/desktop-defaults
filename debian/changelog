@@ -10,8 +10,10 @@ desktop-defaults (0.8.1) UNRELEASED; urgency=low
     installed.
   * Add konsolerc handling to fll-kde-desktop.init. Remove template konsolerc.
   * Standardize fll-*-desktop.init output.
+  * Attempt to address the percieved font problem in a more intelligent and
+    flexible way than just throwing personalised files into /etc/skel.
 
- -- Kel Modderman <kel@otaku42.de>  Mon, 04 Jun 2007 20:24:11 +1000
+ -- Kel Modderman <kel@otaku42.de>  Mon, 04 Jun 2007 20:58:08 +1000
 
 desktop-defaults (0.8.0) unstable; urgency=low
 
