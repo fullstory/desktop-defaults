@@ -17,7 +17,7 @@ fi
 # Start mixer
 if [ -x /usr/bin/kmix ]; then
 	# kmix already started? sound system active?
-	if ! pgrep -x kmix >/dev/null && lsmod | egrep -q "snd|soundcore"; then
+	if ! pgrep -x kmix >/dev/null && grep -q "^snd" /proc/modules; then
 		# be sure that kmix just starts in tray!
 		if grep -q ^Visible ~/.kde/share/config/kmixrc 2>/dev/null; then
 			sed -i 's/^Visible=.*/Visible=false/' ~/.kde/share/config/kmixrc
