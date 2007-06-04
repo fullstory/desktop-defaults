@@ -87,80 +87,191 @@ if [ ! -d "${FLL_LIVE_USER_HOME}" ]; then
 fi
 
 do_start() {
+	###
 	# setup KDM theme
-	if [ -d "${KDE_KDM_THEME}" ]; then
-		echo "USETHEME=true"		>  /etc/default/kdm.d/kdmtheme
-		echo "THEME=${KDE_KDM_THEME}"	>> /etc/default/kdm.d/kdmtheme
+	###
+	if [ "${KDE_KDM_THEME}" ]; then
+		cat > /etc/default/kdm.d/kdmtheme \
+<<EOF
+USETHEME=true
+THEME=${KDE_KDM_THEME}
+EOF
 	fi
 
+	###
+	# setup live user .kde/share/config
+	###
 	if [ ! -d "${FLL_LIVE_USER_HOME}/.kde/share/config" ]; then
 		install --directory --group="${FLL_LIVE_USER}" --owner="${FLL_LIVE_USER}" \
 			"${FLL_LIVE_USER_HOME}/.kde/share/config"
 	fi
 
-	if [ ! -d "${FLL_LIVE_USER_HOME}/Desktop" ]; then
-		install --directory --group="${FLL_LIVE_USER}" --owner="${FLL_LIVE_USER}" \
-			"${FLL_LIVE_USER_HOME}/Desktop"
-	fi
+	###
+	# populate .kde/share/config with our own templates
+	###
+	for krc in /usr/share/desktop-defaults-kde/*rc; do
+		[ -f "${krc}" ] || continue
+		if [ ! -f "${FLL_LIVE_USER_HOME}/.kde/share/config/${krc}" ]; then
+			cat "${krc}" > "${FLL_LIVE_USER_HOME}/.kde/share/config/${krc}"
+			chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" \
+				"${FLL_LIVE_USER_HOME}/.kde/share/config/${krc}"
+		fi
+	done
 
+	###
 	# set KDE wallpaper
-	touch "${FLL_LIVE_USER_HOME}/.kde/share/config/kdesktoprc"
-	if grep -q '^Wallpaper=' "${FLL_LIVE_USER_HOME}/.kde/share/config/kdesktoprc"; then
-		sed -i 's|^Wallpaper=.*|Wallpaper='"${FLL_WALLPAPER}"'|' \
-			"${FLL_LIVE_USER_HOME}/.kde/share/config/kdesktoprc"
-	else
-		cat >> "${FLL_LIVE_USER_HOME}/.kde/share/config/kdesktoprc" \
+	###
+	if [ "${FLL_WALLPAPER}" ]; then
+		touch "${FLL_LIVE_USER_HOME}/.kde/share/config/kdesktoprc"
+		if grep -q '^Wallpaper=' "${FLL_LIVE_USER_HOME}/.kde/share/config/kdesktoprc"; then
+			sed -i 's|^Wallpaper=.*|Wallpaper='"${FLL_WALLPAPER}"'|' \
+				"${FLL_LIVE_USER_HOME}/.kde/share/config/kdesktoprc"
+		else
+			cat > "${FLL_LIVE_USER_HOME}/.kde/share/config/kdesktoprc" \
 << EOF
 [Desktop0]
-BackgroundMode=Flat
-BlendBalance=100
-BlendMode=NoBlending
-ChangeInterval=60
-Color1=0,0,0
-Color2=255,255,255
-CurrentWallpaperName=
-LastChange=0
-MinOptimizationDepth=1
-MultiWallpaperMode=NoMulti
-Pattern=
-Program=
-ReverseBlending=false
-UseSHM=false
 Wallpaper=${FLL_WALLPAPER}
 WallpaperMode=Scaled
 EOF
+		fi
+		chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" \
+			"${FLL_LIVE_USER_HOME}/.kde/share/config/kdesktoprc"
 	fi
-	chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" "${FLL_LIVE_USER_HOME}/.kde/share/config/kdesktoprc"
 
-	touch "${FLL_LIVE_USER_HOME}/.kde/share/config/kdesurc"
-	if ! grep -q '^super-user-command=' "${FLL_LIVE_USER_HOME}/.kde/share/config/kdesurc"; then
-		sed -i 's|^super-user-command=.*|super-user-command=sudo|' \
-			"${FLL_LIVE_USER_HOME}/.kde/share/config/kdesurc"
+	###
+	# set Ksplash theme
+	###
+	if [ "${KDE_KSPLASH_THEME}" ]; then
+		touch "${FLL_LIVE_USER_HOME}/.kde/share/config/ksplashrc"
+		if grep -q '^Theme=' "${FLL_LIVE_USER_HOME}/.kde/share/config/ksplashrc"; then
+			sed -i 's|^Theme=.*|Theme='"${KDE_KSPLASH_THEME}"'|' \
+				"${FLL_LIVE_USER_HOME}/.kde/share/config/ksplashrc"
+		else
+			cat > "${FLL_LIVE_USER_HOME}/.kde/share/config/ksplashrc" \
+<< EOF
+[KSplash]
+Theme=${KDE_KSPLASH_THEME}
+EOF
+		fi
+		chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" \
+			"${FLL_LIVE_USER_HOME}/.kde/share/config/ksplashrc"
+	fi
+
+	###
+	# disable first time login wizard
+	###
+	touch "${FLL_LIVE_USER_HOME}/.kde/share/config/kpersonalizerrc"
+	if grep -q '^FirstLogin=' "${FLL_LIVE_USER_HOME}/.kde/share/config/kpersonalizerrc"; then
+		sed -i 's|^FirstLogin=.*|FirstLogin=false|' \
+			"${FLL_LIVE_USER_HOME}/.kde/share/config/kpersonalizerrc"
 	else
-		echo "[super-user-command]"	>> "${FLL_LIVE_USER_HOME}/.kde/share/config/kdesurc"
-		echo "super-user-command=sudo"	>> "${FLL_LIVE_USER_HOME}/.kde/share/config/kdesurc"
+		cat > "${FLL_LIVE_USER_HOME}/.kde/share/config/kpersonalizerrc" \
+<<EOF
+[General]
+FirstLogin=false
+EOF
 	fi
-	chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" "${FLL_LIVE_USER_HOME}/.kde/share/config/kdesurc"
+	chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" \
+		"${FLL_LIVE_USER_HOME}/.kde/share/config/kpersonalizerrc"
 
 	###
-	# XXX: where the heck do these come from?!?
+	# setup keyboard chooser
 	###
-	#touch "${FLL_LIVE_USER_HOME}/.kde/share/config/kdeglobals"
-	#sed -i	-e 's/^Charset=.*$/Charset='"${CHARSET}"'/' \
-	#	-e 's/^Country=.*$/Country='"${COUNTRY}"'/' \
-	#	-e 's/^Language=.*$/Language='"${LANGUAGE}"'/' \
-	#		"${FLL_LIVE_USER_HOME}/.kde/share/config/kdeglobals"
-	
 	touch "${FLL_LIVE_USER_HOME}/.kde/share/config/kxkbrc"
 	if grep -q '^LayoutList=' "${FLL_LIVE_USER_HOME}/.kde/share/config/kxkbrc"; then
 		sed -i "s|^LayoutList=.*|LayoutList=${KDEKEYBOARDS:=us}|" \
 			"${FLL_LIVE_USER_HOME}/.kde/share/config/kxkbrc"
 	else
-		echo "LayoutList=${KDEKEYBOARDS:=us}" >> "${FLL_LIVE_USER_HOME}/.kde/share/config/kxkbrc"
+		cat > "${FLL_LIVE_USER_HOME}/.kde/share/config/kxkbrc" \
+<<EOF
+[Layout]
+LayoutList=${KDEKEYBOARDS:=us}
+EOF
 	fi
-	chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" "${FLL_LIVE_USER_HOME}/.kde/share/config/kxkbrc"
+	chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" \
+		"${FLL_LIVE_USER_HOME}/.kde/share/config/kxkbrc"
 
+	###
+	# kdesu must use sudo in passwd'less setup
+	###
+	touch "${FLL_LIVE_USER_HOME}/.kde/share/config/kdesurc"
+	if ! grep -q '^super-user-command=' "${FLL_LIVE_USER_HOME}/.kde/share/config/kdesurc"; then
+		sed -i 's|^super-user-command=.*|super-user-command=sudo|' \
+			"${FLL_LIVE_USER_HOME}/.kde/share/config/kdesurc"
+	else
+		cat > "${FLL_LIVE_USER_HOME}/.kde/share/config/kdesurc" \
+<<EOF
+[super-user-command]
+super-user-command=sudo
+EOF
+	fi
+	chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" \
+		"${FLL_LIVE_USER_HOME}/.kde/share/config/kdesurc"
+
+	###
+	# keep these disabled by default for clean desktop startup
+	###
+	for krc in kbluetoothdrc klipperrc korgacrc kpowersaverc; do
+		touch "${FLL_LIVE_USER_HOME}/.kde/share/config/${krc}"
+		if grep -q '^AutoStart=' "${FLL_LIVE_USER_HOME}/.kde/share/config/${krc}"; then
+			sed -i 's|^AutoStart=.*|AutoStart=false|' \
+				"${FLL_LIVE_USER_HOME}/.kde/share/config/${krc}"
+		else
+			cat > "${FLL_LIVE_USER_HOME}/.kde/share/config/${krc}" \
+<<EOF
+[General]
+AutoStart=false
+EOF
+			if [ "${krc}" = "kpowersaverc" ]; then
+				echo "AlreadyStarted=true" >> \
+					"${FLL_LIVE_USER_HOME}/.kde/share/config/${krc}"
+			fi
+		fi
+		chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" \
+			"${FLL_LIVE_USER_HOME}/.kde/share/config/${krc}"
+	done
+
+	###
+	# disable ktip
+	###
+	touch "${FLL_LIVE_USER_HOME}/.kde/share/config/ktiprc"
+	if grep -q '^RunOnStart=' "${FLL_LIVE_USER_HOME}/.kde/share/config/ktiprc"; then
+		sed -i 's|^RunOnStart=.*|RunOnStart=false|' \
+			"${FLL_LIVE_USER_HOME}/.kde/share/config/ktiprc"
+	else
+		cat > "${FLL_LIVE_USER_HOME}/.kde/share/config/ktiprc" \
+<<EOF
+[TipOfDay]
+RunOnStart=false
+EOF
+	fi
+	chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" \
+		"${FLL_LIVE_USER_HOME}/.kde/share/config/ktiprc"
+	
+	###
+	# disable kcmlaptop when kpowersave is installed
+	###
+	if [ -x /usr/bin/kpowersave ]; then
+		cat > "${FLL_LIVE_USER_HOME}/.kde/share/config/kcmlaptoprc" \
+<<EOF
+[BatteryDefault]
+Enable=false
+EOF
+		chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" \
+			"${FLL_LIVE_USER_HOME}/.kde/share/config/kcmlaptoprc"
+	fi
+
+	###
+	# create ~/Desktop if not present
+	###
+	if [ ! -d "${FLL_LIVE_USER_HOME}/Desktop" ]; then
+		install --directory --group="${FLL_LIVE_USER}" --owner="${FLL_LIVE_USER}" \
+			"${FLL_LIVE_USER_HOME}/Desktop"
+	fi
+
+	###
 	# scan for index.html in fll specific live mountpoint directories
+	###
 	for mntpnt in /fll/*; do
 		if [ -d "${mntpnt}" ] && [ -f "${mntpnt}/index.html" ]; then
 			INDEXFILE="${mntpnt}/index.html"
@@ -174,7 +285,10 @@ EOF
 		fi
 	done
 
-	if [ "${INDEXFILE}" ]; then
+	###
+	# create desktop shortcut to index.html
+	###
+	if [ -f "${INDEXFILE}" ]; then
 		cat > "${FLL_LIVE_USER_HOME}/Desktop/${FLL_DISTRO_NAME}.desktop" \
 <<EOF
 [Desktop Entry]
@@ -186,6 +300,16 @@ Terminal=0
 EOF
 		chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" \
 			"${FLL_LIVE_USER_HOME}/Desktop/${FLL_DISTRO_NAME}.desktop"
+
+		if [ "${NOINTRO}" != "yes" ]; then
+			if [ ! -d "${FLL_LIVE_USER_HOME}/.kde/Autostart" ]; then
+				install --directory --group="${FLL_LIVE_USER}" --owner="${FLL_LIVE_USER}" \
+					"${FLL_LIVE_USER_HOME}/.kde/Autostart"
+			fi
+
+			ln -sf "${FLL_LIVE_USER_HOME}/Desktop/${FLL_DISTRO_NAME}.desktop" \
+				"${FLL_LIVE_USER_HOME}/.kde/Autostart/"
+		fi
 	fi
 }
 
