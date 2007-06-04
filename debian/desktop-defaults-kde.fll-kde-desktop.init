@@ -211,7 +211,7 @@ EOF
 	###
 	# keep these disabled by default for clean desktop startup
 	###
-	for krc in kbluetoothdrc klipperrc korgacrc kpowersaverc; do
+	for krc in kbluetoothdrc klipperrc korgacrc; do
 		touch "${FLL_LIVE_USER_HOME}/.kde/share/config/${krc}"
 		if grep -q '^AutoStart=' "${FLL_LIVE_USER_HOME}/.kde/share/config/${krc}"; then
 			sed -i 's|^AutoStart=.*|AutoStart=false|' \
@@ -222,14 +222,27 @@ EOF
 [General]
 AutoStart=false
 EOF
-			if [ "${krc}" = "kpowersaverc" ]; then
-				echo "AlreadyStarted=true" >> \
-					"${FLL_LIVE_USER_HOME}/.kde/share/config/${krc}"
-			fi
 		fi
 		chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" \
 			"${FLL_LIVE_USER_HOME}/.kde/share/config/${krc}"
 	done
+
+	###
+	# kpowersave is the odd one out, stop it from starting by default
+	###
+	touch "${FLL_LIVE_USER_HOME}/.kde/share/config/kpowersaverc"
+	if grep -q '^Autostart' "${FLL_LIVE_USER_HOME}/.kde/share/config/kpowersaverc"; then
+		sed -i 's|^Autostart=.*|Autostart=false|' \
+			"${FLL_LIVE_USER_HOME}/.kde/share/config/kpowersaverc"
+	else
+		cat > "${FLL_LIVE_USER_HOME}/.kde/share/config/kpowersaverc" \
+<<EOF
+Autostart=false
+AlreadyStarted=true
+EOF
+	fi
+	chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" \
+		"${FLL_LIVE_USER_HOME}/.kde/share/config/kpowersaverc"
 
 	###
 	# disable ktip
