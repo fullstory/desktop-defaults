@@ -8,11 +8,10 @@ desktop-defaults (0.8.1) UNRELEASED; urgency=low
   * Disable arts when no sound device is present/supported.
   * Special handling of kpowersaverc. Disable kcmlaptop when kpowersave is
     installed.
-  * Add icon size defaults to kpersonalizerrc template.
   * Add konsolerc handling to fll-kde-desktop.init. Remove template konsolerc.
   * Standardize fll-*-desktop.init output.
 
- -- Kel Modderman <kel@otaku42.de>  Mon, 04 Jun 2007 19:00:52 +1000
+ -- Kel Modderman <kel@otaku42.de>  Mon, 04 Jun 2007 20:24:11 +1000
 
 desktop-defaults (0.8.0) unstable; urgency=low
 

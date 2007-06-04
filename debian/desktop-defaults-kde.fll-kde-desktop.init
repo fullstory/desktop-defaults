@@ -169,18 +169,6 @@ EOF
 <<EOF
 [General]
 FirstLogin=false
-
-[DesktopIcons]
-Size=48
-
-[MainToolbarIcons]
-Size=22
-
-[ToolbarIcons]
-Size=22
-
-[SmallIcons]
-Size=16
 EOF
 	fi
 	chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" \
