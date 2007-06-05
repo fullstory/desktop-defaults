@@ -155,6 +155,9 @@ WallpaperMode=Scaled
 [FMSettings]
 StandardFont=${KDE_ACTIVE_FONT}
 
+[General]
+AutoLineUpIcons=true
+
 [Media]
 enabled=true
 exclude=
