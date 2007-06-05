@@ -1,4 +1,4 @@
-desktop-defaults (0.8.4) UNRELEASED; urgency=low
+desktop-defaults (0.8.4) unstable; urgency=low
 
   * Set AutoLineUpIcons=true in kdesktoprc.
 
