@@ -10,8 +10,12 @@ desktop-defaults (0.8.5) UNRELEASED; urgency=low
     of relying on etcskel to have what we want.
   * fll-gnome-desktop.init: ensure we are preserving user ownership of
     dirs/files touched and created.
+  * Really fix for korganizer. The file *is* named korgacrc but it defies the
+    AutoStart standard in same way as kpowersave, it looks for Autostart
+    (lower case "s"...).
+  * Cleanup up ./kde.
 
- -- Kel Modderman <kel@otaku42.de>  Wed, 06 Jun 2007 13:57:13 +1000
+ -- Kel Modderman <kel@otaku42.de>  Wed, 06 Jun 2007 15:51:15 +1000
 
 desktop-defaults (0.8.4) unstable; urgency=low
 

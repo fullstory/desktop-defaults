@@ -109,12 +109,12 @@ EOF
 	###
 	# populate .kde/share/config with our own templates
 	###
-	for krc in /usr/share/desktop-defaults-kde/*rc; do
+	for krc in /usr/share/desktop-defaults-kde/*; do
 		[ -e "${krc}" ] || continue
-		if [ ! -e "${FLL_LIVE_USER_HOME}/.kde/share/config/${krc##*/}" ]; then
-			cp -a "${krc}" "${FLL_LIVE_USER_HOME}/.kde/share/config/${krc##*/}"
+		if [ ! -e "${FLL_LIVE_USER_HOME}/.kde/${krc##*/}" ]; then
+			cp -a "${krc}" "${FLL_LIVE_USER_HOME}/.kde/${krc##*/}"
 			chown -R "${FLL_LIVE_USER}:${FLL_LIVE_USER}" \
-				"${FLL_LIVE_USER_HOME}/.kde/share/config/${krc##*/}"
+				"${FLL_LIVE_USER_HOME}/.kde/${krc##*/}"
 		fi
 	done
 
@@ -261,7 +261,7 @@ EOF
 	###
 	# keep these disabled by default for clean desktop startup
 	###
-	for krc in kbluetoothdrc klipperrc korganizerrc; do
+	for krc in kbluetoothdrc klipperrc; do
 		touch "${FLL_LIVE_USER_HOME}/.kde/share/config/${krc}"
 		if grep -q '^AutoStart=' "${FLL_LIVE_USER_HOME}/.kde/share/config/${krc}"; then
 			sed -i 's|^AutoStart=.*|AutoStart=false|' \
@@ -276,6 +276,23 @@ EOF
 		chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" \
 			"${FLL_LIVE_USER_HOME}/.kde/share/config/${krc}"
 	done
+
+	###
+	# korganizer
+	###
+	touch "${FLL_LIVE_USER_HOME}/.kde/share/config/korgacrc"
+	if grep -q '^Autostart' "${FLL_LIVE_USER_HOME}/.kde/share/config/korgacrc"; then
+			sed -i 's|^Autostart=.*|Autostart=false|' \
+				"${FLL_LIVE_USER_HOME}/.kde/share/config/korgacrc"
+	else
+		cat > "${FLL_LIVE_USER_HOME}/.kde/share/config/korgacrc" \
+<<EOF
+[General]
+Autostart=false
+EOF
+	fi
+	chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" \
+		"${FLL_LIVE_USER_HOME}/.kde/share/config/korgacrc"
 
 	###
 	# kpowersave is the odd one out, stop it from starting by default, avoid first time wizard
