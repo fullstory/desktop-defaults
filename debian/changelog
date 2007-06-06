@@ -2,8 +2,16 @@ desktop-defaults (0.8.5) UNRELEASED; urgency=low
 
   * fll-kde-desktop.init: fix typo, s/korgacrc/korganizerrc/. Stop korganizer
     from starting up on live boot.
+  * fll-kde-desktop.init: use more generic loop to populate
+    ~/.kde/share/config.
+  * Add desktop-defaults-gnome.install to keep live .gconf templates here
+    instead of etcskel.
+  * fll-gnome-desktop.init: use templates from desktop-defaults-gonme instead
+    of relying on etcskel to have what we want.
+  * fll-gnome-desktop.init: ensure we are preserving user ownership of
+    dirs/files touched and created.
 
- -- Kel Modderman <kel@otaku42.de>  Wed, 06 Jun 2007 13:40:12 +1000
+ -- Kel Modderman <kel@otaku42.de>  Wed, 06 Jun 2007 13:57:13 +1000
 
 desktop-defaults (0.8.4) unstable; urgency=low
 

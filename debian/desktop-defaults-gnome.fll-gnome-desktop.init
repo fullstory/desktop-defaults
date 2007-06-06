@@ -92,8 +92,21 @@ fi
 
 do_start() {
 	###
-	# do stuff to files in FLL_LIVE_USER_HOME . . . 
+	# populate ~/.gconf
 	###
+	if [ ! -d "${FLL_LIVE_USER_HOME}/.gconf" ]; then
+		install --directory --group="${FLL_LIVE_USER}" --owner="${FLL_LIVE_USER}" \
+			"${FLL_LIVE_USER_HOME}/.gconf"
+	fi
+
+	for gcfg in /usr/share/desktop-defaults-gnome/*; do
+		[ -e "${gcfg}" ] || continue
+		if [ ! -e "${FLL_LIVE_USER_HOME}/.gconf/${gcfg##*/}" ]; then
+			cp -a "${gcfg}" "${FLL_LIVE_USER_HOME}/.gconf/${gcfg##*/}"
+			chown -R "${FLL_LIVE_USER}:${FLL_LIVE_USER}" \
+				"${FLL_LIVE_USER_HOME}/.gconf/${gcfg##*/}"
+		fi
+	done
 
 	for mntpnt in /fll/*; do
 		if [ -d "${mntpnt}" ] && [ -f "${mntpnt}/index.html" ]; then
@@ -111,8 +124,12 @@ do_start() {
 	###
 	# create desktop icon . . .
 	###
-        mkdir -p "${FLL_LIVE_USER_HOME}/.config/autostart"
-        cat > "${FLL_LIVE_USER_HOME}/.config/autostart/${FLL_DISTRO_NAME}-manual.desktop" \
+	if [ ! -d "${FLL_LIVE_USER_HOME}/.config/autostart" ]; then
+		install --directory --group="${FLL_LIVE_USER}" --owner="${FLL_LIVE_USER}" \
+			"${FLL_LIVE_USER_HOME}/.config/autostart"
+	fi
+        
+	cat > "${FLL_LIVE_USER_HOME}/.config/autostart/${FLL_DISTRO_NAME}-manual.desktop" \
 <<EOF
 [Desktop Entry]
 Name=${FLL_DISTRO_NAME}-manual
@@ -122,6 +139,14 @@ Name[de_DE]=${FLL_DISTRO_NAME}-manual
 Exec=epiphany file:${INDEXFILE}
 X-GNOME-Autostart-enabled=true
 EOF
+
+	###
+	# create ~/Desktop if not present
+	###
+	if [ ! -d "${FLL_LIVE_USER_HOME}/Desktop" ]; then
+		install --directory --group="${FLL_LIVE_USER}" --owner="${FLL_LIVE_USER}" \
+			"${FLL_LIVE_USER_HOME}/Desktop"
+	fi
 
 	if [ -f "${INDEXFILE}" ]; then
 		cat > "${FLL_LIVE_USER_HOME}/Desktop/${FLL_DISTRO_NAME}.desktop" \
@@ -133,12 +158,19 @@ Type=Application
 Icon=${INDEXICON}
 Terminal=0
 EOF
+	fi
+	chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" \
+		"${FLL_LIVE_USER_HOME}/Desktop/${FLL_DISTRO_NAME}.desktop"
 	
 	BASEDIR=".gconf/apps/nautilus"
-	[ ! -d "${FLL_LIVE_USER_HOME}/$BASEDIR/preferences" ] && mkdir -p ${FLL_LIVE_USER_HOME}/$BASEDIR/preferences
 
-	if [ ! -f "${FLL_LIVE_USER_HOME}/$BASEDIR/preferences" ]; then
--               cat >> "${FLL_LIVE_USER_HOME}/$BASEDIR/preferences/%gconf.xml" << EOF
+	if [ ! -d "${FLL_LIVE_USER_HOME}/${BASEDIR}/preferences" ]; then
+		install --directory --group="${FLL_LIVE_USER}" --owner="${FLL_LIVE_USER}" \
+			"${FLL_LIVE_USER_HOME}/${BASEDIR}/preferences"
+	fi
+
+	if [ ! -f "${FLL_LIVE_USER_HOME}/${BASEDIR}/preferences" ]; then
+-               cat >> "${FLL_LIVE_USER_HOME}/${BASEDIR}/preferences/%gconf.xml" << EOF
 <?xml version="1.0"?>
 <gconf>
 	<entry name="always_use_browser" mtime="1179983929" type="bool" value="true">
@@ -147,8 +179,10 @@ EOF
 EOF
 	else
                 sed -i -e 's|always_use_browser\(.*\)value=\(.*\)|always_use_browser\1value="true"|' \
-                        ${FLL_LIVE_USER_HOME}/$BASEDIR/preferences/%gconf.xml
+                        ${FLL_LIVE_USER_HOME}/${BASEDIR}/preferences/%gconf.xml
         fi
+	chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" \
+		${FLL_LIVE_USER_HOME}/${BASEDIR}/preferences/%gconf.xml
 
 }
 

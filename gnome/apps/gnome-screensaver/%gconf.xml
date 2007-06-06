@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<gconf>
+        <entry name="lock_enabled" mtime="1176238378" type="bool" value="false">
+        </entry>
+        <entry name="themes" mtime="1176218796" type="list" ltype="string">
+                <li type="string">
+                        <stringvalue>debian-floaters</stringvalue>
+                </li>
+        </entry>
+        <entry name="mode" mtime="1176218796" type="string">
+                <stringvalue>single</stringvalue>
+        </entry>
+</gconf>

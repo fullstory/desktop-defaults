@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<gconf>
+	<entry name="show_splash_screen" mtime="1176211954" type="bool" value="false">
+	</entry>
+	<entry name="splash_image" mtime="1175757054" type="string">
+		<stringvalue>/usr/share/wallpapers/sidux.png</stringvalue>
+	</entry>
+	<entry name="logout_option" mtime="1175756986" type="string">
+		<stringvalue>logout, shutdown, restart</stringvalue>
+	</entry>
+</gconf>
