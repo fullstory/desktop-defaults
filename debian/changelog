@@ -1,3 +1,9 @@
+desktop-defaults (0.8.6) UNRELEASED; urgency=low
+
+  * NOT RELEASED YET
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 06 Jun 2007 15:09:32 +0200
+
 desktop-defaults (0.8.5) unstable; urgency=low
 
   * fll-kde-desktop.init: fix typo, s/korgacrc/korganizerrc/. Stop korganizer
