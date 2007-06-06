@@ -261,7 +261,7 @@ EOF
 	###
 	# keep these disabled by default for clean desktop startup
 	###
-	for krc in kbluetoothdrc klipperrc korgacrc; do
+	for krc in kbluetoothdrc klipperrc korganizerrc; do
 		touch "${FLL_LIVE_USER_HOME}/.kde/share/config/${krc}"
 		if grep -q '^AutoStart=' "${FLL_LIVE_USER_HOME}/.kde/share/config/${krc}"; then
 			sed -i 's|^AutoStart=.*|AutoStart=false|' \
