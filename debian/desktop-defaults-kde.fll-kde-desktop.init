@@ -113,7 +113,7 @@ EOF
 		[ -e "${krc}" ] || continue
 		if [ ! -e "${FLL_LIVE_USER_HOME}/.kde/share/config/${krc##*/}" ]; then
 			cp -a "${krc}" "${FLL_LIVE_USER_HOME}/.kde/share/config/${krc##*/}"
-			chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" \
+			chown -R "${FLL_LIVE_USER}:${FLL_LIVE_USER}" \
 				"${FLL_LIVE_USER_HOME}/.kde/share/config/${krc##*/}"
 		fi
 	done
