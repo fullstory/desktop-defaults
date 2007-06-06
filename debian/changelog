@@ -1,4 +1,4 @@
-desktop-defaults (0.8.5) UNRELEASED; urgency=low
+desktop-defaults (0.8.5) unstable; urgency=low
 
   * fll-kde-desktop.init: fix typo, s/korgacrc/korganizerrc/. Stop korganizer
     from starting up on live boot.
