@@ -88,25 +88,6 @@ fi
 
 do_start() {
 	###
-	# setup KDM theme
-	###
-	if [ "${KDE_KDM_THEME}" ]; then
-		cat > /etc/default/kdm.d/kdmtheme \
-<<EOF
-USETHEME=true
-THEME=${KDE_KDM_THEME}
-EOF
-	fi
-
-	###
-	# setup live user .kde/share/config
-	###
-	if [ ! -d "${FLL_LIVE_USER_HOME}/.kde/share/config" ]; then
-		install --directory --group="${FLL_LIVE_USER}" --owner="${FLL_LIVE_USER}" \
-			"${FLL_LIVE_USER_HOME}/.kde/share/config"
-	fi
-
-	###
 	# populate .kde/share/config with our own templates
 	###
 	for krc in /usr/share/desktop-defaults-kde/*; do
@@ -117,6 +98,14 @@ EOF
 				"${FLL_LIVE_USER_HOME}/.kde/${krc##*/}"
 		fi
 	done
+
+	###
+	# setup live user .kde/share/config
+	###
+	if [ ! -d "${FLL_LIVE_USER_HOME}/.kde/share/config" ]; then
+		install --directory --group="${FLL_LIVE_USER}" --owner="${FLL_LIVE_USER}" \
+			"${FLL_LIVE_USER_HOME}/.kde/share/config"
+	fi
 
 	###
 	# global font override
@@ -410,6 +399,17 @@ EOF
 			ln -sf "${FLL_LIVE_USER_HOME}/Desktop/${FLL_DISTRO_NAME}.desktop" \
 				"${FLL_LIVE_USER_HOME}/.kde/Autostart/"
 		fi
+	fi
+
+	###
+	# setup KDM theme
+	###
+	if [ "${KDE_KDM_THEME}" ]; then
+		cat > /etc/default/kdm.d/kdmtheme \
+<<EOF
+USETHEME=true
+THEME=${KDE_KDM_THEME}
+EOF
 	fi
 }
 

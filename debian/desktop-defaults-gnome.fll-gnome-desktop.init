@@ -91,14 +91,6 @@ fi
 ###
 
 do_start() {
-	###
-	# populate ~/.gconf
-	###
-	if [ ! -d "${FLL_LIVE_USER_HOME}/.gconf" ]; then
-		install --directory --group="${FLL_LIVE_USER}" --owner="${FLL_LIVE_USER}" \
-			"${FLL_LIVE_USER_HOME}/.gconf"
-	fi
-
 	for gcfg in /usr/share/desktop-defaults-gnome/*; do
 		[ -e "${gcfg}" ] || continue
 		if [ ! -e "${FLL_LIVE_USER_HOME}/.gconf/${gcfg##*/}" ]; then
@@ -107,6 +99,14 @@ do_start() {
 				"${FLL_LIVE_USER_HOME}/.gconf/${gcfg##*/}"
 		fi
 	done
+
+	###
+	# populate ~/.gconf
+	###
+	if [ ! -d "${FLL_LIVE_USER_HOME}/.gconf" ]; then
+		install --directory --group="${FLL_LIVE_USER}" --owner="${FLL_LIVE_USER}" \
+			"${FLL_LIVE_USER_HOME}/.gconf"
+	fi
 
 	for mntpnt in /fll/*; do
 		if [ -d "${mntpnt}" ] && [ -f "${mntpnt}/index.html" ]; then
