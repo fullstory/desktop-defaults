@@ -12,7 +12,8 @@ KDE_KDM_THEME="/usr/share/apps/kdm/themes/sidux"
 KDE_KSPLASH_THEME="sidux"
 
 # fonts . . .
-KDE_ACTIVE_FONT="DejaVu Sans,12,-1,5,50,0,0,0,0,0"
+#KDE_ACTIVE_FONT="DejaVu Sans,12,-1,5,50,0,0,0,0,0"
+KDE_ACTIVE_FONT="Bitstream Vera Sans,12,-1,5,50,0,0,0,0,0"
 KDE_FIXED_FONT="Monospace,12,-1,5,50,0,0,0,0,0"
 KDE_ANTIA_FONT="true"
 KDE_HINTS_FONT="hintfull"
