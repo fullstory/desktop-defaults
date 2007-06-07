@@ -91,15 +91,6 @@ fi
 ###
 
 do_start() {
-	for gcfg in /usr/share/desktop-defaults-gnome/*; do
-		[ -e "${gcfg}" ] || continue
-		if [ ! -e "${FLL_LIVE_USER_HOME}/.gconf/${gcfg##*/}" ]; then
-			cp -a "${gcfg}" "${FLL_LIVE_USER_HOME}/.gconf/${gcfg##*/}"
-			chown -R "${FLL_LIVE_USER}:${FLL_LIVE_USER}" \
-				"${FLL_LIVE_USER_HOME}/.gconf/${gcfg##*/}"
-		fi
-	done
-
 	###
 	# populate ~/.gconf
 	###
@@ -107,6 +98,14 @@ do_start() {
 		install --directory --group="${FLL_LIVE_USER}" --owner="${FLL_LIVE_USER}" \
 			"${FLL_LIVE_USER_HOME}/.gconf"
 	fi
+
+	for gcfg in /usr/share/desktop-defaults-gnome/*; do
+		[ -e "${gcfg}" ] || continue
+		if [ ! -e "${FLL_LIVE_USER_HOME}/.gconf/${gcfg##*/}" ]; then
+			cp -a "${gcfg}" "${FLL_LIVE_USER_HOME}/.gconf/${gcfg##*/}"
+		fi
+	done
+	chown -R "${FLL_LIVE_USER}:${FLL_LIVE_USER}" "${FLL_LIVE_USER_HOME}/.gconf"
 
 	for mntpnt in /fll/*; do
 		if [ -d "${mntpnt}" ] && [ -f "${mntpnt}/index.html" ]; then

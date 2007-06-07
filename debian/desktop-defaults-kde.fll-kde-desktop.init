@@ -88,16 +88,20 @@ fi
 
 do_start() {
 	###
-	# populate .kde/share/config with our own templates
+	# populate .kde our own templates
 	###
+	if [ ! -d "${FLL_LIVE_USER_HOME}/.kde" ]; then
+		install --directory --group="${FLL_LIVE_USER}" --owner="${FLL_LIVE_USER}" \
+			"${FLL_LIVE_USER_HOME}/.kde"
+	fi
+
 	for krc in /usr/share/desktop-defaults-kde/*; do
 		[ -e "${krc}" ] || continue
 		if [ ! -e "${FLL_LIVE_USER_HOME}/.kde/${krc##*/}" ]; then
 			cp -a "${krc}" "${FLL_LIVE_USER_HOME}/.kde/${krc##*/}"
-			chown -R "${FLL_LIVE_USER}:${FLL_LIVE_USER}" \
-				"${FLL_LIVE_USER_HOME}/.kde/${krc##*/}"
 		fi
 	done
+	chown -R "${FLL_LIVE_USER}:${FLL_LIVE_USER}" "${FLL_LIVE_USER_HOME}/.kde"
 
 	###
 	# setup live user .kde/share/config
