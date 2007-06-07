@@ -9,6 +9,7 @@ Standards-Version: 3.7.2
 Package: desktop-defaults-kde
 Architecture: all
 Depends: distro-defaults, fll-live-initscripts
+Recommends: gtk2-engines-qtcurve
 Conflicts: kde-services-sidux
 Description: defaults specific to the K desktop environment
  This package provides required infrastructure to tweak the KDE desktop

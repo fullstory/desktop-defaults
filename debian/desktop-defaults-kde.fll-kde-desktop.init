@@ -415,6 +415,22 @@ USETHEME=true
 THEME=${KDE_KDM_THEME}
 EOF
 	fi
+
+	###
+	# allow gtk2 apps to blend in with kde style
+	###
+	if [ "${GTK2_FONT}" ]; then
+		echo "gtk-font-name=\"${GTK2_FONT}\"" >> "${FLL_LIVE_USER_HOME}/.gtkrc-2.0"
+	fi
+
+	if [ -f "/usr/share/themes/${GTK2_ENGINE}/gtk-2.0/gtkrc" ]; then
+		echo "include \"/usr/share/themes/${GTK2_ENGINE}/gtk-2.0/gtkrc\"" > \
+			"${FLL_LIVE_USER_HOME}/.gtkrc-2.0"
+	fi
+
+	if [ -f "${FLL_LIVE_USER_HOME}/.gtkrc-2.0" ]; then
+		chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" "${FLL_LIVE_USER_HOME}/.gtkrc-2.0"
+	fi
 }
 
 case "${1}" in
