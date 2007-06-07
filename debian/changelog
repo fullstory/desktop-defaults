@@ -1,4 +1,4 @@
-desktop-defaults (0.8.6) UNRELEASED; urgency=low
+desktop-defaults (0.8.6) unstable; urgency=low
 
   * Fix loop where .kde/.gconf are populated with templates.
   * Add some code to assist with "blending" in gtk2 apps with KDE style via
