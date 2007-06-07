@@ -102,7 +102,7 @@ do_start() {
 	for gcfg in /usr/share/desktop-defaults-gnome/*; do
 		[ -e "${gcfg}" ] || continue
 		if [ ! -e "${FLL_LIVE_USER_HOME}/.gconf/${gcfg##*/}" ]; then
-			cp -a "${gcfg}" "${FLL_LIVE_USER_HOME}/.gconf/${gcfg##*/}"
+			cp -a "${gcfg}" "${FLL_LIVE_USER_HOME}/.gconf/"
 		fi
 	done
 	chown -R "${FLL_LIVE_USER}:${FLL_LIVE_USER}" "${FLL_LIVE_USER_HOME}/.gconf"

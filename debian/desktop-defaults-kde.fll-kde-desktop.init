@@ -98,7 +98,7 @@ do_start() {
 	for krc in /usr/share/desktop-defaults-kde/*; do
 		[ -e "${krc}" ] || continue
 		if [ ! -e "${FLL_LIVE_USER_HOME}/.kde/${krc##*/}" ]; then
-			cp -a "${krc}" "${FLL_LIVE_USER_HOME}/.kde/${krc##*/}"
+			cp -a "${krc}" "${FLL_LIVE_USER_HOME}/.kde/"
 		fi
 	done
 	chown -R "${FLL_LIVE_USER}:${FLL_LIVE_USER}" "${FLL_LIVE_USER_HOME}/.kde"
