@@ -1,4 +1,4 @@
-desktop-defaults (0.8.7) UNRELEASED; urgency=low
+desktop-defaults (0.8.7) unstable; urgency=low
 
   * Set default kde font to Bistream Vera Sans 12pt.
 
