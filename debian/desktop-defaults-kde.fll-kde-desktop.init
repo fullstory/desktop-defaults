@@ -114,21 +114,21 @@ do_start() {
 	###
 	# global font override
 	###
-	if [ ! -f "${FLL_LIVE_USER_HOME}/.kde/share/config/kdeglobals" ]; then
-		cat > "${FLL_LIVE_USER_HOME}/.kde/share/config/kdeglobals" \
-<<EOF
-[General]
-XftAntialias=${KDE_ANTIA_FONT}
-XftHintStyle=${KDE_HINTS_FONT}
-fixed=${KDE_FIXED_FONT}
-font=${KDE_ACTIVE_FONT}
-menuFont=${KDE_ACTIVE_FONT}
-taskbarFont=${KDE_ACTIVE_FONT}
-toolBarFont=${KDE_ACTIVE_FONT}
-EOF
-	fi
-	chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" \
-		"${FLL_LIVE_USER_HOME}/.kde/share/config/kdeglobals"
+#	if [ ! -f "${FLL_LIVE_USER_HOME}/.kde/share/config/kdeglobals" ]; then
+#		cat > "${FLL_LIVE_USER_HOME}/.kde/share/config/kdeglobals" \
+#<<EOF
+#[General]
+#XftAntialias=${KDE_ANTIA_FONT}
+#XftHintStyle=${KDE_HINTS_FONT}
+#fixed=${KDE_FIXED_FONT}
+#font=${KDE_ACTIVE_FONT}
+#menuFont=${KDE_ACTIVE_FONT}
+#taskbarFont=${KDE_ACTIVE_FONT}
+#toolBarFont=${KDE_ACTIVE_FONT}
+#EOF
+#	fi
+#	chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" \
+#		"${FLL_LIVE_USER_HOME}/.kde/share/config/kdeglobals"
 
 	###
 	# set KDE wallpaper and standard font, enable media on desktop
@@ -261,7 +261,7 @@ EOF
 	# kdesu must use sudo in passwd'less setup
 	###
 	touch "${FLL_LIVE_USER_HOME}/.kde/share/config/kdesurc"
-	if ! grep -q '^super-user-command=' "${FLL_LIVE_USER_HOME}/.kde/share/config/kdesurc"; then
+	if grep -q '^super-user-command=' "${FLL_LIVE_USER_HOME}/.kde/share/config/kdesurc"; then
 		sed -i 's|^super-user-command=.*|super-user-command=sudo|' \
 			"${FLL_LIVE_USER_HOME}/.kde/share/config/kdesurc"
 	else
