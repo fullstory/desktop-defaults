@@ -149,6 +149,7 @@ WallpaperMode=Scaled
 StandardFont=${KDE_ACTIVE_FONT}
 
 [General]
+Enabled=true
 AutoLineUpIcons=true
 
 [Media]
