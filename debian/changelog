@@ -1,4 +1,4 @@
-desktop-defaults (0.8.8) UNRELEASED; urgency=low
+desktop-defaults (0.8.8) unstable; urgency=low
 
   * Disable arts from starting for now.
 
