@@ -99,10 +99,10 @@ do_start() {
 			"${FLL_LIVE_USER_HOME}/.gconf"
 	fi
 
-	for gcfg in /usr/share/desktop-defaults-gnome/*; do
-		[ -e "${gcfg}" ] || continue
-		if [ ! -e "${FLL_LIVE_USER_HOME}/.gconf/${gcfg##*/}" ]; then
-			cp -a "${gcfg}" "${FLL_LIVE_USER_HOME}/.gconf/"
+	for cfg in /usr/share/desktop-defaults-gnome/*; do
+		[ -e "${cfg}" ] || continue
+		if [ ! -e "${FLL_LIVE_USER_HOME}/.gconf/${cfg##*/}" ]; then
+			cp -a "${cfg}" "${FLL_LIVE_USER_HOME}/.gconf/"
 		fi
 	done
 	chown -R "${FLL_LIVE_USER}:${FLL_LIVE_USER}" "${FLL_LIVE_USER_HOME}/.gconf"
