@@ -338,18 +338,19 @@ EOF
 	###
 	# disable arts when no sound device is supported/present
 	###
-	if ! grep -q "^snd" /proc/modules; then
-		touch "${FLL_LIVE_USER_HOME}/.kde/share/config/kcmartsrc"
-		if grep -q '^StartServer=' "${FLL_LIVE_USER_HOME}/.kde/share/config/kcmartsrc"; then
-			sed -i 's|^StartServer=.*|StartServer=false|' \
-				"${FLL_LIVE_USER_HOME}/.kde/share/config/kcmartsrc"
-		else
+#	if ! grep -q "^snd" /proc/modules; then
+#		touch "${FLL_LIVE_USER_HOME}/.kde/share/config/kcmartsrc"
+#		if grep -q '^StartServer=' "${FLL_LIVE_USER_HOME}/.kde/share/config/kcmartsrc"; then
+#			sed -i 's|^StartServer=.*|StartServer=false|' \
+#				"${FLL_LIVE_USER_HOME}/.kde/share/config/kcmartsrc"
+#		else
+	if [ ! -f "${FLL_LIVE_USER_HOME}/.kde/share/config/kcmartsrc" ]; then
 			cat > "${FLL_LIVE_USER_HOME}/.kde/share/config/kcmartsrc" \
 <<EOF
 [Arts]
 StartServer=false
 EOF
-		fi
+#		fi
 		chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" \
 			"${FLL_LIVE_USER_HOME}/.kde/share/config/kcmartsrc"
 	fi
