@@ -1,54 +1,38 @@
-[$Version]
-update_info=kickerrc.upd:kde_3_1_sizeChanges,kickerrc.upd:kde_3_4_reverseLayout,kickerrc.upd:kde_3_5_kconfigXTize
-
-[AddAppletDialog Settings]
-Height 1024=941
-Width 1280=1272
-
 [Applet_1]
 ConfigFile=kminipagerappletrc
 DesktopFile=minipagerapplet.desktop
 FreeSpace=0
 FreeSpace2=0
-HeightForWidthHint=44
-WidthForHeightHint=83
 
 [Applet_2]
 ConfigFile=ktaskbarappletrc
 DesktopFile=taskbarapplet.desktop
 FreeSpace=0
 FreeSpace2=0
-HeightForWidthHint=207
-WidthForHeightHint=208
 
 [Applet_3]
 ConfigFile=ksystemtrayappletrc
 DesktopFile=systemtrayapplet.desktop
 FreeSpace=1
 FreeSpace2=1
-HeightForWidthHint=35
-WidthForHeightHint=106
 
 [Applet_4]
 ConfigFile=clockappletrc
 DesktopFile=clockapplet.desktop
 FreeSpace=1
 FreeSpace2=1
-HeightForWidthHint=36
-WidthForHeightHint=160
 
 [Colors]
 CurrentPalette=Definierte Farben
 
-[Extension_1]
-ConfigFile=ksim_panelextensionrc
-DesktopFile=ksim.desktop
-UserHidden=0
+[ExtensionButton_1]
+DesktopFile=systemmenu.desktop
+FreeSpace2=0
 
 [General]
 Alignment=0
 Applets=KMenuButton_1,ServiceMenuButton_1,WindowListButton_1,DesktopButton_1,URLButton_1,URLButton_3,URLButton_4,ServiceButton_1,ServiceMenuButton_2,Applet_1,Applet_2,Applet_3,Applet_4
-Applets2=KMenuButton_1,ServiceButton_1,ServiceButton_3,ServiceButton_2,Applet_1,Applet_2,Applet_3,Applet_4,Applet_5
+Applets2=KMenuButton_1,ExtensionButton_1,ServiceButton_1,ServiceButton_3,ServiceButton_2,Applet_1,Applet_2,Applet_3,Applet_4,Applet_5
 AutoHideAnimation=true
 AutoHideAnimationSpeed=100
 AutoHideDelay=3
@@ -60,10 +44,10 @@ ColorizeBackground=false
 CustomSize=0
 ExpandSize=true
 Extensions2=
-FadeOutAppletHandles=true
+FadeOutAppletHandles=false
 HideAnimation=true
 HideAnimationSpeed=100
-HideAppletHandles=false
+HideAppletHandles=true
 HideButtonSize=12
 IExist=true
 MenubarPanelTransparent=false
@@ -78,7 +62,6 @@ Size=1
 SizePercentage=100
 TintColor=153,143,143
 TintValue=49
-Transparent=true
 TrustedApplets=clockapplet,ksystemtrayapplet,krunapplet,quicklauncher,kminipagerapplet,ktaskbarapplet,eyesapplet,kmixapplet
 UnhideLocation=6
 UntrustedApplets=
