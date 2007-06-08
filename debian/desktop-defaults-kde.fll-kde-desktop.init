@@ -179,6 +179,26 @@ EOF
 			"${FLL_LIVE_USER_HOME}/.kde/share/config/ksplashrc"
 	fi
 
+	if [ "${KDEKEYBOARDS}" ]; then
+		touch "${FLL_LIVE_USER_HOME}/.kde/share/config/kxkbrc"
+		if grep -q '^LayoutList=' "${FLL_LIVE_USER_HOME}/.kde/share/config/kxkbrc"; then
+			sed -i 's|^LayoutList=.*|LayoutList='"${KDEKEYBOARDS}"'|' \
+				"${FLL_LIVE_USER_HOME}/.kde/share/config/kxkbrc"
+		else
+			cat > "${FLL_LIVE_USER_HOME}/.kde/share/config/kxkbrc" \
+<<EOF
+[Layout]
+LayoutList=${KDEKEYBOARDS}
+Model=pc104
+ShowFlag=true
+SwitchMode=Global
+Use=true
+EOF
+		fi
+		chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" \
+			"${FLL_LIVE_USER_HOME}/.kde/share/config/kxkbrc"
+	fi
+
 	###
 	# disable first time login wizard, set icon sizes
 	###
