@@ -133,33 +133,33 @@ EOF
 	###
 	# set KDE wallpaper and standard font, enable media on desktop
 	###
-	if [ "${FLL_WALLPAPER}" ]; then
-		touch "${FLL_LIVE_USER_HOME}/.kde/share/config/kdesktoprc"
-		if grep -q '^Wallpaper=' "${FLL_LIVE_USER_HOME}/.kde/share/config/kdesktoprc"; then
-			sed -i 's|^Wallpaper=.*|Wallpaper='"${FLL_WALLPAPER}"'|' \
-				"${FLL_LIVE_USER_HOME}/.kde/share/config/kdesktoprc"
-		else
-			cat > "${FLL_LIVE_USER_HOME}/.kde/share/config/kdesktoprc" \
-<< EOF
-[Desktop0]
-Wallpaper=${FLL_WALLPAPER}
-WallpaperMode=Scaled
+#	if [ "${FLL_WALLPAPER}" ]; then
+#		touch "${FLL_LIVE_USER_HOME}/.kde/share/config/kdesktoprc"
+#		if grep -q '^Wallpaper=' "${FLL_LIVE_USER_HOME}/.kde/share/config/kdesktoprc"; then
+#			sed -i 's|^Wallpaper=.*|Wallpaper='"${FLL_WALLPAPER}"'|' \
+#				"${FLL_LIVE_USER_HOME}/.kde/share/config/kdesktoprc"
+#		else
+#			cat > "${FLL_LIVE_USER_HOME}/.kde/share/config/kdesktoprc" \
+#<< EOF
+#[Desktop0]
+#Wallpaper=${FLL_WALLPAPER}
+#WallpaperMode=Scaled
 
-[FMSettings]
-StandardFont=${KDE_ACTIVE_FONT}
+#[FMSettings]
+#StandardFont=${KDE_ACTIVE_FONT}
 
-[General]
-Enabled=true
-AutoLineUpIcons=true
+#[General]
+#Enabled=true
+#AutoLineUpIcons=true
 
-[Media]
-enabled=true
-exclude=
-EOF
-		fi
-		chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" \
-			"${FLL_LIVE_USER_HOME}/.kde/share/config/kdesktoprc"
-	fi
+#[Media]
+#enabled=true
+#exclude=
+#EOF
+#		fi
+#		chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" \
+#			"${FLL_LIVE_USER_HOME}/.kde/share/config/kdesktoprc"
+#	fi
 
 	###
 	# set Ksplash theme
@@ -256,23 +256,6 @@ EOF
 		chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" \
 			"${FLL_LIVE_USER_HOME}/.kde/share/config/clockappletrc"
 	fi
-
-	###
-	# setup keyboard chooser
-	###
-	touch "${FLL_LIVE_USER_HOME}/.kde/share/config/kxkbrc"
-	if grep -q '^LayoutList=' "${FLL_LIVE_USER_HOME}/.kde/share/config/kxkbrc"; then
-		sed -i "s|^LayoutList=.*|LayoutList=${KDEKEYBOARDS:=us}|" \
-			"${FLL_LIVE_USER_HOME}/.kde/share/config/kxkbrc"
-	else
-		cat > "${FLL_LIVE_USER_HOME}/.kde/share/config/kxkbrc" \
-<<EOF
-[Layout]
-LayoutList=${KDEKEYBOARDS:=us}
-EOF
-	fi
-	chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" \
-		"${FLL_LIVE_USER_HOME}/.kde/share/config/kxkbrc"
 
 	###
 	# kdesu must use sudo in passwd'less setup
@@ -376,21 +359,14 @@ EOF
 		"${FLL_LIVE_USER_HOME}/.kde/share/config/ktiprc"
 	
 	###
-	# disable arts when no sound device is supported/present
+	# disable arts
 	###
-#	if ! grep -q "^snd" /proc/modules; then
-#		touch "${FLL_LIVE_USER_HOME}/.kde/share/config/kcmartsrc"
-#		if grep -q '^StartServer=' "${FLL_LIVE_USER_HOME}/.kde/share/config/kcmartsrc"; then
-#			sed -i 's|^StartServer=.*|StartServer=false|' \
-#				"${FLL_LIVE_USER_HOME}/.kde/share/config/kcmartsrc"
-#		else
 	if [ ! -f "${FLL_LIVE_USER_HOME}/.kde/share/config/kcmartsrc" ]; then
 			cat > "${FLL_LIVE_USER_HOME}/.kde/share/config/kcmartsrc" \
 <<EOF
 [Arts]
 StartServer=false
 EOF
-#		fi
 		chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" \
 			"${FLL_LIVE_USER_HOME}/.kde/share/config/kcmartsrc"
 	fi
