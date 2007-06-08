@@ -237,6 +237,25 @@ EOF
 	fi
 	chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" \
 		"${FLL_LIVE_USER_HOME}/.kde/share/config/konsolerc"
+	
+	###
+	# blend in clock applet
+	###
+	if [ ! -f "${FLL_LIVE_USER_HOME}/.kde/share/config/clockappletrc" ]; then
+		cat > "${FLL_LIVE_USER_HOME}/.kde/share/config/clockappletrc" \
+<<EOF
+[General]
+Initial_TZ=0
+RemoteZones=
+Type=Plain
+
+[Plain]
+Font=${KDE_ACTIVE_FONT}
+Show_Date=false
+EOF
+		chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" \
+			"${FLL_LIVE_USER_HOME}/.kde/share/config/clockappletrc"
+	fi
 
 	###
 	# setup keyboard chooser
