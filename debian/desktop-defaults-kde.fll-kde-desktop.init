@@ -112,6 +112,10 @@ do_start() {
 	fi
 
 	###
+	# XXX: font handling via fll-kde-desktop.default
+	###
+
+	###
 	# force wallpaper, kdesktoprc is provided by our dot.kde
 	###
 	if [ "${FLL_WALLPAPER}" ] && [ -f "${FLL_LIVE_USER_HOME}/.kde/share/config/kdesktoprc" ]; then
