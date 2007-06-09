@@ -152,7 +152,7 @@ Alignment=0
 OSDBackgroundColor=#000000
 OSDDrawShadow=false
 OSDDuration=3000
-OSDFont=xft,10,-1,5,50,0,0,0,0,0
+OSDFont=Bitstream Vera Sans,12,-1,5,50,0,0,0,0,0
 OSDScreen=0
 OSDTextColor=#000000
 OSDUseCustomColors=false
@@ -162,7 +162,7 @@ ShowChannel=false
 ShowChannelEvent=false
 ShowOwnNick=true
 ShowQuery=false
-UseOSD=true
+UseOSD=false
 
 [Open-with settings]
 CompletionMode=5

@@ -7,8 +7,10 @@ desktop-defaults (0.8.9) UNRELEASED; urgency=low
   * fll-kde-desktop.init: remove a few hacks.
   * fll-kde-desktop.default: reduce options intended to have support.
   * Set desktop icon size to 32 (from default of 48).
+  * Disable OSD in konversation.
+  * Remove superfluous font variables from config.
 
- -- Kel Modderman <kel@otaku42.de>  Sat, 09 Jun 2007 13:03:50 +1000
+ -- Kel Modderman <kel@otaku42.de>  Sat, 09 Jun 2007 13:24:33 +1000
 
 desktop-defaults (0.8.8) unstable; urgency=low
 

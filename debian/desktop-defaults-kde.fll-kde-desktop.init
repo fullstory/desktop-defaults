@@ -104,18 +104,6 @@ do_start() {
 	chown -R "${FLL_LIVE_USER}:${FLL_LIVE_USER}" "${FLL_LIVE_USER_HOME}/.kde"
 
 	###
-	# setup live user .kde/share/config
-	###
-	if [ ! -d "${FLL_LIVE_USER_HOME}/.kde/share/config" ]; then
-		install --directory --group="${FLL_LIVE_USER}" --owner="${FLL_LIVE_USER}" \
-			"${FLL_LIVE_USER_HOME}/.kde/share/config"
-	fi
-
-	###
-	# XXX: font handling via fll-kde-desktop.default
-	###
-
-	###
 	# force wallpaper, kdesktoprc is provided by our dot.kde
 	###
 	if [ "${FLL_WALLPAPER}" ] && [ -f "${FLL_LIVE_USER_HOME}/.kde/share/config/kdesktoprc" ]; then
@@ -125,6 +113,14 @@ do_start() {
 		fi
 		chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" \
 			"${FLL_LIVE_USER_HOME}/.kde/share/config/kdesktoprc"
+	fi
+
+	###
+	# setup live user .kde/share/config
+	###
+	if [ ! -d "${FLL_LIVE_USER_HOME}/.kde/share/config" ]; then
+		install --directory --group="${FLL_LIVE_USER}" --owner="${FLL_LIVE_USER}" \
+			"${FLL_LIVE_USER_HOME}/.kde/share/config"
 	fi
 
 	###
@@ -196,10 +192,6 @@ EOF
 	else
 		cat > "${FLL_LIVE_USER_HOME}/.kde/share/config/konsolerc" \
 <<EOF
-[Desktop Entry]
-defaultfont=${KDE_FIXED_FONT}
-schema=${KDE_KONSOLE_SCHEMA}
-
 [TipOfDay]
 RunOnStart=false
 EOF
