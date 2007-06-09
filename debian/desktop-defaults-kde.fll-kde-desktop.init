@@ -112,56 +112,6 @@ do_start() {
 	fi
 
 	###
-	# global font override
-	###
-#	if [ ! -f "${FLL_LIVE_USER_HOME}/.kde/share/config/kdeglobals" ]; then
-#		cat > "${FLL_LIVE_USER_HOME}/.kde/share/config/kdeglobals" \
-#<<EOF
-#[General]
-#XftAntialias=${KDE_ANTIA_FONT}
-#XftHintStyle=${KDE_HINTS_FONT}
-#fixed=${KDE_FIXED_FONT}
-#font=${KDE_ACTIVE_FONT}
-#menuFont=${KDE_ACTIVE_FONT}
-#taskbarFont=${KDE_ACTIVE_FONT}
-#toolBarFont=${KDE_ACTIVE_FONT}
-#EOF
-#	fi
-#	chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" \
-#		"${FLL_LIVE_USER_HOME}/.kde/share/config/kdeglobals"
-
-	###
-	# set KDE wallpaper and standard font, enable media on desktop
-	###
-#	if [ "${FLL_WALLPAPER}" ]; then
-#		touch "${FLL_LIVE_USER_HOME}/.kde/share/config/kdesktoprc"
-#		if grep -q '^Wallpaper=' "${FLL_LIVE_USER_HOME}/.kde/share/config/kdesktoprc"; then
-#			sed -i 's|^Wallpaper=.*|Wallpaper='"${FLL_WALLPAPER}"'|' \
-#				"${FLL_LIVE_USER_HOME}/.kde/share/config/kdesktoprc"
-#		else
-#			cat > "${FLL_LIVE_USER_HOME}/.kde/share/config/kdesktoprc" \
-#<< EOF
-#[Desktop0]
-#Wallpaper=${FLL_WALLPAPER}
-#WallpaperMode=Scaled
-
-#[FMSettings]
-#StandardFont=${KDE_ACTIVE_FONT}
-
-#[General]
-#Enabled=true
-#AutoLineUpIcons=true
-
-#[Media]
-#enabled=true
-#exclude=
-#EOF
-#		fi
-#		chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" \
-#			"${FLL_LIVE_USER_HOME}/.kde/share/config/kdesktoprc"
-#	fi
-
-	###
 	# set Ksplash theme
 	###
 	if [ "${KDE_KSPLASH_THEME}" ]; then
@@ -238,25 +188,6 @@ EOF
 	chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" \
 		"${FLL_LIVE_USER_HOME}/.kde/share/config/konsolerc"
 	
-	###
-	# blend in clock applet
-	###
-	if [ ! -f "${FLL_LIVE_USER_HOME}/.kde/share/config/clockappletrc" ]; then
-		cat > "${FLL_LIVE_USER_HOME}/.kde/share/config/clockappletrc" \
-<<EOF
-[General]
-Initial_TZ=0
-RemoteZones=
-Type=Plain
-
-[Plain]
-Font=${KDE_ACTIVE_FONT}
-Show_Date=false
-EOF
-		chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" \
-			"${FLL_LIVE_USER_HOME}/.kde/share/config/clockappletrc"
-	fi
-
 	###
 	# kdesu must use sudo in passwd'less setup
 	###
