@@ -23,11 +23,11 @@ Size=32
 
 [General]
 XftHintStyle=hintfull
-fixed=Monospace,12,-1,5,50,0,0,0,0,0
-font=Bitstream Vera Sans,12,-1,5,50,0,0,0,0,0
-menuFont=Bitstream Vera Sans,12,-1,5,50,0,0,0,0,0
-taskbarFont=Bitstream Vera Sans,12,-1,5,50,0,0,0,0,0
-toolBarFont=Bitstream Vera Sans,12,-1,5,50,0,0,0,0,0
+fixed=Monospace,11,-1,5,50,0,0,0,0,0
+font=Bitstream Vera Sans,11,-1,5,50,0,0,0,0,0
+menuFont=Bitstream Vera Sans,11,-1,5,50,0,0,0,0,0
+taskbarFont=Bitstream Vera Sans,11,-1,5,50,0,0,0,0,0
+toolBarFont=Bitstream Vera Sans,11,-1,5,50,0,0,0,0,0
 
 [Global Shortcuts]
 Activate Window Demanding Attention=default(Alt+Ctrl+A)
@@ -223,4 +223,4 @@ DoublePixels=false
 Size=22
 
 [WM]
-activeFont=Bitstream Vera Sans,12,-1,5,75,0,0,0,0,0
+activeFont=Bitstream Vera Sans,11,-1,5,75,0,0,0,0,0

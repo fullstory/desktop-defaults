@@ -10,8 +10,9 @@ desktop-defaults (0.8.9) UNRELEASED; urgency=low
   * Disable OSD in konversation.
   * Remove superfluous font variables from config.
   * Add konsolerc.
+  * Drop global fonts to size 11 (from 12).
 
- -- Kel Modderman <kel@otaku42.de>  Sat, 09 Jun 2007 14:09:07 +1000
+ -- Kel Modderman <kel@otaku42.de>  Sat, 09 Jun 2007 15:55:08 +1000
 
 desktop-defaults (0.8.8) unstable; urgency=low
 
