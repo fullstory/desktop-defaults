@@ -1,3 +1,9 @@
+desktop-defaults (0.8.10) UNRELEASED; urgency=low
+
+  * NOT RELEASED YET
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 09 Jun 2007 21:12:46 +0200
+
 desktop-defaults (0.8.9) unstable; urgency=low
 
   * Use KDEKEYBOARDS to preseed kxkbrc for kde.
