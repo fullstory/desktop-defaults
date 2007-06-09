@@ -19,10 +19,11 @@ if [ -x /usr/bin/kmix ]; then
 	# kmix already started? sound system active?
 	if ! pgrep -x kmix >/dev/null && grep -q "^snd" /proc/modules; then
 		# be sure that kmix just starts in tray!
-		if grep -q ^Visible ~/.kde/share/config/kmixrc 2>/dev/null; then
-			sed -i 's/^Visible=.*/Visible=false/' ~/.kde/share/config/kmixrc
+		touch ${HOME}/.kde/share/config/kmixrc
+		if grep -q '^Visible=' ${HOME}/.kde/share/config/kmixrc; then
+			sed -i 's/^Visible=.*/Visible=false/' ${HOME}/.kde/share/config/kmixrc
 		else
-			echo "Visible=false" > ~/.kde/share/config/kmixrc
+			echo "Visible=false" > ${HOME}/.kde/share/config/kmixrc
 		fi
 		
 		kmix
@@ -37,13 +38,15 @@ fi
 # Start kpowersave
 if [ -x /usr/bin/kpowersave ]; then
 	if ! pgrep -x kpowersave >/dev/null && pidof powersaved >/dev/null; then
-		kpowersave
 		# allow kpowersave to autostart (disabled by default)
-		if grep -q ^Autostart ~/.kde/share/config/kpowersaverc 2>/dev/null; then
-			sed -i 's/Autostart=.*/Autostart=true/' ~/.kde/share/config/kpowersaverc
+		touch ${HOME}/.kde/share/config/kpowersaverc
+		if grep -q '^Autostart=' ${HOME}/.kde/share/config/kpowersaverc; then
+			sed -i 's/Autostart=.*/Autostart=true/' ${HOME}/.kde/share/config/kpowersaverc
 		else
-			echo "Autostart=true" > ~/.kde/share/config/kpowersaverc
+			echo "Autostart=true" > ${HOME}/.kde/share/config/kpowersaverc
 		fi
+
+		kpowersave
 	fi
 fi
 
