@@ -142,6 +142,9 @@ EOF
 			"${FLL_LIVE_USER_HOME}/.kde/share/config/ksplashrc"
 	fi
 
+	###
+	# setup keyboard chooser
+	###
 	if [ "${KDEKEYBOARDS}" ]; then
 		touch "${FLL_LIVE_USER_HOME}/.kde/share/config/kxkbrc"
 		if grep -q '^LayoutList=' "${FLL_LIVE_USER_HOME}/.kde/share/config/kxkbrc"; then
