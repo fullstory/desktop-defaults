@@ -1,4 +1,4 @@
-desktop-defaults (0.8.9) UNRELEASED; urgency=low
+desktop-defaults (0.8.9) unstable; urgency=low
 
   * Use KDEKEYBOARDS to preseed kxkbrc for kde.
   * Add konversationrc.
