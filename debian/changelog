@@ -5,8 +5,9 @@ desktop-defaults (0.8.9) UNRELEASED; urgency=low
   * Move ./gnome and ./kde to ./dot.gconf and ./dot.kde respectively.
   * Reinstate local configs as templates for KDE's look and feel.
   * fll-kde-desktop.init: remove a few hacks.
+  * fll-kde-desktop.default: reduce options intended to have support.
 
- -- Kel Modderman <kel@otaku42.de>  Sat, 09 Jun 2007 10:26:39 +1000
+ -- Kel Modderman <kel@otaku42.de>  Sat, 09 Jun 2007 12:55:58 +1000
 
 desktop-defaults (0.8.8) unstable; urgency=low
 
