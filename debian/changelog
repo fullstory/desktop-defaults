@@ -9,8 +9,9 @@ desktop-defaults (0.8.9) UNRELEASED; urgency=low
   * Set desktop icon size to 32 (from default of 48).
   * Disable OSD in konversation.
   * Remove superfluous font variables from config.
+  * Add konsolerc.
 
- -- Kel Modderman <kel@otaku42.de>  Sat, 09 Jun 2007 13:24:33 +1000
+ -- Kel Modderman <kel@otaku42.de>  Sat, 09 Jun 2007 14:09:07 +1000
 
 desktop-defaults (0.8.8) unstable; urgency=low
 
