@@ -112,6 +112,16 @@ do_start() {
 	fi
 
 	###
+	# force wallpaper, kdesktoprc is provided by our dot.kde
+	###
+	if [ "${FLL_WALLPAPER}" ]; then
+		if ! grep -q "^Wallpaper=${FLL_WALLPAPER}" "${FLL_LIVE_USER_HOME}/.kde/share/config/kdesktoprc"; then
+			sed -i 's|^Wallpaper=.*|Wallpaper='"${FLL_WALLPAPER}"'|' \
+				"${FLL_LIVE_USER_HOME}/.kde/share/config/kdesktoprc"
+		fi
+	fi
+
+	###
 	# set Ksplash theme
 	###
 	if [ "${KDE_KSPLASH_THEME}" ]; then
