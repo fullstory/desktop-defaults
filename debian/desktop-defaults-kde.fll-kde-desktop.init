@@ -266,6 +266,8 @@ EOF
 [General]
 Autostart=false
 AlreadyStarted=true
+lockOnLidClose=false
+lockOnSuspend=false
 EOF
 		fi
 		chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" \

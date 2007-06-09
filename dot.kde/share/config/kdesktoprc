@@ -28,6 +28,9 @@ Middle=WindowListMenu
 Right=DesktopMenu
 WheelSwitchesWorkspace=true
 
+[ScreenSaver]
+Lock=false
+
 [Version]
 KDEVersionMajor=3
 KDEVersionMinor=5
