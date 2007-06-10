@@ -1,8 +1,12 @@
 desktop-defaults (0.8.11) UNRELEASED; urgency=low
 
+  [ Stefan Lippers-Hollmann ]
   * NOT RELEASED YET
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 10 Jun 2007 01:30:04 +0200
+  [ Andreas Weber ]
+  * Browser View changed for Nautilus 
+
+ -- Andreas Weber <andreas@it-weber.com>  Sun, 10 Jun 2007 15:56:10 +0200
 
 desktop-defaults (0.8.10) unstable; urgency=low
 

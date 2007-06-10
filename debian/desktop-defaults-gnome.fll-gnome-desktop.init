@@ -168,8 +168,13 @@ EOF
 			"${FLL_LIVE_USER_HOME}/${BASEDIR}/preferences"
 	fi
 
-	if [ ! -f "${FLL_LIVE_USER_HOME}/${BASEDIR}/preferences" ]; then
--               cat >> "${FLL_LIVE_USER_HOME}/${BASEDIR}/preferences/%gconf.xml" << EOF
+	if [ ! -d "${FLL_LIVE_USER_HOME}/${BASEDIR}/preferences" ]; then
+		install --directory --group="${FLL_LIVE_USER}" --owner="${FLL_LIVE_USER}" \
+ 			"${FLL_LIVE_USER_HOME}/${BASEDIR}/preferences"
+	fi
+
+	if [ ! -f "${FLL_LIVE_USER_HOME}/${BASEDIR}/preferences/%gconf.xml" ]; then
+                cat >> "${FLL_LIVE_USER_HOME}/${BASEDIR}/preferences/%gconf.xml" << EOF
 <?xml version="1.0"?>
 <gconf>
 	<entry name="always_use_browser" mtime="1179983929" type="bool" value="true">
