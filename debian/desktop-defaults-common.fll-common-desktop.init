@@ -111,6 +111,13 @@ do_start() {
 		sed -i 's|^Path='"${MOZPROFILE}"'|Path='"${NEWMOZPROFILE}"'|' \
 			"${FLL_LIVE_USER_HOME}/.mozilla/firefox/profiles.ini"
 	fi
+
+	###
+	# make it default browser
+	###
+	if [ -x /usr/bin/iceweasel ]; then
+		update-alternatives --set x-www-browser /usr/bin/iceweasel >/dev/null
+	fi
 }
 
 case "${1}" in
