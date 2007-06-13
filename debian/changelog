@@ -1,8 +1,8 @@
 desktop-defaults (0.8.13) UNRELEASED; urgency=low
 
-  * NOT RELEASED YET
+  * kpowersave hack in desktop-defaults-kde was not correct, simplify it.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 13 Jun 2007 16:05:26 +0200
+ -- Kel Modderman <kel@otaku42.de>  Thu, 14 Jun 2007 00:11:39 +1000
 
 desktop-defaults (0.8.12) unstable; urgency=low
 
