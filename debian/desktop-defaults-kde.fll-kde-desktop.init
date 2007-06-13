@@ -86,28 +86,19 @@ if [ ! -d "${FLL_LIVE_USER_HOME}" ]; then
 	log_end_msg 1
 fi
 
-do_start() {
-	###
-	# FIXME: populate .kde our own templates
-	###
-	#if [ ! -d "${FLL_LIVE_USER_HOME}/.kde" ]; then
-	#	install --directory --group="${FLL_LIVE_USER}" --owner="${FLL_LIVE_USER}" \
-	#		"${FLL_LIVE_USER_HOME}/.kde"
-	#fi
+###
+# functions
+###
+. /lib/fll/fll-desktop-func
 
-	#for cfg in /usr/share/desktop-defaults-kde/*; do
-	#	[ -e "${cfg}" ] || continue
-	#	if [ ! -e "${FLL_LIVE_USER_HOME}/.kde/${cfg##*/}" ]; then
-	#		cp -a "${cfg}" "${FLL_LIVE_USER_HOME}/.kde/"
-	#	fi
-	#done
-	#chown -R "${FLL_LIVE_USER}:${FLL_LIVE_USER}" "${FLL_LIVE_USER_HOME}/.kde"
+do_start() {
+	cp_desktop_defaults_from /usr/share/desktop-defaults-kde
 
 	###
 	# force wallpaper, kdesktoprc is provided by our dot.kde
 	###
 	if [ "${FLL_WALLPAPER}" ] && [ -f "${FLL_LIVE_USER_HOME}/.kde/share/config/kdesktoprc" ]; then
-		if grep -q '^Wallpaper=' "${FLL_LIVE_USER_HOME}/.kde/share/config/kdesktoprc"; then
+		if grep -s -q '^Wallpaper=' "${FLL_LIVE_USER_HOME}/.kde/share/config/kdesktoprc"; then
 			sed -i 's|^Wallpaper=.*|Wallpaper='"${FLL_WALLPAPER}"'|' \
 				"${FLL_LIVE_USER_HOME}/.kde/share/config/kdesktoprc"
 		fi

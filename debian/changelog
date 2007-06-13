@@ -5,8 +5,10 @@ desktop-defaults (0.8.12) UNRELEASED; urgency=low
   * Change Recommends fields in debian/control to Suggests.
   * Remove chown -R from example init script.
   * Add initial fll-common-desktop skeleton init script.
+  * Add /lib/fll/fll-desktop-func to allow shared cp_desktop_defaults_from()
+    function between out defaults init scripts.
 
- -- Kel Modderman <kel@otaku42.de>  Wed, 13 Jun 2007 16:19:31 +1000
+ -- Kel Modderman <kel@otaku42.de>  Wed, 13 Jun 2007 23:47:59 +1000
 
 desktop-defaults (0.8.11) unstable; urgency=low
 
