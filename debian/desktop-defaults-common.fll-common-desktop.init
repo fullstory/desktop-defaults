@@ -1,14 +1,14 @@
 #!/bin/sh
 
 ### BEGIN INIT INFO
-# Provides:          fll-DESKTOP-desktop
+# Provides:          fll-common-desktop
 # Required-Start:    fll-adduser
 # Required-Stop:     
 # Default-Start:     S
 # Default-Stop:      
-# Short-Description: prepare live user for DESKTOP desktop
+# Short-Description: configure common desktop apps for live user
 # Description:       The purpose of this script is to preseed the live users
-#                    settings for the DESKTOP desktop.
+#                    settings for common desktop applications.
 ### END INIT INFO
 
 ###
@@ -22,11 +22,7 @@
 ###
 
 PATH=/sbin:/usr/sbin:/bin:/usr/bin
-NAME="fll-DESKTOP-desktop"
-
-if [ ! -x /usr/bin/DESKTOP-BIN ]; then
-	exit 0
-fi
+NAME="fll-common-desktop"
 
 ###
 # source distro-defaults, no-op unless in live mode
@@ -50,13 +46,6 @@ fi
 # ANSI escape sequences (N, R, G, Y, B, M, C, W)
 ###
 . /lib/fll/fll-init-cols
-
-###
-# read in variables from our default conffile
-###
-if [ -s "/etc/default/${NAME}" ]; then
-	. "/etc/default/${NAME}"
-fi
 
 ###
 # read in variables from /etc/default/fll-locales
@@ -95,7 +84,7 @@ do_start() {
 
 case "${1}" in
 	start)
-		log_daemon_msg "${B}${NAME}${N}"; log_action_begin_msg " ${G}preparing ${Y}${FLL_LIVE_USER}${G} for ${Y}DESKTOP${N}"
+		log_daemon_msg "${B}${NAME}${N}"; log_action_begin_msg " ${G}preparing ${Y}${FLL_LIVE_USER}${G} for ${Y}common${N}"
 		do_start
 		log_end_msg 0
 		;;
