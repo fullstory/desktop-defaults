@@ -88,20 +88,20 @@ fi
 
 do_start() {
 	###
-	# populate .kde our own templates
+	# FIXME: populate .kde our own templates
 	###
-	if [ ! -d "${FLL_LIVE_USER_HOME}/.kde" ]; then
-		install --directory --group="${FLL_LIVE_USER}" --owner="${FLL_LIVE_USER}" \
-			"${FLL_LIVE_USER_HOME}/.kde"
-	fi
+	#if [ ! -d "${FLL_LIVE_USER_HOME}/.kde" ]; then
+	#	install --directory --group="${FLL_LIVE_USER}" --owner="${FLL_LIVE_USER}" \
+	#		"${FLL_LIVE_USER_HOME}/.kde"
+	#fi
 
-	for cfg in /usr/share/desktop-defaults-kde/*; do
-		[ -e "${cfg}" ] || continue
-		if [ ! -e "${FLL_LIVE_USER_HOME}/.kde/${cfg##*/}" ]; then
-			cp -a "${cfg}" "${FLL_LIVE_USER_HOME}/.kde/"
-		fi
-	done
-	chown -R "${FLL_LIVE_USER}:${FLL_LIVE_USER}" "${FLL_LIVE_USER_HOME}/.kde"
+	#for cfg in /usr/share/desktop-defaults-kde/*; do
+	#	[ -e "${cfg}" ] || continue
+	#	if [ ! -e "${FLL_LIVE_USER_HOME}/.kde/${cfg##*/}" ]; then
+	#		cp -a "${cfg}" "${FLL_LIVE_USER_HOME}/.kde/"
+	#	fi
+	#done
+	#chown -R "${FLL_LIVE_USER}:${FLL_LIVE_USER}" "${FLL_LIVE_USER_HOME}/.kde"
 
 	###
 	# force wallpaper, kdesktoprc is provided by our dot.kde

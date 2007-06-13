@@ -92,20 +92,20 @@ fi
 
 do_start() {
 	###
-	# populate ~/.gconf
+	# FIXME: populate ~/.gconf
 	###
-	if [ ! -d "${FLL_LIVE_USER_HOME}/.gconf" ]; then
-		install --directory --group="${FLL_LIVE_USER}" --owner="${FLL_LIVE_USER}" \
-			"${FLL_LIVE_USER_HOME}/.gconf"
-	fi
+	#if [ ! -d "${FLL_LIVE_USER_HOME}/.gconf" ]; then
+	#	install --directory --group="${FLL_LIVE_USER}" --owner="${FLL_LIVE_USER}" \
+	#		"${FLL_LIVE_USER_HOME}/.gconf"
+	#fi
 
-	for cfg in /usr/share/desktop-defaults-gnome/*; do
-		[ -e "${cfg}" ] || continue
-		if [ ! -e "${FLL_LIVE_USER_HOME}/.gconf/${cfg##*/}" ]; then
-			cp -a "${cfg}" "${FLL_LIVE_USER_HOME}/.gconf/"
-		fi
-	done
-	chown -R "${FLL_LIVE_USER}:${FLL_LIVE_USER}" "${FLL_LIVE_USER_HOME}/.gconf"
+	#for cfg in /usr/share/desktop-defaults-gnome/*; do
+	#	[ -e "${cfg}" ] || continue
+	#	if [ ! -e "${FLL_LIVE_USER_HOME}/.gconf/${cfg##*/}" ]; then
+	#		cp -a "${cfg}" "${FLL_LIVE_USER_HOME}/.gconf/"
+	#	fi
+	#done
+	#chown -R "${FLL_LIVE_USER}:${FLL_LIVE_USER}" "${FLL_LIVE_USER_HOME}/.gconf"
 
 	for mntpnt in /fll/*; do
 		if [ -d "${mntpnt}" ] && [ -f "${mntpnt}/index.html" ]; then
