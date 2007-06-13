@@ -75,6 +75,37 @@ if [ ! -d "${FLL_LIVE_USER_HOME}" ]; then
 	log_end_msg 1
 fi
 
+###
+# copied from legacy live-autoconfig
+###
+# Share Mozilla plugins with Firefox
+#if [ -x /usr/bin/iceweasel ]; then
+#	MOZPROFILE=$(awk '/Profile/{if (/Profile0/){inprof=1}else{inprof=0}}/Path/{if(inprof){print;}}' ${FLL_LIVE_USER_HOME}/.mozilla/firefox/profiles.ini | sed 's/^Path\=//' )
+#	NEWMOZPROFILE=$(mawk 'BEGIN{print int(10000000 * rand())}')".default"
+#	
+#	mv -f "${FLL_LIVE_USER_HOME}/.mozilla/firefox/${MOZPROFILE}" "${FLL_LIVE_USER_HOME}/.mozilla/firefox/${NEWMOZPROFILE}" && \
+#		sed -i 's/Path='$MOZPROFILE'/Path='$NEWMOZPROFILE'/' "${FLL_LIVE_USER_HOME}/.mozilla/firefox/profiles.ini"
+#fi
+#
+#if [ -n "${LANGUAGE}" ]; then
+#	# Set mozilla's preferred language
+#	for f in `ls -1 ${FLL_LIVE_USER_HOME}/.mozilla/*/*/prefs.js 2>/dev/null`; do
+#		echo 'user_pref("intl.accept_languages", "'"${LANGUAGE}"', en");' >>"$f"
+#		
+#		case "$LANG" in
+#			de*|at*|ch*)
+#				echo 'user_pref("general.useragent.contentlocale", "AT");' >>"$f"
+#				echo 'user_pref("general.useragent.locale", "de-AT");' >>"$f" ;;
+#		esac
+#		# else leave default language
+#	done
+#
+#	for f in `ls -1 ${FLL_LIVE_USER_HOME}/.mozilla/*/*/chrome/chrome.rdf.${LANGUAGE} 2>/dev/null`; do
+#		mv -f "$f" "${f%%.${LANGUAGE}}"
+#	done
+#fi
+###
+
 do_start() {
 	###
 	# do stuff to files in FLL_LIVE_USER_HOME . . . 
