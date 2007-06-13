@@ -1,4 +1,4 @@
-desktop-defaults (0.8.14) UNRELEASED; urgency=low
+desktop-defaults (0.8.14) unstable; urgency=low
 
   * fll-common-desktop: purge legacy function.
   * fll-kde-desktop: cleanup gtk2 engine handling.
