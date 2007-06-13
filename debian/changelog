@@ -1,8 +1,10 @@
 desktop-defaults (0.8.13) UNRELEASED; urgency=low
 
   * kpowersave hack in desktop-defaults-kde was not correct, simplify it.
+  * fll-common-desktop: fixups, do not announce script. Remove hardcoded /home
+    path.
 
- -- Kel Modderman <kel@otaku42.de>  Thu, 14 Jun 2007 00:11:39 +1000
+ -- Kel Modderman <kel@otaku42.de>  Thu, 14 Jun 2007 00:54:33 +1000
 
 desktop-defaults (0.8.12) unstable; urgency=low
 

@@ -62,9 +62,6 @@ for param in $(cat /proc/cmdline); do
 		flldebug=*)
 			[ "${param#flldebug=}" = "${NAME}" ] && set -x
 			;;
-		nointro)
-			NOINTRO="yes"
-			;;
 	esac
 done
 
@@ -119,7 +116,7 @@ do_start() {
 	###
 	if [ -f "${FLL_LIVE_USER_HOME}/.mozilla/firefox/profiles.ini" ]; then
 		MOZPROFILE=$(mawk '
-			/^Profile/ {
+			/^\[Profile/ {
 				if (/Profile0/) {
 					inprof=1
 				}
@@ -134,7 +131,7 @@ do_start() {
 		}' "${FLL_LIVE_USER_HOME}/.mozilla/firefox/profiles.ini")
 	fi
 
-	if [ "${MOZPROFILE}" ] && [ -d "/home/kelmo/.mozilla/firefox/${MOZPROFILE}" ]; then
+	if [ "${MOZPROFILE}" ] && [ -d "${FLL_LIVE_USER_HOME}/.mozilla/firefox/${MOZPROFILE}" ]; then
 		NEWMOZPROFILE=$(mawk '
 			BEGIN{
 				printf("%d.%s\n", int(10000000 * rand()), "default")
@@ -149,9 +146,7 @@ do_start() {
 
 case "${1}" in
 	start)
-		log_daemon_msg "${B}${NAME}${N}"; log_action_begin_msg " ${G}preparing ${Y}${FLL_LIVE_USER}${G} for ${Y}common${N}"
 		do_start
-		log_end_msg 0
 		;;
 	stop)
 		;;
