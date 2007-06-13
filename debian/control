@@ -6,18 +6,26 @@ Uploaders: Stefan Lippers-Hollmann <s.l-h@gmx.de>
 Build-Depends: cdbs, debhelper (>= 5)
 Standards-Version: 3.7.2
 
+Package: desktop-defaults-common
+Architecture: all
+Depends: distro-defaults, fll-live-initscripts
+Suggests: iceweasel
+Description: common user presets for various popular desktop applications
+ This package provides required infrastructure to tweak various popular desktop
+ applications.
+
 Package: desktop-defaults-kde
 Architecture: all
 Depends: distro-defaults, fll-live-initscripts
-Recommends: gtk2-engines-qtcurve
+Suggests: gtk2-engines-qtcurve
 Conflicts: kde-services-sidux
-Description: defaults specific to the K desktop environment
+Description: user presets specific to the K desktop environment
  This package provides required infrastructure to tweak the KDE desktop
  of the F.U.L.L.S.T.O.R.Y. live linux media.
 
 Package: desktop-defaults-gnome
 Architecture: all
 Depends: distro-defaults, fll-live-initscripts
-Description: defaults specific to the gnome desktop environment
+Description: user presets specific to the gnome desktop environment
  This package provides required infrastructure to tweak the gnome desktop
  of the F.U.L.L.S.T.O.R.Y. live linux media.
