@@ -1,8 +1,10 @@
 desktop-defaults (0.8.15) UNRELEASED; urgency=low
 
   * NOT RELEASED YET
+  * fll-kde-desktop: fix handling of GTK2_ENGINE that was broken last
+    night.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 13 Jun 2007 18:17:08 +0200
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 14 Jun 2007 08:29:33 +1000
 
 desktop-defaults (0.8.14) unstable; urgency=low
 

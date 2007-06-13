@@ -372,11 +372,11 @@ EOF
 	# allow gtk2 apps to blend in with kde style
 	###
 	if [ ! -f "${FLL_LIVE_USER_HOME}/.gtkrc-2.0" ]; then
-		if [ "${GTK2_ENGINE}" ] && [ -f "/usr/share/themes/${GTK2_ENGINE}/gtk-2.0/gtkrc" ]; then
+		if [ "${GTK2_ENGINE}" ] && [ ! -f "/usr/share/themes/${GTK2_ENGINE}/gtk-2.0/gtkrc" ]; then
 			echo "include \"/usr/share/themes/${GTK2_ENGINE}/gtk-2.0/gtkrc\"" > \
 				"${FLL_LIVE_USER_HOME}/.gtkrc-2.0"
+			chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" "${FLL_LIVE_USER_HOME}/.gtkrc-2.0"
 		fi
-		chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" "${FLL_LIVE_USER_HOME}/.gtkrc-2.0"
 	fi
 }
 
