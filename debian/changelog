@@ -1,4 +1,4 @@
-desktop-defaults (0.8.12) UNRELEASED; urgency=low
+desktop-defaults (0.8.12) unstable; urgency=low
 
   * Initial preset configuration files for desktop-defaults-common.
   * Change Recommends fields in debian/control to Suggests.
