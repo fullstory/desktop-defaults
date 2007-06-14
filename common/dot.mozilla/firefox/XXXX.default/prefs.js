@@ -9,8 +9,9 @@
  * For more information, see http://www.mozilla.org/unix/customizing.html#prefs
  */
 
-user_pref("ui.allow_platform_file_picker", false);
-user_pref("layout.css.dpi", 0);
-user_pref("font.minimum-size.x-western", 12);
 user_pref("font.name.sans-serif.x-western", "Bitstream Vera Serif");
 user_pref("font.name.serif.x-western", "Bitstream Vera Sans");
+user_pref("font.minimum-size.x-western", 12);
+user_pref("font.size.variable.x-western", 14);
+user_pref("ui.allow_platform_file_picker", false);
+user_pref("layout.css.dpi", 0);
