@@ -1,8 +1,10 @@
 desktop-defaults (0.8.17) UNRELEASED; urgency=low
 
-  * NOT RELEASED YET
+  * Put the konsole menu applet on kicker in place of konsole only icon. It
+    provides shortcut to root console. Fix python bug while there, until they
+    apply patch sent to them.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 14 Jun 2007 13:09:12 +0200
+ -- Kel Modderman <kel@otaku42.de>  Thu, 14 Jun 2007 21:21:36 +1000
 
 desktop-defaults (0.8.16) unstable; urgency=low
 

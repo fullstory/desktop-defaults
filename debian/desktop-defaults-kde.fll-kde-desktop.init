@@ -228,7 +228,14 @@ EOF
 		chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" \
 			"${FLL_LIVE_USER_HOME}/.kde/share/apps/konsole/su.desktop"
 	fi
-		
+	
+	# while here, fix #381659 until patch is applied
+	if [ -f /usr/share/apps/konsole/python.desktop ] && [ -e /usr/share/pixmaps/python.xpm ]; then
+		sed -e 's|^Icon=.*|Icon=/usr/share/pixmaps/python.xpm|' /usr/share/apps/konsole/python.desktop > \
+			"${FLL_LIVE_USER_HOME}/.kde/share/apps/konsole/python.desktop"
+		chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" \
+			"${FLL_LIVE_USER_HOME}/.kde/share/apps/konsole/python.desktop"
+	fi
 
 	###
 	# keep these disabled by default for clean desktop startup

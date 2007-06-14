@@ -21,21 +21,25 @@ WidthForHeightHint=200
 ConfigFile=systemtray_panelappletrc
 DesktopFile=systemtrayapplet.desktop
 FreeSpace2=1
-WidthForHeightHint=74
+WidthForHeightHint=98
 
 [Applet_4]
 ConfigFile=clock_panelappletrc
 DesktopFile=clockapplet.desktop
 FreeSpace2=1
-WidthForHeightHint=67
+WidthForHeightHint=49
 
 [ExtensionButton_1]
 DesktopFile=systemmenu.desktop
 FreeSpace2=0
 
+[ExtensionButton_2]
+DesktopFile=konsolemenu.desktop
+FreeSpace2=0
+
 [General]
 Alignment=0
-Applets2=KMenuButton_1,ExtensionButton_1,ServiceButton_3,ServiceButton_1,ServiceButton_2,Applet_1,Applet_2,Applet_3,Applet_4
+Applets2=KMenuButton_1,ExtensionButton_1,ExtensionButton_2,ServiceButton_1,ServiceButton_2,Applet_1,Applet_2,Applet_3,Applet_4
 AutoHideDelay=3
 AutoHidePanel=false
 AutoHideSwitch=false
@@ -75,11 +79,6 @@ StorageId=kde-Home.desktop
 DesktopFile=/usr/share/applications/sidux/sidux-browser.desktop
 FreeSpace2=0
 StorageId=sidux-sidux-browser.desktop
-
-[ServiceButton_3]
-DesktopFile=/usr/share/applications/kde/konsole.desktop
-FreeSpace2=0
-StorageId=kde-konsole.desktop
 
 [button_tiles]
 EnableBrowserTiles=false
