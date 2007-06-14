@@ -1,8 +1,11 @@
 desktop-defaults (0.8.16) UNRELEASED; urgency=low
 
-  * NOT RELEASED YET
+  * fll-kde-desktop: fix the bugfix that should have fixed the attempted
+    bugfix from last night. Now it should really be preseeding the gtk2 engine
+    properly.
+  * Add sidux.com to bookmarks toolbar of iceweasel.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 14 Jun 2007 00:32:50 +0200
+ -- Kel Modderman <kel@otaku42.de>  Thu, 14 Jun 2007 12:38:23 +1000
 
 desktop-defaults (0.8.15) unstable; urgency=low
 
