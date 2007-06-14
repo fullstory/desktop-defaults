@@ -7,8 +7,9 @@ desktop-defaults (0.8.16) UNRELEASED; urgency=low
   * Set standard mozilla font size to 14. It defaulted to 16 which is
     just a tiny bit too large.
   * Add su-to-root/sudo hack for live mode and debian menu system.
+  * fll-kde-desktop: setup konsole for passwd'less root login.
 
- -- Kel Modderman <kel@otaku42.de>  Thu, 14 Jun 2007 18:42:27 +1000
+ -- Kel Modderman <kel@otaku42.de>  Thu, 14 Jun 2007 18:55:12 +1000
 
 desktop-defaults (0.8.15) unstable; urgency=low
 

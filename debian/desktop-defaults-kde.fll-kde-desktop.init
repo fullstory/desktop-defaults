@@ -208,6 +208,29 @@ EOF
 		"${FLL_LIVE_USER_HOME}/.kde/share/config/kdesurc"
 
 	###
+	# root konsole's
+	###
+	if [ ! -d "${FLL_LIVE_USER_HOME}/.kde/share/apps/konsole" ]; then
+		install --directory --group="${FLL_LIVE_USER}" --owner="${FLL_LIVE_USER}" \
+			"${FLL_LIVE_USER_HOME}/.kde/share/apps/konsole"
+	fi
+
+	if [ -f /usr/share/apps/konsole/sumc.desktop ]; then
+		sed -e 's|^Exec=su.*$|Exec=sudo mc -c|' /usr/share/apps/konsole/sumc.desktop > \
+			"${FLL_LIVE_USER_HOME}/.kde/share/apps/konsole/sumc.desktop"
+		chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" \
+			"${FLL_LIVE_USER_HOME}/.kde/share/apps/konsole/sumc.desktop"
+	fi
+
+	if [ -f /usr/share/apps/konsole/su.desktop ]; then
+		sed -e 's|^Exec=su.*$|Exec=sudo -i|' /usr/share/apps/konsole/su.desktop > \
+			"${FLL_LIVE_USER_HOME}/.kde/share/apps/konsole/su.desktop"
+		chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" \
+			"${FLL_LIVE_USER_HOME}/.kde/share/apps/konsole/su.desktop"
+	fi
+		
+
+	###
 	# keep these disabled by default for clean desktop startup
 	###
 	for krc in kbluetoothdrc klipperrc; do
