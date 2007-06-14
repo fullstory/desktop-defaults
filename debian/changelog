@@ -1,8 +1,12 @@
 desktop-defaults (0.8.19) UNRELEASED; urgency=low
 
+  [ Stefan Lippers-Hollmann ]
   * NOT RELEASED YET
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 14 Jun 2007 15:40:05 +0200
+  [ Bernard Gray ]
+  * enable applet handles for moving stuff on the kicker panel 
+
+ -- Bernard Gray <bernard.gray@gmail.com>  Fri, 15 Jun 2007 09:26:39 +1000
 
 desktop-defaults (0.8.18) unstable; urgency=low
 
