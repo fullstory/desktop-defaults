@@ -1,4 +1,4 @@
-desktop-defaults (0.8.16) UNRELEASED; urgency=low
+desktop-defaults (0.8.16) unstable; urgency=low
 
   * fll-kde-desktop: fix the bugfix that should have fixed the attempted
     bugfix from last night. Now it should really be preseeding the gtk2 engine
