@@ -6,8 +6,9 @@ desktop-defaults (0.8.16) UNRELEASED; urgency=low
   * Add sidux.com to bookmarks toolbar of iceweasel.
   * Set standard mozilla font size to 14. It defaulted to 16 which is
     just a tiny bit too large.
+  * Add su-to-root/sudo hack for live mode and debian menu system.
 
- -- Kel Modderman <kel@otaku42.de>  Thu, 14 Jun 2007 13:32:46 +1000
+ -- Kel Modderman <kel@otaku42.de>  Thu, 14 Jun 2007 18:42:27 +1000
 
 desktop-defaults (0.8.15) unstable; urgency=low
 

@@ -118,6 +118,18 @@ do_start() {
 	if [ -x /usr/bin/iceweasel ]; then
 		update-alternatives --set x-www-browser /usr/bin/iceweasel >/dev/null
 	fi
+
+	###
+	# su-to-root
+	###
+	touch "${FLL_LIVE_USER_HOME}/.su-to-rootrc"
+	if grep -q '^SU_TO_ROOT_SU=' "${FLL_LIVE_USER_HOME}/.su-to-rootrc"; then
+		sed -i 's|^SU_TO_ROOT_SU=.*|SU_TO_ROOT_SU=sudo|' \
+			"${FLL_LIVE_USER_HOME}/.su-to-rootrc"
+	else
+		echo 'SU_TO_ROOT_SU=sudo' >> "${FLL_LIVE_USER_HOME}/.su-to-rootrc"
+	fi
+	chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" "${FLL_LIVE_USER_HOME}/.su-to-rootrc"
 }
 
 case "${1}" in
