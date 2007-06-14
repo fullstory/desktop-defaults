@@ -1,4 +1,4 @@
-desktop-defaults (0.8.17) UNRELEASED; urgency=low
+desktop-defaults (0.8.17) unstable; urgency=low
 
   * Put the konsole menu applet on kicker in place of konsole only icon. It
     provides shortcut to root console. Fix python bug while there, until they
