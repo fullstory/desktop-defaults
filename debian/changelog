@@ -4,9 +4,10 @@ desktop-defaults (0.8.19) UNRELEASED; urgency=low
   * NOT RELEASED YET
 
   [ Bernard Gray ]
-  * enable applet handles for moving stuff on the kicker panel 
+  * enable applet handles for moving stuff on the kicker panel
+  * enable background theme for kicker so it's not flat white 
 
- -- Bernard Gray <bernard.gray@gmail.com>  Fri, 15 Jun 2007 09:26:39 +1000
+ -- Bernard Gray <bernard.gray@gmail.com>  Fri, 15 Jun 2007 13:34:03 +1000
 
 desktop-defaults (0.8.18) unstable; urgency=low
 
