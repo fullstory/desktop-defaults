@@ -1,9 +1,5 @@
-desktop-defaults (0.8.19) UNRELEASED; urgency=low
+desktop-defaults (0.8.19) unstable; urgency=low
 
-  [ Stefan Lippers-Hollmann ]
-  * NOT RELEASED YET
-
-  [ Bernard Gray ]
   * enable applet handles for moving stuff on the kicker panel
   * enable background theme for kicker so it's not flat white 
 
