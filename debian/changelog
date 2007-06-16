@@ -1,4 +1,4 @@
-desktop-defaults (0.8.22) UNRELEASED; urgency=low
+desktop-defaults (0.8.22) unstable; urgency=low
 
   * fll-desktop-func: bugfix crap findutils syntax.
 
