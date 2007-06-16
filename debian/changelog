@@ -1,4 +1,4 @@
-desktop-defaults (0.8.21) UNRELEASED; urgency=low
+desktop-defaults (0.8.21) unstable; urgency=low
 
   * fll-desktop-func: enforce umask of cpio'd files.
 
