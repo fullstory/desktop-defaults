@@ -1,3 +1,9 @@
+desktop-defaults (0.8.21) UNRELEASED; urgency=low
+
+  * NOT RELEASED YET
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 16 Jun 2007 14:05:38 +0200
+
 desktop-defaults (0.8.20) unstable; urgency=low
 
   * fll-desktop-func: set umask of 0077 (u=rwx,g=,o=) when playing around with
