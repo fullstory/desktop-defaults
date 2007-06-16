@@ -1,5 +1,7 @@
 # /lib/fll/fll-desktop-func -*- shell-script -*-
 
+umask 0077
+
 cp_desktop_defaults_from()
 {
 	local dotdir dotdestdir

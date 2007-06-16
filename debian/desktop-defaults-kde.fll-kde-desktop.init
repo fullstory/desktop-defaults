@@ -388,17 +388,6 @@ EOF
 	fi
 
 	###
-	# setup KDM theme
-	###
-	if [ "${KDE_KDM_THEME}" ]; then
-		cat > /etc/default/kdm.d/kdmtheme \
-<<EOF
-USETHEME=true
-THEME=${KDE_KDM_THEME}
-EOF
-	fi
-
-	###
 	# allow gtk2 apps to blend in with kde style
 	###
 	if [ ! -f "${FLL_LIVE_USER_HOME}/.gtkrc-2.0" ]; then
@@ -410,11 +399,29 @@ EOF
 	fi
 }
 
+default_kdm_theme()
+{
+	###
+	# setup KDM theme
+	###
+	if [ "${KDE_KDM_THEME}" ]; then
+		umask 0022
+		cat > /etc/default/kdm.d/kdmtheme \
+<<EOF
+USETHEME=true
+THEME=${KDE_KDM_THEME}
+EOF
+	fi
+}
+
 case "${1}" in
 	start)
 		log_daemon_msg "${B}${NAME}${N}"; log_action_begin_msg " ${G}preparing ${Y}${FLL_LIVE_USER}${G} for ${Y}kde${N}"
 		do_start
 		log_end_msg 0
+
+		# set default kdm theme
+		default_kdm_theme
 		;;
 	stop)
 		;;

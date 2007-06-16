@@ -1,8 +1,11 @@
 desktop-defaults (0.8.20) UNRELEASED; urgency=low
 
-  * NOT RELEASED YET
+  * fll-desktop-func: set umask of 0077 (u=rwx,g=,o=) when playing around with
+    users private files.
+  * fll-kde-desktop: seperate kdm theme setup, it is disticly different to
+    other code that is only concerned with user profile.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Fri, 15 Jun 2007 15:36:20 +0200
+ -- Kel Modderman <kel@otaku42.de>  Sat, 16 Jun 2007 18:57:57 +1000
 
 desktop-defaults (0.8.19) unstable; urgency=low
 
