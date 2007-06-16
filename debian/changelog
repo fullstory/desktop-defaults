@@ -1,3 +1,9 @@
+desktop-defaults (0.8.22) UNRELEASED; urgency=low
+
+  * NOT RELEASED YET
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 16 Jun 2007 14:59:28 +0200
+
 desktop-defaults (0.8.21) unstable; urgency=low
 
   * fll-desktop-func: enforce umask of cpio'd files.
