@@ -87,6 +87,7 @@ EnableURLTiles=false
 EnableWindowListTiles=false
 
 [buttons]
+EnableIconZoom=false
 EnableTileBackground=false
 
 [menus]
