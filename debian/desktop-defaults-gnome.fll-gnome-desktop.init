@@ -115,7 +115,9 @@ do_start() {
 			"${FLL_LIVE_USER_HOME}/.config/autostart"
 	fi
         
-	cat > "${FLL_LIVE_USER_HOME}/.config/autostart/${FLL_DISTRO_NAME}-manual.desktop" \
+	if [ ! -f "${FLL_LIVE_USER_HOME}/.config/autostart/${FLL_DISTRO_NAME}.desktop" ] && \
+		[ "${NOINTRO}" != "yes" ]; then
+		cat > "${FLL_LIVE_USER_HOME}/.config/autostart/${FLL_DISTRO_NAME}.desktop" \
 <<EOF
 [Desktop Entry]
 Name=${FLL_DISTRO_NAME}-manual
@@ -125,6 +127,9 @@ Name[de_DE]=${FLL_DISTRO_NAME}-manual
 Exec=epiphany file:${INDEXFILE}
 X-GNOME-Autostart-enabled=true
 EOF
+		chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" \
+			"${FLL_LIVE_USER_HOME}/.config/autostart/${FLL_DISTRO_NAME}.desktop"
+	fi
 
 	###
 	# create ~/Desktop if not present
@@ -149,11 +154,6 @@ EOF
 		"${FLL_LIVE_USER_HOME}/Desktop/${FLL_DISTRO_NAME}.desktop"
 	
 	BASEDIR=".gconf/apps/nautilus"
-
-	if [ ! -d "${FLL_LIVE_USER_HOME}/${BASEDIR}/preferences" ]; then
-		install --directory --group="${FLL_LIVE_USER}" --owner="${FLL_LIVE_USER}" \
-			"${FLL_LIVE_USER_HOME}/${BASEDIR}/preferences"
-	fi
 
 	if [ ! -d "${FLL_LIVE_USER_HOME}/${BASEDIR}/preferences" ]; then
 		install --directory --group="${FLL_LIVE_USER}" --owner="${FLL_LIVE_USER}" \

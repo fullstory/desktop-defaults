@@ -7,8 +7,10 @@ desktop-defaults (0.8.23) UNRELEASED; urgency=low
   * Disable Icon Zooming on kicker.
   * Add klaunchrc to modify blinking cursor settings and taskbar alerts.
   * Move desktop-defaults-kde.* to kde/ and update all install files.
+  * fll-gnome-desktop: fix index.html autostart.
+  * fll-gnome-desktop: remove duplicate ${BASEDIR}/preferences dir creation.
 
- -- Kel Modderman <kel@otaku42.de>  Sun, 17 Jun 2007 14:29:20 +1000
+ -- Kel Modderman <kel@otaku42.de>  Sun, 17 Jun 2007 16:32:09 +1000
 
 desktop-defaults (0.8.22) unstable; urgency=low
 
