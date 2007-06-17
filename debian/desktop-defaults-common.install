@@ -1,2 +1,2 @@
-common/*		usr/share/desktop-defaults-common
+common/dot.*		usr/share/desktop-defaults-common
 fll-desktop-func	lib/fll
