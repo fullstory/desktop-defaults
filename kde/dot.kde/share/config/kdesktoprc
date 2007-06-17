@@ -15,10 +15,6 @@ AutoLineUpIcons=true
 Enabled=true
 SetVRoot=false
 
-[Media]
-enabled=true
-exclude=
-
 [Menubar]
 ShowMenubar=false
 

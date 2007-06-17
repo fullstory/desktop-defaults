@@ -1,8 +1,10 @@
 desktop-defaults (0.8.23) UNRELEASED; urgency=low
 
-  * NOT RELEASED YET
+  * fll-kde-desktop: create shortcut to media:/ kioslave instead of having
+    numerous media icons on desktop.
+  * fll-kde-desktop: minor cleanup of index icon desktop file.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 16 Jun 2007 15:10:36 +0200
+ -- Kel Modderman <kel@otaku42.de>  Sun, 17 Jun 2007 13:27:07 +1000
 
 desktop-defaults (0.8.22) unstable; urgency=low
 

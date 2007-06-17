@@ -367,11 +367,14 @@ EOF
 		cat > "${FLL_LIVE_USER_HOME}/Desktop/${FLL_DISTRO_NAME}.desktop" \
 <<EOF
 [Desktop Entry]
-Name=${FLL_CDROM_INDEX}
-Exec=konqueror --geometry 950x700+35+20 file:${INDEXFILE}
+Encoding=UTF-8
 Type=Application
+Exec=konqueror --geometry 950x700+35+20 file:${INDEXFILE}
 Icon=${INDEXICON}
 Terminal=0
+
+Name=${FLL_CDROM_INDEX}
+GenericName=${FLL_CDROM_INDEX}
 EOF
 		chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" \
 			"${FLL_LIVE_USER_HOME}/Desktop/${FLL_DISTRO_NAME}.desktop"
@@ -385,6 +388,25 @@ EOF
 			ln -sf "${FLL_LIVE_USER_HOME}/Desktop/${FLL_DISTRO_NAME}.desktop" \
 				"${FLL_LIVE_USER_HOME}/.kde/Autostart/"
 		fi
+	fi
+
+	###
+	# create shortcut to media:/
+	###
+	if [ ! -f "${FLL_LIVE_USER_HOME}/Desktop/media.desktop" ]; then
+		cat > "${FLL_LIVE_USER_HOME}/Desktop/media.desktop" \
+<<EOF
+[Desktop Entry]
+Encoding=UTF-8
+Type=Application
+Exec=kfmclient openProfile filemanagement media:/
+Icon=kcmpartitions
+
+Name=Storage Media
+GenericName=Storage Media
+EOF
+		chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" \
+			"${FLL_LIVE_USER_HOME}/Desktop/media.desktop"
 	fi
 
 	###
