@@ -1,4 +1,4 @@
-desktop-defaults (0.8.24) UNRELEASED; urgency=low
+desktop-defaults (0.8.24) unstable; urgency=low
 
   * fll-kde-desktop: allow kaffeine to start without annoyance.
   * fll-kde-desktop: fix some misplaced indentation.
