@@ -261,8 +261,8 @@ EOF
 	###
 	touch "${FLL_LIVE_USER_HOME}/.kde/share/config/korgacrc"
 	if grep -q '^Autostart' "${FLL_LIVE_USER_HOME}/.kde/share/config/korgacrc"; then
-			sed -i 's|^Autostart=.*|Autostart=false|' \
-				"${FLL_LIVE_USER_HOME}/.kde/share/config/korgacrc"
+		sed -i 's|^Autostart=.*|Autostart=false|' \
+			"${FLL_LIVE_USER_HOME}/.kde/share/config/korgacrc"
 	else
 		cat > "${FLL_LIVE_USER_HOME}/.kde/share/config/korgacrc" \
 <<EOF
@@ -327,13 +327,26 @@ EOF
 	# disable arts
 	###
 	if [ ! -f "${FLL_LIVE_USER_HOME}/.kde/share/config/kcmartsrc" ]; then
-			cat > "${FLL_LIVE_USER_HOME}/.kde/share/config/kcmartsrc" \
+		cat > "${FLL_LIVE_USER_HOME}/.kde/share/config/kcmartsrc" \
 <<EOF
 [Arts]
 StartServer=false
 EOF
 		chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" \
 			"${FLL_LIVE_USER_HOME}/.kde/share/config/kcmartsrc"
+	fi
+
+	###
+	# skip kaffeine "problem resolver"
+	###
+	if [ ! -f "${FLL_LIVE_USER_HOME}/.kde/share/config/kaffeinerc" ]; then
+		cat > "${FLL_LIVE_USER_HOME}/.kde/share/config/kaffeinerc" \
+<<EOF
+[General Options]
+Embed in System Tray=true
+EOF
+		chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" \
+			"${FLL_LIVE_USER_HOME}/.kde/share/config/kaffeinerc"
 	fi
 
 	###
@@ -427,7 +440,6 @@ default_kdm_theme()
 	# setup KDM theme
 	###
 	if [ "${KDE_KDM_THEME}" ]; then
-		umask 0022
 		cat > /etc/default/kdm.d/kdmtheme \
 <<EOF
 USETHEME=true
