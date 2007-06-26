@@ -1,3 +1,9 @@
+desktop-defaults (0.8.27) UNRELEASED; urgency=low
+
+  * NOT RELEASED YET
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 26 Jun 2007 15:40:19 +0200
+
 desktop-defaults (0.8.26) unstable; urgency=low
 
   * fll-kde-desktop: kaffeine workaround didn't pay off, reverting.
