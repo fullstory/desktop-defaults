@@ -1,4 +1,4 @@
-desktop-defaults (0.8.25) UNRELEASED; urgency=low
+desktop-defaults (0.8.25) unstable; urgency=low
 
   * desktop-defaults-kde: depend on kde-style-qtcurve, blend in our gtk and qt
     themes nicely.
