@@ -1,3 +1,9 @@
+desktop-defaults (0.8.26) UNRELEASED; urgency=low
+
+  * NOT RELEASED YET
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 26 Jun 2007 13:22:02 +0200
+
 desktop-defaults (0.8.25) unstable; urgency=low
 
   * desktop-defaults-kde: depend on kde-style-qtcurve, blend in our gtk and qt
