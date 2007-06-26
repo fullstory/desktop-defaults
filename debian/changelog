@@ -1,4 +1,4 @@
-desktop-defaults (0.8.26) UNRELEASED; urgency=low
+desktop-defaults (0.8.26) unstable; urgency=low
 
   * fll-kde-desktop: kaffeine workaround didn't pay off, reverting.
   * fll-kde-desktop: replaced previous silent removal of umask when creating
