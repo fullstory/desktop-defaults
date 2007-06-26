@@ -1,8 +1,10 @@
 desktop-defaults (0.8.25) UNRELEASED; urgency=low
 
-  * NOT RELEASED YET
+  * desktop-defaults-kde: depend on kde-style-qtcurve, blend in out gtk and qt
+    themes nicely
+  * desktop-defaults-kde: active plastik ui.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 26 Jun 2007 11:16:49 +0200
+ -- Kel Modderman <kel@otaku42.de>  Tue, 26 Jun 2007 21:14:33 +1000
 
 desktop-defaults (0.8.24) unstable; urgency=low
 
