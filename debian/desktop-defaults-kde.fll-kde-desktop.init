@@ -337,19 +337,6 @@ EOF
 	fi
 
 	###
-	# skip kaffeine "problem resolver"
-	###
-	if [ ! -f "${FLL_LIVE_USER_HOME}/.kde/share/config/kaffeinerc" ]; then
-		cat > "${FLL_LIVE_USER_HOME}/.kde/share/config/kaffeinerc" \
-<<EOF
-[General Options]
-Embed in System Tray=true
-EOF
-		chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" \
-			"${FLL_LIVE_USER_HOME}/.kde/share/config/kaffeinerc"
-	fi
-
-	###
 	# create ~/Desktop if not present
 	###
 	if [ ! -d "${FLL_LIVE_USER_HOME}/Desktop" ]; then
@@ -439,6 +426,7 @@ default_kdm_theme()
 	###
 	# setup KDM theme
 	###
+	umask 0022
 	if [ "${KDE_KDM_THEME}" ]; then
 		cat > /etc/default/kdm.d/kdmtheme \
 <<EOF

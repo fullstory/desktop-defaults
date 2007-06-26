@@ -1,8 +1,10 @@
 desktop-defaults (0.8.26) UNRELEASED; urgency=low
 
-  * NOT RELEASED YET
+  * fll-kde-desktop: kaffeine workaround didn't pay off, reverting.
+  * fll-kde-desktop: replaced previous silent removal of umask when creating
+    kdmtheme override.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 26 Jun 2007 13:22:02 +0200
+ -- Kel Modderman <kel@otaku42.de>  Tue, 26 Jun 2007 23:08:50 +1000
 
 desktop-defaults (0.8.25) unstable; urgency=low
 
