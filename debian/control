@@ -8,7 +8,7 @@ Standards-Version: 3.7.2
 
 Package: desktop-defaults-common
 Architecture: all
-Depends: distro-defaults, fll-live-initscripts
+Depends: distro-defaults, fll-live-initscripts, sidux-art-wallpaper-gaia
 Suggests: iceweasel
 Description: common user presets for various popular desktop applications
  This package provides required infrastructure to tweak various popular desktop
