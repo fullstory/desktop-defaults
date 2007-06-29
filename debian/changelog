@@ -1,8 +1,8 @@
 desktop-defaults (0.8.27) UNRELEASED; urgency=low
 
-  * NOT RELEASED YET
+  * Update kde.default for new art theme.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 26 Jun 2007 15:40:19 +0200
+ -- Kel Modderman <kel@otaku42.de>  Fri, 29 Jun 2007 23:04:38 +1000
 
 desktop-defaults (0.8.26) unstable; urgency=low
 
