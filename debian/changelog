@@ -3,8 +3,9 @@ desktop-defaults (0.8.27) UNRELEASED; urgency=low
   * Update kde.default for new art theme.
   * Depend on sidux-art-kde-gaia.
   * Add bogus depends on sidux-art-wallpaper-gaia by desktop-defaults-common.
+  * Activate default KDE color scheme.
 
- -- Kel Modderman <kel@otaku42.de>  Fri, 29 Jun 2007 23:29:02 +1000
+ -- Kel Modderman <kel@otaku42.de>  Sat, 30 Jun 2007 00:16:39 +1000
 
 desktop-defaults (0.8.26) unstable; urgency=low
 

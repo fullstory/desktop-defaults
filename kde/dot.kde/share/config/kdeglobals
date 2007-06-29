@@ -140,6 +140,10 @@ Window to Desktop 9=none
 Window to Next Desktop=none
 Window to Previous Desktop=none
 
+[KDE]
+colorScheme=InvisibleLightSilver.kcsrc
+contrast=7
+
 [MainToolbarIcons]
 ActiveColor=169,156,255
 ActiveColor2=0,0,0
