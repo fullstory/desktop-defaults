@@ -9,7 +9,7 @@ Name_4=
 Number=4
 
 [Style]
-BorderSize=1
+BorderSize=0
 ButtonsOnLeft=MS
 ButtonsOnRight=HIAX
 CustomButtonPositions=false
