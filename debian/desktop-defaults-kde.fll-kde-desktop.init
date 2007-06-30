@@ -191,23 +191,6 @@ EOF
 		"${FLL_LIVE_USER_HOME}/.kde/share/config/konsolerc"
 	
 	###
-	# kdesu must use sudo in passwd'less setup
-	###
-	touch "${FLL_LIVE_USER_HOME}/.kde/share/config/kdesurc"
-	if grep -q '^super-user-command=' "${FLL_LIVE_USER_HOME}/.kde/share/config/kdesurc"; then
-		sed -i 's|^super-user-command=.*|super-user-command=sudo|' \
-			"${FLL_LIVE_USER_HOME}/.kde/share/config/kdesurc"
-	else
-		cat > "${FLL_LIVE_USER_HOME}/.kde/share/config/kdesurc" \
-<<EOF
-[super-user-command]
-super-user-command=sudo
-EOF
-	fi
-	chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" \
-		"${FLL_LIVE_USER_HOME}/.kde/share/config/kdesurc"
-
-	###
 	# root konsole's
 	###
 	if [ ! -d "${FLL_LIVE_USER_HOME}/.kde/share/apps/konsole" ]; then

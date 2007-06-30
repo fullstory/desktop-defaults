@@ -2,7 +2,7 @@
 
 ### BEGIN INIT INFO
 # Provides:          fll-common-desktop
-# Required-Start:    fll-adduser
+# Required-Start:    fll-adduser fll-kde-desktop fll-gnome-desktop
 # Required-Stop:     
 # Default-Start:     S
 # Default-Stop:      
@@ -84,23 +84,23 @@ do_start() {
 	# emulate firefox^iceweasel security via obscurity 
 	###
 	if [ -f "${FLL_LIVE_USER_HOME}/.mozilla/firefox/profiles.ini" ]; then
-		MOZPROFILE=$(mawk '
+		MOZPROFILE=$(awk '
 			/^\[Profile/ {
-				if (/Profile0/) {
+				if (/Profile0/)
 					inprof=1
-				}
-				else {
-					inprof=0}
-				}
+				else
+					inprof=0
+			}
 			/^Path=/ {
 				if (inprof) {
 					sub("Path=", "", $0)
 					print
 				}
-		}' "${FLL_LIVE_USER_HOME}/.mozilla/firefox/profiles.ini")
+			}' "${FLL_LIVE_USER_HOME}/.mozilla/firefox/profiles.ini")
 	fi
 
 	if [ "${MOZPROFILE}" ] && [ -d "${FLL_LIVE_USER_HOME}/.mozilla/firefox/${MOZPROFILE}" ]; then
+		# use mawk: rand() behaviour is different among awk variants
 		NEWMOZPROFILE=$(mawk '
 			BEGIN{
 				printf("%d.%s\n", int(10000000 * rand()), "default")
@@ -113,23 +113,60 @@ do_start() {
 	fi
 
 	###
-	# make it default browser
+	# make iceweasel default browser if installed
 	###
-	if [ -x /usr/bin/iceweasel ]; then
-		update-alternatives --set x-www-browser /usr/bin/iceweasel >/dev/null
+	ICEWEASEL=$(which iceweasel 2>/dev/null)
+	if [ -x "${ICEWEASEL}" ]; then
+		update-alternatives --set x-www-browser "${ICEWEASEL}" >/dev/null
 	fi
 
 	###
-	# su-to-root
+	# su-to-root -> sudo
 	###
-	touch "${FLL_LIVE_USER_HOME}/.su-to-rootrc"
-	if grep -q '^SU_TO_ROOT_SU=' "${FLL_LIVE_USER_HOME}/.su-to-rootrc"; then
-		sed -i 's|^SU_TO_ROOT_SU=.*|SU_TO_ROOT_SU=sudo|' \
-			"${FLL_LIVE_USER_HOME}/.su-to-rootrc"
-	else
-		echo 'SU_TO_ROOT_SU=sudo' >> "${FLL_LIVE_USER_HOME}/.su-to-rootrc"
+	if [ "$(which su-to-root 2>/dev/null)" ]; then
+		touch "${FLL_LIVE_USER_HOME}/.su-to-rootrc"
+		if grep -q '^SU_TO_ROOT_SU=' "${FLL_LIVE_USER_HOME}/.su-to-rootrc"; then
+			sed -i 's|^SU_TO_ROOT_SU=.*|SU_TO_ROOT_SU=sudo|' \
+				"${FLL_LIVE_USER_HOME}/.su-to-rootrc"
+		else
+			echo 'SU_TO_ROOT_SU=sudo' >> "${FLL_LIVE_USER_HOME}/.su-to-rootrc"
+		fi
+		chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" "${FLL_LIVE_USER_HOME}/.su-to-rootrc"
 	fi
-	chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" "${FLL_LIVE_USER_HOME}/.su-to-rootrc"
+
+	###
+	# gksu -> sudo
+	###
+	if [ "$(which gconftool-2 2>/dev/null)" ]; then
+		sudo -u "${FLL_LIVE_USER}" \
+			gconftool-2 -s -t bool /apps/gksu/sudo-mode true
+		sudo -u "${FLL_LIVE_USER}" \
+			gconftool-2 -s -t bool /apps/gksu/display-no-pass-info false
+	fi
+
+	###
+	# kdesu -> sudo
+	###
+	if [ "$(which kdesu 2>/dev/null)" ]; then
+		if [ ! -d "${FLL_LIVE_USER_HOME}/.kde/share/config" ]; then
+			install --directory --group="${FLL_LIVE_USER}" --owner="${FLL_LIVE_USER}" \
+				"${FLL_LIVE_USER_HOME}/.kde/share/config"
+		fi
+	
+		touch "${FLL_LIVE_USER_HOME}/.kde/share/config/kdesurc"
+		if grep -q '^super-user-command=' "${FLL_LIVE_USER_HOME}/.kde/share/config/kdesurc"; then
+			sed -i 's|^super-user-command=.*|super-user-command=sudo|' \
+				"${FLL_LIVE_USER_HOME}/.kde/share/config/kdesurc"
+		else
+			cat > "${FLL_LIVE_USER_HOME}/.kde/share/config/kdesurc" \
+<<EOF
+[super-user-command]
+super-user-command=sudo
+EOF
+		fi
+		chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" \
+			"${FLL_LIVE_USER_HOME}/.kde/share/config/kdesurc"
+	fi
 }
 
 case "${1}" in

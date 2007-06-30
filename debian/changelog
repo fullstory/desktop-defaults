@@ -8,8 +8,17 @@ desktop-defaults (0.8.27) UNRELEASED; urgency=low
   * Hack kdeglobals in attempt to display InvisibleGold color scheme.
   * Tiny borders, no title text shadows, no colored window border.
   * Make InvisibleSilver default color scheme.
+  * fll-common-desktop:
+      - add all sudo hacks/workarounds here
+      - add new gconf sudo mode
+      - syntax cleanup of awk used for iceweasel random profile generator
+      - add comment about deliberate use of mawk for rand()
+      - use which to check for executable existance
+  * fll-kde-desktop: remove kdesurc sudo workaround, move to -common.
+  * debian/rules: bump sequence of fll-common-desktop from 95 to 96, make it
+    depend on fll-*-desktop to have started.
 
- -- Kel Modderman <kel@otaku42.de>  Sat, 30 Jun 2007 11:09:53 +1000
+ -- Kel Modderman <kel@otaku42.de>  Sat, 30 Jun 2007 19:21:38 +1000
 
 desktop-defaults (0.8.26) unstable; urgency=low
 
