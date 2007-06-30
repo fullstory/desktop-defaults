@@ -1,4 +1,4 @@
-desktop-defaults (0.9.1) UNRELEASED; urgency=low
+desktop-defaults (0.9.1) unstable; urgency=low
 
   * Update kdeglobals to reflect filename change of colour scheme.
 
