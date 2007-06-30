@@ -1,4 +1,4 @@
-desktop-defaults (0.8.27) UNRELEASED; urgency=low
+desktop-defaults (0.9.0) unstable; urgency=low
 
   * Update kde.default for new art theme.
   * Depend on sidux-art-kde-gaia.
