@@ -153,7 +153,7 @@ Window to Next Desktop=none
 Window to Previous Desktop=none
 
 [KDE]
-colorScheme=InvisibleLightSilver.kcsrc
+colorScheme=Invisible_Light.kcsrc
 contrast=7
 
 [MainToolbarIcons]
