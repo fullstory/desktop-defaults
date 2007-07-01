@@ -2,7 +2,7 @@
 appearance=dullglass
 defBtnIndicator=fontcolor
 lvAppearance=bevelled
-menubarAppearance=dullglass
+menubarAppearance=flat
 menuitemAppearance=dullglass
 progressAppearance=dullglass
 shadeMenubars=none

@@ -1,8 +1,9 @@
 desktop-defaults (0.9.2) UNRELEASED; urgency=low
 
   * dekstop-defaults-kde: add dot.config dir for finetuning qtcurve style.
+  * Use "flat" menu bar appearance for qtcurvestylerc.
 
- -- Kel Modderman <kel@otaku42.de>  Sun, 01 Jul 2007 13:29:21 +1000
+ -- Kel Modderman <kel@otaku42.de>  Sun, 01 Jul 2007 17:50:46 +1000
 
 desktop-defaults (0.9.1) unstable; urgency=low
 
