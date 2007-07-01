@@ -1,8 +1,8 @@
 desktop-defaults (0.9.2) UNRELEASED; urgency=low
 
-  * NOT RELEASED YET
+  * dekstop-defaults-kde: add dot.config dir for finetuning qtcurve style.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 01 Jul 2007 01:58:38 +0200
+ -- Kel Modderman <kel@otaku42.de>  Sun, 01 Jul 2007 13:29:21 +1000
 
 desktop-defaults (0.9.1) unstable; urgency=low
 
