@@ -1,3 +1,9 @@
+desktop-defaults (0.9.4) UNRELEASED; urgency=low
+
+  * NOT RELEASED YET
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 02 Jul 2007 00:44:08 +0200
+
 desktop-defaults (0.9.3) unstable; urgency=low
 
   * qtcurvestylerc: only round buttons slightly.
