@@ -1,4 +1,4 @@
-desktop-defaults (0.9.3) UNRELEASED; urgency=low
+desktop-defaults (0.9.3) unstable; urgency=low
 
   * qtcurvestylerc: only round buttons slightly.
 
