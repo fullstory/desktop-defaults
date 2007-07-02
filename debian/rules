@@ -3,10 +3,10 @@
 include /usr/share/cdbs/1/rules/debhelper.mk
 
 install/desktop-defaults-common::
-	dh_installinit --no-start --name=fll-common-desktop	-- start 96 S .
+	dh_installinit --no-start --name=fll-common-desktop	-- start 97 S .
 
 install/desktop-defaults-kde::
-	dh_installinit --no-start --name=fll-kde-desktop	-- start 95 S .
+	dh_installinit --no-start --name=fll-kde-desktop	-- start 96 S .
 
 install/desktop-defaults-gnome::
-	dh_installinit --no-start --name=fll-gnome-desktop	-- start 95 S .
+	dh_installinit --no-start --name=fll-gnome-desktop	-- start 96 S .

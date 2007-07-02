@@ -2,7 +2,7 @@
 
 ### BEGIN INIT INFO
 # Provides:          fll-kde-desktop
-# Required-Start:    fll-adduser
+# Required-Start:    fll-adduser fll-xdm
 # Required-Stop:     
 # Default-Start:     S
 # Default-Stop:      
