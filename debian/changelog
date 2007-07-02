@@ -1,3 +1,9 @@
+desktop-defaults (0.9.5) UNRELEASED; urgency=low
+
+  * NOT RELEASED YET
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 02 Jul 2007 10:33:13 +0200
+
 desktop-defaults (0.9.4) unstable; urgency=low
 
   * fll-kde-desktop: allow KDE_KDM_WALLPAPER to override or generic wallpaper
