@@ -406,16 +406,30 @@ EOF
 
 default_kdm_theme()
 {
+	umask 0022
+
 	###
 	# setup KDM theme
 	###
-	umask 0022
 	if [ "${KDE_KDM_THEME}" ]; then
 		cat > /etc/default/kdm.d/kdmtheme \
 <<EOF
 USETHEME=true
 THEME=${KDE_KDM_THEME}
 EOF
+	fi
+
+	###
+	# override fll-xdm is matching kdm walppaper is wanted
+	###
+	if [ "${KDE_KDM_WALLPAPER}" ]; then
+		if [ -s /etc/default/kdm.d/wallpaper ]; then
+			sed -i 's|^WALLPAPER=.*|WALLPAPER='"${KDE_KDM_WALLPAPER}"'|' \
+				/etc/default/kdm.d/wallpaper
+		else
+			echo "USEBACKGROUND=true"		>  /etc/default/kdm.d/wallpaper
+			echo "WALLPAPER=${KDE_KDM_WALLPAPER}"	>> /etc/default/kdm.d/wallpaper
+		fi
 	fi
 }
 

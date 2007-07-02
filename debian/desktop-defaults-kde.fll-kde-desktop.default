@@ -8,6 +8,9 @@ KDE_SERVICES_ENABLED="true"
 # specify KDM theme to be used
 KDE_KDM_THEME="/usr/share/apps/kdm/themes/sidux-gaia"
 
+# specify KDM wallpaper (usually background of theme)
+KDE_KDM_WALLPAPER="${KDE_KDM_THEME}/background.png"
+
 # specify ksplash theme
 KDE_KSPLASH_THEME="sidux-gaia"
 
