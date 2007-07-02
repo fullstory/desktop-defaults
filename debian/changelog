@@ -1,4 +1,4 @@
-desktop-defaults (0.9.4) UNRELEASED; urgency=low
+desktop-defaults (0.9.4) unstable; urgency=low
 
   * fll-kde-desktop: allow KDE_KDM_WALLPAPER to override or generic wallpaper
     selction done by fll-xdm, and use something that more matches our theme.
