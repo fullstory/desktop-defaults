@@ -1,4 +1,4 @@
-desktop-defaults (0.9.5) UNRELEASED; urgency=low
+desktop-defaults (0.9.5) unstable; urgency=low
 
   * fll-kde-desktop: use consistent style when creating new files.
 
