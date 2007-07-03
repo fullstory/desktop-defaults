@@ -1,8 +1,8 @@
 desktop-defaults (0.9.6) UNRELEASED; urgency=low
 
-  * NOT RELEASED YET
+  * qtcurvestylerc: toolbarAppearance gradient -> flat.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 03 Jul 2007 13:14:25 +0200
+ -- Kel Modderman <kel@otaku42.de>  Tue, 03 Jul 2007 23:16:37 +1000
 
 desktop-defaults (0.9.5) unstable; urgency=low
 
