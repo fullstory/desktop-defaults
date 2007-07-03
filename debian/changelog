@@ -1,8 +1,8 @@
 desktop-defaults (0.9.5) UNRELEASED; urgency=low
 
-  * NOT RELEASED YET
+  * fll-kde-desktop: use consistent style when creating new files.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 02 Jul 2007 10:33:13 +0200
+ -- Kel Modderman <kel@otaku42.de>  Tue, 03 Jul 2007 12:33:58 +1000
 
 desktop-defaults (0.9.4) unstable; urgency=low
 

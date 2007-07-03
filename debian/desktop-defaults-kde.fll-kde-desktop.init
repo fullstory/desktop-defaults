@@ -427,8 +427,11 @@ EOF
 			sed -i 's|^WALLPAPER=.*|WALLPAPER='"${KDE_KDM_WALLPAPER}"'|' \
 				/etc/default/kdm.d/wallpaper
 		else
-			echo "USEBACKGROUND=true"		>  /etc/default/kdm.d/wallpaper
-			echo "WALLPAPER=${KDE_KDM_WALLPAPER}"	>> /etc/default/kdm.d/wallpaper
+			cat > /etc/default/kdm.d/wallpaper \
+<<EOF
+USEBACKGROUND=true
+WALLPAPER=${KDE_KDM_WALLPAPER}
+EOF
 		fi
 	fi
 }
