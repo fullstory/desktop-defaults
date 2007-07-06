@@ -6,8 +6,9 @@ desktop-defaults (0.9.7) UNRELEASED; urgency=low
     providing a dummy .local/share/Trash.
   * fll-desktop-func: redirect stderr, we may have no files to alter
     permissions of.
+  * kdeglobals: add Paths subsection with Trash:/ path for live user.
 
- -- Kel Modderman <kel@otaku42.de>  Fri, 06 Jul 2007 15:31:32 +1000
+ -- Kel Modderman <kel@otaku42.de>  Fri, 06 Jul 2007 15:46:39 +1000
 
 desktop-defaults (0.9.6) unstable; urgency=low
 
