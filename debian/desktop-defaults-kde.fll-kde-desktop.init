@@ -341,25 +341,6 @@ EOF
 	done
 
 	###
-	# create shortcut to media:/
-	###
-	if [ ! -f "${FLL_LIVE_USER_HOME}/Desktop/media.desktop" ]; then
-		cat > "${FLL_LIVE_USER_HOME}/Desktop/media.desktop" \
-<<EOF
-[Desktop Entry]
-Encoding=UTF-8
-Type=Application
-Exec=kfmclient openProfile filemanagement media:/
-Icon=kcmpartitions
-
-Name=Storage Media
-GenericName=Storage Media
-EOF
-		chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" \
-			"${FLL_LIVE_USER_HOME}/Desktop/media.desktop"
-	fi	
-
-	###
 	# scan for index.html in fll specific live mountpoint directories
 	###
 	for mntpnt in /fll/*; do
