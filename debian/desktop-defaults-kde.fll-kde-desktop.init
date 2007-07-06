@@ -328,6 +328,18 @@ EOF
 	fi
 
 	###
+	# trash:/
+	###
+	if [ ! -f "${FLL_LIVE_USER_HOME}/Desktop/trash.desktop" ] &&
+		[ -f /usr/share/apps/systemview/trash.desktop ]; then
+		cp /usr/share/apps/systemview/trash.desktop \
+			"${FLL_LIVE_USER_HOME}/Desktop/trash.desktop"
+		chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" \
+			"${FLL_LIVE_USER_HOME}/Desktop/trash.desktop"
+	fi
+		
+
+	###
 	# scan for index.html in fll specific live mountpoint directories
 	###
 	for mntpnt in /fll/*; do
