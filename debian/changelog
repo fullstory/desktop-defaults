@@ -1,8 +1,11 @@
 desktop-defaults (0.9.7) UNRELEASED; urgency=low
 
-  * NOT RELEASED YET
+  * desktop-defaults-common: have stab in dark at defeating occaisional
+    kdesktop error that plauges the KDE live desktop. SOmething (kio related)
+    inhibits proper desktop display of icons. Try to make trash:/ happier by
+    providing a dummy .local/share/Trash.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 04 Jul 2007 00:52:25 +0200
+ -- Kel Modderman <kel@otaku42.de>  Fri, 06 Jul 2007 14:37:40 +1000
 
 desktop-defaults (0.9.6) unstable; urgency=low
 
