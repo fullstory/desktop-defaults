@@ -328,16 +328,36 @@ EOF
 	fi
 
 	###
-	# trash:/
+	# kio shortcuts: media:/ , trash:/
 	###
-	if [ ! -f "${FLL_LIVE_USER_HOME}/Desktop/trash.desktop" ] &&
-		[ -f /usr/share/apps/systemview/trash.desktop ]; then
-		cp /usr/share/apps/systemview/trash.desktop \
-			"${FLL_LIVE_USER_HOME}/Desktop/trash.desktop"
+	for icon in trash.desktop media.desktop; do
+		if [ ! -f "${FLL_LIVE_USER_HOME}/Desktop/${icon}" ] && \
+			[ -f "/usr/share/apps/systemview/${icon}" ]; then
+			cat "/usr/share/apps/systemview/${icon}" > \
+				"${FLL_LIVE_USER_HOME}/Desktop/${icon}"
+			chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" \
+				"${FLL_LIVE_USER_HOME}/Desktop/${icon}"
+		fi
+	done
+
+	###
+	# create shortcut to media:/
+	###
+	if [ ! -f "${FLL_LIVE_USER_HOME}/Desktop/media.desktop" ]; then
+		cat > "${FLL_LIVE_USER_HOME}/Desktop/media.desktop" \
+<<EOF
+[Desktop Entry]
+Encoding=UTF-8
+Type=Application
+Exec=kfmclient openProfile filemanagement media:/
+Icon=kcmpartitions
+
+Name=Storage Media
+GenericName=Storage Media
+EOF
 		chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" \
-			"${FLL_LIVE_USER_HOME}/Desktop/trash.desktop"
-	fi
-		
+			"${FLL_LIVE_USER_HOME}/Desktop/media.desktop"
+	fi	
 
 	###
 	# scan for index.html in fll specific live mountpoint directories
@@ -383,25 +403,6 @@ EOF
 			ln -sf "${FLL_LIVE_USER_HOME}/Desktop/${FLL_DISTRO_NAME}.desktop" \
 				"${FLL_LIVE_USER_HOME}/.kde/Autostart/"
 		fi
-	fi
-
-	###
-	# create shortcut to media:/
-	###
-	if [ ! -f "${FLL_LIVE_USER_HOME}/Desktop/media.desktop" ]; then
-		cat > "${FLL_LIVE_USER_HOME}/Desktop/media.desktop" \
-<<EOF
-[Desktop Entry]
-Encoding=UTF-8
-Type=Application
-Exec=kfmclient openProfile filemanagement media:/
-Icon=kcmpartitions
-
-Name=Storage Media
-GenericName=Storage Media
-EOF
-		chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" \
-			"${FLL_LIVE_USER_HOME}/Desktop/media.desktop"
 	fi
 
 	###
