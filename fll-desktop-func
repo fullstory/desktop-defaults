@@ -28,6 +28,6 @@ cp_desktop_defaults_from()
 				"${dotdestdir}"
 		}
 
-		find "${dotdestdir}" -type f -print0 | xargs -0 chmod u=rw,g=,o=
+		find "${dotdestdir}" -type f -print0 | xargs -0 chmod u=rw,g=,o= 2>/dev/null
 	done
 }

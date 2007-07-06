@@ -4,8 +4,10 @@ desktop-defaults (0.9.7) UNRELEASED; urgency=low
     kdesktop error that plauges the KDE live desktop. SOmething (kio related)
     inhibits proper desktop display of icons. Try to make trash:/ happier by
     providing a dummy .local/share/Trash.
+  * fll-desktop-func: redirect stderr, we may have no files to alter
+    permissions of.
 
- -- Kel Modderman <kel@otaku42.de>  Fri, 06 Jul 2007 14:37:40 +1000
+ -- Kel Modderman <kel@otaku42.de>  Fri, 06 Jul 2007 15:31:32 +1000
 
 desktop-defaults (0.9.6) unstable; urgency=low
 
