@@ -1,4 +1,4 @@
-desktop-defaults (0.9.7) UNRELEASED; urgency=low
+desktop-defaults (0.9.7) unstable; urgency=low
 
   * desktop-defaults-common: have stab in dark at defeating occaisional
     kdesktop error that plauges the KDE live desktop. SOmething (kio related)
