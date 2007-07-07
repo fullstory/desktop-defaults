@@ -330,7 +330,7 @@ EOF
 	###
 	# kio shortcuts: media:/ , trash:/
 	###
-	for icon in home.desktop media.desktop remote.desktop trash.desktop; do
+	for icon in media.desktop trash.desktop; do
 		if [ ! -f "${FLL_LIVE_USER_HOME}/Desktop/${icon}" ] && [ -f "/usr/share/apps/systemview/${icon}" ]; then
 			install --group="${FLL_LIVE_USER}" --owner="${FLL_LIVE_USER}" \
 				"/usr/share/apps/systemview/${icon}" "${FLL_LIVE_USER_HOME}/Desktop/${icon}"

@@ -4,9 +4,8 @@ desktop-defaults (0.9.8) UNRELEASED; urgency=low
   * fll-kde-desktop: dash in shebang line, depend on dash.
   * fll-common-desktop: dash in shebang line, depend on dash.
   * kickerrc: purge the system menu applet.
-  * fll-kde-desktop: add home and remote desktop files.
 
- -- Kel Modderman <kel@otaku42.de>  Sat, 07 Jul 2007 11:33:30 +1000
+ -- Kel Modderman <kel@otaku42.de>  Sat, 07 Jul 2007 13:07:00 +1000
 
 desktop-defaults (0.9.7) unstable; urgency=low
 
