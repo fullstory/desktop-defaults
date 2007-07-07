@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/dash
 
 ### BEGIN INIT INFO
 # Provides:          fll-kde-desktop
@@ -331,12 +331,9 @@ EOF
 	# kio shortcuts: media:/ , trash:/
 	###
 	for icon in trash.desktop media.desktop; do
-		if [ ! -f "${FLL_LIVE_USER_HOME}/Desktop/${icon}" ] && \
-			[ -f "/usr/share/apps/systemview/${icon}" ]; then
-			cat "/usr/share/apps/systemview/${icon}" > \
-				"${FLL_LIVE_USER_HOME}/Desktop/${icon}"
-			chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" \
-				"${FLL_LIVE_USER_HOME}/Desktop/${icon}"
+		if [ ! -f "${FLL_LIVE_USER_HOME}/Desktop/${icon}" ] && [ -f "/usr/share/apps/systemview/${icon}" ]; then
+			install --group="${FLL_LIVE_USER}" --owner="${FLL_LIVE_USER}" \
+				"/usr/share/apps/systemview/${icon}" "${FLL_LIVE_USER_HOME}/Desktop/${icon}"
 		fi
 	done
 
@@ -406,11 +403,16 @@ default_kdm_theme()
 	# setup KDM theme
 	###
 	if [ "${KDE_KDM_THEME}" ]; then
-		cat > /etc/default/kdm.d/kdmtheme \
+		if [ -s /etc/default/kdm.d/kdmtheme ]; then
+			sed -i 's|^THEME=.*|THEME='"${KDE_KDM_THEME}"'|' \
+				/etc/default/kdm.d/kdmtheme
+		else
+			cat > /etc/default/kdm.d/kdmtheme \
 <<EOF
 USETHEME=true
 THEME=${KDE_KDM_THEME}
 EOF
+		fi
 	fi
 
 	###
