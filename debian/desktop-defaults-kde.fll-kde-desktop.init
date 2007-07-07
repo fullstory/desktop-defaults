@@ -416,7 +416,7 @@ EOF
 	fi
 
 	###
-	# override fll-xdm is matching kdm walppaper is wanted
+	# override fll-xdm if matching kdm walppaper is wanted
 	###
 	if [ "${KDE_KDM_WALLPAPER}" ]; then
 		if [ -s /etc/default/kdm.d/wallpaper ]; then
