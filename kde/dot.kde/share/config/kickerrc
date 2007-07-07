@@ -9,37 +9,33 @@ Width 1400=647
 ConfigFile=minipager_panelappletrc
 DesktopFile=minipagerapplet.desktop
 FreeSpace2=0
-WidthForHeightHint=163
+WidthForHeightHint=207
 
 [Applet_2]
 ConfigFile=taskbar_panelappletrc
 DesktopFile=taskbarapplet.desktop
 FreeSpace2=0
-WidthForHeightHint=200
+WidthForHeightHint=212
 
 [Applet_3]
 ConfigFile=systemtray_panelappletrc
 DesktopFile=systemtrayapplet.desktop
 FreeSpace2=1
-WidthForHeightHint=98
+WidthForHeightHint=86
 
 [Applet_4]
 ConfigFile=clock_panelappletrc
 DesktopFile=clockapplet.desktop
 FreeSpace2=1
-WidthForHeightHint=49
+WidthForHeightHint=72
 
 [ExtensionButton_1]
-DesktopFile=systemmenu.desktop
-FreeSpace2=0
-
-[ExtensionButton_2]
 DesktopFile=konsolemenu.desktop
 FreeSpace2=0
 
 [General]
 Alignment=0
-Applets2=KMenuButton_1,ExtensionButton_1,ExtensionButton_2,ServiceButton_1,ServiceButton_2,Applet_1,Applet_2,Applet_3,Applet_4
+Applets2=KMenuButton_1,ExtensionButton_1,ServiceButton_1,ServiceButton_2,Applet_1,Applet_2,Applet_3,Applet_4
 AutoHideDelay=3
 AutoHidePanel=false
 AutoHideSwitch=false
