@@ -1,4 +1,4 @@
-desktop-defaults (0.9.8) UNRELEASED; urgency=low
+desktop-defaults (0.9.8) unstable; urgency=low
 
   * fll-kde-desktop: simplify loop that creates desktop shortcuts.
   * fll-kde-desktop: dash in shebang line, depend on dash.
