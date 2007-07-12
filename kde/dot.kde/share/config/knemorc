@@ -1,4 +1,5 @@
 [General]
+Backend=Sys
 FirstStart=false
 Interfaces=eth0,eth1,eth2,eth3,ppp0,ppp1,ppp2,ra0,ra1,ath0,ath1,wlan0,wlan1
 PollInterval=5
