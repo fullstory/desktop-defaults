@@ -1,3 +1,9 @@
+desktop-defaults (0.9.9) UNRELEASED; urgency=low
+
+  * NOT RELEASED YET
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 12 Jul 2007 14:28:57 +0200
+
 desktop-defaults (0.9.8) unstable; urgency=low
 
   * fll-kde-desktop: simplify loop that creates desktop shortcuts.
