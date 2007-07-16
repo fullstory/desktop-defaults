@@ -18,7 +18,8 @@ defaultfont=Monospace,12,-1,5,50,0,0,0,0,0
 history=0
 historyenabled=true
 keytab=default
-schema=WhiteOnBlack.schema
+#schema=WhiteOnBlack.schema
+schema=GreenOnBlack.schema
 scrollbar=2
 tabbar=2
 
