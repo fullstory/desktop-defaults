@@ -338,6 +338,15 @@ EOF
 	done
 
 	###
+	# put a manual icon on the desktop
+	###
+	if [ ! -f "${FLL_LIVE_USER_HOME}/Desktop/sidux-manual.desktop" ] && \
+		[ -f /usr/share/applications/sidux/sidux-manual.desktop ]; then
+		install --group="${FLL_LIVE_USER}" --owner="${FLL_LIVE_USER}" \
+			/usr/share/applications/sidux/sidux-manual.desktop "${FLL_LIVE_USER_HOME}/Desktop/sidux-manual.desktop"
+	fi
+
+	###
 	# scan for index.html in fll specific live mountpoint directories
 	###
 	for mntpnt in /fll/*; do
