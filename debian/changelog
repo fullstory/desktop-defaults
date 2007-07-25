@@ -1,4 +1,4 @@
-desktop-defaults (0.9.9) UNRELEASED; urgency=low
+desktop-defaults (0.9.9) unstable; urgency=low
 
   * fll-desktop-kde: put a manual icon on the desktop.
 
