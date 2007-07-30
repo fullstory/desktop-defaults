@@ -10,3 +10,6 @@ install/desktop-defaults-kde::
 
 install/desktop-defaults-gnome::
 	dh_installinit --no-start --name=fll-gnome-desktop	-- start 96 S .
+
+install/desktop-defaults-xfce::
+	dh_installinit --no-start --name=fll-xfce-desktop	-- start 96 S .

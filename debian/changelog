@@ -1,8 +1,8 @@
 desktop-defaults (0.9.10) UNRELEASED; urgency=low
 
-  * NOT RELEASED YET
+  * Add boilerplate for desktop-defaults-xfce.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 25 Jul 2007 03:06:20 +0200
+ -- Kel Modderman <kel@otaku42.de>  Tue, 31 Jul 2007 09:44:24 +1000
 
 desktop-defaults (0.9.9) unstable; urgency=low
 
