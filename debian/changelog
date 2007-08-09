@@ -1,8 +1,12 @@
 desktop-defaults (0.9.10) UNRELEASED; urgency=low
 
+  [ Kel Modderman ]
   * Add boilerplate for desktop-defaults-xfce.
 
- -- Kel Modderman <kel@otaku42.de>  Tue, 31 Jul 2007 09:44:24 +1000
+  [ webera ]
+  * Wallpaper fixed for gnome.
+
+ -- webera <webera@srv-1>  Thu, 09 Aug 2007 16:44:32 +0200
 
 desktop-defaults (0.9.9) unstable; urgency=low
 
