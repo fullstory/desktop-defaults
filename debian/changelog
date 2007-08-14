@@ -6,7 +6,10 @@ desktop-defaults (0.9.10) UNRELEASED; urgency=low
   [ webera ]
   * Wallpaper fixed for gnome.
 
- -- webera <webera@srv-1>  Thu, 09 Aug 2007 16:44:32 +0200
+  [ Bernard Gray ]
+  * remove desktop icon text shadow, and change text colour 
+
+ -- Bernard Gray <bernard.gray@gmail.com>  Tue, 14 Aug 2007 17:19:24 +1000
 
 desktop-defaults (0.9.9) unstable; urgency=low
 
