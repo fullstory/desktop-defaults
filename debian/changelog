@@ -7,9 +7,12 @@ desktop-defaults (0.9.10) unstable; urgency=low
   * Wallpaper fixed for gnome.
 
   [ Bernard Gray ]
-  * remove desktop icon text shadow, and change text colour 
+  * remove desktop icon text shadow, and change text colour
 
- -- Bernard Gray <bernard.gray@gmail.com>  Tue, 14 Aug 2007 17:19:24 +1000
+  [ Stefan Lippers-Hollmann ]
+  * disable empty xfce package.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 14 Aug 2007 10:54:22 +0200
 
 desktop-defaults (0.9.9) unstable; urgency=low
 
