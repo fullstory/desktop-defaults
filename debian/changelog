@@ -1,4 +1,4 @@
-desktop-defaults (0.9.10) UNRELEASED; urgency=low
+desktop-defaults (0.9.10) unstable; urgency=low
 
   [ Kel Modderman ]
   * Add boilerplate for desktop-defaults-xfce.
