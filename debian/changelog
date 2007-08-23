@@ -1,8 +1,12 @@
 desktop-defaults (0.9.13) UNRELEASED; urgency=low
 
+  [ Stefan Lippers-Hollmann ]
   * NOT RELEASED YET
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 23 Aug 2007 13:18:41 +0200
+  [ Bernard Gray ]
+  * test for xfwm4 instead of kwin in fll-desktop-xfce.init 
+
+ -- Bernard Gray <bernard.gray@gmail.com>  Fri, 24 Aug 2007 09:27:16 +1000
 
 desktop-defaults (0.9.12) unstable; urgency=low
 

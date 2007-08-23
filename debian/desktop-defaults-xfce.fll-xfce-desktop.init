@@ -24,7 +24,7 @@
 PATH=/sbin:/usr/sbin:/bin:/usr/bin
 NAME="fll-xfce-desktop"
 
-if [ ! -x /usr/bin/kwin ]; then
+if [ ! -x /usr/bin/xfwm4 ]; then
 	exit 0
 fi
 
