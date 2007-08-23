@@ -111,12 +111,12 @@ do_start() {
         # disable tips on startup
         ###
 	FLL_CONF_PRESEED="${FLL_LIVE_USER_HOME}/.config/autostart/xfce4-tips-autostart.desktop"
-        touch "${FLL_CONF_PRESEED}"
         if grep -q '^Hidden=' "${FLL_CONF_PRESEED}"; then
                 sed -i 's|^Hidden=.*|Hidden=true|' \
                         "${FLL_CONF_PRESEED}"
         else
 		mkdir -p "${FLL_LIVE_USER_HOME}/.config/autostart"
+        	touch "${FLL_CONF_PRESEED}"
 		chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" \
 			"${FLL_LIVE_USER_HOME}/.config/autostart"
                 cat > "${FLL_CONF_PRESEED}" \
