@@ -1,9 +1,5 @@
-desktop-defaults (0.9.12) UNRELEASED; urgency=low
+desktop-defaults (0.9.12) unstable; urgency=low
 
-  [ Stefan Lippers-Hollmann ]
-  * NOT RELEASED YET
-
-  [ Bernard Gray ]
   * uncomment desktop-defaults-xfce in debian/control
 
  -- Bernard Gray <bernard.gray@gmail.com>  Thu, 23 Aug 2007 21:14:29 +1000
