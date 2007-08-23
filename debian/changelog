@@ -9,9 +9,10 @@ desktop-defaults (0.9.11) UNRELEASED; urgency=low
   [ Bernard Gray ]
   * begin populating xfce desktop defaults (hide tips on startup)
   * add desktop config desktop.xml
-  * add wallpaper setting to xfce desktop init 
+  * add wallpaper setting to xfce desktop init
+  * move tips suppression to xfce4 init 
 
- -- Bernard Gray <bernard.gray@gmail.com>  Thu, 23 Aug 2007 17:17:05 +1000
+ -- Bernard Gray <bernard.gray@gmail.com>  Thu, 23 Aug 2007 17:35:40 +1000
 
 desktop-defaults (0.9.10) unstable; urgency=low
 

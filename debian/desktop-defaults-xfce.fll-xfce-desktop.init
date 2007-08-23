@@ -97,14 +97,34 @@ do_start() {
 	###
         # force wallpaper, desktop.xml is provided by our dot.config
         ###
-        if [ "${FLL_WALLPAPER}" ] && [ -f "${FLL_LIVE_USER_HOME}/.config/xfce4/mcs_settings/desktop.xml" ]; then
-                if grep -s -q 'imagepath' "${FLL_LIVE_USER_HOME}/.config/xfce4/mcs_settings/desktop.xml"; then
+	FLL_CONF_PRESEED="${FLL_LIVE_USER_HOME}/.config/xfce4/mcs_settings/desktop.xml"
+        if [ "${FLL_WALLPAPER}" ] && [ -f "${FLL_CONF_PRESEED}" ]; then
+                if grep -s -q 'imagepath' "${FLL_CONF_PRESEED}"; then
                         sed -i '/imagepath/s|\(.*value="\)[^"]\+\(".*\)|\1'"$FLL_WALLPAPER"'\2|' \
-                                "${FLL_LIVE_USER_HOME}/.config/xfce4/mcs_settings/desktop.xml"
+                                "${FLL_CONF_PRESEED}"
                 fi
                 chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" \
-                        "${FLL_LIVE_USER_HOME}/.config/xfce4/mcs_settings/desktop.xml"
+                        "${FLL_CONF_PRESEED}"
         fi
+
+        ###
+        # disable tips on startup
+        ###
+	FLL_CONF_PRESEED="${FLL_LIVE_USER_HOME}/.config/autostart/xfce4-tips-autostart.desktop"
+        touch "${FLL_CONF_PRESEED}"
+        if grep -q '^Hidden=' "${FLL_CONF_PRESEED}"; then
+                sed -i 's|^Hidden=.*|Hidden=true|' \
+                        "${FLL_CONF_PRESEED}"
+        else
+                cat > "${FLL_CONF_PRESEED}" \
+<<EOF
+[DesktopEntry]
+Hidden=true
+
+EOF
+        fi
+        chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" \
+                "${FLL_CONF_PRESEED}"
 
 
 	# ${FLL_LIVE_USER}
