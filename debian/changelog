@@ -1,9 +1,5 @@
-desktop-defaults (0.9.13) UNRELEASED; urgency=low
+desktop-defaults (0.9.13) unstable; urgency=low
 
-  [ Stefan Lippers-Hollmann ]
-  * NOT RELEASED YET
-
-  [ Bernard Gray ]
   * test for xfwm4 instead of kwin in fll-desktop-xfce.init
   * mv touch on tips supp. to after the dir gets created
   * use install for dir creation and ownership permissions
