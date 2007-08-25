@@ -1,3 +1,9 @@
+desktop-defaults (0.9.14) unstable; urgency=low
+
+  * desktop-defaults-xfce depends on dash.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 25 Aug 2007 14:26:47 +0200
+
 desktop-defaults (0.9.13) unstable; urgency=low
 
   * test for xfwm4 instead of kwin in fll-desktop-xfce.init
