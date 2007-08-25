@@ -6,9 +6,10 @@ desktop-defaults (0.9.13) UNRELEASED; urgency=low
   [ Bernard Gray ]
   * test for xfwm4 instead of kwin in fll-desktop-xfce.init
   * mv touch on tips supp. to after the dir gets created
-  * use install for dir creation and ownership permissions 
+  * use install for dir creation and ownership permissions
+  * fix typo on tips suppression file 
 
- -- Bernard Gray <bernard.gray@gmail.com>  Fri, 24 Aug 2007 10:37:27 +1000
+ -- Bernard Gray <bernard.gray@gmail.com>  Sat, 25 Aug 2007 15:00:37 +1000
 
 desktop-defaults (0.9.12) unstable; urgency=low
 

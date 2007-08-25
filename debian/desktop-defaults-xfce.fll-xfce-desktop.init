@@ -123,7 +123,7 @@ do_start() {
         else
                 cat > "${FLL_CONF_PRESEED}" \
 <<EOF
-[DesktopEntry]
+[Desktop Entry]
 Hidden=true
 
 EOF
