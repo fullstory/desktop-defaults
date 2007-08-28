@@ -1,8 +1,12 @@
 desktop-defaults (0.9.15) UNRELEASED; urgency=low
 
+  [ Stefan Lippers-Hollmann ]
   * NOT RELEASED YET
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 25 Aug 2007 14:28:23 +0200
+  [ Bernard Gray ]
+  * add fll-xfce-desktop.default  
+
+ -- Bernard Gray <bernard.gray@gmail.com>  Tue, 28 Aug 2007 13:55:02 +1000
 
 desktop-defaults (0.9.14) unstable; urgency=low
 

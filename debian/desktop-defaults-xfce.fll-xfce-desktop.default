@@ -1,0 +1,9 @@
+# Defaults for xfce desktop
+# sourced by /usr/bin/desktop-defaults-xfce and /etc/init.d/fll-xfce-desktop
+# installed at /etc/default/fll-xfce-desktop by the maintainer scripts
+
+# specify GDM theme to be used
+XFCE_GDM_THEME="/usr/share/gdm/themes/sidux-gaia"
+
+# specify xfce splash theme
+#XFCE_SPLASH_THEME="" 
