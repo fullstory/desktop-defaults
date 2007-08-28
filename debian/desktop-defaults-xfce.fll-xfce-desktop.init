@@ -136,11 +136,28 @@ EOF
 	# ${FLL_LIVE_USER_HOME}
 }
 
+default_gdm_theme()
+{
+        umask 0022
+
+        ###
+        # setup GDM theme
+        ###
+        if [ "${XFCE_GDM_THEME}" ]; then
+		if ! grep -q "^GraphicalTheme=" /etc/gdm/gdm.conf ; then
+	                sed -i "s/\[greeter\]/\[greeter\]\nGraphicalTheme=${XFCE_GDM_THEME}\nGraphicalThemedColor=#343434/g" /etc/gdm/gdm.conf
+		else
+			sed -i "s/GraphicalTheme=.*/GraphicalTheme=${XFCE_GDM_THEME}/g" /etc/gdm/gdm.conf
+	        fi
+	fi
+}
+
 case "${1}" in
 	start)
 		log_daemon_msg "${B}${NAME}${N}"
 		log_action_begin_msg " ${G}preparing ${Y}${FLL_LIVE_USER}${G} for ${Y}xfce${N}"
 		do_start
+		default_gdm_theme
 		log_end_msg 0
 		;;
 	stop)
