@@ -1,9 +1,5 @@
-desktop-defaults (0.9.15) UNRELEASED; urgency=low
+desktop-defaults (0.9.15) unstable; urgency=low
 
-  [ Stefan Lippers-Hollmann ]
-  * NOT RELEASED YET
-
-  [ Bernard Gray ]
   * add fll-xfce-desktop.default
   * modify fll-xfce-desktop.default to suit gdm.conf requirements
   * add gdm theme setting in fll-xfce-desktop.init
