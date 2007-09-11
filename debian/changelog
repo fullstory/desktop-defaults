@@ -1,8 +1,9 @@
 desktop-defaults (0.9.16) UNRELEASED; urgency=low
 
   * NOT RELEASED YET
+  * add VCS control headers.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 28 Aug 2007 09:40:26 +0200
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 11 Sep 2007 20:09:15 +0200
 
 desktop-defaults (0.9.15) unstable; urgency=low
 
