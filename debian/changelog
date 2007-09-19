@@ -1,8 +1,15 @@
 desktop-defaults (0.9.17) UNRELEASED; urgency=low
 
+  [ Stefan Lippers-Hollmann ]
   * NOT RELEASED YET
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 19 Sep 2007 10:41:34 +0200
+  [ Bernard Gray ]
+  * xfce init script tweak
+    - desktop manual icon
+    - attempt to start manual in iceweasel on login
+    - add todo for xfce login splash
+
+ -- Bernard Gray <bernard.gray@gmail.com>  Wed, 19 Sep 2007 23:48:25 +1000
 
 desktop-defaults (0.9.16) unstable; urgency=low
 

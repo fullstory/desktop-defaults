@@ -1,4 +1,4 @@
-#!/bin/dash
+
 
 ### BEGIN INIT INFO
 # Provides:          fll-xfce-desktop
@@ -130,6 +130,73 @@ EOF
         fi
         chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" \
                 "${FLL_CONF_PRESEED}"
+
+        ###
+        # set xfce splash login theme
+	# XXX: TODO
+        ###
+
+        ###
+        # create ~/Desktop if not present
+        ###
+        if [ ! -d "${FLL_LIVE_USER_HOME}/Desktop" ]; then
+                install --directory --group="${FLL_LIVE_USER}" --owner="${FLL_LIVE_USER}" \
+                        "${FLL_LIVE_USER_HOME}/Desktop"
+        fi
+        ###
+        # put a manual icon on the desktop
+        ###
+        if [ ! -f "${FLL_LIVE_USER_HOME}/Desktop/sidux-manual.desktop" ] && \
+                [ -f /usr/share/applications/sidux/sidux-manual.desktop ]; then
+                install --group="${FLL_LIVE_USER}" --owner="${FLL_LIVE_USER}" \
+                        /usr/share/applications/sidux/sidux-manual.desktop "${FLL_LIVE_USER_HOME}/Desktop/sidux-manual.desktop"
+        fi
+
+        ###
+        # scan for index.html in fll specific live mountpoint directories
+        ###
+        for mntpnt in /fll/*; do
+                if [ -d "${mntpnt}" ] && [ -f "${mntpnt}/index.html" ]; then
+                        INDEXFILE="${mntpnt}/index.html"
+                        for ext in gif ico png; do
+                                if [ -f "${mntpnt}/${FLL_CDROM_INDEX_ICON}.${ext}" ]; then
+                                        INDEXICON="${mntpnt}/${FLL_CDROM_INDEX_ICON}.${ext}"
+                                        break
+                                fi
+                        done
+                        break
+                fi
+        done
+
+        ###
+        # create desktop shortcut to index.html
+        ###
+        if [ -f "${INDEXFILE}" ]; then
+                cat > "${FLL_LIVE_USER_HOME}/Desktop/${FLL_DISTRO_NAME}.desktop" \
+<<EOF
+[Desktop Entry]
+Encoding=UTF-8
+Type=Application
+Exec=iceweasel ${INDEXFILE}
+Icon=${INDEXICON}
+Terminal=0
+
+Name=${FLL_CDROM_INDEX}
+GenericName=${FLL_CDROM_INDEX}
+EOF
+                chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" \
+                        "${FLL_LIVE_USER_HOME}/Desktop/${FLL_DISTRO_NAME}.desktop"
+
+                if [ "${NOINTRO}" != "yes" ]; then
+                        if [ ! -d "${FLL_LIVE_USER_HOME}/.kde/Autostart" ]; then
+                                install --directory --group="${FLL_LIVE_USER}" --owner="${FLL_LIVE_USER}" \
+                                        "${FLL_LIVE_USER_HOME}/.config/autostart"
+                        fi
+
+                        ln -sf "${FLL_LIVE_USER_HOME}/Desktop/${FLL_DISTRO_NAME}.desktop" \
+                                "${FLL_LIVE_USER_HOME}/.config/autostart/"
+                fi
+        fi
 
 
 	# ${FLL_LIVE_USER}
