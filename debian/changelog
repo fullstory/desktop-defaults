@@ -9,7 +9,10 @@ desktop-defaults (0.9.17) UNRELEASED; urgency=low
     - attempt to start manual in iceweasel on login
     - add todo for xfce login splash
 
- -- Bernard Gray <bernard.gray@gmail.com>  Wed, 19 Sep 2007 23:48:25 +1000
+  [ Horst Tritremmel ]
+  * switch back to sidux-gaia gdm-theme
+
+ -- Horst Tritremmel <hjt@sidux.com>  Wed, 19 Sep 2007 16:03:16 +0200
 
 desktop-defaults (0.9.16) unstable; urgency=low
 

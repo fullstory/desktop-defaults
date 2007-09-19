@@ -3,8 +3,7 @@
 # installed at /etc/default/fll-xfce-desktop by the maintainer scripts
 
 # specify GDM theme to be used
-#XFCE_GDM_THEME="sidux-gaia"
-XFCE_GDM_THEME="sidux-dawn"  # use so long as sidux-gaia for gdm is broken, sidux-dawn is part of gdm-themes-sidux (hjt)
+XFCE_GDM_THEME="sidux-gaia"
 
 # specify GDM theme color to be used
 XFCE_GDM_THEME_COLOR="#eae7cb"
