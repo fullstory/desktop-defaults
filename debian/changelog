@@ -1,9 +1,17 @@
 desktop-defaults (0.9.16) UNRELEASED; urgency=low
 
+  [ Stefan Lippers-Hollmann ]
   * NOT RELEASED YET
   * add VCS control headers.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 11 Sep 2007 20:09:15 +0200
+  [ Horst Tritremmel ]
+  * XFCE_GDM_THEME_COLOR added to desktop-defaults-xfce.fll-xfce-
+    desktop.default
+  * changed XFCE_GDM_THEME from sidux-gaia to sidux-dawn in desktop-
+    defaults-xfce.fll-xfce-desktop.default, so long as sidux-gaia gdm-
+    theme is broken
+
+ -- Horst Tritremmel <hjt@sidux.com>  Wed, 19 Sep 2007 10:04:32 +0200
 
 desktop-defaults (0.9.15) unstable; urgency=low
 

@@ -145,7 +145,7 @@ default_gdm_theme()
         ###
         if [ "${XFCE_GDM_THEME}" ]; then
 		if ! grep -q "^GraphicalTheme=" /etc/gdm/gdm.conf ; then
-	                sed -i "s/\[greeter\]/\[greeter\]\nGraphicalTheme=${XFCE_GDM_THEME}\nGraphicalThemedColor=#343434/g" /etc/gdm/gdm.conf
+	                sed -i "s/\[greeter\]/\[greeter\]\nGraphicalTheme=${XFCE_GDM_THEME}\nGraphicalThemedColor=${XFCE_GDM_THEME_COLOR}/g" /etc/gdm/gdm.conf
 		else
 			sed -i "s/GraphicalTheme=.*/GraphicalTheme=${XFCE_GDM_THEME}/g" /etc/gdm/gdm.conf
 	        fi
