@@ -1,7 +1,6 @@
-desktop-defaults (0.9.16) UNRELEASED; urgency=low
+desktop-defaults (0.9.16) unstable; urgency=low
 
   [ Stefan Lippers-Hollmann ]
-  * NOT RELEASED YET
   * add VCS control headers.
 
   [ Horst Tritremmel ]
