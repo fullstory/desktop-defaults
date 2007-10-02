@@ -1,8 +1,12 @@
 desktop-defaults (0.9.18) UNRELEASED; urgency=low
 
+  [ Stefan Lippers-Hollmann ]
   * NOT RELEASED YET
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 19 Sep 2007 16:23:42 +0200
+  [ Bernard Gray ]
+  * adjust iceweasel fonts 
+
+ -- Bernard Gray <bernard.gray@gmail.com>  Tue, 02 Oct 2007 15:07:49 +1000
 
 desktop-defaults (0.9.17) unstable; urgency=low
 
