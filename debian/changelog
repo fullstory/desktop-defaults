@@ -1,9 +1,5 @@
-desktop-defaults (0.9.18) UNRELEASED; urgency=low
+desktop-defaults (0.9.18) unstable; urgency=low
 
-  [ Stefan Lippers-Hollmann ]
-  * NOT RELEASED YET
-
-  [ Bernard Gray ]
   * adjust iceweasel fonts 
 
  -- Bernard Gray <bernard.gray@gmail.com>  Tue, 02 Oct 2007 15:07:49 +1000
