@@ -1,7 +1,4 @@
-desktop-defaults (0.9.19) UNRELEASED; urgency=low
-
-  [ Stefan Lippers-Hollmann ]
-  * NOT RELEASED YET
+desktop-defaults (0.9.19) unstable; urgency=low
 
   [ Bernard Gray ]
   * add stub for xfce xkb config in fll-xfce init
@@ -11,7 +8,6 @@ desktop-defaults (0.9.19) UNRELEASED; urgency=low
   * revert setxkbmap commmand (won't run outside x)
   * increment debian/*.default to use eros themes
   * depend on eros themes '
-
 
   [ Kel Modderman ]
   * fll-kde-desktop:
