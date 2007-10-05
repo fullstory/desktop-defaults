@@ -1,8 +1,12 @@
 desktop-defaults (0.9.19) UNRELEASED; urgency=low
 
+  [ Stefan Lippers-Hollmann ]
   * NOT RELEASED YET
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 02 Oct 2007 11:10:19 +0200
+  [ Bernard Gray ]
+  * add stub for xfce xkb config in fll-xfce init 
+
+ -- Bernard Gray <bernard.gray@gmail.com>  Fri, 05 Oct 2007 14:11:20 +1000
 
 desktop-defaults (0.9.18) unstable; urgency=low
 

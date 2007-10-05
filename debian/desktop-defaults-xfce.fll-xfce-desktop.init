@@ -137,6 +137,14 @@ EOF
         ###
 
         ###
+        # setup keyboard chooser
+        ###
+	if [ "${KDEKEYBOARDS}" ]; then
+		# XXX: Todo - configure the xfce4-xkb-plugin
+	fi
+
+
+        ###
         # create ~/Desktop if not present
         ###
         if [ ! -d "${FLL_LIVE_USER_HOME}/Desktop" ]; then
