@@ -15,8 +15,9 @@ desktop-defaults (0.9.19) UNRELEASED; urgency=low
     - use XKBLAYOUT from fll-locales.default, KDEKEYBOARDS was made redundant
       (pending it actually working ;-))
   * Add debian/preinst, installation will fail if not in a build chroot.
+  * Shebang line missing from fll-desktop-xfce.init !
 
- -- Kel Modderman <kel@otaku42.de>  Fri, 05 Oct 2007 17:00:59 +1000
+ -- Kel Modderman <kel@otaku42.de>  Fri, 05 Oct 2007 17:06:12 +1000
 
 desktop-defaults (0.9.18) unstable; urgency=low
 
