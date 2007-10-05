@@ -140,7 +140,6 @@ EOF
         # setup keyboard chooser
         ###
 	if [ "${KDEKEYBOARDS}" ]; then
-		setxkbmap "${KDEKEYBOARDS}" -option grp:alt_shift_toggle,grp_led:scroll
 		# XXX: Todo - configure the xfce4-xkb-plugin
 	fi
 
