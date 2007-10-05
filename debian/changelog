@@ -8,9 +8,14 @@ desktop-defaults (0.9.19) UNRELEASED; urgency=low
   * add setxkbmap command to set multiple kb maps for xfce-xkb-plugin to use
   * add scroll lock led indicator for when non-primary lang is selected
   * xkb maps can be toggled using alt+shift
-  * revert setxkbmap commmand (won't run outside x) 
+  * revert setxkbmap commmand (won't run outside x)
 
- -- Bernard Gray <bernard.gray@gmail.com>  Fri, 05 Oct 2007 15:04:33 +1000
+  [ Kel Modderman ]
+  * fll-kde-desktop:
+    - use XKBLAYOUT from fll-locales.default, KDEKEYBOARDS was made redundant
+      (pending it actually working ;-))
+
+ -- Kel Modderman <kel@otaku42.de>  Fri, 05 Oct 2007 15:38:50 +1000
 
 desktop-defaults (0.9.18) unstable; urgency=low
 

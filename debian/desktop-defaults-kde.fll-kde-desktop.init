@@ -136,16 +136,16 @@ EOF
 	###
 	# setup keyboard chooser
 	###
-	if [ "${KDEKEYBOARDS}" ]; then
+	if [ "${XKBLAYOUT}" ]; then
 		touch "${FLL_LIVE_USER_HOME}/.kde/share/config/kxkbrc"
 		if grep -q '^LayoutList=' "${FLL_LIVE_USER_HOME}/.kde/share/config/kxkbrc"; then
-			sed -i 's|^LayoutList=.*|LayoutList='"${KDEKEYBOARDS}"'|' \
+			sed -i 's|^LayoutList=.*|LayoutList='"${XKBLAYOUT}"'|' \
 				"${FLL_LIVE_USER_HOME}/.kde/share/config/kxkbrc"
 		else
 			cat > "${FLL_LIVE_USER_HOME}/.kde/share/config/kxkbrc" \
 <<EOF
 [Layout]
-LayoutList=${KDEKEYBOARDS}
+LayoutList=${XKBLAYOUT}
 Model=pc104
 ShowFlag=true
 SwitchMode=Global
