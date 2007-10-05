@@ -9,6 +9,9 @@ desktop-defaults (0.9.19) UNRELEASED; urgency=low
   * add scroll lock led indicator for when non-primary lang is selected
   * xkb maps can be toggled using alt+shift
   * revert setxkbmap commmand (won't run outside x)
+  * increment debian/*.default to use eros themes
+  * depend on eros themes '
+
 
   [ Kel Modderman ]
   * fll-kde-desktop:

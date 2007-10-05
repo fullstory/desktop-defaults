@@ -6,13 +6,13 @@
 KDE_SERVICES_ENABLED="true"
 
 # specify KDM theme to be used
-KDE_KDM_THEME="/usr/share/apps/kdm/themes/sidux-gaia"
+KDE_KDM_THEME="/usr/share/apps/kdm/themes/sidux-eros"
 
 # specify KDM wallpaper (usually background of theme)
 KDE_KDM_WALLPAPER="${KDE_KDM_THEME}/background.png"
 
 # specify ksplash theme
-KDE_KSPLASH_THEME="sidux-gaia"
+KDE_KSPLASH_THEME="sidux-eros"
 
 # gtk2 theme to match KDE style - gtk2-engines-qtcurve
 GTK2_ENGINE="QtCurve"
