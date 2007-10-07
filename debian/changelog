@@ -1,8 +1,9 @@
 desktop-defaults (0.9.21) UNRELEASED; urgency=low
 
   * NOT RELEASED YET
+  * update syntax for Vcs headers in debian/control
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 07 Oct 2007 12:30:05 +0200
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 07 Oct 2007 14:39:45 +0200
 
 desktop-defaults (0.9.20) unstable; urgency=low
 
