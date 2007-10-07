@@ -1,9 +1,5 @@
-desktop-defaults (0.9.20) UNRELEASED; urgency=low
+desktop-defaults (0.9.20) unstable; urgency=low
 
-  [ Stefan Lippers-Hollmann ]
-  * NOT RELEASED YET
-
-  [ Bernard Gray ]
   * comment empty if statement in xfce init
   * remove defunct KDEKEYBOARDS from xfce init, replace with XKBLAYOUT
   * add skeleton xfce panel config for panel plugin support 
