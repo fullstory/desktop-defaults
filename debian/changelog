@@ -1,8 +1,12 @@
 desktop-defaults (0.9.20) UNRELEASED; urgency=low
 
+  [ Stefan Lippers-Hollmann ]
   * NOT RELEASED YET
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Fri, 05 Oct 2007 11:34:14 +0200
+  [ Bernard Gray ]
+  * comment empty if statement in xfce init
+
+ -- Bernard Gray <bernard.gray@gmail.com>  Sun, 07 Oct 2007 14:21:05 +1000
 
 desktop-defaults (0.9.19) unstable; urgency=low
 
