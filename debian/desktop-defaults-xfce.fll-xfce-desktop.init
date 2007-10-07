@@ -139,7 +139,7 @@ EOF
         ###
         # setup keyboard chooser
         ###
-	#if [ "${KDEKEYBOARDS}" ]; then
+	#if [ "${XKBLAYOUT}" ]; then
 		# XXX: Todo - configure the xfce4-xkb-plugin
 	#fi
 

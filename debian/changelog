@@ -5,8 +5,9 @@ desktop-defaults (0.9.20) UNRELEASED; urgency=low
 
   [ Bernard Gray ]
   * comment empty if statement in xfce init
+  * remove defunct KDEKEYBOARDS from xfce init, replace with XKBLAYOUT 
 
- -- Bernard Gray <bernard.gray@gmail.com>  Sun, 07 Oct 2007 14:21:05 +1000
+ -- Bernard Gray <bernard.gray@gmail.com>  Sun, 07 Oct 2007 14:26:42 +1000
 
 desktop-defaults (0.9.19) unstable; urgency=low
 
