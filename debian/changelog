@@ -1,8 +1,8 @@
-desktop-defaults (0.9.21) UNRELEASED; urgency=low
+desktop-defaults (0.9.21) unstable; urgency=low
 
   [ Stefan Lippers-Hollmann ]
-  * NOT RELEASED YET
   * update syntax for Vcs headers in debian/control
+  * replace perl with simple sed.
 
   [ Bernard Gray ]
   * configure xfce4-xkb-plugin in xfce fll-init
@@ -10,7 +10,7 @@ desktop-defaults (0.9.21) UNRELEASED; urgency=low
   [ Kel Modderman ]
   * setup keyboard chooser when > 1 xkblayout variant is defined
 
- -- Kel Modderman <kel@otaku42.de>  Tue, 09 Oct 2007 12:58:17 +1000
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 09 Oct 2007 14:02:58 +0200
 
 desktop-defaults (0.9.20) unstable; urgency=low
 

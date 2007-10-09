@@ -142,8 +142,9 @@ EOF
 	case "${XKBLAYOUT}" in
 		[a-z]*,[a-z]*)
 			if [ -f "${FLL_LIVE_USER_HOME}/.config/xfce4/panel/panels.xml" ]; then
-				perl -pi -e 's/^(\s+)(<item name="systray".*)/$1<item name="xkb-plugin" id="11918899770"\/>\n$1$2/' \
-					"${FLL_LIVE_USER_HOME}/.config/xfce4/panel/panels.xml"
+				sed -i	-e "/<item name=\"xkb-plugin\"/d" \
+					-e "s|^\([ \t]*\)\(<item[ \t]*name\=\"systray\".*\)|\1<item name=\"xkb-plugin\" id=\"11918899770\"\/\>\n\1\2|" \
+						"${FLL_LIVE_USER_HOME}/.config/xfce4/panel/panels.xml"
 			fi
 			;;
 	esac
