@@ -139,9 +139,11 @@ EOF
         ###
         # setup keyboard chooser
         ###
-	#if [ "${XKBLAYOUT}" ]; then
-		# XXX: Todo - configure the xfce4-xkb-plugin
-	#fi
+	if [ "${XKBLAYOUT}" ] && \
+		[ -f "${FLL_LIVE_USER_HOME}/.config/xfce4/panel/panels.xml" ]; then
+		perl -pi -e 's/^(\s+)(<item name\=\"systray\".*)/$1<item name="xkb-plugin" id="11918899770"\/>\n$1$2/' \
+			"${FLL_LIVE_USER_HOME}/.config/xfce4/panel/panels.xml"
+	fi
 
 
         ###
