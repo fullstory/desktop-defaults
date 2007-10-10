@@ -1,9 +1,5 @@
-desktop-defaults (0.9.22) UNRELEASED; urgency=low
+desktop-defaults (0.9.22) unstable; urgency=low
 
-  [ Stefan Lippers-Hollmann ]
-  * NOT RELEASED YET
-
-  [ Bernard Gray ]
   * darken kde desktop icon text 
 
  -- Bernard Gray <bernard.gray@gmail.com>  Wed, 10 Oct 2007 17:13:39 +1000
