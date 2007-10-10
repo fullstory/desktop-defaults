@@ -1,8 +1,12 @@
 desktop-defaults (0.9.22) UNRELEASED; urgency=low
 
+  [ Stefan Lippers-Hollmann ]
   * NOT RELEASED YET
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 09 Oct 2007 14:04:53 +0200
+  [ Bernard Gray ]
+  * darken kde desktop icon text 
+
+ -- Bernard Gray <bernard.gray@gmail.com>  Wed, 10 Oct 2007 17:13:39 +1000
 
 desktop-defaults (0.9.21) unstable; urgency=low
 
