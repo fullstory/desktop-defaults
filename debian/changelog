@@ -7,8 +7,10 @@ desktop-defaults (0.9.23) UNRELEASED; urgency=low
   * fll-kde-desktop:
     - if the index file for release notes/errata does not exist, but the
       autostart link does, remove the autostart link (persistency + toram)
+  * fll-gnome-desktop:
+    - check existance if INDEXFILE before creating autostart item for it
 
- -- Kel Modderman <kel@otaku42.de>  Thu, 11 Oct 2007 15:35:38 +1000
+ -- Kel Modderman <kel@otaku42.de>  Thu, 11 Oct 2007 15:39:12 +1000
 
 desktop-defaults (0.9.22) unstable; urgency=low
 

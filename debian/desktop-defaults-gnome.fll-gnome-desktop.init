@@ -115,8 +115,8 @@ do_start() {
 			"${FLL_LIVE_USER_HOME}/.config/autostart"
 	fi
         
-	if [ ! -f "${FLL_LIVE_USER_HOME}/.config/autostart/${FLL_DISTRO_NAME}.desktop" ] && \
-		[ "${NOINTRO}" != "yes" ]; then
+	if [ -f "${INDEXFILE}"  ] && [ "${NOINTRO}" != "yes" ] && \
+		[ ! -f "${FLL_LIVE_USER_HOME}/.config/autostart/${FLL_DISTRO_NAME}.desktop" ]; then
 		cat > "${FLL_LIVE_USER_HOME}/.config/autostart/${FLL_DISTRO_NAME}.desktop" \
 <<EOF
 [Desktop Entry]
