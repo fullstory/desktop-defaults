@@ -9,8 +9,10 @@ desktop-defaults (0.9.23) UNRELEASED; urgency=low
       autostart link does, remove the autostart link (persistency + toram)
   * fll-gnome-desktop:
     - check existance if INDEXFILE before creating autostart item for it
+  * fll-xfce-desktop:
+    - do the same as for fll-kde-desktop
 
- -- Kel Modderman <kel@otaku42.de>  Thu, 11 Oct 2007 15:39:12 +1000
+ -- Kel Modderman <kel@otaku42.de>  Thu, 11 Oct 2007 15:41:37 +1000
 
 desktop-defaults (0.9.22) unstable; urgency=low
 

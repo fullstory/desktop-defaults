@@ -210,7 +210,10 @@ EOF
                         ln -sf "${FLL_LIVE_USER_HOME}/Desktop/${FLL_DISTRO_NAME}.desktop" \
                                 "${FLL_LIVE_USER_HOME}/.config/autostart/"
                 fi
-        fi
+        elif [ -e "${FLL_LIVE_USER_HOME}/.config/autostart/${FLL_DISTRO_NAME}.desktop" ]; then
+		# toram + persistency
+		rm -f "${FLL_LIVE_USER_HOME}/.config/autostart/${FLL_DISTRO_NAME}.desktop"
+	fi
 
 
 	# ${FLL_LIVE_USER}
