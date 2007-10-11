@@ -390,6 +390,9 @@ EOF
 			ln -sf "${FLL_LIVE_USER_HOME}/Desktop/${FLL_DISTRO_NAME}.desktop" \
 				"${FLL_LIVE_USER_HOME}/.kde/Autostart/"
 		fi
+	elif [ -f "${FLL_LIVE_USER_HOME}/.kde/Autostart/${FLL_DISTRO_NAME}.desktop" ]; then
+		# toram + persistency
+		rm -f "${FLL_LIVE_USER_HOME}/.kde/Autostart/${FLL_DISTRO_NAME}.desktop"
 	fi
 
 	###
