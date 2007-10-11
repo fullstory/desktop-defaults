@@ -1,9 +1,5 @@
-desktop-defaults (0.9.23) UNRELEASED; urgency=low
+desktop-defaults (0.9.23) unstable; urgency=low
 
-  [ Stefan Lippers-Hollmann ]
-  * NOT RELEASED YET
-
-  [ Kel Modderman ]
   * fll-kde-desktop:
     - if the index file for release notes/errata does not exist, but the
       autostart link does, remove the autostart link (persistency + toram)
