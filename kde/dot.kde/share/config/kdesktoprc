@@ -10,7 +10,7 @@ ShowHidden=false
 NormalTextColor=72,69,64
 ShadowEnabled=false
 ShowFileTips=true
-StandardFont=Bitstream Vera Sans,11,-1,5,50,0,0,0,0,0
+StandardFont=Bitstream Vera Sans,10,-1,5,50,0,0,0,0,0
 
 [General]
 AutoLineUpIcons=true
