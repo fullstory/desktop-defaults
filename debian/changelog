@@ -1,9 +1,5 @@
-desktop-defaults (0.9.24) UNRELEASED; urgency=low
+desktop-defaults (0.9.24) unstable; urgency=low
 
-  [ Stefan Lippers-Hollmann ]
-  * NOT RELEASED YET
-
-  [ Kel Modderman ]
   * desktop-defaults-kde:
     - drop all font sizes by 1 point, 11 -> 10, 12 -> 11
 
