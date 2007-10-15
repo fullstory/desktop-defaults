@@ -1,8 +1,12 @@
 desktop-defaults (0.9.25) UNRELEASED; urgency=low
 
+  [ Stefan Lippers-Hollmann ]
   * NOT RELEASED YET
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Fri, 12 Oct 2007 21:29:22 +0200
+  [ Bernard Gray ]
+  * add xfce thunar defaults (from mzilikazi) 
+
+ -- Bernard Gray <bernard.gray@gmail.com>  Tue, 16 Oct 2007 09:35:16 +1000
 
 desktop-defaults (0.9.24) unstable; urgency=low
 
