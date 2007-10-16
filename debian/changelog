@@ -1,9 +1,5 @@
-desktop-defaults (0.9.25) UNRELEASED; urgency=low
+desktop-defaults (0.9.25) unstable; urgency=low
 
-  [ Stefan Lippers-Hollmann ]
-  * NOT RELEASED YET
-
-  [ Bernard Gray ]
   * add xfce thunar defaults (from mzilikazi)
   * add xfce terminal defaults (disable F10 key - from mz) 
 
