@@ -1,0 +1,22 @@
+#!/bin/sh
+
+# Should we offer our services?
+if [ -f /etc/default/fll-xfce-desktop ]; then
+	. /etc/default/fll-xfce-desktop
+fi
+
+if [ "${XFCE_SERVICES_ENABLED}" = "false" ]; then
+	exit 0
+fi
+
+# Start krandrtray
+# XXX: todo?
+
+# Start mixer
+# XXX:todo
+
+# Start network monitor
+# XXX: todo?
+
+## Start kpowersave
+# XXX: todo?

@@ -1,8 +1,13 @@
 desktop-defaults (0.9.26) UNRELEASED; urgency=low
 
+  [ Stefan Lippers-Hollmann ]
   * NOT RELEASED YET
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 16 Oct 2007 11:56:31 +0200
+  [ Bernard Gray ]
+  * add skeleton for xfce desktop services start
+   - ala kde desktop services
+
+ -- Bernard Gray <bernard.gray@gmail.com>  Wed, 17 Oct 2007 16:59:19 +1000
 
 desktop-defaults (0.9.25) unstable; urgency=low
 
