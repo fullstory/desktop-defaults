@@ -1,8 +1,12 @@
 desktop-defaults (0.9.27) UNRELEASED; urgency=low
 
+  [ Stefan Lippers-Hollmann ]
   * NOT RELEASED YET
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 17 Oct 2007 10:59:23 +0200
+  [ Bernard Gray ]
+  * update xfce.install script to account for new desktop autostart scripts 
+
+ -- Bernard Gray <bernard.gray@gmail.com>  Thu, 18 Oct 2007 08:40:23 +1000
 
 desktop-defaults (0.9.26) unstable; urgency=low
 
