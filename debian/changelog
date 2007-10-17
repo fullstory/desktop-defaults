@@ -1,9 +1,5 @@
-desktop-defaults (0.9.26) UNRELEASED; urgency=low
+desktop-defaults (0.9.26) unstable; urgency=low
 
-  [ Stefan Lippers-Hollmann ]
-  * NOT RELEASED YET
-
-  [ Bernard Gray ]
   * add skeleton for xfce desktop services start
    - ala kde desktop services
 
