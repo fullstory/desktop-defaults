@@ -1,8 +1,12 @@
 desktop-defaults (0.9.29) UNRELEASED; urgency=low
 
+  [ Stefan Lippers-Hollmann ]
   * NOT RELEASED YET
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 18 Oct 2007 10:06:31 +0200
+  [ Bernard Gray ]
+  * fix kpowersave instead of battmon typo 
+
+ -- Bernard Gray <bernard.gray@gmail.com>  Thu, 18 Oct 2007 22:31:17 +1000
 
 desktop-defaults (0.9.28) unstable; urgency=low
 

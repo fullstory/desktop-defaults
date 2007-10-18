@@ -28,7 +28,7 @@ fi
 # XXX: todo?
 
 # Start battmon plugin
-if [ -x /usr/bin/kpowersave ]; then
+if [ -x /usr/lib/xfce4-battery-plugin/xfce4/panel-plugins/xfce4-battery-plugin ]; then
         if ! pgrep xfce4-battery >/dev/null && pidof powersaved >/dev/null; then
         	if [ -f "${FLL_LIVE_USER_HOME}/.config/xfce4/panel/panels.xml" ]; then
                 	sed -i  -e "/<item name=\"battmon\"/d" \
