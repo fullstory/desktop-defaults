@@ -1,9 +1,5 @@
-desktop-defaults (0.9.28) UNRELEASED; urgency=low
+desktop-defaults (0.9.28) unstable; urgency=low
 
-  [ Stefan Lippers-Hollmann ]
-  * NOT RELEASED YET
-
-  [ Bernard Gray ]
   * add xfce4-mixer panel plugin to xfce-desktop-defaults
   * add xfce4-battmon panel plugin to xfce-desktop-defaults
 
