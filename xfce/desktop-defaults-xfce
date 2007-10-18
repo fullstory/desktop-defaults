@@ -13,7 +13,6 @@ fi
 # XXX: todo?
 
 # Start mixer
-# XXX:todo
 if [ -x /usr/bin/xfce4-mixer ]; then
         # xfce4-mixer already started? sound system active?
         if ! pgrep xfce4-mixer >/dev/null && grep -q "^snd" /proc/modules; then
@@ -28,5 +27,14 @@ fi
 # Start network monitor
 # XXX: todo?
 
-## Start kpowersave
-# XXX: todo?
+# Start battmon plugin
+if [ -x /usr/bin/kpowersave ]; then
+        if ! pgrep xfce4-battery >/dev/null && pidof powersaved >/dev/null; then
+        	if [ -f "${FLL_LIVE_USER_HOME}/.config/xfce4/panel/panels.xml" ]; then
+                	sed -i  -e "/<item name=\"battmon\"/d" \
+                        	-e "s|^\([ \t]*\)\(<item[ \t]*name\=\"systray\".*\)|\1<item name=\"battmon\" id=\"11927411720\"\/\>\n\1\2|" \
+                                "${FLL_LIVE_USER_HOME}/.config/xfce4/panel/panels.xml"
+                fi
+        fi
+fi
+
