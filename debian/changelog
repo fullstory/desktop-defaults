@@ -1,8 +1,12 @@
 desktop-defaults (0.9.28) UNRELEASED; urgency=low
 
+  [ Stefan Lippers-Hollmann ]
   * NOT RELEASED YET
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 18 Oct 2007 00:57:07 +0200
+  [ Bernard Gray ]
+  * add xfce4-mixer panel plugin to xfce-desktop-defaults 
+
+ -- Bernard Gray <bernard.gray@gmail.com>  Thu, 18 Oct 2007 16:46:00 +1000
 
 desktop-defaults (0.9.27) unstable; urgency=low
 
