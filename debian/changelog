@@ -1,9 +1,5 @@
-desktop-defaults (0.9.29) UNRELEASED; urgency=low
+desktop-defaults (0.9.29) unstable; urgency=low
 
-  [ Stefan Lippers-Hollmann ]
-  * NOT RELEASED YET
-
-  [ Bernard Gray ]
   * fix kpowersave instead of battmon typo 
 
  -- Bernard Gray <bernard.gray@gmail.com>  Thu, 18 Oct 2007 22:31:17 +1000
