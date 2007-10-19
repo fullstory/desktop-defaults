@@ -1,9 +1,5 @@
-desktop-defaults (0.9.30) UNRELEASED; urgency=low
+desktop-defaults (0.9.30) unstable; urgency=low
 
-  [ Stefan Lippers-Hollmann ]
-  * NOT RELEASED YET
-
-  [ Bernard Gray ]
   * use ${HOME} in desktop-defaults-xfce
    - distro-defaults are not sourced here
   * nuke xfce/desktop-defaults-xfce, changes to panels.xml must be made
