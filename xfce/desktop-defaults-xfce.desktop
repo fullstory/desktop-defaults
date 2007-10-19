@@ -1,7 +1,0 @@
-[Desktop Entry]
-Name=Autostart some XFCE-Services
-Name[de]=Startet automatisch einige XFCE-Dienste
-Exec=/usr/bin/desktop-defaults-xfce; true
-Type=Application
-Icon=html
-Terminal=0

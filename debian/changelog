@@ -4,10 +4,13 @@ desktop-defaults (0.9.30) UNRELEASED; urgency=low
   * NOT RELEASED YET
 
   [ Bernard Gray ]
-  * use ${HOME} in desktop-defaults-xfce 
+  * use ${HOME} in desktop-defaults-xfce
    - distro-defaults are not sourced here
+  * nuke xfce/desktop-defaults-xfce, changes to panels.xml must be made
+    before gdm login
+  * move volume control and battmon creation to xfce init script
 
- -- Bernard Gray <bernard.gray@gmail.com>  Fri, 19 Oct 2007 11:18:10 +1000
+ -- Bernard Gray <bernard.gray@gmail.com>  Fri, 19 Oct 2007 12:56:49 +1000
 
 desktop-defaults (0.9.29) unstable; urgency=low
 

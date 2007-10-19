@@ -137,6 +137,35 @@ EOF
         ###
 
         ###
+	# Start battmon plugin
+        ###
+	if [ -x /usr/lib/xfce4-battery-plugin/xfce4/panel-plugins/xfce4-battery-plugin ]; then
+		# is powersaved running?
+	        if pidof powersaved >/dev/null; then
+	                if [ -f "${FLL_LIVE_USER_HOME}/.config/xfce4/panel/panels.xml" ]; then
+	                        sed -i  -e "/<item name=\"battmon\"/d" \
+	                                -e "s|^\([ \t]*\)\(<item[ \t]*name\=\"systray\".*\)|\1<item name=\"battmon\" id=\"11927411720\"\/\>\n\1\2|" \
+	                                "${FLL_LIVE_USER_HOME}/.config/xfce4/panel/panels.xml"
+	                fi
+	        fi
+	fi
+
+        ###
+	# Start mixer
+        ###
+	if [ -x /usr/bin/xfce4-mixer ]; then
+	        # sound system active?
+	        if grep -q "^snd" /proc/modules; then
+	                if [ -f "${FLL_LIVE_USER_HOME}/.config/xfce4/panel/panels.xml" ]; then
+	                        sed -i  -e "/<item name=\"xfce4-mixer\"/d" \
+	                                -e "s|^\([ \t]*\)\(<item[ \t]*name\=\"systray\".*\)|\1<item name=\"xfce4-mixer\" id=\"11927313170\"\/\>\n\1\2|" \
+	                                "${FLL_LIVE_USER_HOME}/.config/xfce4/panel/panels.xml"
+	                fi
+	        fi
+	fi
+	
+
+        ###
         # setup keyboard chooser when > 1 xkblayout variant is defined
         ###
 	case "${XKBLAYOUT}" in
