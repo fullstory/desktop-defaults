@@ -1,8 +1,13 @@
 desktop-defaults (0.9.30) UNRELEASED; urgency=low
 
+  [ Stefan Lippers-Hollmann ]
   * NOT RELEASED YET
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 18 Oct 2007 15:32:33 +0200
+  [ Bernard Gray ]
+  * use ${HOME} in desktop-defaults-xfce 
+   - distro-defaults are not sourced here
+
+ -- Bernard Gray <bernard.gray@gmail.com>  Fri, 19 Oct 2007 11:18:10 +1000
 
 desktop-defaults (0.9.29) unstable; urgency=low
 
