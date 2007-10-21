@@ -1,9 +1,5 @@
-desktop-defaults (0.9.31) UNRELEASED; urgency=low
+desktop-defaults (0.9.31) unstable; urgency=low
 
-  [ Stefan Lippers-Hollmann ]
-  * NOT RELEASED YET
-
-  [ Bernard Gray ]
   * reinstate desktop-defaults-xfce desktop startup script to manage
     xfce4-battmon applet
   * deinstate desktop-defaults-xfce in favour off simpler battmon test
