@@ -6,9 +6,10 @@ desktop-defaults (0.9.31) UNRELEASED; urgency=low
   [ Bernard Gray ]
   * reinstate desktop-defaults-xfce desktop startup script to manage
     xfce4-battmon applet
-  * deinstate desktop-defaults-xfce in favour off simpler battmon test 
+  * deinstate desktop-defaults-xfce in favour off simpler battmon test
+  * test for battery info file, not just bat dir 
 
- -- Bernard Gray <bernard.gray@gmail.com>  Sun, 21 Oct 2007 18:24:16 +1000
+ -- Bernard Gray <bernard.gray@gmail.com>  Sun, 21 Oct 2007 18:29:06 +1000
 
 desktop-defaults (0.9.30) unstable; urgency=low
 
