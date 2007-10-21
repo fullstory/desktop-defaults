@@ -1,0 +1,16 @@
+#!/bin/sh
+
+# Should we offer our services?
+if [ -f /etc/default/fll-xfce-desktop ]; then
+       . /etc/default/fll-xfce-desktop
+fi
+
+if [ "${XFCE_SERVICES_ENABLED}" = "false" ]; then
+       exit 0
+fi
+
+# kill battmon plugin if no powersaved active
+if ! pidof powersaved >/dev/null && pgrep xfce4-battery; then 
+	sed -i "/<item name=\"battmon\"/d" "${HOME}/.config/xfce4/panel/panels.xml"
+	kill $(pgrep xfce4-battery)
+fi

@@ -1,8 +1,13 @@
 desktop-defaults (0.9.31) UNRELEASED; urgency=low
 
+  [ Stefan Lippers-Hollmann ]
   * NOT RELEASED YET
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Fri, 19 Oct 2007 11:41:15 +0200
+  [ Bernard Gray ]
+  * reinstate desktop-defaults-xfce desktop startup script to manage 
+    xfce4-battmon applet 
+
+ -- Bernard Gray <bernard.gray@gmail.com>  Sun, 21 Oct 2007 18:09:34 +1000
 
 desktop-defaults (0.9.30) unstable; urgency=low
 

@@ -137,17 +137,13 @@ EOF
         ###
 
         ###
-	# Start battmon plugin
+	# Add battmon plugin to panel - since powersaved starts after this script,
+	# desktop-defaults-xfce manages whethere we need it or not
         ###
-	if [ -x /usr/lib/xfce4-battery-plugin/xfce4/panel-plugins/xfce4-battery-plugin ]; then
-		# is powersaved running?
-	        if pidof powersaved >/dev/null; then
-	                if [ -f "${FLL_LIVE_USER_HOME}/.config/xfce4/panel/panels.xml" ]; then
-	                        sed -i  -e "/<item name=\"battmon\"/d" \
-	                                -e "s|^\([ \t]*\)\(<item[ \t]*name\=\"systray\".*\)|\1<item name=\"battmon\" id=\"11927411720\"\/\>\n\1\2|" \
-	                                "${FLL_LIVE_USER_HOME}/.config/xfce4/panel/panels.xml"
-	                fi
-	        fi
+	if [ -f "${FLL_LIVE_USER_HOME}/.config/xfce4/panel/panels.xml" ]; then
+	        sed -i  -e "/<item name=\"battmon\"/d" \
+	                -e "s|^\([ \t]*\)\(<item[ \t]*name\=\"systray\".*\)|\1<item name=\"battmon\" id=\"11927411720\"\/\>\n\1\2|" \
+	                "${FLL_LIVE_USER_HOME}/.config/xfce4/panel/panels.xml"
 	fi
 
         ###
