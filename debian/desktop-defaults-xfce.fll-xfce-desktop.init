@@ -137,16 +137,18 @@ EOF
         ###
 
         ###
-	# Add battmon plugin to panel - since powersaved starts after this script,
-	# desktop-defaults-xfce manages whethere we need it or not
+	# Add battmon plugin to panel
         ###
-	if [ -f "${FLL_LIVE_USER_HOME}/.config/xfce4/panel/panels.xml" ]; then
-	        sed -i  -e "/<item name=\"battmon\"/d" \
-	                -e "s|^\([ \t]*\)\(<item[ \t]*name\=\"systray\".*\)|\1<item name=\"battmon\" id=\"11927411720\"\/\>\n\1\2|" \
-	                "${FLL_LIVE_USER_HOME}/.config/xfce4/panel/panels.xml"
-	fi
-
-        ###
+	for dir in /proc/acpi/battery/*; do 
+		if [ -d "$dir" ]; then 
+			sed -i  -e "/<item name=\"battmon\"/d" \
+	                        -e "s|^\([ \t]*\)\(<item[ \t]*name\=\"systray\".*\)|\1<item name=\"battmon\" id=\"11927411720\"\/\>\n\1\2|" \
+        	                "${FLL_LIVE_USER_HOME}/.config/xfce4/panel/panels.xml"
+			break
+		fi
+	done
+        
+	###
 	# Start mixer
         ###
 	if [ -x /usr/bin/xfce4-mixer ]; then

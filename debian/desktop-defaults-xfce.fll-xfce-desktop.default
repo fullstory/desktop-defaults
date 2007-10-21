@@ -3,7 +3,7 @@
 # installed at /etc/default/fll-xfce-desktop by the maintainer scripts
 
 # change to "false" to disable the automatic start of the XFCE-Services
-XFCE_SERVICES_ENABLED="true"
+#XFCE_SERVICES_ENABLED="true"
 
 # specify GDM theme to be used
 XFCE_GDM_THEME="sidux-eros"

@@ -1,3 +1,1 @@
-xfce/desktop-defaults-xfce               usr/bin
-xfce/desktop-defaults-xfce.desktop       usr/share/autostart
 xfce/dot.*	usr/share/desktop-defaults-xfce
