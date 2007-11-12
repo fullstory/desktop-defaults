@@ -1,8 +1,9 @@
 desktop-defaults (0.9.32) UNRELEASED; urgency=low
 
-  * NOT RELEASED YET
+  * Add a preinst for each binary package preventing installation in
+    non-chroot environments.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 21 Oct 2007 12:21:21 +0200
+ -- Kel Modderman <kel@otaku42.de>  Mon, 12 Nov 2007 11:22:26 +1000
 
 desktop-defaults (0.9.31) unstable; urgency=low
 
