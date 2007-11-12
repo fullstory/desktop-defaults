@@ -1,4 +1,4 @@
-desktop-defaults (0.9.32) UNRELEASED; urgency=low
+desktop-defaults (0.9.32) unstable; urgency=low
 
   * Add a preinst for each binary package preventing installation in
     non-chroot environments.
