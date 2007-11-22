@@ -1,8 +1,13 @@
 desktop-defaults (0.9.34) UNRELEASED; urgency=low
 
+  [ Stefan Lippers-Hollmann ]
   * NOT RELEASED YET
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 22 Nov 2007 01:58:25 +0100
+  [ Horst Tritremmel ]
+  * put a seminarix-handbook icon on the desktop if installed
+  * put a sidux-edu icon on the desktop if installed
+
+ -- Horst Tritremmel <hjt@sidux.com>  Thu, 22 Nov 2007 12:08:31 +0100
 
 desktop-defaults (0.9.33) unstable; urgency=low
 
