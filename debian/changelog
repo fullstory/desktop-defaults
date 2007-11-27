@@ -1,9 +1,5 @@
-desktop-defaults (0.9.35) UNRELEASED; urgency=low
+desktop-defaults (0.9.35) unstable; urgency=low
 
-  [ Stefan Lippers-Hollmann ]
-  * NOT RELEASED YET
-
-  [ Horst Tritremmel ]
   * put a seminarix-handbook icon on the desktop removed
 
  -- Horst Tritremmel <hjt@sidux.com>  Tue, 27 Nov 2007 11:28:27 +0100
