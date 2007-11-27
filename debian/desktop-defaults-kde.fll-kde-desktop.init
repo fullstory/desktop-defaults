@@ -347,16 +347,7 @@ EOF
 	fi
 
 	###
-	# put a seminarix-handbook icon on the desktop
-	###
-	if [ ! -f "${FLL_LIVE_USER_HOME}/Desktop/seminarix-handbook.desktop" ] && \
-		[ -f /usr/share/applications/sidux/seminarix-handbook.desktop ]; then
-		install --group="${FLL_LIVE_USER}" --owner="${FLL_LIVE_USER}" \
-			/usr/share/applications/sidux/seminarix-handbook.desktop "${FLL_LIVE_USER_HOME}/Desktop/seminarix-handbook.desktop"
-	fi
-
-	###
-	# put a sidux-edu icon on the desktop
+	# put a sidux-edu (seminarix appstarter) icon on the desktop
 	###
 	if [ ! -f "${FLL_LIVE_USER_HOME}/Desktop/sidux-edu.desktop" ] && \
 		[ -f /usr/share/applications/kde/sidux-edu.desktop ]; then
