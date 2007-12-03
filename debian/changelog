@@ -1,8 +1,9 @@
 desktop-defaults (0.9.36) UNRELEASED; urgency=low
 
   * NOT RELEASED YET
+  * update to Standards-Version 3.7.3, no changes necessary.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 27 Nov 2007 12:16:50 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 03 Dec 2007 13:46:13 +0100
 
 desktop-defaults (0.9.35) unstable; urgency=low
 
