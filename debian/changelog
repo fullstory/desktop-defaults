@@ -1,7 +1,6 @@
-desktop-defaults (0.9.36) UNRELEASED; urgency=low
+desktop-defaults (0.9.36) unstable; urgency=low
 
   [ Stefan Lippers-Hollmann ]
-  * NOT RELEASED YET
   * update to Standards-Version 3.7.3, no changes necessary.
 
   [ Kel Modderman ]
