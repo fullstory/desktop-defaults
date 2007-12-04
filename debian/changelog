@@ -1,9 +1,13 @@
 desktop-defaults (0.9.36) UNRELEASED; urgency=low
 
+  [ Stefan Lippers-Hollmann ]
   * NOT RELEASED YET
   * update to Standards-Version 3.7.3, no changes necessary.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 03 Dec 2007 13:46:13 +0100
+  [ Kel Modderman ]
+  * Add real person to copyright headers.
+
+ -- Kel Modderman <kel@otaku42.de>  Tue, 04 Dec 2007 17:01:59 +1000
 
 desktop-defaults (0.9.35) unstable; urgency=low
 
