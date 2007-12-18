@@ -1,6 +1,9 @@
 [Desktop Entry]
 Name=Autostart some KDE-Services
 Name[de]=Startet automatisch einige KDE-Dienste
+Name[ru]=служит для автостарта некоторых служб KDE
+Name[pt]=Lançamento automático de Serviços do KDE
+Name[pt_BR]=Lançamento automático de Serviços do KDE
 Exec=/usr/bin/desktop-defaults-kde; true
 Type=Application
 Icon=html
