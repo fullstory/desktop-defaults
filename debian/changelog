@@ -1,8 +1,12 @@
 desktop-defaults (0.9.38) UNRELEASED; urgency=low
 
+  [ Stefan Lippers-Hollmann ]
   * NOT RELEASED YET
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 19 Dec 2007 11:18:48 +0100
+  [ webera ]
+  * Wallpaper changed to eros for Gnome Desktop. 
+
+ -- Andreas Weber <andreas@it-weber.com>  Wed, 26 Dec 2007 20:59:26 +0100
 
 desktop-defaults (0.9.37) unstable; urgency=low
 
