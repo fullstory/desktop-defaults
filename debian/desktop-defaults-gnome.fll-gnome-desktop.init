@@ -154,28 +154,13 @@ EOF
 	chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" \
 		"${FLL_LIVE_USER_HOME}/Desktop/${FLL_DISTRO_NAME}.desktop"
 	
-	BASEDIR=".gconf/apps/nautilus"
-
-	if [ ! -d "${FLL_LIVE_USER_HOME}/${BASEDIR}/preferences" ]; then
-		install --directory --group="${FLL_LIVE_USER}" --owner="${FLL_LIVE_USER}" \
- 			"${FLL_LIVE_USER_HOME}/${BASEDIR}/preferences"
-	fi
-
-	if [ ! -f "${FLL_LIVE_USER_HOME}/${BASEDIR}/preferences/%gconf.xml" ]; then
-                cat >> "${FLL_LIVE_USER_HOME}/${BASEDIR}/preferences/%gconf.xml" << EOF
-<?xml version="1.0"?>
-<gconf>
-	<entry name="always_use_browser" mtime="1179983929" type="bool" value="true">
-	</entry>
-</gconf>
-EOF
-	else
-                sed -i -e 's|always_use_browser\(.*\)value=\(.*\)|always_use_browser\1value="true"|' \
-                        ${FLL_LIVE_USER_HOME}/${BASEDIR}/preferences/%gconf.xml
-        fi
-	chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" \
-		${FLL_LIVE_USER_HOME}/${BASEDIR}/preferences/%gconf.xml
-
+	su ${FLL_LIVE_USER} -c 'gconftool-2 -t bool -s /apps/nautilus/preferences/always_use_browser true'
+	su ${FLL_LIVE_USER} -c 'gconftool-2 -t string -s /desktop/gnome/background/picture_filename /usr/share/wallpapers/sidux-eros-1280x1024.png'
+	su ${FLL_LIVE_USER} -c 'gconftool-2 -t string -s /desktop/gnome/background/picture_options stretched'
+	su ${FLL_LIVE_USER} -c 'gconftool-2 -t bool -s /desktop/gnome/sound/enable_esd true'
+	su ${FLL_LIVE_USER} -c 'gconftool-2 -t bool -s /desktop/gnome/sound/event_sounds true'
+	su ${FLL_LIVE_USER} -c 'gconftool-2 -t string -s /apps/epiphany/general/homepage http://www.sidux.com'
+	su ${FLL_LIVE_USER} -c 'gconftool-2 -t bool -s /apps/gnome-screensaver/lock_enabled false'
 }
 
 case "${1}" in

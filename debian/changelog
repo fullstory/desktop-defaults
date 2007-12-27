@@ -4,9 +4,10 @@ desktop-defaults (0.9.38) UNRELEASED; urgency=low
   * NOT RELEASED YET
 
   [ webera ]
-  * Wallpaper changed to eros for Gnome Desktop. 
+  * Wallpaper changed to eros for Gnome Desktop.
+  * Gnome Settings changed to use gconftool-2.
 
- -- Andreas Weber <andreas@it-weber.com>  Wed, 26 Dec 2007 20:59:26 +0100
+ -- Andreas Weber <andreas@it-weber.com>  Thu, 27 Dec 2007 06:31:45 +0100
 
 desktop-defaults (0.9.37) unstable; urgency=low
 
