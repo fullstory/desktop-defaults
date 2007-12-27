@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/dash
 
 ### BEGIN INIT INFO
 # Provides:          fll-gnome-desktop
@@ -155,7 +155,7 @@ EOF
 		"${FLL_LIVE_USER_HOME}/Desktop/${FLL_DISTRO_NAME}.desktop"
 	
 	su ${FLL_LIVE_USER} -c 'gconftool-2 -t bool -s /apps/nautilus/preferences/always_use_browser true'
-	su ${FLL_LIVE_USER} -c 'gconftool-2 -t string -s /desktop/gnome/background/picture_filename /usr/share/wallpapers/sidux-eros-1280x1024.png'
+	su ${FLL_LIVE_USER} -c 'gconftool-2 -t string -s /desktop/gnome/background/picture_filename ${FLL_WALLPAPER}'
 	su ${FLL_LIVE_USER} -c 'gconftool-2 -t string -s /desktop/gnome/background/picture_options stretched'
 	su ${FLL_LIVE_USER} -c 'gconftool-2 -t bool -s /desktop/gnome/sound/enable_esd true'
 	su ${FLL_LIVE_USER} -c 'gconftool-2 -t bool -s /desktop/gnome/sound/event_sounds true'
@@ -163,10 +163,27 @@ EOF
 	su ${FLL_LIVE_USER} -c 'gconftool-2 -t bool -s /apps/gnome-screensaver/lock_enabled false'
 }
 
+default_gdm_theme()
+{
+        umask 0022
+
+        ###
+        # setup GDM theme
+        ###
+        if [ "${GNOME_GDM_THEME}" ]; then
+		if ! grep -q "^GraphicalTheme=" /etc/gdm/gdm.conf ; then
+	                sed -i "s/\[greeter\]/\[greeter\]\nGraphicalTheme=${GNOME_GDM_THEME}\nGraphicalThemedColor=${GNOME_GDM_THEME_COLOR}/g" /etc/gdm/gdm.conf
+		else
+			sed -i "s/GraphicalTheme=.*/GraphicalTheme=${GNOME_GDM_THEME}/g" /etc/gdm/gdm.conf
+	        fi
+	fi
+}
+
 case "${1}" in
 	start)
 		log_daemon_msg "${B}${NAME}${N}"; log_action_begin_msg " ${G}preparing ${Y}${FLL_LIVE_USER}${G} for ${Y}gnome${N}"
 		do_start
+		default_gdm_theme
 		log_end_msg 0
 		;;
 	stop)

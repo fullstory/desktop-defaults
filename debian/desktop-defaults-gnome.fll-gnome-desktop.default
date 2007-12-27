@@ -1,1 +1,15 @@
 # Defaults for gnome desktop
+# sourced by /usr/bin/desktop-defaults-gnome and /etc/init.d/fll-gnome-desktop
+# installed at /etc/default/fll-gnome-desktop by the maintainer scripts
+
+# change to "false" to disable the automatic start of the GNOME-Services
+#GNOME_SERVICES_ENABLED="true"
+
+# specify GDM theme to be used
+GNOME_GDM_THEME="sidux-eros"
+
+# specify GDM theme color to be used
+GNOME_GDM_THEME_COLOR="#eae7cb"
+
+# specify gnome splash theme
+#GNOME_SPLASH_THEME=""
