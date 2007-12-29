@@ -161,6 +161,10 @@ EOF
 	su ${FLL_LIVE_USER} -c 'gconftool-2 -t bool -s /desktop/gnome/sound/event_sounds true'
 	su ${FLL_LIVE_USER} -c 'gconftool-2 -t string -s /apps/epiphany/general/homepage http://www.sidux.com'
 	su ${FLL_LIVE_USER} -c 'gconftool-2 -t bool -s /apps/gnome-screensaver/lock_enabled false'
+	su ${FLL_LIVE_USER} -c 'gconftool-2 -t int -s /apps/panel/toplevels/bottom_panel_screen0/background/opacity 3000'
+	su ${FLL_LIVE_USER} -c 'gconftool-2 -t int -s /apps/panel/toplevels/top_panel_screen0/background/opacity 3000'
+	su ${FLL_LIVE_USER} -c 'gconftool-2 -t string -s /apps/panel/toplevels/bottom_panel_screen0/background/opacity color'
+	su ${FLL_LIVE_USER} -c 'gconftool-2 -t string -s /apps/panel/toplevels/top_panel_screen0/background/type color'
 }
 
 default_gdm_theme()

@@ -7,13 +7,14 @@ desktop-defaults (0.9.38) UNRELEASED; urgency=low
   * Wallpaper changed to eros for Gnome Desktop.
   * Gnome Settings changed to use gconftool-2.
   * Old .gnome files removed.
+  * Panel background changed for gnome.
 
   [ Horst Tritremmel ]
   * changed hardcoded wallpaper path to FLL_WALLPAPER variable for gnome
   * default_gdm_theme subprogram added for gnome which use
     desktop-defaults-gnome.fll-gnome-desktop.default now
 
- -- Andreas Weber <andreas@it-weber.com>  Thu, 27 Dec 2007 20:05:01 +0100
+ -- Andreas Weber <andreas@it-weber.com>  Sat, 29 Dec 2007 21:20:20 +0100
 
 desktop-defaults (0.9.37) unstable; urgency=low
 
