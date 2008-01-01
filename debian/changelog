@@ -1,7 +1,4 @@
-desktop-defaults (0.9.38) UNRELEASED; urgency=low
-
-  [ Stefan Lippers-Hollmann ]
-  * NOT RELEASED YET
+desktop-defaults (0.9.38) unstable; urgency=low
 
   [ Horst Tritremmel ]
   * changed hardcoded wallpaper path to FLL_WALLPAPER variable for gnome
@@ -16,9 +13,19 @@ desktop-defaults (0.9.38) UNRELEASED; urgency=low
   * Qoutes fixed for the gconftool-2 commands and Parameter fixed.
   * Method for gconftool-2 changed when running for $FLL_LIVE_USER.
   * gnome-terminal Profile configured.
-  * root Terminal Default Profile fixed. 
+  * root Terminal Default Profile fixed.
 
- -- Andreas Weber <andreas@it-weber.com>  Tue, 01 Jan 2008 13:41:56 +0100
+  [ Stefan Lippers-Hollmann ]
+  * remove desktop preconfig for root, it ought to be unconfigured and maybe
+    even look different.
+  * remove predictable file creation below /tmp/ and replace it by an
+    appropriate subshell.
+  * add dash to desktop-defaults-gnome dependencies.
+  * hide grep call.
+  * switch to more reliable grep-dctrl to determine if gnome-themes is
+    installed.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 01 Jan 2008 16:53:55 +0100
 
 desktop-defaults (0.9.37) unstable; urgency=low
 

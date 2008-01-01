@@ -153,43 +153,31 @@ EOF
 	fi
 	chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" \
 		"${FLL_LIVE_USER_HOME}/Desktop/${FLL_DISTRO_NAME}.desktop"
-	
-	cat > "/tmp/gnome-settings.sh" <<EOF
-#!/bin/bash
-[ -s "/etc/default/distro" ] && . /etc/default/distro
-gconftool-2 --type bool --set /apps/nautilus/preferences/always_use_browser true
-gconftool-2 --type string --set /desktop/gnome/background/picture_options "stretched"
-gconftool-2 --type string --set /apps/epiphany/general/homepage "http://www.sidux.com"
-gconftool-2 --type bool --set /apps/gnome-screensaver/lock_enabled false
-gconftool-2 --type int --set /apps/panel/toplevels/bottom_panel_screen0/background/opacity 3000
-gconftool-2 --type int --set /apps/panel/toplevels/top_panel_screen0/background/opacity 3000
-gconftool-2 --type string --set /apps/panel/toplevels/bottom_panel_screen0/background/type color
-gconftool-2 --type string --set /apps/panel/toplevels/top_panel_screen0/background/type color
-gconftool-2 --type bool --set /apps/gnome-osd/avoid_panels true
-gconftool-2 --type bool --set /apps/gnome-osd/animations true
-gconftool-2 --type bool --set /apps/gnome-osd/drop_shadow true
-gconftool-2 --type string --set /apps/gnome-osd/osd_halignment "center"
-gconftool-2 --type string --set /apps/gnome-osd/osd_vposition "top"
-gconftool-2 --type bool --set /apps/gnome-osd/plugins/gaim/enabled true
-gconftool-2 --type bool --set /desktop/gnome/sound/enable_esd true
-gconftool-2 --type bool --set /desktop/gnome/sound/event_sounds true	
-gconftool-2 --type string --set /desktop/gnome/background/picture_filename "$FLL_WALLPAPER"
-dpkg -l | grep gnome-themes\ && gconftool-2 --type string --set /desktop/gnome/interface/gtk_theme "Clearlooks"
-gconftool-2 --type float --set /apps/gnome-terminal/profiles/Default/background_darkness 0.6
-gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/background_type "transparent"
-EOF
 
-	chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" /tmp/gnome-settings.sh
-	chmod +rx /tmp/gnome-settings.sh
-	su ${FLL_LIVE_USER} -c "/tmp/gnome-settings.sh" 2>&1 /dev/null	
-	rm -f /tmp/gnome-settings.sh
-
-	# Set the Basics for root. Thats important when a User is using nautilus in Fluxbox or opening a Folder as Administrator (root)	
-	gconftool-2 --type bool --set /apps/nautilus/preferences/always_use_browser true
-	gconftool-2 --type string --set /desktop/gnome/background/picture_filename "$FLL_WALLPAPER"
-	gconftool-2 --type string --set /desktop/gnome/background/picture_options "stretched"
-	gconftool-2 --type float --set /apps/gnome-terminal/profiles/Default/background_darkness 0.6
-	gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/background_type "transparent"
+	su "${FLL_LIVE_USER}" -c "( \
+		[ -s /etc/default/distro ] && . /etc/default/distro									; \
+		gconftool-2 --type bool --set /apps/nautilus/preferences/always_use_browser true					; \
+		gconftool-2 --type string --set /desktop/gnome/background/picture_options 'stretched'					; \
+		gconftool-2 --type string --set /apps/epiphany/general/homepage 'http://www.sidux.com'					; \
+		gconftool-2 --type bool --set /apps/gnome-screensaver/lock_enabled false						; \
+		gconftool-2 --type int --set /apps/panel/toplevels/bottom_panel_screen0/background/opacity 3000				; \
+		gconftool-2 --type int --set /apps/panel/toplevels/top_panel_screen0/background/opacity 3000				; \
+		gconftool-2 --type string --set /apps/panel/toplevels/bottom_panel_screen0/background/type color			; \
+		gconftool-2 --type string --set /apps/panel/toplevels/top_panel_screen0/background/type color				; \
+		gconftool-2 --type bool --set /apps/gnome-osd/avoid_panels true								; \
+		gconftool-2 --type bool --set /apps/gnome-osd/animations true								; \
+		gconftool-2 --type bool --set /apps/gnome-osd/drop_shadow true								; \
+		gconftool-2 --type string --set /apps/gnome-osd/osd_halignment 'center'							; \
+		gconftool-2 --type string --set /apps/gnome-osd/osd_vposition 'top'							; \
+		gconftool-2 --type bool --set /apps/gnome-osd/plugins/gaim/enabled true							; \
+		gconftool-2 --type bool --set /desktop/gnome/sound/enable_esd true							; \
+		gconftool-2 --type bool --set /desktop/gnome/sound/event_sounds true							; \
+		gconftool-2 --type string --set /desktop/gnome/background/picture_filename \"${FLL_WALLPAPER}\"				; \
+		[ \"$(grep-dctrl -n -s Status -XP gnome-themes /var/lib/dpkg/status)\" = 'install ok installed' ] && \
+			gconftool-2 --type string --set /desktop/gnome/interface/gtk_theme 'Clearlooks'					; \
+		gconftool-2 --type float --set /apps/gnome-terminal/profiles/Default/background_darkness 0.6				; \
+		gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/background_type 'transparent'			  \
+	)"
 }
 
 default_gdm_theme()
@@ -227,4 +215,3 @@ case "${1}" in
 		;;
 esac
 
-:
