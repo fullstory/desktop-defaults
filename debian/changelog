@@ -16,8 +16,9 @@ desktop-defaults (0.9.38) UNRELEASED; urgency=low
   * Qoutes fixed for the gconftool-2 commands and Parameter fixed.
   * Method for gconftool-2 changed when running for $FLL_LIVE_USER.
   * gnome-terminal Profile configured.
+  * root Terminal Default Profile fixed. 
 
- -- Andreas Weber <andreas@it-weber.com>  Mon, 31 Dec 2007 14:15:35 +0100
+ -- Andreas Weber <andreas@it-weber.com>  Tue, 01 Jan 2008 13:41:56 +0100
 
 desktop-defaults (0.9.37) unstable; urgency=low
 
