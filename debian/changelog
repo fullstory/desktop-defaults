@@ -1,14 +1,18 @@
 desktop-defaults (0.9.40) UNRELEASED; urgency=low
 
+  [ Stefan Lippers-Hollmann ]
   * NOT RELEASED YET
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 03 Jan 2008 02:46:58 +0100
+  [ Andreas Weber ]
+  * Skel Function added 
+
+ -- Andreas Weber <andreas@it-weber.com>  Fri, 04 Jan 2008 08:42:14 +0100
 
 desktop-defaults (0.9.39) unstable; urgency=low
 
   * Icon size fixed
 
- -- Andreas Weber <andreas@it-weber.com>  Wed, 02 Jan 2008 15:53:47 +0100
+ -- Andreas Weber <andreas@it-weber.com>  Fri, 04 Jan 2008 06:46:04 +0100
 
 desktop-defaults (0.9.38) unstable; urgency=low
 
