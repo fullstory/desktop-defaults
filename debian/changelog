@@ -1,8 +1,8 @@
-desktop-defaults (0.9.41) UNRELEASED; urgency=low
+desktop-defaults (0.9.41) unstable; urgency=low
 
-  * NOT RELEASED YET
+  * use numerical user/ group IDs for cpio, thanks to x-un-i.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 05 Jan 2008 01:36:53 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 05 Jan 2008 19:48:32 +0100
 
 desktop-defaults (0.9.40) unstable; urgency=low
 

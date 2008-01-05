@@ -24,7 +24,7 @@ cp_desktop_defaults_from()
 			find 	. -printf "%P\n" | grep ^. | \
 			cpio 	--unconditional --make-directories --dereference \
 				--preserve-modification-time --pass-through --quiet \
-				--owner "${FLL_LIVE_USER}:${FLL_LIVE_USER}" \
+				--owner "$(getent passwd ${FLL_LIVE_USER} | cut -d\: -f3):$(getent passwd ${FLL_LIVE_USER} | cut -d\: -f4)" \
 				"${dotdestdir}"
 		}
 
