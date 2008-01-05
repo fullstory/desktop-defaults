@@ -1,9 +1,5 @@
-desktop-defaults (0.9.40) UNRELEASED; urgency=low
+desktop-defaults (0.9.40) unstable; urgency=low
 
-  [ Stefan Lippers-Hollmann ]
-  * NOT RELEASED YET
-
-  [ Andreas Weber ]
   * Skel Function added
   * dot.gconf removed.
   * install File fixed for desktop-defaults-gnome 
