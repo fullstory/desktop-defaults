@@ -19,12 +19,15 @@ cp_desktop_defaults_from()
 
 		install -d --owner="${FLL_LIVE_USER}" --group="${FLL_LIVE_USER}" \
 			"${dotdestdir}"
+
+		FLL_LIVE_USER_UID="$(getent passwd ${FLL_LIVE_USER} | cut -d\: -f3)"
+		FLL_LIVE_USER_GID="$(getent passwd ${FLL_LIVE_USER} | cut -d\: -f4)"
 	
 		cd "${dotdir}" && {
 			find 	. -printf "%P\n" | grep ^. | \
 			cpio 	--unconditional --make-directories --dereference \
 				--preserve-modification-time --pass-through --quiet \
-				--owner "$(getent passwd ${FLL_LIVE_USER} | cut -d\: -f3):$(getent passwd ${FLL_LIVE_USER} | cut -d\: -f4)" \
+				--owner "${FLL_LIVE_USER_UID}:${FLL_LIVE_USER_GID}" \
 				"${dotdestdir}"
 		}
 
