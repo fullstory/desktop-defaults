@@ -184,7 +184,7 @@ EOF
 	cp -a ${FLL_LIVE_USER_HOME}/.gconf /etc/skel/
 
 	gconftool-2 --type bool --set /apps/nautilus/preferences/always_use_browser true
-	[ \"$(grep-dctrl -n -s Status -XP gnome-themes /var/lib/dpkg/status)\" = 'install ok installed' ] && \
+	[ "$(grep-dctrl -n -s Status -XP gnome-themes /var/lib/dpkg/status)" = 'install ok installed' ] && \
 			gconftool-2 --type string --set /desktop/gnome/interface/gtk_theme 'Clearlooks'	
 	gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/background_type 'transparent'
 	gconftool-2 --type float --set /apps/gnome-terminal/profiles/Default/background_darkness 0.6

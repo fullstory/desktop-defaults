@@ -1,8 +1,8 @@
-desktop-defaults (0.9.42) UNRELEASED; urgency=low
+desktop-defaults (0.9.42) unstable; urgency=low
 
-  * NOT RELEASED YET
+  * fix syntax errors introduced in r13776.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 05 Jan 2008 19:52:11 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 08 Jan 2008 00:38:27 +0100
 
 desktop-defaults (0.9.41) unstable; urgency=low
 
