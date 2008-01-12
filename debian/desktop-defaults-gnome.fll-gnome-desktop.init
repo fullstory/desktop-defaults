@@ -173,7 +173,7 @@ EOF
 		gconftool-2 --type bool --set /desktop/gnome/sound/enable_esd true							; \
 		gconftool-2 --type bool --set /desktop/gnome/sound/event_sounds true							; \
 		gconftool-2 --type string --set /desktop/gnome/background/picture_filename \"${FLL_WALLPAPER}\"				; \
-		[ \"$(grep-dctrl -n -s Status -XP gnome-themes /var/lib/dpkg/status)\" = 'install ok installed' ] && \
+		[ -d "/usr/share/themes/Clearlooks" ] && \
 			gconftool-2 --type string --set /desktop/gnome/interface/gtk_theme 'Clearlooks'					; \
 		gconftool-2 --type float --set /apps/gnome-terminal/profiles/Default/background_darkness 0.6				; \
 		gconftool-2 -t string -s /apps/nautilus/icon_view/default_zoom_level 'small'						; \
@@ -184,7 +184,7 @@ EOF
 	cp -a ${FLL_LIVE_USER_HOME}/.gconf /etc/skel/
 
 	gconftool-2 --type bool --set /apps/nautilus/preferences/always_use_browser true
-	[ "$(grep-dctrl -n -s Status -XP gnome-themes /var/lib/dpkg/status)" = 'install ok installed' ] && \
+	[ -d "/usr/share/themes/Clearlooks" ] && \
 			gconftool-2 --type string --set /desktop/gnome/interface/gtk_theme 'Clearlooks'	
 	gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/background_type 'transparent'
 	gconftool-2 --type float --set /apps/gnome-terminal/profiles/Default/background_darkness 0.6
