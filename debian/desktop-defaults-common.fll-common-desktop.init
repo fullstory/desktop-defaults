@@ -100,7 +100,8 @@ do_start() {
 			}' "${FLL_LIVE_USER_HOME}/.mozilla/firefox/profiles.ini")
 	fi
 
-	if [ "${MOZPROFILE}" ] && [ -d "${FLL_LIVE_USER_HOME}/.mozilla/firefox/${MOZPROFILE}" ]; then
+	if [ "${MOZPROFILE}" = "XXXX.default" ] && \
+		[ -d "${FLL_LIVE_USER_HOME}/.mozilla/firefox/${MOZPROFILE}" ]; then
 		# use mawk: rand() behaviour is different among awk variants
 		NEWMOZPROFILE=$(mawk '
 			BEGIN{
