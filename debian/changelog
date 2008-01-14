@@ -1,4 +1,4 @@
-desktop-defaults (0.9.45) UNRELEASED; urgency=low
+desktop-defaults (0.9.45) unstable; urgency=low
 
   * fll-common-desktop:
     - only muck around with mozilla/firefox/iceweasel profile when
