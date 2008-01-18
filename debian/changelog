@@ -1,8 +1,8 @@
-desktop-defaults (0.9.46) UNRELEASED; urgency=low
+desktop-defaults (0.9.46) unstable; urgency=low
 
-  * NOT RELEASED YET
+  * update to debhelper compat 6.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 14 Jan 2008 13:15:24 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Fri, 18 Jan 2008 23:15:07 +0100
 
 desktop-defaults (0.9.45) unstable; urgency=low
 
