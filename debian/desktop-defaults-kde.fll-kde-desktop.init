@@ -362,7 +362,7 @@ EOF
 	for mntpnt in /fll/*; do
 		if [ -d "${mntpnt}" ] && [ -f "${mntpnt}/index.html" ]; then
 			INDEXFILE="${mntpnt}/index.html"
-			for ext in gif ico png; do
+			for ext in svg png gif ico; do
 				if [ -f "${mntpnt}/${FLL_CDROM_INDEX_ICON}.${ext}" ]; then
 					INDEXICON="${mntpnt}/${FLL_CDROM_INDEX_ICON}.${ext}"
 					break
