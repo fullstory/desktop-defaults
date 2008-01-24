@@ -1,4 +1,4 @@
-desktop-defaults (0.9.48~slh.9) UNRELEASED; urgency=low
+desktop-defaults (0.9.48~slh.10) UNRELEASED; urgency=low
 
   * NOT RELEASED YET
   * take care not to break the su -c () subshell in fll-gnome.init.
@@ -48,12 +48,13 @@ desktop-defaults (0.9.48~slh.9) UNRELEASED; urgency=low
     - we need to inherit the cheatcode handling as well.
     - drep-dctrl is no longer needed.
     - fix call to preseed-user-home-gnome.
+    - we're now running as user, ${FLL_LIVE_USER_HOME} --> ${HOME}.
   * desktop-defaults-xfce:
     - re-add environment configuration.
     - we need to inherit the cheatcode handling as well.
     - depend on xfwm4, no need to check it.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 24 Jan 2008 19:50:10 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 24 Jan 2008 20:16:56 +0100
 
 desktop-defaults (0.9.47) unstable; urgency=low
 
