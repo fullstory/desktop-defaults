@@ -2,8 +2,9 @@ desktop-defaults (0.9.48) UNRELEASED; urgency=low
 
   * NOT RELEASED YET
   * take care not to break the su -c () subshell in fll-gnome.init.
+  * clean up XDG desktop file.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 24 Jan 2008 15:11:56 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 24 Jan 2008 15:27:53 +0100
 
 desktop-defaults (0.9.47) unstable; urgency=low
 
