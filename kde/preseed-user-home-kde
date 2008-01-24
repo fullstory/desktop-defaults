@@ -8,16 +8,13 @@ if [ "${FLL_WALLPAPER}" ] && [ -f "${FLL_LIVE_USER_HOME}/.kde/share/config/kdesk
 		sed -i 's|^Wallpaper=.*|Wallpaper='"${FLL_WALLPAPER}"'|' \
 			"${FLL_LIVE_USER_HOME}/.kde/share/config/kdesktoprc"
 	fi
-	chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" \
-		"${FLL_LIVE_USER_HOME}/.kde/share/config/kdesktoprc"
 fi
 
 ###
 # setup live user .kde/share/config
 ###
 if [ ! -d "${FLL_LIVE_USER_HOME}/.kde/share/config" ]; then
-	install --directory --group="${FLL_LIVE_USER}" --owner="${FLL_LIVE_USER}" \
-		"${FLL_LIVE_USER_HOME}/.kde/share/config"
+	mkdir -p "${FLL_LIVE_USER_HOME}/.kde/share/config"
 fi
 
 ###
@@ -35,8 +32,6 @@ if [ "${KDE_KSPLASH_THEME}" ]; then
 Theme=${KDE_KSPLASH_THEME}
 EOF
 	fi
-	chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" \
-		"${FLL_LIVE_USER_HOME}/.kde/share/config/ksplashrc"
 fi
 
 ###
@@ -58,8 +53,6 @@ SwitchMode=Global
 Use=true
 EOF
 	fi
-	chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" \
-		"${FLL_LIVE_USER_HOME}/.kde/share/config/kxkbrc"
 fi
 
 ###
@@ -76,8 +69,6 @@ else
 FirstLogin=false
 EOF
 fi
-chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" \
-	"${FLL_LIVE_USER_HOME}/.kde/share/config/kpersonalizerrc"
 
 ###
 # konsole defaults
@@ -93,36 +84,27 @@ else
 RunOnStart=false
 EOF
 fi
-chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" \
-	"${FLL_LIVE_USER_HOME}/.kde/share/config/konsolerc"
 
 ###
 # root konsole's
 ###
 if [ ! -d "${FLL_LIVE_USER_HOME}/.kde/share/apps/konsole" ]; then
-	install --directory --group="${FLL_LIVE_USER}" --owner="${FLL_LIVE_USER}" \
-		"${FLL_LIVE_USER_HOME}/.kde/share/apps/konsole"
+	mkdir -p "${FLL_LIVE_USER_HOME}/.kde/share/apps/konsole"
 fi
 
 if [ -f /usr/share/apps/konsole/sumc.desktop ]; then
 	sed -e 's|^Exec=su.*$|Exec=sudo mc -c|' /usr/share/apps/konsole/sumc.desktop > \
-		"${FLL_LIVE_USER_HOME}/.kde/share/apps/konsole/sumc.desktop"
-	chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" \
 		"${FLL_LIVE_USER_HOME}/.kde/share/apps/konsole/sumc.desktop"
 fi
 
 if [ -f /usr/share/apps/konsole/su.desktop ]; then
 	sed -e 's|^Exec=su.*$|Exec=sudo -i|' /usr/share/apps/konsole/su.desktop > \
 		"${FLL_LIVE_USER_HOME}/.kde/share/apps/konsole/su.desktop"
-	chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" \
-		"${FLL_LIVE_USER_HOME}/.kde/share/apps/konsole/su.desktop"
 fi
 
 # while here, fix #381659 until patch is applied
 if [ -f /usr/share/apps/konsole/python.desktop ] && [ -e /usr/share/pixmaps/python.xpm ]; then
 	sed -e 's|^Icon=.*|Icon=/usr/share/pixmaps/python.xpm|' /usr/share/apps/konsole/python.desktop > \
-		"${FLL_LIVE_USER_HOME}/.kde/share/apps/konsole/python.desktop"
-	chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" \
 		"${FLL_LIVE_USER_HOME}/.kde/share/apps/konsole/python.desktop"
 fi
 
@@ -141,8 +123,6 @@ for krc in kbluetoothdrc klipperrc; do
 AutoStart=false
 EOF
 	fi
-	chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" \
-		"${FLL_LIVE_USER_HOME}/.kde/share/config/${krc}"
 done
 
 ###
@@ -159,8 +139,6 @@ else
 Autostart=false
 EOF
 fi
-chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" \
-	"${FLL_LIVE_USER_HOME}/.kde/share/config/korgacrc"
 
 ###
 # kpowersave is the odd one out, stop it from starting by default, avoid first time wizard
@@ -180,8 +158,6 @@ lockOnLidClose=false
 lockOnSuspend=false
 EOF
 	fi
-	chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" \
-		"${FLL_LIVE_USER_HOME}/.kde/share/config/kpowersaverc"
 
 	###
 	# disable kcmlaptop when kpowersave is installed
@@ -191,8 +167,6 @@ EOF
 [BatteryDefault]
 Enable=false
 EOF
-	chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" \
-		"${FLL_LIVE_USER_HOME}/.kde/share/config/kcmlaptoprc"
 fi
 
 ###
@@ -209,8 +183,6 @@ else
 RunOnStart=false
 EOF
 	fi
-	chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" \
-		"${FLL_LIVE_USER_HOME}/.kde/share/config/ktiprc"
 	
 	###
 	# disable arts
@@ -221,16 +193,13 @@ EOF
 [Arts]
 StartServer=false
 EOF
-	chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" \
-		"${FLL_LIVE_USER_HOME}/.kde/share/config/kcmartsrc"
 fi
 
 ###
 # create ~/Desktop if not present
 ###
 if [ ! -d "${FLL_LIVE_USER_HOME}/Desktop" ]; then
-	install --directory --group="${FLL_LIVE_USER}" --owner="${FLL_LIVE_USER}" \
-		"${FLL_LIVE_USER_HOME}/Desktop"
+	mkdir -p "${FLL_LIVE_USER_HOME}/Desktop"
 fi
 
 ###
@@ -238,8 +207,7 @@ fi
 ###
 for icon in media.desktop trash.desktop; do
 	if [ ! -f "${FLL_LIVE_USER_HOME}/Desktop/${icon}" ] && [ -f "/usr/share/apps/systemview/${icon}" ]; then
-		install --group="${FLL_LIVE_USER}" --owner="${FLL_LIVE_USER}" \
-			"/usr/share/apps/systemview/${icon}" "${FLL_LIVE_USER_HOME}/Desktop/${icon}"
+		cp "/usr/share/apps/systemview/${icon}" "${FLL_LIVE_USER_HOME}/Desktop/${icon}"
 	fi
 done
 
@@ -248,8 +216,7 @@ done
 ###
 if [ ! -f "${FLL_LIVE_USER_HOME}/Desktop/sidux-manual.desktop" ] && \
 	[ -f /usr/share/applications/sidux/sidux-manual.desktop ]; then
-	install --group="${FLL_LIVE_USER}" --owner="${FLL_LIVE_USER}" \
-		/usr/share/applications/sidux/sidux-manual.desktop "${FLL_LIVE_USER_HOME}/Desktop/sidux-manual.desktop"
+	cp /usr/share/applications/sidux/sidux-manual.desktop "${FLL_LIVE_USER_HOME}/Desktop/sidux-manual.desktop"
 fi
 
 ###
@@ -257,8 +224,7 @@ fi
 ###
 if [ ! -f "${FLL_LIVE_USER_HOME}/Desktop/sidux-edu.desktop" ] && \
 	[ -f /usr/share/applications/kde/sidux-edu.desktop ]; then
-	install --group="${FLL_LIVE_USER}" --owner="${FLL_LIVE_USER}" \
-		/usr/share/applications/kde/sidux-edu.desktop "${FLL_LIVE_USER_HOME}/Desktop/sidux-edu.desktop"
+	cp /usr/share/applications/kde/sidux-edu.desktop "${FLL_LIVE_USER_HOME}/Desktop/sidux-edu.desktop"
 fi
 
 ###
@@ -293,13 +259,10 @@ Terminal=0
 Name=${FLL_CDROM_INDEX}
 GenericName=${FLL_CDROM_INDEX}
 EOF
-	chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" \
-		"${FLL_LIVE_USER_HOME}/Desktop/${FLL_DISTRO_NAME}.desktop"
 
 	if [ "${NOINTRO}" != "yes" ]; then
 		if [ ! -d "${FLL_LIVE_USER_HOME}/.kde/Autostart" ]; then
-			install --directory --group="${FLL_LIVE_USER}" --owner="${FLL_LIVE_USER}" \
-				"${FLL_LIVE_USER_HOME}/.kde/Autostart"
+			mkdir -p "${FLL_LIVE_USER_HOME}/.kde/Autostart"
 		fi
 
 		ln -sf "${FLL_LIVE_USER_HOME}/Desktop/${FLL_DISTRO_NAME}.desktop" \
@@ -317,6 +280,5 @@ if [ ! -f "${FLL_LIVE_USER_HOME}/.gtkrc-2.0" ]; then
 	if [ "${GTK2_ENGINE}" ] && [ -f "/usr/share/themes/${GTK2_ENGINE}/gtk-2.0/gtkrc" ]; then
 		echo "include \"/usr/share/themes/${GTK2_ENGINE}/gtk-2.0/gtkrc\"" > \
 			"${FLL_LIVE_USER_HOME}/.gtkrc-2.0"
-		chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" "${FLL_LIVE_USER_HOME}/.gtkrc-2.0"
 	fi
 fi
