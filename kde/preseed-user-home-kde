@@ -1,9 +1,24 @@
 #!/bin/dash
 
+###
+# F.U.L.L.S.T.O.R.Y init script
+#
+# Copyright: (C) 2007-2008 F.U.L.L.S.T.O.R.Y Project
+# Copyright: (C) 2007-2008 Kel Modderman <kel@otaku42.de>
+# Copyright: (C) 2008 Stefan Lippers-Hollmann <s.l-h@gmx.de>
+# License:   GPLv2
+#
+# F.U.L.L.S.T.O.R.Y Project Homepage:
+# http://developer.berlios.de/projects/fullstory
+###
+
 set -e
 
 # set default umask
 umask 0022
+
+# this is only invoked from fll-kde-desktop, inherit its environment
+NAME="fll-kde-desktop"
 
 ###
 # source distro-defaults, no-op unless in live mode
@@ -22,6 +37,24 @@ fi
 ## functions
 ###
 . /usr/share/desktop-defaults-common/fll-desktop-func
+
+###
+# read in variables from our default conffile
+###
+if [ -s "/etc/default/${NAME}" ]; then
+	. "/etc/default/${NAME}"
+fi
+
+###
+# read in variables from /etc/default/fll-locales
+###
+if [ -s /etc/default/fll-locales ]; then
+	. /etc/default/fll-locales
+fi
+
+##########
+# main() #
+##########
 
 cp_desktop_defaults_from /usr/share/desktop-defaults-kde
 

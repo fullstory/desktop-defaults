@@ -16,10 +16,11 @@ desktop-defaults (0.9.48~slh.4) UNRELEASED; urgency=low
    - set -e, actually show display the exit state.
    - move fll-desktop-func to /usr/share/desktop-defaults-common/.
    - rework fll-desktop-func/ cp_desktop_defaults_from() to work as user.
+   - re-add environment configuration.
   * move fll-desktop-func into common subdirectory.
   * add preseed-user-home-foo stubs for other desktop environments.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 24 Jan 2008 17:25:55 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 24 Jan 2008 18:04:49 +0100
 
 desktop-defaults (0.9.47) unstable; urgency=low
 
