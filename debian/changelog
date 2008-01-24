@@ -1,8 +1,8 @@
-desktop-defaults (0.9.48~slh.10) UNRELEASED; urgency=low
+desktop-defaults (0.9.48~slh.11) UNRELEASED; urgency=low
 
   * NOT RELEASED YET
   * take care not to break the su -c () subshell in fll-gnome.init.
-  * desktop-defaults-kde:
+  * desktop-defaults-kde
     - clean up XDG desktop file.
     - do the big code movement to factor out do_start() from
       fll-kde-desktop.init to preseed-user-home-kde, functionally incomplete.
@@ -20,7 +20,7 @@ desktop-defaults (0.9.48~slh.10) UNRELEASED; urgency=low
     - depend on kwin, no need to check it.
   * move fll-desktop-func into common subdirectory.
   * add preseed-user-home-foo stubs for other desktop environments.
-  * desktop-defaults-common:
+  * desktop-defaults-common
     - do the big code movement to factor out do_start() from
       fll-common-desktop.init to preseed-user-home-common, functionally incomplete.
     - we're now running as user, ${FLL_LIVE_USER_HOME} --> ${HOME}.
@@ -33,6 +33,7 @@ desktop-defaults (0.9.48~slh.10) UNRELEASED; urgency=low
     - sudo is mandatory, depend on it.
     - really remove obsolete do_start() call.
     - actually install preseed-user-home-common.
+    - don't ship empty directories in oour skeleton, create 'em on boot.
   * desktop-defaults-gnome:
     - remove empty desktop-defaults-gnome.install.
     - re-add environment configuration.
@@ -49,7 +50,7 @@ desktop-defaults (0.9.48~slh.10) UNRELEASED; urgency=low
     - drep-dctrl is no longer needed.
     - fix call to preseed-user-home-gnome.
     - we're now running as user, ${FLL_LIVE_USER_HOME} --> ${HOME}.
-  * desktop-defaults-xfce:
+  * desktop-defaults-xfce
     - re-add environment configuration.
     - we need to inherit the cheatcode handling as well.
     - depend on xfwm4, no need to check it.
@@ -61,7 +62,7 @@ desktop-defaults (0.9.48~slh.10) UNRELEASED; urgency=low
       longer have access to super user capabilities.
     - switch install calls to mkdir/ cp.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 24 Jan 2008 20:37:27 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 24 Jan 2008 20:54:38 +0100
 
 desktop-defaults (0.9.47) unstable; urgency=low
 

@@ -152,9 +152,8 @@ esac
 ###
 # create ~/Desktop if not present
 ###
-if [ ! -d "${HOME}/Desktop" ]; then
 mkdir -p "${HOME}/Desktop"
-fi
+
 ###
 # put a manual icon on the desktop
 ###
@@ -162,6 +161,12 @@ if [ ! -f "${HOME}/Desktop/sidux-manual.desktop" ] && \
 	[ -f /usr/share/applications/sidux/sidux-manual.desktop ]; then
 	cp /usr/share/applications/sidux/sidux-manual.desktop "${HOME}/Desktop/sidux-manual.desktop"
 fi
+
+###
+# take care of the trash can
+###
+mkdir -p	"${HOME}/.local/share/Trash/info" \
+		"${HOME}/.local/share/Trash/files/"
 
 ###
 # scan for index.html in fll specific live mountpoint directories
@@ -197,10 +202,6 @@ GenericName=${FLL_CDROM_INDEX}
 EOF
 
 	if [ "${NOINTRO}" != "yes" ]; then
-		if [ ! -d "${HOME}/.kde/Autostart" ]; then
-			mkdir -p "${HOME}/.config/autostart"
-		fi
-
 		ln -sf "${HOME}/Desktop/${FLL_DISTRO_NAME}.desktop" \
 			"${HOME}/.config/autostart/"
 	fi
