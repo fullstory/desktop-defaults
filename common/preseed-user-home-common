@@ -92,7 +92,6 @@ if [ "$(which su-to-root 2>/dev/null)" ]; then
 	else
 		echo 'SU_TO_ROOT_SU=sudo' >> "${HOME}/.su-to-rootrc"
 	fi
-	chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" "${HOME}/.su-to-rootrc"
 fi
 
 ###
@@ -110,8 +109,7 @@ fi
 ###
 if [ "$(which kdesu 2>/dev/null)" ]; then
 	if [ ! -d "${HOME}/.kde/share/config" ]; then
-		install --directory --group="${FLL_LIVE_USER}" --owner="${FLL_LIVE_USER}" \
-			"${HOME}/.kde/share/config"
+		mkdir -p "${HOME}/.kde/share/config"
 	fi
 
 	touch "${HOME}/.kde/share/config/kdesurc"
@@ -125,6 +123,4 @@ if [ "$(which kdesu 2>/dev/null)" ]; then
 super-user-command=sudo
 EOF
 	fi
-	chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" \
-		"${HOME}/.kde/share/config/kdesurc"
 fi

@@ -23,8 +23,11 @@ desktop-defaults (0.9.48~slh.4) UNRELEASED; urgency=low
    - do the big code movement to factor out do_start() from
      fll-kde-desktop.init to preseed-user-home-kde, functionally incomplete.
    - we're now running as user, ${FLL_LIVE_USER_HOME} --> ${HOME}.
+   - switch install calls to mkdir/ cp.
+   - remove chown calls, we're running as the specified user now and do no
+     longer have access to super user capabilities.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 24 Jan 2008 18:07:41 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 24 Jan 2008 18:08:48 +0100
 
 desktop-defaults (0.9.47) unstable; urgency=low
 
