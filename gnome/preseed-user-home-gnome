@@ -75,8 +75,7 @@ done
 # create desktop icon . . .
 ###
 if [ ! -d "${FLL_LIVE_USER_HOME}/.config/autostart" ]; then
-	install --directory --group="${FLL_LIVE_USER}" --owner="${FLL_LIVE_USER}" \
-		"${FLL_LIVE_USER_HOME}/.config/autostart"
+	mkdir -p "${FLL_LIVE_USER_HOME}/.config/autostart"
 fi
 
 if [ -f "${INDEXFILE}"  ] && [ "${NOINTRO}" != "yes" ] && \
@@ -91,16 +90,13 @@ Name[de_DE]=${FLL_DISTRO_NAME}-manual
 Exec=epiphany file:${INDEXFILE}
 X-GNOME-Autostart-enabled=true
 EOF
-	chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" \
-		"${FLL_LIVE_USER_HOME}/.config/autostart/${FLL_DISTRO_NAME}.desktop"
 fi
 
 ###
 # create ~/Desktop if not present
 ###
 if [ ! -d "${FLL_LIVE_USER_HOME}/Desktop" ]; then
-	install --directory --group="${FLL_LIVE_USER}" --owner="${FLL_LIVE_USER}" \
-		"${FLL_LIVE_USER_HOME}/Desktop"
+	mkdir -p "${FLL_LIVE_USER_HOME}/Desktop"
 fi
 
 if [ -f "${INDEXFILE}" ]; then
@@ -114,8 +110,6 @@ Icon=${INDEXICON}
 Terminal=0
 EOF
 fi
-chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" \
-	"${FLL_LIVE_USER_HOME}/Desktop/${FLL_DISTRO_NAME}.desktop"
 
 su "${FLL_LIVE_USER}" -c "( \
 	[ -s /etc/default/distro ] && . /etc/default/distro									; \
@@ -142,13 +136,3 @@ su "${FLL_LIVE_USER}" -c "( \
 	gconftool-2 -t string -s /apps/nautilus/icon_view/default_zoom_level 'small'						; \
 	gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/background_type 'transparent'			  \
 )"
-
-# Create SKEL
-cp -a ${FLL_LIVE_USER_HOME}/.gconf /etc/skel/
-
-gconftool-2 --type bool --set /apps/nautilus/preferences/always_use_browser true
-[ -d "/usr/share/themes/Clearlooks" ] && \
-		gconftool-2 --type string --set /desktop/gnome/interface/gtk_theme 'Clearlooks'	
-gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/background_type 'transparent'
-gconftool-2 --type float --set /apps/gnome-terminal/profiles/Default/background_darkness 0.6
-gconftool-2 -t string -s /apps/nautilus/icon_view/default_zoom_level 'small'
