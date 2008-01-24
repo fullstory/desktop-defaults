@@ -107,7 +107,7 @@ default_gdm_theme()
 case "${1}" in
 	start)
 		log_daemon_msg "${B}${NAME}${N}"; log_action_begin_msg " ${G}preparing ${Y}${FLL_LIVE_USER}${G} for ${Y}gnome${N}"
-		su "${FLL_LIVE_USER}" -c /usr/share/desktop-defaults-kde/preseed-user-home-kde
+		su "${FLL_LIVE_USER}" -c /usr/share/desktop-defaults-gnome/preseed-user-home-gnome
 		log_end_msg "$?"
 
 		# set default kdm theme
