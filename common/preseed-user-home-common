@@ -74,14 +74,6 @@ if [ "${MOZPROFILE}" = "XXXX.default" ] && \
 fi
 
 ###
-# make iceweasel default browser if installed
-###
-ICEWEASEL=$(which iceweasel 2>/dev/null)
-if [ -x "${ICEWEASEL}" ]; then
-	update-alternatives --set x-www-browser "${ICEWEASEL}" >/dev/null
-fi
-
-###
 # su-to-root -> sudo
 ###
 if [ "$(which su-to-root 2>/dev/null)" ]; then

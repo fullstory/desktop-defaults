@@ -73,8 +73,20 @@ if [ ! -d "${FLL_LIVE_USER_HOME}" ]; then
 	log_end_msg 1
 fi
 
+do_start()
+{
+	###
+	# make iceweasel default browser if installed
+	###
+	ICEWEASEL=$(which iceweasel 2>/dev/null)
+	if [ -x "${ICEWEASEL}" ]; then
+		update-alternatives --set x-www-browser "${ICEWEASEL}" >/dev/null
+	fi
+}
+
 case "${1}" in
 	start)
+		do_start
 		su "${FLL_LIVE_USER}" -c /usr/share/desktop-defaults-common/preseed-user-home-common
 		;;
 	stop)
