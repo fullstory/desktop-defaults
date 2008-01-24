@@ -58,3 +58,97 @@ fi
 
 cp_desktop_defaults_from /usr/share/desktop-defaults-gnome
 
+for mntpnt in /fll/*; do
+	if [ -d "${mntpnt}" ] && [ -f "${mntpnt}/index.html" ]; then
+		INDEXFILE="${mntpnt}/index.html"
+		for ext in svg png gif ico; do
+			if [ -f "${mntpnt}/${FLL_CDROM_INDEX_ICON}.${ext}" ]; then
+				INDEXICON="${mntpnt}/${FLL_CDROM_INDEX_ICON}.${ext}"
+				break
+			fi
+		done
+		break
+	fi
+done
+
+###
+# create desktop icon . . .
+###
+if [ ! -d "${FLL_LIVE_USER_HOME}/.config/autostart" ]; then
+	install --directory --group="${FLL_LIVE_USER}" --owner="${FLL_LIVE_USER}" \
+		"${FLL_LIVE_USER_HOME}/.config/autostart"
+fi
+
+if [ -f "${INDEXFILE}"  ] && [ "${NOINTRO}" != "yes" ] && \
+	[ ! -f "${FLL_LIVE_USER_HOME}/.config/autostart/${FLL_DISTRO_NAME}.desktop" ]; then
+	cat > "${FLL_LIVE_USER_HOME}/.config/autostart/${FLL_DISTRO_NAME}.desktop" \
+<<EOF
+[Desktop Entry]
+Name=${FLL_DISTRO_NAME}-manual
+Encoding=UTF-8
+Version=1.0
+Name[de_DE]=${FLL_DISTRO_NAME}-manual
+Exec=epiphany file:${INDEXFILE}
+X-GNOME-Autostart-enabled=true
+EOF
+	chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" \
+		"${FLL_LIVE_USER_HOME}/.config/autostart/${FLL_DISTRO_NAME}.desktop"
+fi
+
+###
+# create ~/Desktop if not present
+###
+if [ ! -d "${FLL_LIVE_USER_HOME}/Desktop" ]; then
+	install --directory --group="${FLL_LIVE_USER}" --owner="${FLL_LIVE_USER}" \
+		"${FLL_LIVE_USER_HOME}/Desktop"
+fi
+
+if [ -f "${INDEXFILE}" ]; then
+	cat > "${FLL_LIVE_USER_HOME}/Desktop/${FLL_DISTRO_NAME}.desktop" \
+<<EOF
+[Desktop Entry]
+Name=${FLL_CDROM_INDEX}
+Exec=epiphany file:${INDEXFILE}
+Type=Application
+Icon=${INDEXICON}
+Terminal=0
+EOF
+fi
+chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" \
+	"${FLL_LIVE_USER_HOME}/Desktop/${FLL_DISTRO_NAME}.desktop"
+
+su "${FLL_LIVE_USER}" -c "( \
+	[ -s /etc/default/distro ] && . /etc/default/distro									; \
+	gconftool-2 --type bool --set /apps/nautilus/preferences/always_use_browser true					; \
+	gconftool-2 --type string --set /desktop/gnome/background/picture_options 'stretched'					; \
+	gconftool-2 --type string --set /apps/epiphany/general/homepage 'http://www.sidux.com'					; \
+	gconftool-2 --type bool --set /apps/gnome-screensaver/lock_enabled false						; \
+	gconftool-2 --type int --set /apps/panel/toplevels/bottom_panel_screen0/background/opacity 3000				; \
+	gconftool-2 --type int --set /apps/panel/toplevels/top_panel_screen0/background/opacity 3000				; \
+	gconftool-2 --type string --set /apps/panel/toplevels/bottom_panel_screen0/background/type color			; \
+	gconftool-2 --type string --set /apps/panel/toplevels/top_panel_screen0/background/type color				; \
+	gconftool-2 --type bool --set /apps/gnome-osd/avoid_panels true								; \
+	gconftool-2 --type bool --set /apps/gnome-osd/animations true								; \
+	gconftool-2 --type bool --set /apps/gnome-osd/drop_shadow true								; \
+	gconftool-2 --type string --set /apps/gnome-osd/osd_halignment 'center'							; \
+	gconftool-2 --type string --set /apps/gnome-osd/osd_vposition 'top'							; \
+	gconftool-2 --type bool --set /apps/gnome-osd/plugins/gaim/enabled true							; \
+	gconftool-2 --type bool --set /desktop/gnome/sound/enable_esd true							; \
+	gconftool-2 --type bool --set /desktop/gnome/sound/event_sounds true							; \
+	gconftool-2 --type string --set /desktop/gnome/background/picture_filename \"${FLL_WALLPAPER}\"				; \
+	[ -d '/usr/share/themes/Clearlooks' ] && \
+		gconftool-2 --type string --set /desktop/gnome/interface/gtk_theme 'Clearlooks'					; \
+	gconftool-2 --type float --set /apps/gnome-terminal/profiles/Default/background_darkness 0.6				; \
+	gconftool-2 -t string -s /apps/nautilus/icon_view/default_zoom_level 'small'						; \
+	gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/background_type 'transparent'			  \
+)"
+
+# Create SKEL
+cp -a ${FLL_LIVE_USER_HOME}/.gconf /etc/skel/
+
+gconftool-2 --type bool --set /apps/nautilus/preferences/always_use_browser true
+[ -d "/usr/share/themes/Clearlooks" ] && \
+		gconftool-2 --type string --set /desktop/gnome/interface/gtk_theme 'Clearlooks'	
+gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/background_type 'transparent'
+gconftool-2 --type float --set /apps/gnome-terminal/profiles/Default/background_darkness 0.6
+gconftool-2 -t string -s /apps/nautilus/icon_view/default_zoom_level 'small'
