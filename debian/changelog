@@ -1,4 +1,4 @@
-desktop-defaults (0.9.48~slh.8) UNRELEASED; urgency=low
+desktop-defaults (0.9.48~slh.9) UNRELEASED; urgency=low
 
   * NOT RELEASED YET
   * take care not to break the su -c () subshell in fll-gnome.init.
@@ -31,6 +31,8 @@ desktop-defaults (0.9.48~slh.8) UNRELEASED; urgency=low
       longer have access to super user capabilities.
     - we need to inherit the cheatcode handling as well.
     - sudo is mandatory, depend on it.
+    - really remove obsolete do_start() call.
+    - actually install preseed-user-home-common.
   * desktop-defaults-gnome:
     - remove empty desktop-defaults-gnome.install.
     - re-add environment configuration.
@@ -51,7 +53,7 @@ desktop-defaults (0.9.48~slh.8) UNRELEASED; urgency=low
     - we need to inherit the cheatcode handling as well.
     - depend on xfwm4, no need to check it.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 24 Jan 2008 19:33:08 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 24 Jan 2008 19:50:10 +0100
 
 desktop-defaults (0.9.47) unstable; urgency=low
 

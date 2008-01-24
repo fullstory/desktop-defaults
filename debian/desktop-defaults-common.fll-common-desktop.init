@@ -75,7 +75,6 @@ fi
 
 case "${1}" in
 	start)
-		do_start
 		su "${FLL_LIVE_USER}" -c /usr/share/desktop-defaults-common/preseed-user-home-common
 		;;
 	stop)
