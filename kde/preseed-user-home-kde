@@ -52,6 +52,20 @@ if [ -s /etc/default/fll-locales ]; then
 	. /etc/default/fll-locales
 fi
 
+###
+# cheatcode handling
+###
+for param in $(cat /proc/cmdline); do
+	case "${param}" in
+		flldebug=*)
+			[ "${param#flldebug=}" = "${NAME}" ] && set -x
+			;;
+		nointro)
+			NOINTRO="yes"
+			;;
+	esac
+done
+
 ##########
 # main() #
 ##########
