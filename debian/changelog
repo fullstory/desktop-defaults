@@ -13,8 +13,9 @@ desktop-defaults (0.9.48) UNRELEASED; urgency=low
    - install and start preseed-user-home-kde.
    - source desktop-defaults.
    - set default umask.
+   - set -e, actually show display the exit state.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 24 Jan 2008 15:57:17 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 24 Jan 2008 16:23:14 +0100
 
 desktop-defaults (0.9.47) unstable; urgency=low
 

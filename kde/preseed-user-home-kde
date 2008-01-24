@@ -1,5 +1,7 @@
 #!/bin/dash
 
+set -e
+
 # set default umask
 umask 0022
 
