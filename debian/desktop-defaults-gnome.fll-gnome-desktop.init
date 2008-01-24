@@ -25,10 +25,6 @@
 PATH=/sbin:/usr/sbin:/bin:/usr/bin
 NAME="fll-gnome-desktop"
 
-if [ ! -x /usr/bin/metacity ]; then
-	exit 0
-fi
-
 ###
 # source distro-defaults, no-op unless in live mode
 ###
