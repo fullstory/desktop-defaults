@@ -94,7 +94,7 @@ fi
 
 do_start() {
 	cp_desktop_defaults_from /usr/share/desktop-defaults-kde
-
+	su "${FLL_LIVE_USER}" -c /usr/share/desktop-defaults-kde/preseed-user-home-kde
 }
 
 default_kdm_theme()

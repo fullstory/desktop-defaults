@@ -1,3 +1,4 @@
-kde/desktop-defaults-kde		usr/bin
-kde/desktop-defaults-kde.desktop	usr/share/autostart
-kde/dot.*				usr/share/desktop-defaults-kde
+kde/desktop-defaults-kde		usr/bin/
+kde/desktop-defaults-kde.desktop	usr/share/autostart/
+kde/dot.*				usr/share/desktop-defaults-kde/
+kde/preseed-user-home-kde		usr/share/desktop-defaults-kde/
