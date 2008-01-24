@@ -1,6 +1,19 @@
 #!/bin/dash
 
 ###
+# source distro-defaults, no-op unless in live mode
+###
+FLL_DISTRO_MODE="installed"
+
+if [ -s /etc/default/distro ]; then
+	. /etc/default/distro
+fi
+
+if [ "${FLL_DISTRO_MODE}" != "live" ]; then
+	exit 0
+fi
+
+###
 # force wallpaper, kdesktoprc is provided by our dot.kde
 ###
 if [ "${FLL_WALLPAPER}" ] && [ -f "${HOME}/.kde/share/config/kdesktoprc" ]; then
