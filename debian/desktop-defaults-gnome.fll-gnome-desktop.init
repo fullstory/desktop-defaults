@@ -173,7 +173,7 @@ EOF
 		gconftool-2 --type bool --set /desktop/gnome/sound/enable_esd true							; \
 		gconftool-2 --type bool --set /desktop/gnome/sound/event_sounds true							; \
 		gconftool-2 --type string --set /desktop/gnome/background/picture_filename \"${FLL_WALLPAPER}\"				; \
-		[ -d "/usr/share/themes/Clearlooks" ] && \
+		[ -d '/usr/share/themes/Clearlooks' ] && \
 			gconftool-2 --type string --set /desktop/gnome/interface/gtk_theme 'Clearlooks'					; \
 		gconftool-2 --type float --set /apps/gnome-terminal/profiles/Default/background_darkness 0.6				; \
 		gconftool-2 -t string -s /apps/nautilus/icon_view/default_zoom_level 'small'						; \
