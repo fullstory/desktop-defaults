@@ -73,107 +73,10 @@ if [ ! -d "${FLL_LIVE_USER_HOME}" ]; then
 	log_end_msg 1
 fi
 
-###
-# functions
-###
-. /usr/share/desktop-defaults-common/fll-desktop-func
-
-do_start() {
-	cp_desktop_defaults_from /usr/share/desktop-defaults-common
-	
-	###
-	# emulate firefox^iceweasel security via obscurity 
-	###
-	if [ -f "${FLL_LIVE_USER_HOME}/.mozilla/firefox/profiles.ini" ]; then
-		MOZPROFILE=$(awk '
-			/^\[Profile/ {
-				if (/Profile0/)
-					inprof=1
-				else
-					inprof=0
-			}
-			/^Path=/ {
-				if (inprof) {
-					sub("Path=", "", $0)
-					print
-				}
-			}' "${FLL_LIVE_USER_HOME}/.mozilla/firefox/profiles.ini")
-	fi
-
-	if [ "${MOZPROFILE}" = "XXXX.default" ] && \
-		[ -d "${FLL_LIVE_USER_HOME}/.mozilla/firefox/${MOZPROFILE}" ]; then
-		# use mawk: rand() behaviour is different among awk variants
-		NEWMOZPROFILE=$(mawk '
-			BEGIN{
-				printf("%d.%s\n", int(10000000 * rand()), "default")
-		}')
-
-		mv "${FLL_LIVE_USER_HOME}/.mozilla/firefox/${MOZPROFILE}" \
-			"${FLL_LIVE_USER_HOME}/.mozilla/firefox/${NEWMOZPROFILE}"
-		sed -i 's|^Path='"${MOZPROFILE}"'|Path='"${NEWMOZPROFILE}"'|' \
-			"${FLL_LIVE_USER_HOME}/.mozilla/firefox/profiles.ini"
-	fi
-
-	###
-	# make iceweasel default browser if installed
-	###
-	ICEWEASEL=$(which iceweasel 2>/dev/null)
-	if [ -x "${ICEWEASEL}" ]; then
-		update-alternatives --set x-www-browser "${ICEWEASEL}" >/dev/null
-	fi
-
-	###
-	# su-to-root -> sudo
-	###
-	if [ "$(which su-to-root 2>/dev/null)" ]; then
-		touch "${FLL_LIVE_USER_HOME}/.su-to-rootrc"
-		if grep -q '^SU_TO_ROOT_SU=' "${FLL_LIVE_USER_HOME}/.su-to-rootrc"; then
-			sed -i 's|^SU_TO_ROOT_SU=.*|SU_TO_ROOT_SU=sudo|' \
-				"${FLL_LIVE_USER_HOME}/.su-to-rootrc"
-		else
-			echo 'SU_TO_ROOT_SU=sudo' >> "${FLL_LIVE_USER_HOME}/.su-to-rootrc"
-		fi
-		chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" "${FLL_LIVE_USER_HOME}/.su-to-rootrc"
-	fi
-
-	###
-	# gksu -> sudo
-	###
-	if [ "$(which gconftool-2 2>/dev/null)" ]; then
-		sudo -u "${FLL_LIVE_USER}" \
-			gconftool-2 -s -t bool /apps/gksu/sudo-mode true
-		sudo -u "${FLL_LIVE_USER}" \
-			gconftool-2 -s -t bool /apps/gksu/display-no-pass-info false
-	fi
-
-	###
-	# kdesu -> sudo
-	###
-	if [ "$(which kdesu 2>/dev/null)" ]; then
-		if [ ! -d "${FLL_LIVE_USER_HOME}/.kde/share/config" ]; then
-			install --directory --group="${FLL_LIVE_USER}" --owner="${FLL_LIVE_USER}" \
-				"${FLL_LIVE_USER_HOME}/.kde/share/config"
-		fi
-	
-		touch "${FLL_LIVE_USER_HOME}/.kde/share/config/kdesurc"
-		if grep -q '^super-user-command=' "${FLL_LIVE_USER_HOME}/.kde/share/config/kdesurc"; then
-			sed -i 's|^super-user-command=.*|super-user-command=sudo|' \
-				"${FLL_LIVE_USER_HOME}/.kde/share/config/kdesurc"
-		else
-			cat > "${FLL_LIVE_USER_HOME}/.kde/share/config/kdesurc" \
-<<EOF
-[super-user-command]
-super-user-command=sudo
-EOF
-		fi
-		chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" \
-			"${FLL_LIVE_USER_HOME}/.kde/share/config/kdesurc"
-	fi
-}
-
 case "${1}" in
 	start)
 		do_start
+		su "${FLL_LIVE_USER}" -c /usr/share/desktop-defaults-common/preseed-user-home-common
 		;;
 	stop)
 		;;
