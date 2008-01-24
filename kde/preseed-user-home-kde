@@ -1,5 +1,8 @@
 #!/bin/dash
 
+# set default umask
+umask 0022
+
 ###
 # source distro-defaults, no-op unless in live mode
 ###

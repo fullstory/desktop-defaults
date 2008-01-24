@@ -12,8 +12,9 @@ desktop-defaults (0.9.48) UNRELEASED; urgency=low
    - we're now running as user, ${FLL_LIVE_USER_HOME} --> ${HOME}.
    - install and start preseed-user-home-kde.
    - source desktop-defaults.
+   - set default umask.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 24 Jan 2008 15:53:27 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 24 Jan 2008 15:57:17 +0100
 
 desktop-defaults (0.9.47) unstable; urgency=low
 
