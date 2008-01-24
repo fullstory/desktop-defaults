@@ -3,30 +3,30 @@
 ###
 # force wallpaper, kdesktoprc is provided by our dot.kde
 ###
-if [ "${FLL_WALLPAPER}" ] && [ -f "${FLL_LIVE_USER_HOME}/.kde/share/config/kdesktoprc" ]; then
-	if grep -s -q '^Wallpaper=' "${FLL_LIVE_USER_HOME}/.kde/share/config/kdesktoprc"; then
+if [ "${FLL_WALLPAPER}" ] && [ -f "${HOME}/.kde/share/config/kdesktoprc" ]; then
+	if grep -s -q '^Wallpaper=' "${HOME}/.kde/share/config/kdesktoprc"; then
 		sed -i 's|^Wallpaper=.*|Wallpaper='"${FLL_WALLPAPER}"'|' \
-			"${FLL_LIVE_USER_HOME}/.kde/share/config/kdesktoprc"
+			"${HOME}/.kde/share/config/kdesktoprc"
 	fi
 fi
 
 ###
 # setup live user .kde/share/config
 ###
-if [ ! -d "${FLL_LIVE_USER_HOME}/.kde/share/config" ]; then
-	mkdir -p "${FLL_LIVE_USER_HOME}/.kde/share/config"
+if [ ! -d "${HOME}/.kde/share/config" ]; then
+	mkdir -p "${HOME}/.kde/share/config"
 fi
 
 ###
 # set Ksplash theme
 ###
 if [ "${KDE_KSPLASH_THEME}" ]; then
-	touch "${FLL_LIVE_USER_HOME}/.kde/share/config/ksplashrc"
-	if grep -q '^Theme=' "${FLL_LIVE_USER_HOME}/.kde/share/config/ksplashrc"; then
+	touch "${HOME}/.kde/share/config/ksplashrc"
+	if grep -q '^Theme=' "${HOME}/.kde/share/config/ksplashrc"; then
 		sed -i 's|^Theme=.*|Theme='"${KDE_KSPLASH_THEME}"'|' \
-			"${FLL_LIVE_USER_HOME}/.kde/share/config/ksplashrc"
+			"${HOME}/.kde/share/config/ksplashrc"
 	else
-		cat > "${FLL_LIVE_USER_HOME}/.kde/share/config/ksplashrc" \
+		cat > "${HOME}/.kde/share/config/ksplashrc" \
 << EOF
 [KSplash]
 Theme=${KDE_KSPLASH_THEME}
@@ -38,12 +38,12 @@ fi
 # setup keyboard chooser
 ###
 if [ "${XKBLAYOUT}" ]; then
-	touch "${FLL_LIVE_USER_HOME}/.kde/share/config/kxkbrc"
-	if grep -q '^LayoutList=' "${FLL_LIVE_USER_HOME}/.kde/share/config/kxkbrc"; then
+	touch "${HOME}/.kde/share/config/kxkbrc"
+	if grep -q '^LayoutList=' "${HOME}/.kde/share/config/kxkbrc"; then
 		sed -i 's|^LayoutList=.*|LayoutList='"${XKBLAYOUT}"'|' \
-			"${FLL_LIVE_USER_HOME}/.kde/share/config/kxkbrc"
+			"${HOME}/.kde/share/config/kxkbrc"
 	else
-		cat > "${FLL_LIVE_USER_HOME}/.kde/share/config/kxkbrc" \
+		cat > "${HOME}/.kde/share/config/kxkbrc" \
 <<EOF
 [Layout]
 LayoutList=${XKBLAYOUT}
@@ -58,12 +58,12 @@ fi
 ###
 # disable first time login wizard, set icon sizes
 ###
-touch "${FLL_LIVE_USER_HOME}/.kde/share/config/kpersonalizerrc"
-if grep -q '^FirstLogin=' "${FLL_LIVE_USER_HOME}/.kde/share/config/kpersonalizerrc"; then
+touch "${HOME}/.kde/share/config/kpersonalizerrc"
+if grep -q '^FirstLogin=' "${HOME}/.kde/share/config/kpersonalizerrc"; then
 	sed -i 's|^FirstLogin=.*|FirstLogin=false|' \
-		"${FLL_LIVE_USER_HOME}/.kde/share/config/kpersonalizerrc"
+		"${HOME}/.kde/share/config/kpersonalizerrc"
 else
-	cat > "${FLL_LIVE_USER_HOME}/.kde/share/config/kpersonalizerrc" \
+	cat > "${HOME}/.kde/share/config/kpersonalizerrc" \
 <<EOF
 [General]
 FirstLogin=false
@@ -73,12 +73,12 @@ fi
 ###
 # konsole defaults
 ###
-touch "${FLL_LIVE_USER_HOME}/.kde/share/config/konsolerc"
-if grep -q '^RunOnStart=' "${FLL_LIVE_USER_HOME}/.kde/share/config/konsolerc"; then
+touch "${HOME}/.kde/share/config/konsolerc"
+if grep -q '^RunOnStart=' "${HOME}/.kde/share/config/konsolerc"; then
 	sed -i 's|^RunOnStart=.*|RunOnStart=false|' \
-		"${FLL_LIVE_USER_HOME}/.kde/share/config/konsolerc"
+		"${HOME}/.kde/share/config/konsolerc"
 else
-	cat > "${FLL_LIVE_USER_HOME}/.kde/share/config/konsolerc" \
+	cat > "${HOME}/.kde/share/config/konsolerc" \
 <<EOF
 [TipOfDay]
 RunOnStart=false
@@ -88,36 +88,36 @@ fi
 ###
 # root konsole's
 ###
-if [ ! -d "${FLL_LIVE_USER_HOME}/.kde/share/apps/konsole" ]; then
-	mkdir -p "${FLL_LIVE_USER_HOME}/.kde/share/apps/konsole"
+if [ ! -d "${HOME}/.kde/share/apps/konsole" ]; then
+	mkdir -p "${HOME}/.kde/share/apps/konsole"
 fi
 
 if [ -f /usr/share/apps/konsole/sumc.desktop ]; then
 	sed -e 's|^Exec=su.*$|Exec=sudo mc -c|' /usr/share/apps/konsole/sumc.desktop > \
-		"${FLL_LIVE_USER_HOME}/.kde/share/apps/konsole/sumc.desktop"
+		"${HOME}/.kde/share/apps/konsole/sumc.desktop"
 fi
 
 if [ -f /usr/share/apps/konsole/su.desktop ]; then
 	sed -e 's|^Exec=su.*$|Exec=sudo -i|' /usr/share/apps/konsole/su.desktop > \
-		"${FLL_LIVE_USER_HOME}/.kde/share/apps/konsole/su.desktop"
+		"${HOME}/.kde/share/apps/konsole/su.desktop"
 fi
 
 # while here, fix #381659 until patch is applied
 if [ -f /usr/share/apps/konsole/python.desktop ] && [ -e /usr/share/pixmaps/python.xpm ]; then
 	sed -e 's|^Icon=.*|Icon=/usr/share/pixmaps/python.xpm|' /usr/share/apps/konsole/python.desktop > \
-		"${FLL_LIVE_USER_HOME}/.kde/share/apps/konsole/python.desktop"
+		"${HOME}/.kde/share/apps/konsole/python.desktop"
 fi
 
 ###
 # keep these disabled by default for clean desktop startup
 ###
 for krc in kbluetoothdrc klipperrc; do
-	touch "${FLL_LIVE_USER_HOME}/.kde/share/config/${krc}"
-	if grep -q '^AutoStart=' "${FLL_LIVE_USER_HOME}/.kde/share/config/${krc}"; then
+	touch "${HOME}/.kde/share/config/${krc}"
+	if grep -q '^AutoStart=' "${HOME}/.kde/share/config/${krc}"; then
 		sed -i 's|^AutoStart=.*|AutoStart=false|' \
-			"${FLL_LIVE_USER_HOME}/.kde/share/config/${krc}"
+			"${HOME}/.kde/share/config/${krc}"
 	else
-		cat > "${FLL_LIVE_USER_HOME}/.kde/share/config/${krc}" \
+		cat > "${HOME}/.kde/share/config/${krc}" \
 <<EOF
 [General]
 AutoStart=false
@@ -128,12 +128,12 @@ done
 ###
 # korganizer
 ###
-touch "${FLL_LIVE_USER_HOME}/.kde/share/config/korgacrc"
-if grep -q '^Autostart' "${FLL_LIVE_USER_HOME}/.kde/share/config/korgacrc"; then
+touch "${HOME}/.kde/share/config/korgacrc"
+if grep -q '^Autostart' "${HOME}/.kde/share/config/korgacrc"; then
 	sed -i 's|^Autostart=.*|Autostart=false|' \
-		"${FLL_LIVE_USER_HOME}/.kde/share/config/korgacrc"
+		"${HOME}/.kde/share/config/korgacrc"
 else
-	cat > "${FLL_LIVE_USER_HOME}/.kde/share/config/korgacrc" \
+	cat > "${HOME}/.kde/share/config/korgacrc" \
 <<EOF
 [General]
 Autostart=false
@@ -144,12 +144,12 @@ fi
 # kpowersave is the odd one out, stop it from starting by default, avoid first time wizard
 ###
 if [ -x /usr/bin/kpowersave ]; then
-	touch "${FLL_LIVE_USER_HOME}/.kde/share/config/kpowersaverc"
-	if grep -q '^Autostart' "${FLL_LIVE_USER_HOME}/.kde/share/config/kpowersaverc"; then
+	touch "${HOME}/.kde/share/config/kpowersaverc"
+	if grep -q '^Autostart' "${HOME}/.kde/share/config/kpowersaverc"; then
 		sed -i 's|^Autostart=.*|Autostart=false|' \
-			"${FLL_LIVE_USER_HOME}/.kde/share/config/kpowersaverc"
+			"${HOME}/.kde/share/config/kpowersaverc"
 	else
-		cat > "${FLL_LIVE_USER_HOME}/.kde/share/config/kpowersaverc" \
+		cat > "${HOME}/.kde/share/config/kpowersaverc" \
 <<EOF
 [General]
 Autostart=false
@@ -162,7 +162,7 @@ EOF
 	###
 	# disable kcmlaptop when kpowersave is installed
 	###
-	cat > "${FLL_LIVE_USER_HOME}/.kde/share/config/kcmlaptoprc" \
+	cat > "${HOME}/.kde/share/config/kcmlaptoprc" \
 <<EOF
 [BatteryDefault]
 Enable=false
@@ -172,12 +172,12 @@ fi
 ###
 # disable ktip
 ###
-touch "${FLL_LIVE_USER_HOME}/.kde/share/config/ktiprc"
-if grep -q '^RunOnStart=' "${FLL_LIVE_USER_HOME}/.kde/share/config/ktiprc"; then
+touch "${HOME}/.kde/share/config/ktiprc"
+if grep -q '^RunOnStart=' "${HOME}/.kde/share/config/ktiprc"; then
 	sed -i 's|^RunOnStart=.*|RunOnStart=false|' \
-		"${FLL_LIVE_USER_HOME}/.kde/share/config/ktiprc"
+		"${HOME}/.kde/share/config/ktiprc"
 else
-	cat > "${FLL_LIVE_USER_HOME}/.kde/share/config/ktiprc" \
+	cat > "${HOME}/.kde/share/config/ktiprc" \
 <<EOF
 [TipOfDay]
 RunOnStart=false
@@ -187,8 +187,8 @@ EOF
 	###
 	# disable arts
 	###
-	if [ ! -f "${FLL_LIVE_USER_HOME}/.kde/share/config/kcmartsrc" ]; then
-		cat > "${FLL_LIVE_USER_HOME}/.kde/share/config/kcmartsrc" \
+	if [ ! -f "${HOME}/.kde/share/config/kcmartsrc" ]; then
+		cat > "${HOME}/.kde/share/config/kcmartsrc" \
 <<EOF
 [Arts]
 StartServer=false
@@ -198,33 +198,33 @@ fi
 ###
 # create ~/Desktop if not present
 ###
-if [ ! -d "${FLL_LIVE_USER_HOME}/Desktop" ]; then
-	mkdir -p "${FLL_LIVE_USER_HOME}/Desktop"
+if [ ! -d "${HOME}/Desktop" ]; then
+	mkdir -p "${HOME}/Desktop"
 fi
 
 ###
 # kio shortcuts: media:/ , trash:/
 ###
 for icon in media.desktop trash.desktop; do
-	if [ ! -f "${FLL_LIVE_USER_HOME}/Desktop/${icon}" ] && [ -f "/usr/share/apps/systemview/${icon}" ]; then
-		cp "/usr/share/apps/systemview/${icon}" "${FLL_LIVE_USER_HOME}/Desktop/${icon}"
+	if [ ! -f "${HOME}/Desktop/${icon}" ] && [ -f "/usr/share/apps/systemview/${icon}" ]; then
+		cp "/usr/share/apps/systemview/${icon}" "${HOME}/Desktop/${icon}"
 	fi
 done
 
 ###
 # put a manual icon on the desktop
 ###
-if [ ! -f "${FLL_LIVE_USER_HOME}/Desktop/sidux-manual.desktop" ] && \
+if [ ! -f "${HOME}/Desktop/sidux-manual.desktop" ] && \
 	[ -f /usr/share/applications/sidux/sidux-manual.desktop ]; then
-	cp /usr/share/applications/sidux/sidux-manual.desktop "${FLL_LIVE_USER_HOME}/Desktop/sidux-manual.desktop"
+	cp /usr/share/applications/sidux/sidux-manual.desktop "${HOME}/Desktop/sidux-manual.desktop"
 fi
 
 ###
 # put a sidux-edu (seminarix appstarter) icon on the desktop
 ###
-if [ ! -f "${FLL_LIVE_USER_HOME}/Desktop/sidux-edu.desktop" ] && \
+if [ ! -f "${HOME}/Desktop/sidux-edu.desktop" ] && \
 	[ -f /usr/share/applications/kde/sidux-edu.desktop ]; then
-	cp /usr/share/applications/kde/sidux-edu.desktop "${FLL_LIVE_USER_HOME}/Desktop/sidux-edu.desktop"
+	cp /usr/share/applications/kde/sidux-edu.desktop "${HOME}/Desktop/sidux-edu.desktop"
 fi
 
 ###
@@ -247,7 +247,7 @@ done
 # create desktop shortcut to index.html
 ###
 if [ -f "${INDEXFILE}" ]; then
-	cat > "${FLL_LIVE_USER_HOME}/Desktop/${FLL_DISTRO_NAME}.desktop" \
+	cat > "${HOME}/Desktop/${FLL_DISTRO_NAME}.desktop" \
 <<EOF
 [Desktop Entry]
 Encoding=UTF-8
@@ -261,24 +261,24 @@ GenericName=${FLL_CDROM_INDEX}
 EOF
 
 	if [ "${NOINTRO}" != "yes" ]; then
-		if [ ! -d "${FLL_LIVE_USER_HOME}/.kde/Autostart" ]; then
-			mkdir -p "${FLL_LIVE_USER_HOME}/.kde/Autostart"
+		if [ ! -d "${HOME}/.kde/Autostart" ]; then
+			mkdir -p "${HOME}/.kde/Autostart"
 		fi
 
-		ln -sf "${FLL_LIVE_USER_HOME}/Desktop/${FLL_DISTRO_NAME}.desktop" \
-			"${FLL_LIVE_USER_HOME}/.kde/Autostart/"
+		ln -sf "${HOME}/Desktop/${FLL_DISTRO_NAME}.desktop" \
+			"${HOME}/.kde/Autostart/"
 	fi
-elif [ -e "${FLL_LIVE_USER_HOME}/.kde/Autostart/${FLL_DISTRO_NAME}.desktop" ]; then
+elif [ -e "${HOME}/.kde/Autostart/${FLL_DISTRO_NAME}.desktop" ]; then
 	# toram + persistency
-	rm -f "${FLL_LIVE_USER_HOME}/.kde/Autostart/${FLL_DISTRO_NAME}.desktop"
+	rm -f "${HOME}/.kde/Autostart/${FLL_DISTRO_NAME}.desktop"
 fi
 
 ###
 # allow gtk2 apps to blend in with kde style
 ###
-if [ ! -f "${FLL_LIVE_USER_HOME}/.gtkrc-2.0" ]; then
+if [ ! -f "${HOME}/.gtkrc-2.0" ]; then
 	if [ "${GTK2_ENGINE}" ] && [ -f "/usr/share/themes/${GTK2_ENGINE}/gtk-2.0/gtkrc" ]; then
 		echo "include \"/usr/share/themes/${GTK2_ENGINE}/gtk-2.0/gtkrc\"" > \
-			"${FLL_LIVE_USER_HOME}/.gtkrc-2.0"
+			"${HOME}/.gtkrc-2.0"
 	fi
 fi
