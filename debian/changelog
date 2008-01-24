@@ -14,8 +14,10 @@ desktop-defaults (0.9.48) UNRELEASED; urgency=low
    - source desktop-defaults.
    - set default umask.
    - set -e, actually show display the exit state.
+   - move fll-desktop-func to /usr/share/desktop-defaults-common/.
+   - rework fll-desktop-func/ cp_desktop_defaults_from() to work as user.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 24 Jan 2008 16:23:14 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 24 Jan 2008 17:14:07 +0100
 
 desktop-defaults (0.9.47) unstable; urgency=low
 

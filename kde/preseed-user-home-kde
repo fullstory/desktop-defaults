@@ -19,6 +19,13 @@ if [ "${FLL_DISTRO_MODE}" != "live" ]; then
 fi
 
 ###
+## functions
+###
+. /usr/share/desktop-defaults-common/fll-desktop-func
+
+cp_desktop_defaults_from /usr/share/desktop-defaults-kde
+
+###
 # force wallpaper, kdesktoprc is provided by our dot.kde
 ###
 if [ "${FLL_WALLPAPER}" ] && [ -f "${HOME}/.kde/share/config/kdesktoprc" ]; then

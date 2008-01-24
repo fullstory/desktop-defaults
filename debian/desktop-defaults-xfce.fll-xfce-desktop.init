@@ -90,7 +90,7 @@ fi
 ###
 # functions
 ###
-. /lib/fll/fll-desktop-func
+. /usr/share/desktop-defaults-common/fll-desktop-func
 
 do_start() {
 	cp_desktop_defaults_from /usr/share/desktop-defaults-xfce

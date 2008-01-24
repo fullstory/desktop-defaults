@@ -87,11 +87,6 @@ if [ ! -d "${FLL_LIVE_USER_HOME}" ]; then
 	log_end_msg 1
 fi
 
-###
-# functions
-###
-. /lib/fll/fll-desktop-func
-
 default_kdm_theme()
 {
 	umask 0022
@@ -132,7 +127,6 @@ EOF
 case "${1}" in
 	start)
 		log_daemon_msg "${B}${NAME}${N}"; log_action_begin_msg " ${G}preparing ${Y}${FLL_LIVE_USER}${G} for ${Y}kde${N}"
-		cp_desktop_defaults_from /usr/share/desktop-defaults-kde
 		su "${FLL_LIVE_USER}" -c /usr/share/desktop-defaults-kde/preseed-user-home-kde
 		log_end_msg "$?"
 
