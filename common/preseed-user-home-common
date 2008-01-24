@@ -98,10 +98,8 @@ fi
 # gksu -> sudo
 ###
 if [ "$(which gconftool-2 2>/dev/null)" ]; then
-	sudo -u "${FLL_LIVE_USER}" \
-		gconftool-2 -s -t bool /apps/gksu/sudo-mode true
-	sudo -u "${FLL_LIVE_USER}" \
-		gconftool-2 -s -t bool /apps/gksu/display-no-pass-info false
+	gconftool-2 -s -t bool /apps/gksu/sudo-mode true
+	gconftool-2 -s -t bool /apps/gksu/display-no-pass-info false
 fi
 
 ###
