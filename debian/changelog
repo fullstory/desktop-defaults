@@ -9,8 +9,9 @@ desktop-defaults (0.9.48) UNRELEASED; urgency=low
     longer have access to super user capabilities.
   * switch install calls to mkdir/ cp.
   * we're now running as user, ${FLL_LIVE_USER_HOME} --> ${HOME}.
+  * source desktop-defaults.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 24 Jan 2008 15:45:50 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 24 Jan 2008 15:47:11 +0100
 
 desktop-defaults (0.9.47) unstable; urgency=low
 
