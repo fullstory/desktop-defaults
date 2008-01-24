@@ -5,14 +5,14 @@
 #
 # Copyright: (C) 2007-2008 F.U.L.L.S.T.O.R.Y Project
 # Copyright: (C) 2007-2008 Kel Modderman <kel@otaku42.de>
+# Copyright: (C) 2007-2008 Andreas Weber <andreas@it-weber.com>
+# Copyright: (C) 2007-2008 Horst Tritremmel <hjt@sidux.com>
 # Copyright: (C) 2008 Stefan Lippers-Hollmann <s.l-h@gmx.de>
 # License:   GPLv2
 #
 # F.U.L.L.S.T.O.R.Y Project Homepage:
 # http://developer.berlios.de/projects/fullstory
 ###
-
-set -e
 
 # set default umask
 umask 0022

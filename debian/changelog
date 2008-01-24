@@ -1,6 +1,5 @@
-desktop-defaults (0.9.48~slh.13) UNRELEASED; urgency=low
+desktop-defaults (0.10.0) unstable; urgency=low
 
-  * NOT RELEASED YET
   * take care not to break the su -c () subshell in fll-gnome.init.
   * desktop-defaults-kde
     - clean up XDG desktop file.
@@ -22,7 +21,8 @@ desktop-defaults (0.9.48~slh.13) UNRELEASED; urgency=low
   * add preseed-user-home-foo stubs for other desktop environments.
   * desktop-defaults-common
     - do the big code movement to factor out do_start() from
-      fll-common-desktop.init to preseed-user-home-common, functionally incomplete.
+      fll-common-desktop.init to preseed-user-home-common, functionally
+      incomplete.
     - we're now running as user, ${FLL_LIVE_USER_HOME} --> ${HOME}.
     - switch install calls to mkdir/ cp.
     - remove chown calls, we're running as the specified user now and do no
@@ -39,7 +39,8 @@ desktop-defaults (0.9.48~slh.13) UNRELEASED; urgency=low
     - remove empty desktop-defaults-gnome.install.
     - re-add environment configuration.
     - do the big code movement to factor out do_start() from
-      fll-gnome-desktop.init to preseed-user-home-gnome, functionally incomplete.
+      fll-gnome-desktop.init to preseed-user-home-gnome, functionally
+      incomplete.
     - install and start preseed-user-home-kde.
     - remove chown calls, we're running as the specified user now and do no
       longer have access to super user capabilities.
@@ -64,8 +65,15 @@ desktop-defaults (0.9.48~slh.13) UNRELEASED; urgency=low
     - switch install calls to mkdir/ cp.
     - fix preseed-user-home-xfce invocation.
     - invoke /usr/share/desktop-defaults-xfce/preseed-user-home-xfce.
+  * remove "set -e" introduced for debugging, on the release the preseeding
+    needs to work on a best efforts basis, errors are still printed to stdout.
+  * re-introduce do_start() functions to allow additions in a central place
+    easily.
+  * match copyrights with reality.
+  * hand further maintenance over to the maintainers of each desktop
+    environment.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 24 Jan 2008 21:19:13 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 24 Jan 2008 21:50:31 +0100
 
 desktop-defaults (0.9.47) unstable; urgency=low
 

@@ -14,8 +14,9 @@
 ###
 # F.U.L.L.S.T.O.R.Y init script
 #
-# Copyright: (C) 2007 F.U.L.L.S.T.O.R.Y Project
-# Copyright: (C) 2007 Kel Modderman <kel@otaku42.de>
+# Copyright: (C) 2007-2008 F.U.L.L.S.T.O.R.Y Project
+# Copyright: (C) 2007-2008 Kel Modderman <kel@otaku42.de>
+# Copyright: (C) 2008 Stefan Lippers-Hollmann <s.l-h@gmx.de>
 # License:   GPLv2
 #
 # F.U.L.L.S.T.O.R.Y Project Homepage:
@@ -104,13 +105,18 @@ default_gdm_theme()
 	fi
 }
 
+do_start()
+{
+	su "${FLL_LIVE_USER}" -c /usr/share/desktop-defaults-xfce/preseed-user-home-xfce
+}
+
 case "${1}" in
 	start)
 		log_daemon_msg "${B}${NAME}${N}"
 		log_action_begin_msg " ${G}preparing ${Y}${FLL_LIVE_USER}${G} for ${Y}xfce${N}"
-		su "${FLL_LIVE_USER}" -c /usr/share/desktop-defaults-xfce/preseed-user-home-xfce
-		log_end_msg "$?"
+		do_start
 		default_gdm_theme
+		log_end_msg 0
 		;;
 	stop)
 		;;
