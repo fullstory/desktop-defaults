@@ -74,26 +74,23 @@ cp_desktop_defaults_from /usr/share/desktop-defaults-xfce
 ###
 # force wallpaper, desktop.xml is provided by our dot.config
 ###
-FLL_CONF_PRESEED="${FLL_LIVE_USER_HOME}/.config/xfce4/mcs_settings/desktop.xml"
+FLL_CONF_PRESEED="${HOME}/.config/xfce4/mcs_settings/desktop.xml"
 if [ "${FLL_WALLPAPER}" ] && [ -f "${FLL_CONF_PRESEED}" ]; then
 	if grep -s -q 'imagepath' "${FLL_CONF_PRESEED}"; then
 		sed -i '/imagepath/s|\(.*value="\)[^"]\+\(".*\)|\1'"$FLL_WALLPAPER"'\2|' \
 			"${FLL_CONF_PRESEED}"
 	fi
-	chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" \
-		"${FLL_CONF_PRESEED}"
 fi
 
 ###
 # create .config/autostart dir
 ###
-install --directory --group="${FLL_LIVE_USER}" --owner="${FLL_LIVE_USER}" \
-		"${FLL_LIVE_USER_HOME}/.config/autostart"
+mkdir -p "${HOME}/.config/autostart"
 
 ###
 # disable tips on startup
 ###
-FLL_CONF_PRESEED="${FLL_LIVE_USER_HOME}/.config/autostart/xfce4-tips-autostart.desktop"
+FLL_CONF_PRESEED="${HOME}/.config/autostart/xfce4-tips-autostart.desktop"
 touch "${FLL_CONF_PRESEED}"
 if grep -q '^Hidden=' "${FLL_CONF_PRESEED}"; then
 	sed -i 's|^Hidden=.*|Hidden=true|' "${FLL_CONF_PRESEED}"
@@ -105,8 +102,6 @@ Hidden=true
 
 EOF
 fi
-chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" \
-	"${FLL_CONF_PRESEED}"
 
 ###
 # set xfce splash login theme
@@ -120,7 +115,7 @@ for bat in /proc/acpi/battery/*/info; do
 	if [ -f "$bat" ]; then 
 		sed -i  -e "/<item name=\"battmon\"/d" \
 			-e "s|^\([ \t]*\)\(<item[ \t]*name\=\"systray\".*\)|\1<item name=\"battmon\" id=\"11927411720\"\/\>\n\1\2|" \
-			"${FLL_LIVE_USER_HOME}/.config/xfce4/panel/panels.xml"
+			"${HOME}/.config/xfce4/panel/panels.xml"
 		break
 	fi
 done
@@ -131,10 +126,10 @@ done
 if [ -x /usr/bin/xfce4-mixer ]; then
 	# sound system active?
 	if grep -q "^snd" /proc/modules; then
-		if [ -f "${FLL_LIVE_USER_HOME}/.config/xfce4/panel/panels.xml" ]; then
+		if [ -f "${HOME}/.config/xfce4/panel/panels.xml" ]; then
 			sed -i  -e "/<item name=\"xfce4-mixer\"/d" \
 				-e "s|^\([ \t]*\)\(<item[ \t]*name\=\"systray\".*\)|\1<item name=\"xfce4-mixer\" id=\"11927313170\"\/\>\n\1\2|" \
-				"${FLL_LIVE_USER_HOME}/.config/xfce4/panel/panels.xml"
+				"${HOME}/.config/xfce4/panel/panels.xml"
 		fi
 	fi
 fi
@@ -145,10 +140,10 @@ fi
 ###
 case "${XKBLAYOUT}" in
 	[a-z]*,[a-z]*)
-		if [ -f "${FLL_LIVE_USER_HOME}/.config/xfce4/panel/panels.xml" ]; then
+		if [ -f "${HOME}/.config/xfce4/panel/panels.xml" ]; then
 			sed -i	-e "/<item name=\"xkb-plugin\"/d" \
 				-e "s|^\([ \t]*\)\(<item[ \t]*name\=\"systray\".*\)|\1<item name=\"xkb-plugin\" id=\"11918899770\"\/\>\n\1\2|" \
-					"${FLL_LIVE_USER_HOME}/.config/xfce4/panel/panels.xml"
+					"${HOME}/.config/xfce4/panel/panels.xml"
 		fi
 		;;
 esac
@@ -157,17 +152,15 @@ esac
 ###
 # create ~/Desktop if not present
 ###
-if [ ! -d "${FLL_LIVE_USER_HOME}/Desktop" ]; then
-	install --directory --group="${FLL_LIVE_USER}" --owner="${FLL_LIVE_USER}" \
-		"${FLL_LIVE_USER_HOME}/Desktop"
+if [ ! -d "${HOME}/Desktop" ]; then
+mkdir -p "${HOME}/Desktop"
 fi
 ###
 # put a manual icon on the desktop
 ###
-if [ ! -f "${FLL_LIVE_USER_HOME}/Desktop/sidux-manual.desktop" ] && \
+if [ ! -f "${HOME}/Desktop/sidux-manual.desktop" ] && \
 	[ -f /usr/share/applications/sidux/sidux-manual.desktop ]; then
-	install --group="${FLL_LIVE_USER}" --owner="${FLL_LIVE_USER}" \
-		/usr/share/applications/sidux/sidux-manual.desktop "${FLL_LIVE_USER_HOME}/Desktop/sidux-manual.desktop"
+	cp /usr/share/applications/sidux/sidux-manual.desktop "${HOME}/Desktop/sidux-manual.desktop"
 fi
 
 ###
@@ -190,7 +183,7 @@ done
 # create desktop shortcut to index.html
 ###
 if [ -f "${INDEXFILE}" ]; then
-	cat > "${FLL_LIVE_USER_HOME}/Desktop/${FLL_DISTRO_NAME}.desktop" \
+	cat > "${HOME}/Desktop/${FLL_DISTRO_NAME}.desktop" \
 <<EOF
 [Desktop Entry]
 Encoding=UTF-8
@@ -202,19 +195,16 @@ Terminal=0
 Name=${FLL_CDROM_INDEX}
 GenericName=${FLL_CDROM_INDEX}
 EOF
-	chown "${FLL_LIVE_USER}:${FLL_LIVE_USER}" \
-		"${FLL_LIVE_USER_HOME}/Desktop/${FLL_DISTRO_NAME}.desktop"
 
 	if [ "${NOINTRO}" != "yes" ]; then
-		if [ ! -d "${FLL_LIVE_USER_HOME}/.kde/Autostart" ]; then
-			install --directory --group="${FLL_LIVE_USER}" --owner="${FLL_LIVE_USER}" \
-				"${FLL_LIVE_USER_HOME}/.config/autostart"
+		if [ ! -d "${HOME}/.kde/Autostart" ]; then
+			mkdir -p "${HOME}/.config/autostart"
 		fi
 
-		ln -sf "${FLL_LIVE_USER_HOME}/Desktop/${FLL_DISTRO_NAME}.desktop" \
-			"${FLL_LIVE_USER_HOME}/.config/autostart/"
+		ln -sf "${HOME}/Desktop/${FLL_DISTRO_NAME}.desktop" \
+			"${HOME}/.config/autostart/"
 	fi
-elif [ -e "${FLL_LIVE_USER_HOME}/.config/autostart/${FLL_DISTRO_NAME}.desktop" ]; then
+elif [ -e "${HOME}/.config/autostart/${FLL_DISTRO_NAME}.desktop" ]; then
 	# toram + persistency
-	rm -f "${FLL_LIVE_USER_HOME}/.config/autostart/${FLL_DISTRO_NAME}.desktop"
+	rm -f "${HOME}/.config/autostart/${FLL_DISTRO_NAME}.desktop"
 fi
