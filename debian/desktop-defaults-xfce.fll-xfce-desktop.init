@@ -25,10 +25,6 @@
 PATH=/sbin:/usr/sbin:/bin:/usr/bin
 NAME="fll-xfce-desktop"
 
-if [ ! -x /usr/bin/xfwm4 ]; then
-	exit 0
-fi
-
 ###
 # source distro-defaults, no-op unless in live mode
 ###
