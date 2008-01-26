@@ -146,3 +146,13 @@ gconftool-2 --type string --set /desktop/gnome/background/picture_filename "${FL
 gconftool-2 --type float --set /apps/gnome-terminal/profiles/Default/background_darkness 0.6
 gconftool-2 -t string -s /apps/nautilus/icon_view/default_zoom_level "small"
 gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/background_type "transparent"
+
+# set prefs for epiphany so the right offline-manual page shows
+LANG_CODE=${LANGUAGE%%[-_]*}
+
+if [ ! -d "${HOME}/.gnome2/epiphany/mozilla/epiphany" ]; then
+	mkdir -p ${HOME}/.gnome2/epiphany/mozilla/epiphany 
+fi
+echo 'user_pref("general.useragent.locale", "${LANG_CODE}");' >  ${HOME}/.gnome2/epiphany/mozilla/epiphany/prefs.js 
+
+
