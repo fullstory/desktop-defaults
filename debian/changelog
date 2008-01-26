@@ -1,9 +1,5 @@
-desktop-defaults (0.10.1) UNRELEASED; urgency=low
+desktop-defaults (0.10.1) unstable; urgency=low
 
-  [ Stefan Lippers-Hollmann ]
-  * NOT RELEASED YET
-
-  [ Joaquim Boura ]
   * configure epiphany so it shows the right page on start
   * code for creation of desktop icons for installer, sidux-irc and
     manual put together in the common part
