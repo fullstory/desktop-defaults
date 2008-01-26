@@ -146,20 +146,6 @@ case "${XKBLAYOUT}" in
 		;;
 esac
 
-
-###
-# create ~/Desktop if not present
-###
-mkdir -p "${HOME}/Desktop"
-
-###
-# put a manual icon on the desktop
-###
-if [ ! -f "${HOME}/Desktop/sidux-manual.desktop" ] && \
-	[ -f /usr/share/applications/sidux/sidux-manual.desktop ]; then
-	cp /usr/share/applications/sidux/sidux-manual.desktop "${HOME}/Desktop/sidux-manual.desktop"
-fi
-
 ###
 # take care of the trash can
 ###
@@ -181,6 +167,11 @@ for mntpnt in /fll/*; do
 		break
 	fi
 done
+
+###
+# create ~/Desktop if not present
+###
+mkdir -p "${HOME}/Desktop"
 
 ###
 # create desktop shortcut to index.html

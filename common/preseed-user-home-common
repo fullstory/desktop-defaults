@@ -113,3 +113,45 @@ super-user-command=sudo
 EOF
 	fi
 fi
+
+###
+## create ~/Desktop if not present
+####
+if [ ! -d "${HOME}/Desktop" ]; then
+	mkdir -p "${HOME}/Desktop"
+fi
+
+###
+## put a manual icon on the desktop
+####
+if [ ! -f "${HOME}/Desktop/sidux-manual.desktop" ] && \
+	[ -f /usr/share/applications/sidux/sidux-manual.desktop ]; then
+	ln -s /usr/share/applications/sidux/sidux-manual.desktop "${HOME}/Desktop/sidux-manual.desktop"
+fi
+
+###
+## put a sidux-edu (seminarix appstarter) icon on the desktop
+####
+if [ ! -f "${HOME}/Desktop/sidux-edu.desktop" ] && \
+	[ -f /usr/share/applications/kde/sidux-edu.desktop ]; then
+	ln-s /usr/share/applications/kde/sidux-edu.desktop "${HOME}/Desktop/sidux-edu.desktop"
+fi
+
+
+###
+## put a sidux-irc icon on the desktop
+####
+if [ ! -f "${HOME}/Desktop/sidux-irc.desktop" ] && \
+	[ -f /usr/share/applications/sidux/sidux-irc.desktop ]; then
+	ln -s /usr/share/applications/sidux/sidux-irc.desktop "${HOME}/Desktop/sidux-irc.desktop"
+fi
+
+###
+## put a installer-gui-irc icon on the desktop
+####
+if [ ! -f "${HOME}/Desktop/install-gui.desktop" ] && \
+	[ -f /usr/share/applications/sidux/install-gui.desktop ]; then
+	ln -s /usr/share/applications/sidux/install-gui.desktop "${HOME}/Desktop/install-gui.desktop"
+fi
+
+
