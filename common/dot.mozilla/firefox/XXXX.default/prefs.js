@@ -15,3 +15,7 @@ user_pref("font.minimum-size.x-western", 12);
 user_pref("font.size.variable.x-western", 14);
 user_pref("ui.allow_platform_file_picker", false);
 user_pref("layout.css.dpi", 0);
+user_pref("browser.startup.homepage", "http://sidux.com/");
+user_pref("browser.tabs.closeButtons", 3);
+user_pref("browser.tabs.tabMinWidth", 5);
+user_pref("browser.visited_color", "#336666");
