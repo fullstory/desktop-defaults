@@ -153,6 +153,8 @@ LANG_CODE=${LANGUAGE%%[-_]*}
 if [ ! -d "${HOME}/.gnome2/epiphany/mozilla/epiphany" ]; then
 	mkdir -p ${HOME}/.gnome2/epiphany/mozilla/epiphany 
 fi
-echo 'user_pref("general.useragent.locale", "${LANG_CODE}");' >  ${HOME}/.gnome2/epiphany/mozilla/epiphany/prefs.js 
-
+cat > "${HOME}/.gnome2/epiphany/mozilla/epiphany/prefs.js" \
+<< EOF
+user_pref("general.useragent.locale", "${LANG_CODE}");  
+EOF
 
