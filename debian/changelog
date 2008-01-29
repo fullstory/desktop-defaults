@@ -1,3 +1,9 @@
+desktop-defaults (0.10.4) UNRELEASED; urgency=low
+
+  * NOT RELEASED YET
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 29 Jan 2008 01:44:22 +0100
+
 desktop-defaults (0.10.3) unstable; urgency=low
 
   * enhance iceweasel preconfig.
