@@ -134,7 +134,7 @@ fi
 ####
 if [ ! -f "${HOME}/Desktop/sidux-edu.desktop" ] && \
 	[ -f /usr/share/applications/kde/sidux-edu.desktop ]; then
-	ln-s /usr/share/applications/kde/sidux-edu.desktop "${HOME}/Desktop/sidux-edu.desktop"
+	ln -s /usr/share/applications/kde/sidux-edu.desktop "${HOME}/Desktop/sidux-edu.desktop"
 fi
 
 
