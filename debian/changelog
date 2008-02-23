@@ -1,3 +1,9 @@
+desktop-defaults (0.10.9) UNRELEASED; urgency=low
+
+  * NOT RELEASED YET
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 23 Feb 2008 22:40:25 +0100
+
 desktop-defaults (0.10.8) unstable; urgency=low
 
   * dark backgrounds interfere with "konsole --type su".
