@@ -1,3 +1,9 @@
+desktop-defaults (0.10.7) UNRELEASED; urgency=low
+
+  * NOT RELEASED YET
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 23 Feb 2008 13:19:29 +0100
+
 desktop-defaults (0.10.6) unstable; urgency=low
 
   * change desktop icon text to white for nyx 
