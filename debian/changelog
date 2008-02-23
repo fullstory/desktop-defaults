@@ -5,8 +5,9 @@ desktop-defaults (0.10.7) unstable; urgency=low
 
   [ Stefan Lippers-Hollmann ]
   * only depend on the art metapackages, not on a specific version.
+  * fix Xfce spelling in debian/control.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 23 Feb 2008 21:41:43 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 23 Feb 2008 21:44:20 +0100
 
 desktop-defaults (0.10.6) unstable; urgency=low
 
