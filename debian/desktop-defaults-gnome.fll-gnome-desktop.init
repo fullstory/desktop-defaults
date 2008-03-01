@@ -2,8 +2,9 @@
 
 ### BEGIN INIT INFO
 # Provides:          fll-gnome-desktop
-# Required-Start:    fll-adduser fll-xdm
+# Required-Start:    $local_fs fll-adduser
 # Required-Stop:
+# X-Start-Before:    fll-common-desktop
 # Default-Start:     S
 # Default-Stop:
 # Short-Description: prepare live user for gnome desktop

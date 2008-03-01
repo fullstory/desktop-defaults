@@ -2,7 +2,7 @@
 
 ### BEGIN INIT INFO
 # Provides:          fll-common-desktop
-# Required-Start:    fll-adduser fll-kde-desktop fll-gnome-desktop
+# Required-Start:    $local_fs fll-adduser
 # Required-Stop:
 # Default-Start:     S
 # Default-Stop:

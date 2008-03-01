@@ -1,8 +1,9 @@
 desktop-defaults (0.10.9) UNRELEASED; urgency=low
 
-  * NOT RELEASED YET
+  * Trim whitespace from line endings of ./debian/*.
+  * Adjust LSB headers of initscripts for initial LSB compliance.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 23 Feb 2008 22:40:25 +0100
+ -- Kel Modderman <kel@otaku42.de>  Sun, 02 Mar 2008 00:51:49 +1000
 
 desktop-defaults (0.10.8) unstable; urgency=low
 
