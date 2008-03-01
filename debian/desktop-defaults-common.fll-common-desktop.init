@@ -3,9 +3,9 @@
 ### BEGIN INIT INFO
 # Provides:          fll-common-desktop
 # Required-Start:    fll-adduser fll-kde-desktop fll-gnome-desktop
-# Required-Stop:     
+# Required-Stop:
 # Default-Start:     S
-# Default-Stop:      
+# Default-Stop:
 # Short-Description: configure common desktop apps for live user
 # Description:       The purpose of this script is to preseed the live users
 #                    settings for common desktop applications.

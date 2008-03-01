@@ -12,4 +12,4 @@ XFCE_GDM_THEME="sidux-eros"
 XFCE_GDM_THEME_COLOR="#eae7cb"
 
 # specify xfce splash theme
-#XFCE_SPLASH_THEME="" 
+#XFCE_SPLASH_THEME=""

@@ -3,9 +3,9 @@
 ### BEGIN INIT INFO
 # Provides:          fll-xfce-desktop
 # Required-Start:    fll-adduser fll-xdm
-# Required-Stop:     
+# Required-Stop:
 # Default-Start:     S
-# Default-Stop:      
+# Default-Stop:
 # Short-Description: prepare live user for xfce desktop
 # Description:       The purpose of this script is to preseed the live users
 #                    settings for the xfce desktop.

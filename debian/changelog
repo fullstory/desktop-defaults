@@ -23,7 +23,7 @@ desktop-defaults (0.10.7) unstable; urgency=low
 
 desktop-defaults (0.10.6) unstable; urgency=low
 
-  * change desktop icon text to white for nyx 
+  * change desktop icon text to white for nyx
 
  -- Bernard Gray <bernard.gray@gmail.com>  Sat, 23 Feb 2008 21:43:07 +1100
 
@@ -164,7 +164,7 @@ desktop-defaults (0.9.44) unstable; urgency=low
 
 desktop-defaults (0.9.43) unstable; urgency=low
 
-  * Theme Switcher changed 
+  * Theme Switcher changed
 
  -- Andreas Weber <andreas@it-weber.com>  Sat, 12 Jan 2008 18:33:35 +0100
 
@@ -184,7 +184,7 @@ desktop-defaults (0.9.40) unstable; urgency=low
 
   * Skel Function added
   * dot.gconf removed.
-  * install File fixed for desktop-defaults-gnome 
+  * install File fixed for desktop-defaults-gnome
 
  -- Andreas Weber <andreas@it-weber.com>  Fri, 04 Jan 2008 13:07:22 +0100
 
@@ -271,7 +271,7 @@ desktop-defaults (0.9.31) unstable; urgency=low
   * reinstate desktop-defaults-xfce desktop startup script to manage
     xfce4-battmon applet
   * deinstate desktop-defaults-xfce in favour off simpler battmon test
-  * test for battery info file, not just bat dir 
+  * test for battery info file, not just bat dir
 
  -- Bernard Gray <bernard.gray@gmail.com>  Sun, 21 Oct 2007 18:29:06 +1000
 
@@ -287,7 +287,7 @@ desktop-defaults (0.9.30) unstable; urgency=low
 
 desktop-defaults (0.9.29) unstable; urgency=low
 
-  * fix kpowersave instead of battmon typo 
+  * fix kpowersave instead of battmon typo
 
  -- Bernard Gray <bernard.gray@gmail.com>  Thu, 18 Oct 2007 22:31:17 +1000
 
@@ -300,7 +300,7 @@ desktop-defaults (0.9.28) unstable; urgency=low
 
 desktop-defaults (0.9.27) unstable; urgency=low
 
-  * update xfce.install script to account for new desktop autostart scripts 
+  * update xfce.install script to account for new desktop autostart scripts
 
  -- Bernard Gray <bernard.gray@gmail.com>  Thu, 18 Oct 2007 08:40:23 +1000
 
@@ -314,7 +314,7 @@ desktop-defaults (0.9.26) unstable; urgency=low
 desktop-defaults (0.9.25) unstable; urgency=low
 
   * add xfce thunar defaults (from mzilikazi)
-  * add xfce terminal defaults (disable F10 key - from mz) 
+  * add xfce terminal defaults (disable F10 key - from mz)
 
  -- Bernard Gray <bernard.gray@gmail.com>  Tue, 16 Oct 2007 10:58:32 +1000
 
@@ -339,7 +339,7 @@ desktop-defaults (0.9.23) unstable; urgency=low
 
 desktop-defaults (0.9.22) unstable; urgency=low
 
-  * darken kde desktop icon text 
+  * darken kde desktop icon text
 
  -- Bernard Gray <bernard.gray@gmail.com>  Wed, 10 Oct 2007 17:13:39 +1000
 
@@ -361,7 +361,7 @@ desktop-defaults (0.9.20) unstable; urgency=low
 
   * comment empty if statement in xfce init
   * remove defunct KDEKEYBOARDS from xfce init, replace with XKBLAYOUT
-  * add skeleton xfce panel config for panel plugin support 
+  * add skeleton xfce panel config for panel plugin support
 
  -- Bernard Gray <bernard.gray@gmail.com>  Sun, 07 Oct 2007 14:57:03 +1000
 
@@ -387,7 +387,7 @@ desktop-defaults (0.9.19) unstable; urgency=low
 
 desktop-defaults (0.9.18) unstable; urgency=low
 
-  * adjust iceweasel fonts 
+  * adjust iceweasel fonts
 
  -- Bernard Gray <bernard.gray@gmail.com>  Tue, 02 Oct 2007 15:07:49 +1000
 
@@ -437,7 +437,7 @@ desktop-defaults (0.9.13) unstable; urgency=low
   * test for xfwm4 instead of kwin in fll-desktop-xfce.init
   * mv touch on tips supp. to after the dir gets created
   * use install for dir creation and ownership permissions
-  * fix typo on tips suppression file 
+  * fix typo on tips suppression file
 
  -- Bernard Gray <bernard.gray@gmail.com>  Sat, 25 Aug 2007 15:00:37 +1000
 
@@ -457,7 +457,7 @@ desktop-defaults (0.9.11) unstable; urgency=low
   * add desktop config desktop.xml
   * add wallpaper setting to xfce desktop init
   * move tips suppression to xfce4 init
-  * create .config/autostart dir for tips conf file 
+  * create .config/autostart dir for tips conf file
 
  -- Bernard Gray <bernard.gray@gmail.com>  Thu, 23 Aug 2007 17:39:31 +1000
 
@@ -632,7 +632,7 @@ desktop-defaults (0.8.20) unstable; urgency=low
 desktop-defaults (0.8.19) unstable; urgency=low
 
   * enable applet handles for moving stuff on the kicker panel
-  * enable background theme for kicker so it's not flat white 
+  * enable background theme for kicker so it's not flat white
 
  -- Bernard Gray <bernard.gray@gmail.com>  Fri, 15 Jun 2007 13:34:03 +1000
 
@@ -700,7 +700,7 @@ desktop-defaults (0.8.12) unstable; urgency=low
 
 desktop-defaults (0.8.11) unstable; urgency=low
 
-  * Browser View changed for Nautilus 
+  * Browser View changed for Nautilus
 
  -- Andreas Weber <andreas@it-weber.com>  Sun, 10 Jun 2007 15:56:10 +0200
 
@@ -787,7 +787,7 @@ desktop-defaults (0.8.3) unstable; urgency=low
 
 desktop-defaults (0.8.2) unstable; urgency=low
 
-  * Initial Gnome init created 
+  * Initial Gnome init created
 
  -- Andreas Weber <andreas@it-weber.com>  Mon, 04 Jun 2007 14:31:13 +0200
 
