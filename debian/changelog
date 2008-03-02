@@ -1,4 +1,4 @@
-desktop-defaults (0.10.9) UNRELEASED; urgency=low
+desktop-defaults (0.10.9) unstable; urgency=low
 
   * Trim whitespace from line endings of ./debian/*.
   * Adjust LSB headers of initscripts for initial LSB compliance.
