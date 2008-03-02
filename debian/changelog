@@ -1,3 +1,9 @@
+desktop-defaults (0.10.10) UNRELEASED; urgency=low
+
+  * NOT RELEASED YET
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 02 Mar 2008 03:07:26 +0100
+
 desktop-defaults (0.10.9) unstable; urgency=low
 
   * Trim whitespace from line endings of ./debian/*.
