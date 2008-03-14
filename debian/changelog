@@ -3,8 +3,9 @@ desktop-defaults (0.10.10) UNRELEASED; urgency=low
   * desktop-defaults-kde:
     - don't test powersaved has started for criteria of starting kpowersave,
       use laptop-detect instead
+    - setup autostart link for sidux-edu
 
- -- Kel Modderman <kel@otaku42.de>  Fri, 14 Mar 2008 16:25:42 +1000
+ -- Kel Modderman <kel@otaku42.de>  Fri, 14 Mar 2008 21:58:10 +1000
 
 desktop-defaults (0.10.9) unstable; urgency=low
 
