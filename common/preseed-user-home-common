@@ -130,15 +130,12 @@ if [ ! -f "${HOME}/Desktop/sidux-manual.desktop" ] && \
 fi
 
 ###
-## put a sidux-edu (seminarix appstarter) icon on the desktop and to Autostart
+## put a sidux-edu (seminarix appstarter) icon on the desktop
 ####
 if [ -f /usr/share/applications/kde/sidux-edu.desktop ]; then
 	[ ! -f "${HOME}/Desktop/sidux-edu.desktop" ] && \
 		ln -s /usr/share/applications/kde/sidux-edu.desktop \
 			"${HOME}/Desktop/sidux-edu.desktop"
-	[ ! -f "${HOME}/.kde/Autostart/sidux-edu.desktop" ] && \
-		ln -s /usr/share/applications/kde/sidux-edu.desktop \
-			"${HOME}/.kde/Autostart/sidux-edu.desktop"
 fi
 
 
