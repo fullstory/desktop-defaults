@@ -1,8 +1,13 @@
 desktop-defaults (0.10.11) UNRELEASED; urgency=low
 
-  * NOT RELEASED YET
+  * desktop-defaults-kde:
+    - always start kpowersave, it enables our power buttons quite nicely in
+      its most useless form, and does better things for hardware that allow
+      that
+    - do not do an xrandr check before starting krandrtray, its a tad
+      expensive in time, and we probably could just use it anyway
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Fri, 14 Mar 2008 14:12:34 +0100
+ -- Kel Modderman <kel@otaku42.de>  Tue, 18 Mar 2008 19:17:40 +1000
 
 desktop-defaults (0.10.10) unstable; urgency=low
 

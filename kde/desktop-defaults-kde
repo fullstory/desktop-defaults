@@ -5,13 +5,30 @@ if [ -f /etc/default/fll-kde-desktop ]; then
 	. /etc/default/fll-kde-desktop
 fi
 
-if [ "${KDE_SERVICES_ENABLED}" = "false" ]; then
-	exit 0
-fi
+[ "${KDE_SERVICES_ENABLED}" = "false" ] && exit 0
 
 # Start krandrtray
 if [ -x /usr/bin/krandrtray ]; then
-	xrandr -q >/dev/null 2>/dev/null && krandrtray
+	pgrep -x krandrtray >/dev/null && krandrtray
+fi
+
+# Start network monitor
+if [ -e /usr/share/services/kded/knemod.desktop ]; then
+	dcop kded kded loadModule knemod
+fi
+
+# Start kpowersave
+if [ -x /usr/bin/kpowersave ]; then
+	if ! pgrep -x kpowersave >/dev/null; then
+		# allow kpowersave to autostart (disabled by default)
+		if grep -s -q '^Autostart=' ${HOME}/.kde/share/config/kpowersaverc; then
+			sed -i 's/^Autostart=.*/Autostart=true/' ${HOME}/.kde/share/config/kpowersaverc
+		else
+			echo "Autostart=true" > ${HOME}/.kde/share/config/kpowersaverc
+		fi
+
+		kpowersave
+	fi
 fi
 
 # Start mixer
@@ -29,21 +46,3 @@ if [ -x /usr/bin/kmix ]; then
 		kmix
 	fi
 fi
-
-# Start network monitor
-if [ -e /usr/share/services/kded/knemod.desktop ]; then
-	dcop kded kded loadModule knemod
-fi
-
-# Start kpowersave
-if [ -x /usr/bin/kpowersave ]; then
-	if ! pgrep -x kpowersave >/dev/null && /usr/sbin/laptop-detect 2>/dev/null; then
-		# allow kpowersave to autostart (disabled by default)
-		if grep -s -q '^Autostart=' ${HOME}/.kde/share/config/kpowersaverc; then
-			sed -i 's/Autostart=.*/Autostart=true/' ${HOME}/.kde/share/config/kpowersaverc
-		fi
-
-		kpowersave
-	fi
-fi
-
