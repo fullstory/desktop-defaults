@@ -1,4 +1,4 @@
-desktop-defaults (0.10.11) UNRELEASED; urgency=low
+desktop-defaults (0.10.11) unstable; urgency=low
 
   * desktop-defaults-kde:
     - always start kpowersave, it enables our power buttons quite nicely in
