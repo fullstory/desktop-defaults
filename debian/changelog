@@ -1,4 +1,4 @@
-desktop-defaults (0.10.12) UNRELEASED; urgency=low
+desktop-defaults (0.10.12) unstable; urgency=low
 
   [ Kel Modderman ]
   * desktop-defaults-kde:
