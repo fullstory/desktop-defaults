@@ -1,10 +1,14 @@
 desktop-defaults (0.10.12) UNRELEASED; urgency=low
 
+  [ Kel Modderman ]
   * desktop-defaults-kde:
     - inverse condition for starting krandrtray, broken in last upload
     - pipe knemod stdout to /dev/null
 
- -- Kel Modderman <kel@otaku42.de>  Wed, 19 Mar 2008 11:15:56 +1000
+  [ Bernard Gray ]
+  * modify xfce default gdm theme for nyx 
+
+ -- Bernard Gray <bernard.gray@gmail.com>  Wed, 19 Mar 2008 22:56:08 +1100
 
 desktop-defaults (0.10.11) unstable; urgency=low
 

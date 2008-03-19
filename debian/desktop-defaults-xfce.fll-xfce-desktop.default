@@ -6,10 +6,10 @@
 #XFCE_SERVICES_ENABLED="true"
 
 # specify GDM theme to be used
-XFCE_GDM_THEME="sidux-eros"
+XFCE_GDM_THEME="sidux-nyx"
 
 # specify GDM theme color to be used
-XFCE_GDM_THEME_COLOR="#eae7cb"
+XFCE_GDM_THEME_COLOR="#323e41"
 
 # specify xfce splash theme
 #XFCE_SPLASH_THEME=""
