@@ -9,12 +9,12 @@ fi
 
 # Start krandrtray
 if [ -x /usr/bin/krandrtray ]; then
-	pgrep -x krandrtray >/dev/null && krandrtray
+	pgrep -x krandrtray >/dev/null || krandrtray
 fi
 
 # Start network monitor
 if [ -e /usr/share/services/kded/knemod.desktop ]; then
-	dcop kded kded loadModule knemod
+	dcop kded kded loadModule knemod >/dev/null
 fi
 
 # Start kpowersave

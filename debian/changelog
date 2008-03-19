@@ -1,8 +1,10 @@
 desktop-defaults (0.10.12) UNRELEASED; urgency=low
 
-  * NOT RELEASED YET
+  * desktop-defaults-kde:
+    - inverse condition for starting krandrtray, broken in last upload
+    - pipe knemod stdout to /dev/null
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 19 Mar 2008 00:44:35 +0100
+ -- Kel Modderman <kel@otaku42.de>  Wed, 19 Mar 2008 11:15:56 +1000
 
 desktop-defaults (0.10.11) unstable; urgency=low
 
