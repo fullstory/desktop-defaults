@@ -19,7 +19,7 @@ fi
 
 # Start kpowersave
 if [ -x /usr/bin/kpowersave ]; then
-	if ! pgrep -x kpowersave >/dev/null; then
+	if ! pgrep -x kpowersave >/dev/null && /usr/sbin/laptop-detect 2>/dev/null; then
 		# allow kpowersave to autostart (disabled by default)
 		if grep -s -q '^Autostart=' ${HOME}/.kde/share/config/kpowersaverc; then
 			sed -i 's/^Autostart=.*/Autostart=true/' ${HOME}/.kde/share/config/kpowersaverc
