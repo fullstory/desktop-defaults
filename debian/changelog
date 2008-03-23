@@ -1,8 +1,9 @@
-desktop-defaults (0.10.14) UNRELEASED; urgency=low
+desktop-defaults (0.10.14) unstable; urgency=low
 
-  * NOT RELEASED YET
+  * increase panel opacity by a factor of 10 to increase contrast and
+    readability for the darker Νυξ background.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 23 Mar 2008 16:35:55 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 23 Mar 2008 22:48:58 +0100
 
 desktop-defaults (0.10.13) unstable; urgency=low
 

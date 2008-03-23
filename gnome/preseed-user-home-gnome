@@ -128,8 +128,8 @@ gconftool-2 --type bool --set /apps/nautilus/preferences/always_use_browser true
 gconftool-2 --type string --set /desktop/gnome/background/picture_options "stretched"
 gconftool-2 --type string --set /apps/epiphany/general/homepage "http://www.sidux.com"
 gconftool-2 --type bool --set /apps/gnome-screensaver/lock_enabled false
-gconftool-2 --type int --set /apps/panel/toplevels/bottom_panel_screen0/background/opacity 3000
-gconftool-2 --type int --set /apps/panel/toplevels/top_panel_screen0/background/opacity 3000
+gconftool-2 --type int --set /apps/panel/toplevels/bottom_panel_screen0/background/opacity 30000
+gconftool-2 --type int --set /apps/panel/toplevels/top_panel_screen0/background/opacity 30000
 gconftool-2 --type string --set /apps/panel/toplevels/bottom_panel_screen0/background/type color
 gconftool-2 --type string --set /apps/panel/toplevels/top_panel_screen0/background/type color
 gconftool-2 --type bool --set /apps/gnome-osd/avoid_panels true
