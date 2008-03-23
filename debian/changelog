@@ -1,4 +1,4 @@
-desktop-defaults (0.10.13) UNRELEASED; urgency=low
+desktop-defaults (0.10.13) unstable; urgency=low
 
   * desktop-defaults-kde:
     - start kpowersave when laptop-detect returns 0 only
