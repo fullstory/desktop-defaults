@@ -6,7 +6,7 @@
 #GNOME_SERVICES_ENABLED="true"
 
 # specify GDM theme to be used
-GNOME_GDM_THEME="sidux-eros"
+GNOME_GDM_THEME="sidux-nyx"
 
 # specify GDM theme color to be used
 GNOME_GDM_THEME_COLOR="#eae7cb"
