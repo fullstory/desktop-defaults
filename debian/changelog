@@ -5,8 +5,9 @@ desktop-defaults (0.10.15) UNRELEASED; urgency=low
 
   [ Joaquim Boura ]
   * changed default theme for gdm into sidux-nyx
+  * thanks to qq et muchan
 
- -- Joaquim Boura <x-un-i@sidux.com>  Tue, 25 Mar 2008 21:50:14 +0100
+ -- Joaquim Boura <x-un-i@sidux.com>  Tue, 25 Mar 2008 21:51:24 +0100
 
 desktop-defaults (0.10.14) unstable; urgency=low
 
