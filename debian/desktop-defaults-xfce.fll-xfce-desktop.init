@@ -46,11 +46,6 @@ fi
 . /lib/lsb/init-functions
 
 ###
-# ANSI escape sequences (N, R, G, Y, B, M, C, W)
-###
-. /lib/fll/fll-init-cols
-
-###
 # read in variables from our default conffile
 ###
 if [ -s "/etc/default/${NAME}" ]; then
@@ -81,7 +76,7 @@ done
 FLL_LIVE_USER_HOME=$(getent passwd ${FLL_LIVE_USER} | cut -d\: -f 6)
 
 if [ ! -d "${FLL_LIVE_USER_HOME}" ]; then
-	log_daemon_msg "${B}${NAME}${N}" "${R}directory '${Y}${FLL_LIVE_USER_HOME}${R} does not exist${N}"
+	log_daemon_msg "${NAME}" "directory ${FLL_LIVE_USER_HOME} does not exist"
 	log_end_msg 1
 fi
 
@@ -113,8 +108,8 @@ do_start()
 
 case "${1}" in
 	start)
-		log_daemon_msg "${B}${NAME}${N}"
-		log_action_begin_msg " ${G}preparing ${Y}${FLL_LIVE_USER}${G} for ${Y}xfce${N}"
+		log_daemon_msg "${NAME}"
+		log_action_begin_msg " preparing ${FLL_LIVE_USER} for xfce"
 		do_start
 		default_gdm_theme
 		log_end_msg 0

@@ -46,11 +46,6 @@ fi
 . /lib/lsb/init-functions
 
 ###
-# ANSI escape sequences (N, R, G, Y, B, M, C, W)
-###
-. /lib/fll/fll-init-cols
-
-###
 # read in variables from /etc/default/fll-locales
 ###
 if [ -s /etc/default/fll-locales ]; then
@@ -71,7 +66,7 @@ done
 FLL_LIVE_USER_HOME=$(getent passwd ${FLL_LIVE_USER} | cut -d\: -f 6)
 
 if [ ! -d "${FLL_LIVE_USER_HOME}" ]; then
-	log_daemon_msg "${B}${NAME}${N}" "${R}directory '${Y}${FLL_LIVE_USER_HOME}${R} does not exist${N}"
+	log_daemon_msg "${NAME}" "directory '${FLL_LIVE_USER_HOME} does not exist"
 	log_end_msg 1
 fi
 

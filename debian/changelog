@@ -1,13 +1,13 @@
-desktop-defaults (0.10.15) UNRELEASED; urgency=low
-
-  [ Stefan Lippers-Hollmann ]
-  * NOT RELEASED YET
+desktop-defaults (0.10.15) unstable; urgency=low
 
   [ Joaquim Boura ]
   * changed default theme for gdm into sidux-nyx
   * thanks to qq et muchan
 
- -- Joaquim Boura <x-un-i@sidux.com>  Tue, 25 Mar 2008 21:51:24 +0100
+  [ Stefan Lippers-Hollmann ]
+  * remove calls to no longer existing fll-init-cols.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 27 Mar 2008 00:41:30 +0100
 
 desktop-defaults (0.10.14) unstable; urgency=low
 
