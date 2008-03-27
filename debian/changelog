@@ -1,8 +1,10 @@
-desktop-defaults (0.10.16) UNRELEASED; urgency=low
+desktop-defaults (0.10.16) unstable; urgency=low
 
-  * NOT RELEASED YET
+  * adapt terminal to be readable with nyx' theme (white background, no
+    transparency).
+  * reorder and reformat gconftool-2 calls consistently.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 27 Mar 2008 00:52:42 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 27 Mar 2008 03:07:23 +0100
 
 desktop-defaults (0.10.15) unstable; urgency=low
 

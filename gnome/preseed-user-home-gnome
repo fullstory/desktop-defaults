@@ -124,28 +124,43 @@ Terminal=0
 EOF
 fi
 
-gconftool-2 --type bool --set /apps/nautilus/preferences/always_use_browser true
-gconftool-2 --type string --set /desktop/gnome/background/picture_options "stretched"
-gconftool-2 --type string --set /apps/epiphany/general/homepage "http://www.sidux.com"
-gconftool-2 --type bool --set /apps/gnome-screensaver/lock_enabled false
-gconftool-2 --type int --set /apps/panel/toplevels/bottom_panel_screen0/background/opacity 30000
-gconftool-2 --type int --set /apps/panel/toplevels/top_panel_screen0/background/opacity 30000
-gconftool-2 --type string --set /apps/panel/toplevels/bottom_panel_screen0/background/type color
-gconftool-2 --type string --set /apps/panel/toplevels/top_panel_screen0/background/type color
-gconftool-2 --type bool --set /apps/gnome-osd/avoid_panels true
-gconftool-2 --type bool --set /apps/gnome-osd/animations true
-gconftool-2 --type bool --set /apps/gnome-osd/drop_shadow true
-gconftool-2 --type string --set /apps/gnome-osd/osd_halignment "center"
-gconftool-2 --type string --set /apps/gnome-osd/osd_vposition "top"
-gconftool-2 --type bool --set /apps/gnome-osd/plugins/gaim/enabled true
-gconftool-2 --type bool --set /desktop/gnome/sound/enable_esd true
-gconftool-2 --type bool --set /desktop/gnome/sound/event_sounds true
-gconftool-2 --type string --set /desktop/gnome/background/picture_filename "${FLL_WALLPAPER}"
-[ -d "/usr/share/themes/Clearlooks" ] && \
-	gconftool-2 --type string --set /desktop/gnome/interface/gtk_theme "Clearlooks"
-gconftool-2 --type float --set /apps/gnome-terminal/profiles/Default/background_darkness 0.6
-gconftool-2 -t string -s /apps/nautilus/icon_view/default_zoom_level "small"
-gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/background_type "transparent"
+# background
+gconftool-2 --set "/desktop/gnome/background/picture_options" --type string "stretched"
+gconftool-2 --set "/desktop/gnome/background/picture_filename" --type string "${FLL_WALLPAPER}"
+
+# theme
+[ -d "/usr/share/themes/Clearlooks" ] && gconftool-2 --set "/desktop/gnome/interface/gtk_theme" --type string "Clearlooks"
+
+# panels
+gconftool-2 --set "/apps/panel/toplevels/bottom_panel_screen0/background/opacity" --type int 30000
+gconftool-2 --set "/apps/panel/toplevels/top_panel_screen0/background/opacity" --type int 30000
+gconftool-2 --set "/apps/panel/toplevels/bottom_panel_screen0/background/type" --type string "color"
+gconftool-2 --set "/apps/panel/toplevels/top_panel_screen0/background/type" --type string "color"
+
+# osd
+gconftool-2 --set "/apps/gnome-osd/avoid_panels" --type bool true
+gconftool-2 --set "/apps/gnome-osd/animations" --type bool true
+gconftool-2 --set "/apps/gnome-osd/drop_shadow" --type bool true
+gconftool-2 --set "/apps/gnome-osd/osd_halignment" --type string "center"
+gconftool-2 --set "/apps/gnome-osd/osd_vposition" --type string "top"
+gconftool-2 --set "/apps/gnome-osd/plugins/gaim/enabled" --type bool true
+
+# sound
+gconftool-2 --set "/desktop/gnome/sound/enable_esd" --type bool true
+gconftool-2 --set "/desktop/gnome/sound/event_sounds" --type bool true
+
+# screensaver
+gconftool-2 --set "/apps/gnome-screensaver/lock_enabled" --type bool false
+
+# terminal
+gconftool-2 --set "/apps/gnome-terminal/profiles/Default/background_color" --type string '#FFFFFF'
+
+# nautilus
+gconftool-2 --set "/apps/nautilus/preferences/always_use_browser" --type bool true
+gconftool-2 --set "/apps/nautilus/icon_view/default_zoom_level" --type string "small"
+
+# epiphany
+gconftool-2 --set "/apps/epiphany/general/homepage" --type string "http://www.sidux.com"
 
 # set prefs for epiphany so the right offline-manual page shows
 LANG_CODE=${LANGUAGE%%[-_]*}
