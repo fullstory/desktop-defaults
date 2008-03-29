@@ -1,8 +1,16 @@
 desktop-defaults (0.10.18) UNRELEASED; urgency=low
 
+  [ Stefan Lippers-Hollmann ]
   * NOT RELEASED YET
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 29 Mar 2008 01:39:19 +0100
+  [ Niall Walsh ]
+  * fll-desktop-func:
+    - do not ignore an entire dot.* just because $HOME/.* already exists.
+      gnome and xfce both share files under $HOME/.config so without this
+      only one would get to copy files to $HOME/.config
+    - limit to only copying files not already present in $HOME/.*
+
+ -- Niall Walsh <niallwalsh@users.berlios.de>  Sat, 29 Mar 2008 21:34:38 +0000
 
 desktop-defaults (0.10.17) unstable; urgency=low
 
