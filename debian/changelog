@@ -1,9 +1,5 @@
-desktop-defaults (0.10.18) UNRELEASED; urgency=low
+desktop-defaults (0.10.18) unstable; urgency=low
 
-  [ Stefan Lippers-Hollmann ]
-  * NOT RELEASED YET
-
-  [ Niall Walsh ]
   * fll-desktop-func:
     - do not ignore an entire dot.* just because $HOME/.* already exists.
       gnome and xfce both share files under $HOME/.config so without this
