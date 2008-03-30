@@ -1,3 +1,9 @@
+desktop-defaults (0.10.20) UNRELEASED; urgency=low
+
+  * NOT RELEASED YET
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 30 Mar 2008 01:20:52 +0100
+
 desktop-defaults (0.10.19) unstable; urgency=low
 
   * XFCE has no default web browser, don't hardcode iceweasel for starting the
