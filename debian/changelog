@@ -1,4 +1,4 @@
-desktop-defaults (0.10.20) UNRELEASED; urgency=low
+desktop-defaults (0.10.20) unstable; urgency=low
 
   * preseed-user-home-xfce:
     - fix syntax error introduced in r16971
