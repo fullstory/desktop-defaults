@@ -299,7 +299,7 @@ done
 ###
 # create desktop shortcut to index.html
 ###
-if [ -f "${INDEXFILE}" ]; then
+if [ -f "${INDEXFILE}" ] && [ ! -f "${HOME}/Desktop/${FLL_DISTRO_NAME}.desktop" ]; then
 	cat > "${HOME}/Desktop/${FLL_DISTRO_NAME}.desktop" \
 <<EOF
 [Desktop Entry]
