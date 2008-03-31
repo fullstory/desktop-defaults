@@ -1,8 +1,12 @@
 desktop-defaults (0.10.21) UNRELEASED; urgency=low
 
+  [ Stefan Lippers-Hollmann ]
   * NOT RELEASED YET
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 30 Mar 2008 13:29:41 +0200
+  [ Joaquim Boura ]
+  * use a color for the base similar to the wallpaper
+
+ -- Joaquim Boura <x-un-i@sidux.com>  Mon, 31 Mar 2008 18:57:21 +0200
 
 desktop-defaults (0.10.20) unstable; urgency=low
 

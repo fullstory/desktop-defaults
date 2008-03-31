@@ -9,7 +9,7 @@
 GNOME_GDM_THEME="sidux-nyx"
 
 # specify GDM theme color to be used
-GNOME_GDM_THEME_COLOR="#eae7cb"
+GNOME_GDM_THEME_COLOR="#455459"
 
 # specify gnome splash theme
 #GNOME_SPLASH_THEME=""
