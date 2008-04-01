@@ -7,7 +7,10 @@ desktop-defaults (0.10.21) UNRELEASED; urgency=low
   * use a color for the base similar to the wallpaper
   * the same for the xfce version
 
- -- Joaquim Boura <x-un-i@sidux.com>  Tue, 01 Apr 2008 08:59:17 +0200
+  [ Bernard Gray ]
+  * add sidux-browser to the panel  
+
+ -- Bernard Gray <bernard.gray@gmail.com>  Tue, 01 Apr 2008 19:22:38 +1100
 
 desktop-defaults (0.10.20) unstable; urgency=low
 
