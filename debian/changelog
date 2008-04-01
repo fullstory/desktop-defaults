@@ -5,8 +5,9 @@ desktop-defaults (0.10.21) UNRELEASED; urgency=low
 
   [ Joaquim Boura ]
   * use a color for the base similar to the wallpaper
+  * the same for the xfce version
 
- -- Joaquim Boura <x-un-i@sidux.com>  Mon, 31 Mar 2008 18:57:21 +0200
+ -- Joaquim Boura <x-un-i@sidux.com>  Tue, 01 Apr 2008 08:59:17 +0200
 
 desktop-defaults (0.10.20) unstable; urgency=low
 
