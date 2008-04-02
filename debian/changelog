@@ -1,9 +1,5 @@
-desktop-defaults (0.10.22) UNRELEASED; urgency=low
+desktop-defaults (0.10.22) unstable; urgency=low
 
-  [ Stefan Lippers-Hollmann ]
-  * NOT RELEASED YET
-
-  [ Niall Walsh ]
   * Fix stray quote in fll-xfce-desktop.default
 
  -- Niall Walsh <niallwalsh@users.berlios.de>  Wed, 02 Apr 2008 06:37:52 +0100
