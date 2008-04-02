@@ -9,7 +9,7 @@
 XFCE_GDM_THEME="sidux-nyx"
 
 # specify GDM theme color to be used
-XFCE_GDM_THEME_COLOR="#455459""
+XFCE_GDM_THEME_COLOR="#455459"
 
 # specify xfce splash theme
 #XFCE_SPLASH_THEME=""
