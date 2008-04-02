@@ -1,7 +1,4 @@
-desktop-defaults (0.10.21) UNRELEASED; urgency=low
-
-  [ Stefan Lippers-Hollmann ]
-  * NOT RELEASED YET
+desktop-defaults (0.10.21) unstable; urgency=low
 
   [ Joaquim Boura ]
   * use a color for the base similar to the wallpaper
