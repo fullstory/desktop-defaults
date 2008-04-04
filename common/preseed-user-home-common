@@ -138,6 +138,15 @@ if [ -f /usr/share/applications/kde/sidux-edu.desktop ]; then
 			"${HOME}/Desktop/sidux-edu.desktop"
 fi
 
+###
+## put a sidux-png-video icon on the desktop
+###
+if [ -f /usr/share/seminarix-samples/video/sidux-png-video.desktop ]; then
+	[ ! -f "${HOME}/Desktop/sidux-png-video.desktop" ] && \
+		ln -s /usr/share/seminarix-samples/video/sidux-png-video.desktop \
+			"${HOME}/Desktop/sidux-png-video.desktop"
+fi
+
 
 ###
 ## put a sidux-irc icon on the desktop
@@ -155,4 +164,7 @@ if [ ! -f "${HOME}/Desktop/install-gui.desktop" ] && \
 	ln -s /usr/share/applications/sidux/install-gui.desktop "${HOME}/Desktop/install-gui.desktop"
 fi
 
+###
+## put a sidux-png-video icon on the desktop
+###
 
