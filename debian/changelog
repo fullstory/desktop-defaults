@@ -1,8 +1,12 @@
 desktop-defaults (0.10.23) UNRELEASED; urgency=low
 
+  [ Stefan Lippers-Hollmann ]
   * NOT RELEASED YET
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 02 Apr 2008 14:59:10 +0200
+  [ Ferdinand Thommes ]
+  * added sidux-png to seminarix desktop  * *fixed typo
+
+ -- Ferdinand Thommes <devil@sidux.com>  Sat, 05 Apr 2008 09:24:44 +0200
 
 desktop-defaults (0.10.22) unstable; urgency=low
 
@@ -112,6 +116,7 @@ desktop-defaults (0.10.11) unstable; urgency=low
 
  -- Kel Modderman <kel@otaku42.de>  Tue, 18 Mar 2008 19:25:06 +1000
 
+>>>>>>> .r17107
 desktop-defaults (0.10.10) unstable; urgency=low
 
   * desktop-defaults-kde:
