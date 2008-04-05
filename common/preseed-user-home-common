@@ -164,7 +164,4 @@ if [ ! -f "${HOME}/Desktop/install-gui.desktop" ] && \
 	ln -s /usr/share/applications/sidux/install-gui.desktop "${HOME}/Desktop/install-gui.desktop"
 fi
 
-###
-## put a sidux-png-video icon on the desktop
-###
 
