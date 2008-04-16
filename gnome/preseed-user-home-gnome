@@ -160,7 +160,7 @@ gconftool-2 --set "/apps/nautilus/preferences/always_use_browser" --type bool tr
 gconftool-2 --set "/apps/nautilus/icon_view/default_zoom_level" --type string "small"
 
 # epiphany
-gconftool-2 --set "/apps/epiphany/general/homepage" --type string "http://www.sidux.com"
+gconftool-2 --set "/apps/epiphany/general/homepage" --type string "http://sidux.com"
 
 # set prefs for epiphany so the right offline-manual page shows
 LANG_CODE=${LANGUAGE%%[-_]*}
