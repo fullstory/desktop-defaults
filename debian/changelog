@@ -1,9 +1,5 @@
-desktop-defaults (0.10.25) UNRELEASED; urgency=low
+desktop-defaults (0.10.25) unstable; urgency=low
 
-  [ Stefan Lippers-Hollmann ]
-  * NOT RELEASED YET
-
-  [ Bernard Gray ]
   * remove reference to non-existent xkblayout plugin for xfce
   * remove non-existent launcher id=8 from xfce panel 
 
