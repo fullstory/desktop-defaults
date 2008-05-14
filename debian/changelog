@@ -5,8 +5,9 @@ desktop-defaults (0.10.25) UNRELEASED; urgency=low
 
   [ Bernard Gray ]
   * remove reference to non-existent xkblayout plugin for xfce
+  * remove non-existent launcher id=8 from xfce panel 
 
- -- Bernard Gray <bernard.gray@gmail.com>  Wed, 14 May 2008 14:18:52 +1000
+ -- Bernard Gray <bernard.gray@gmail.com>  Wed, 14 May 2008 14:24:19 +1000
 
 desktop-defaults (0.10.24) unstable; urgency=low
 
