@@ -134,19 +134,6 @@ fi
 
 
 ###
-# setup keyboard chooser when > 1 xkblayout variant is defined
-###
-case "${XKBLAYOUT}" in
-	[a-z]*,[a-z]*)
-		if [ -f "${HOME}/.config/xfce4/panel/panels.xml" ]; then
-			sed -i	-e "/<item name=\"xkb-plugin\"/d" \
-				-e "s|^\([ \t]*\)\(<item[ \t]*name\=\"systray\".*\)|\1<item name=\"xkb-plugin\" id=\"11918899770\"\/\>\n\1\2|" \
-					"${HOME}/.config/xfce4/panel/panels.xml"
-		fi
-		;;
-esac
-
-###
 # take care of the trash can
 ###
 mkdir -p	"${HOME}/.local/share/Trash/info" \
