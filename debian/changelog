@@ -1,8 +1,8 @@
-desktop-defaults (0.10.26) UNRELEASED; urgency=low
+desktop-defaults (0.10.26) unstable; urgency=low
 
-  * NOT RELEASED YET
+  * switch to the new dh implementation of debhelper 7.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 14 May 2008 16:04:29 +0200
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 21 May 2008 19:17:43 +0200
 
 desktop-defaults (0.10.25) unstable; urgency=low
 
