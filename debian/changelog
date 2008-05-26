@@ -5,8 +5,9 @@ desktop-defaults (0.10.27) UNRELEASED; urgency=low
 
   [ Bernard Gray ]
   * configure defaults for erebos release
+  * modify xfce defaults for new xfce art package 
 
- -- Bernard Gray <bernard.gray@gmail.com>  Mon, 26 May 2008 17:53:55 +1000
+ -- Bernard Gray <bernard.gray@gmail.com>  Mon, 26 May 2008 18:04:33 +1000
 
 desktop-defaults (0.10.26) unstable; urgency=low
 
