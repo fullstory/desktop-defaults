@@ -1,3 +1,9 @@
+desktop-defaults (0.10.28) UNRELEASED; urgency=low
+
+  * NOT RELEASED YET
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 27 May 2008 02:03:51 +0200
+
 desktop-defaults (0.10.27) unstable; urgency=low
 
   * configure defaults for erebos release
