@@ -1,9 +1,5 @@
-desktop-defaults (0.10.27) UNRELEASED; urgency=low
+desktop-defaults (0.10.27) unstable; urgency=low
 
-  [ Stefan Lippers-Hollmann ]
-  * NOT RELEASED YET
-
-  [ Bernard Gray ]
   * configure defaults for erebos release
   * modify xfce defaults for new xfce art package 
 
