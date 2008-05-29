@@ -132,8 +132,8 @@ gconftool-2 --set "/desktop/gnome/background/picture_filename" --type string "${
 [ -d "/usr/share/themes/Clearlooks" ] && gconftool-2 --set "/desktop/gnome/interface/gtk_theme" --type string "Clearlooks"
 
 # panels
-gconftool-2 --set "/apps/panel/toplevels/bottom_panel_screen0/background/opacity" --type int 30000
-gconftool-2 --set "/apps/panel/toplevels/top_panel_screen0/background/opacity" --type int 30000
+gconftool-2 --set "/apps/panel/toplevels/bottom_panel_screen0/background/opacity" --type int 45000
+gconftool-2 --set "/apps/panel/toplevels/top_panel_screen0/background/opacity" --type int 45000
 gconftool-2 --set "/apps/panel/toplevels/bottom_panel_screen0/background/type" --type string "color"
 gconftool-2 --set "/apps/panel/toplevels/top_panel_screen0/background/type" --type string "color"
 
