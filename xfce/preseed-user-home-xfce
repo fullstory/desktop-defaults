@@ -105,6 +105,25 @@ fi
 # set xfce splash login theme
 # XXX: TODO
 ###
+if [ "${XFCE_KSPLASH_THEME}" ]; then
+        echo "" > "${HOME}/.config/xfce4-session/xfce4-splash.rc"
+        cat > "${HOME}/.config/xfce4-session/xfce4-splash.rc" \
+<< EOF
+[Engine: ${XFCE_SPLASH_ENGINE}]
+Theme=${XFCE_SPLASH_THEME}
+
+EOF
+
+        cat > "${HOME}/.config/xfce4-session/xfce4-session.rc" \
+<< EOF
+
+[Splash Screen]
+Theme=${XFCE_SPLASH_THEME}
+Engine=${XFCE_SPLASH_ENGINE}
+
+EOF
+
+fi
 
 ###
 # Add battmon plugin to panel

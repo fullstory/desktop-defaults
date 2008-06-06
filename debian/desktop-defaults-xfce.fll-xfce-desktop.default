@@ -11,5 +11,6 @@ XFCE_GDM_THEME="sidux-erebos"
 # specify GDM theme color to be used
 XFCE_GDM_THEME_COLOR="#455459"
 
-# specify xfce splash theme
+# specify xfce splash theme and engine
 XFCE_SPLASH_THEME="sidux-erebos"
+XFCE_SPLASH_ENGINE="balou"
