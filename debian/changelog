@@ -6,8 +6,9 @@ desktop-defaults (0.10.29) UNRELEASED; urgency=low
   [ Bernard Gray ]
   * add XFCE_SPLASH_ENGINE var to xfce default - req'd for conf files
   * add xfce splash conf file creation to preseed script
+  * xfce splash config failing due to non-existent dir - make sure dir exists 
 
- -- Bernard Gray <bernard.gray@gmail.com>  Fri, 06 Jun 2008 22:37:08 +1000
+ -- Bernard Gray <bernard.gray@gmail.com>  Sun, 08 Jun 2008 15:35:02 +1000
 
 desktop-defaults (0.10.28) unstable; urgency=low
 
