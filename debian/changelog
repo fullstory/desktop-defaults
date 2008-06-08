@@ -1,8 +1,9 @@
-desktop-defaults (0.10.30) UNRELEASED; urgency=low
+desktop-defaults (0.10.30) unstable; urgency=low
 
-  * NOT RELEASED YET
+  * move section from the obsoleted "base" to "x11", to really follow
+    standards version 3.8.0.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 08 Jun 2008 15:39:54 +0200
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 08 Jun 2008 22:09:05 +0200
 
 desktop-defaults (0.10.29) unstable; urgency=low
 

@@ -1,5 +1,5 @@
 Source: desktop-defaults
-Section: base
+Section: x11
 Priority: optional
 Maintainer: Kel Modderman <kel@otaku42.de>
 Uploaders: Stefan Lippers-Hollmann <s.l-h@gmx.de>
