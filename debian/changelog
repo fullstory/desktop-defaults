@@ -1,14 +1,14 @@
-desktop-defaults (0.10.29) UNRELEASED; urgency=low
-
-  [ Stefan Lippers-Hollmann ]
-  * NOT RELEASED YET
+desktop-defaults (0.10.29) unstable; urgency=low
 
   [ Bernard Gray ]
   * add XFCE_SPLASH_ENGINE var to xfce default - req'd for conf files
   * add xfce splash conf file creation to preseed script
   * xfce splash config failing due to non-existent dir - make sure dir exists 
 
- -- Bernard Gray <bernard.gray@gmail.com>  Sun, 08 Jun 2008 15:35:02 +1000
+  [ Stefan Lippers-Hollmann ]
+  * bump standards version to 3.8.0, no changes necessary.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 08 Jun 2008 15:38:24 +0200
 
 desktop-defaults (0.10.28) unstable; urgency=low
 
