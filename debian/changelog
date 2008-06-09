@@ -7,8 +7,9 @@ desktop-defaults (0.10.31) UNRELEASED; urgency=low
   * fix glaring typo breaking xfce splash config :/
   * begin configuring domino based kde theme - kdeglobals setup
   * replace qtcurve with domino kde-style
+  * remove qtcurve rc conf, add domino equivalent
 
- -- Bernard Gray <bernard.gray@gmail.com>  Mon, 09 Jun 2008 16:47:03 +1000
+ -- Bernard Gray <bernard.gray@gmail.com>  Mon, 09 Jun 2008 17:03:36 +1000
 
 desktop-defaults (0.10.30) unstable; urgency=low
 
