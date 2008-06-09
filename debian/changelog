@@ -1,9 +1,5 @@
-desktop-defaults (0.10.31) UNRELEASED; urgency=low
+desktop-defaults (0.10.31) unstable; urgency=low
 
-  [ Stefan Lippers-Hollmann ]
-  * NOT RELEASED YET
-
-  [ Bernard Gray ]
   * fix glaring typo breaking xfce splash config :/
   * begin configuring domino based kde theme - kdeglobals setup
   * replace qtcurve with domino kde-style
