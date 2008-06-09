@@ -1,3 +1,9 @@
+desktop-defaults (0.10.32) UNRELEASED; urgency=low
+
+  * NOT RELEASED YET
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 10 Jun 2008 01:36:48 +0200
+
 desktop-defaults (0.10.31) unstable; urgency=low
 
   * fix glaring typo breaking xfce splash config :/
