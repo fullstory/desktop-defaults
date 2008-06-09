@@ -104,7 +104,7 @@ fi
 ###
 # set xfce splash login theme
 ###
-if [ "${XFCE_KSPLASH_THEME}" ]; then
+if [ "${XFCE_SPLASH_THEME}" ]; then
 	mkdir -p "${HOME}/.config/xfce4-session"
         echo "" > "${HOME}/.config/xfce4-session/xfce4-splash.rc"
         cat > "${HOME}/.config/xfce4-session/xfce4-splash.rc" \
