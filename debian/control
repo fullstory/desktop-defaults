@@ -18,8 +18,8 @@ Description: common user presets for various popular desktop applications
 
 Package: desktop-defaults-kde
 Architecture: all
-Depends: dash, distro-defaults, fll-live-initscripts, desktop-defaults-common, kde-style-qtcurve, sidux-art-kde, kwin
-Suggests: gtk2-engines-qtcurve
+Depends: dash, distro-defaults, fll-live-initscripts, desktop-defaults-common, kde-style-domino, sidux-art-kde, kwin
+Suggests: gtk-qt-engine
 Conflicts: kde-services-sidux
 Description: user presets specific to the K desktop environment
  This package provides required infrastructure to tweak the KDE desktop
