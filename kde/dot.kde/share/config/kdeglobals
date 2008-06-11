@@ -156,7 +156,7 @@ Window to Previous Desktop=none
 Trash=$HOME/Desktop/Trash/
 
 [KDE]
-colorScheme=Erebos.kcsrc
+colorScheme=sidux-erebos.kcsrc
 contrast=7
 
 [MainToolbarIcons]
