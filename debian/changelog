@@ -5,8 +5,9 @@ desktop-defaults (0.10.32) UNRELEASED; urgency=low
 
   [ Bernard Gray ]
   * change the colour scheme in use to match that in sidux-art-erebos 
+  * convert gtk-kde theme matching tool to generic gtk-qt-engine
 
- -- Bernard Gray <bernard.gray@gmail.com>  Wed, 11 Jun 2008 14:37:49 +1000
+ -- Bernard Gray <bernard.gray@gmail.com>  Wed, 11 Jun 2008 14:48:00 +1000
 
 desktop-defaults (0.10.31) unstable; urgency=low
 
