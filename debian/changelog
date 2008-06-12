@@ -1,3 +1,9 @@
+desktop-defaults (0.10.33) UNRELEASED; urgency=low
+
+  * NOT RELEASED YET
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 12 Jun 2008 02:52:38 +0200
+
 desktop-defaults (0.10.32) unstable; urgency=low
 
   * change the colour scheme in use to match that in sidux-art-erebos 
