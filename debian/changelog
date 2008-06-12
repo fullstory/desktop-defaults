@@ -1,9 +1,5 @@
-desktop-defaults (0.10.32) UNRELEASED; urgency=low
+desktop-defaults (0.10.32) unstable; urgency=low
 
-  [ Stefan Lippers-Hollmann ]
-  * NOT RELEASED YET
-
-  [ Bernard Gray ]
   * change the colour scheme in use to match that in sidux-art-erebos 
   * convert gtk-kde theme matching tool to generic gtk-qt-engine
 
