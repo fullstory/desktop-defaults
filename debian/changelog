@@ -1,8 +1,8 @@
 desktop-defaults (0.10.33) UNRELEASED; urgency=low
 
-  * NOT RELEASED YET
+  * Set "darkFrame" property to true in kwindominorc.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 12 Jun 2008 02:52:38 +0200
+ -- Kel Modderman <kel@otaku42.de>  Sun, 15 Jun 2008 11:54:54 +1000
 
 desktop-defaults (0.10.32) unstable; urgency=low
 
