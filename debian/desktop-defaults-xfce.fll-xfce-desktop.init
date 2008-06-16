@@ -1,10 +1,10 @@
-#!/bin/dash
+#!/bin/sh
 
 ### BEGIN INIT INFO
 # Provides:          fll-xfce-desktop
 # Required-Start:    $local_fs fll-adduser
 # Required-Stop:
-# X-Start-Before:    fll-common-desktop
+# X-Start-Before:    fll-common-desktop fll-gnome-desktop
 # Default-Start:     S
 # Default-Stop:
 # Short-Description: prepare live user for xfce desktop
@@ -79,11 +79,6 @@ if [ ! -d "${FLL_LIVE_USER_HOME}" ]; then
 	log_daemon_msg "${NAME}" "directory ${FLL_LIVE_USER_HOME} does not exist"
 	log_end_msg 1
 fi
-
-###
-# functions
-###
-. /usr/share/desktop-defaults-common/fll-desktop-func
 
 default_gdm_theme()
 {

@@ -11,15 +11,22 @@ cp_desktop_defaults_from()
 			continue
 		fi
 		
-		dotdestdir="${HOME}/${dotdir#${1}/dot}"
+		dotdestdir="${dotdir#${1}/dot}"
+
+		if [ -d "${HOME}/${dotdestdir}" ]; then
+			#
+			# Do _not_ clobber an existing $HOME dotfile heirachy
+			#
+			continue
+		fi
 		
-		mkdir -p "${dotdestdir}"
+		mkdir -p "${HOME}/${dotdestdir}"
 
 		cd "${dotdir}" && {
-			find 	. -printf "%P\n" -exec [ ! -e "${dotdestdir}"/'{}' ] \; | grep ^. | \
+			find 	. -printf "%P\n" | grep ^. | \
 			cpio 	--unconditional --make-directories --dereference \
 				--preserve-modification-time --pass-through --quiet \
-				"${dotdestdir}"
+				"${HOME}/${dotdestdir}"
 		}
 	done
 }

@@ -10,7 +10,7 @@ Vcs-Browser: http://svn.berlios.de/wsvn/fullstory/desktop-defaults/trunk/
 
 Package: desktop-defaults-common
 Architecture: all
-Depends: dash, distro-defaults, fll-live-initscripts, sidux-art-wallpaper, sudo
+Depends: distro-defaults, fll-live-initscripts, sidux-art-wallpaper, sudo
 Suggests: iceweasel
 Description: common user presets for various popular desktop applications
  This package provides required infrastructure to tweak various popular desktop
@@ -18,7 +18,7 @@ Description: common user presets for various popular desktop applications
 
 Package: desktop-defaults-kde
 Architecture: all
-Depends: dash, distro-defaults, fll-live-initscripts, desktop-defaults-common, kde-style-domino, sidux-art-kde, kwin
+Depends: distro-defaults, fll-live-initscripts, desktop-defaults-common, kde-style-domino, sidux-art-kde, kwin
 Suggests: gtk-qt-engine
 Conflicts: kde-services-sidux
 Description: user presets specific to the K desktop environment
@@ -27,14 +27,14 @@ Description: user presets specific to the K desktop environment
 
 Package: desktop-defaults-gnome
 Architecture: all
-Depends: dash, distro-defaults, fll-live-initscripts, desktop-defaults-common, metacity
+Depends: distro-defaults, fll-live-initscripts, desktop-defaults-common, metacity
 Description: user presets specific to the GNOME desktop environment
  This package provides required infrastructure to tweak the GNOME desktop
  of the F.U.L.L.S.T.O.R.Y. live Linux media.
 
 Package: desktop-defaults-xfce
 Architecture: all
-Depends: dash, distro-defaults, fll-live-initscripts, desktop-defaults-common, sidux-art-xfce, xfwm4
+Depends: distro-defaults, fll-live-initscripts, desktop-defaults-common, sidux-art-xfce, xfwm4
 Description: user presets specific to the Xfce desktop environment
  This package provides required infrastructure to tweak the Xfce desktop
  of the F.U.L.L.S.T.O.R.Y. live Linux media.

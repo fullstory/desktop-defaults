@@ -1,4 +1,4 @@
-#!/bin/dash
+#!/bin/sh
 
 ### BEGIN INIT INFO
 # Provides:          fll-gnome-desktop
@@ -81,11 +81,6 @@ if [ ! -d "${FLL_LIVE_USER_HOME}" ]; then
 	log_daemon_msg "${NAME}" "directory ${FLL_LIVE_USER_HOME} does not exist"
 	log_end_msg 1
 fi
-
-###
-# functions
-###
-. /usr/share/desktop-defaults-common/fll-desktop-func
 
 default_gdm_theme()
 {
