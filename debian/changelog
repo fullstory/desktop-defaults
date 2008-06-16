@@ -1,4 +1,4 @@
-desktop-defaults (0.10.33) UNRELEASED; urgency=low
+desktop-defaults (0.10.33) unstable; urgency=low
 
   * Set "darkFrame" property to true in kwindominorc.
 
