@@ -4,7 +4,7 @@
 # Provides:          fll-xfce-desktop
 # Required-Start:    $local_fs fll-adduser
 # Required-Stop:
-# X-Start-Before:    fll-common-desktop fll-gnome-desktop
+# X-Start-Before:    fll-common-desktop
 # Default-Start:     S
 # Default-Stop:
 # Short-Description: prepare live user for xfce desktop

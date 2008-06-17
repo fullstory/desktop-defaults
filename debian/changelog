@@ -10,12 +10,8 @@ desktop-defaults (0.10.34) UNRELEASED; urgency=low
   * fll-gnome-desktop.init, fll-xfce-desktop.init:
     - do not source /usr/share/desktop-defaults-common/fll-desktop-func, no
       functions are used in initscript anymore
-  * fll-xfce-desktop.init:
-    - start at sequence num 95, to ensure executed before
-      fll-gnome-desktop.init at boot time
-    - add fll-gnome-desktop to X-Start-Before LSB defaults
 
- -- Kel Modderman <kel@otaku42.de>  Mon, 16 Jun 2008 13:52:42 +1000
+ -- Kel Modderman <kel@otaku42.de>  Wed, 18 Jun 2008 09:47:26 +1000
 
 desktop-defaults (0.10.33) unstable; urgency=low
 
