@@ -1,4 +1,4 @@
-desktop-defaults (0.10.34) UNRELEASED; urgency=low
+desktop-defaults (0.10.34) unstable; urgency=low
 
   [ Kel Modderman ]
   * The "I don't care if its broken if you don't care it is broken" release.
