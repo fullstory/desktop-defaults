@@ -13,7 +13,7 @@ BorderSize=0
 ButtonsOnLeft=MS
 ButtonsOnRight=HIAX
 CustomButtonPositions=false
-PluginLib=kwin3_domino
+PluginLib=kwin3_plastik
 ShowToolTips=true
 
 [Windows]

@@ -1,0 +1,12 @@
+[Settings]
+appearance=dullglass
+defBtnIndicator=fontcolor
+lvAppearance=bevelled
+menubarAppearance=flat
+menuitemAppearance=dullglass
+progressAppearance=dullglass
+round=slight
+shadeMenubars=none
+sliderAppearance=dullglass
+tabAppearance=gradient
+toolbarAppearance=flat
