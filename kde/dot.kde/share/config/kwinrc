@@ -17,4 +17,5 @@ PluginLib=kwin3_domino
 ShowToolTips=true
 
 [Windows]
+FocusStealingPreventionLevel=2
 IgnoreFocusStealingClasses=kio_uiserver
