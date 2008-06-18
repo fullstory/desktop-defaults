@@ -16,8 +16,9 @@ desktop-defaults (0.10.34) UNRELEASED; urgency=low
   * also delete kde/dot.kde/env for revert ^
   * revert 18605 - domino -> qtcurve theme
   * revert 18606 - ""
+  * revert 18604 - ""
 
- -- Bernard Gray <bernard.gray@gmail.com>  Wed, 18 Jun 2008 22:27:47 +1000
+ -- Bernard Gray <bernard.gray@gmail.com>  Wed, 18 Jun 2008 22:33:19 +1000
 
 desktop-defaults (0.10.33) unstable; urgency=low
 

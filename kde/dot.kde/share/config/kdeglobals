@@ -38,7 +38,7 @@ shadeSortColumn=false
 taskbarFont=Bitstream Vera Sans,10,-1,5,50,0,0,0,0,0
 toolBarFont=Bitstream Vera Sans,10,-1,5,50,0,0,0,0,0
 visitedLinkColor=128,0,128
-widgetStyle=domino
+widgetStyle=qtcurve
 windowBackground=255,255,255
 windowForeground=0,0,0
 
@@ -156,7 +156,7 @@ Window to Previous Desktop=none
 Trash=$HOME/Desktop/Trash/
 
 [KDE]
-colorScheme=sidux-erebos.kcsrc
+colorScheme=Invisible_Light.kcsrc
 contrast=7
 
 [MainToolbarIcons]
@@ -219,11 +219,6 @@ DisabledValue=1
 DoublePixels=false
 Size=16
 
-[Toolbar style]
-Highlighting=true
-IconText=IconOnly
-TransparentMoving=true
-
 [ToolbarIcons]
 ActiveColor=169,156,255
 ActiveColor2=0,0,0
@@ -249,7 +244,7 @@ activeBackground=239,239,239
 activeBlend=239,239,239
 activeFont=Bitstream Vera Sans,10,-1,5,75,0,0,0,0,0
 activeForeground=0,0,0
-activeTitleBtnBg=239,239,239
+activeTitleBtnBg=0,0,0
 frame=239,239,239
 handle=239,239,239
 inactiveBackground=239,239,239
