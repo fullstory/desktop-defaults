@@ -1,8 +1,8 @@
-desktop-defaults (0.10.35) UNRELEASED; urgency=low
+desktop-defaults (0.10.35) unstable; urgency=low
 
-  * NOT RELEASED YET
+  * remove gnome, it's the profiles are seriously outdated and broken.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 18 Jun 2008 15:55:06 +0200
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 25 Jun 2008 19:00:49 +0200
 
 desktop-defaults (0.10.34) unstable; urgency=low
 
