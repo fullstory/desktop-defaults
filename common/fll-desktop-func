@@ -6,6 +6,14 @@ cp_desktop_defaults_from()
 {
 	local dotdir dotdestdir
 
+	for opt in $(cat /proc/cmdline); do
+		case "${opt}" in
+			persist*)
+				FLL_PERSIST="yes"
+				;;
+		esac
+	done
+
 	for dotdir in ${1}/dot.*; do
 		if [ ! -d "${dotdir}" ]; then
 			continue
@@ -13,6 +21,10 @@ cp_desktop_defaults_from()
 		
 		dotdestdir="${HOME}/${dotdir#${1}/dot}"
 		
+		if [ "${FLL_PERSIST}" = "yes" -a -d "${dotdestdir}" ]; then
+			continue
+		fi
+
 		mkdir -p "${dotdestdir}"
 
 		cd "${dotdir}" && {
