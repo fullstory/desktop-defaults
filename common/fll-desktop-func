@@ -21,7 +21,7 @@ cp_desktop_defaults_from()
 		
 		dotdestdir="${HOME}/${dotdir#${1}/dot}"
 		
-		if [ "${FLL_PERSIST}" = "yes" -a -d "${dotdestdir}" ]; then
+		if [ "${FLL_PERSIST}" = "yes" ] && [ -d "${dotdestdir}" ]; then
 			continue
 		fi
 
