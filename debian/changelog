@@ -1,8 +1,12 @@
 desktop-defaults (0.10.37) UNRELEASED; urgency=low
 
+  [ Stefan Lippers-Hollmann ]
   * NOT RELEASED YET
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 27 Jul 2008 03:37:04 +0200
+  [ Bernard Gray ]
+  * adjust defaults to use ourea art theme
+
+ -- Bernard Gray <bernard.gray@gmail.com>  Fri, 22 Aug 2008 23:12:02 +1000
 
 desktop-defaults (0.10.36) unstable; urgency=low
 
