@@ -1,9 +1,5 @@
-desktop-defaults (0.10.37) UNRELEASED; urgency=low
+desktop-defaults (0.10.37) unstable; urgency=low
 
-  [ Stefan Lippers-Hollmann ]
-  * NOT RELEASED YET
-
-  [ Bernard Gray ]
   * adjust defaults to use ourea art theme
 
  -- Bernard Gray <bernard.gray@gmail.com>  Fri, 22 Aug 2008 23:12:02 +1000
