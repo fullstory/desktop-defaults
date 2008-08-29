@@ -1,9 +1,5 @@
-desktop-defaults (0.10.38) UNRELEASED; urgency=low
+desktop-defaults (0.10.38) unstable; urgency=low
 
-  [ Stefan Lippers-Hollmann ]
-  * NOT RELEASED YET
-
-  [ Bernard Gray ]
   * add battmon applet to xfce panel use laptop-detect instead of batt checking
   * (first attempt to) modify xfce decoration theme to better suit ourea
     - use standard installed theme - Xfce-winter
