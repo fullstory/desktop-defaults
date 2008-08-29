@@ -1,3 +1,9 @@
+desktop-defaults (0.10.39) UNRELEASED; urgency=low
+
+  * NOT RELEASED YET
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Fri, 29 Aug 2008 02:10:56 +0200
+
 desktop-defaults (0.10.38) unstable; urgency=low
 
   * add battmon applet to xfce panel use laptop-detect instead of batt checking
