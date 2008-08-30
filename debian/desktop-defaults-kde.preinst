@@ -22,7 +22,13 @@ case "$1" in
 			echo '############################################################'
 			exit 1
 		fi
+
+		# Divert kdesktop_lock for the live user session
+		dpkg-divert --add --package desktop-defaults-kde --rename \
+			--divert /usr/bin/kdesktop_lock.real /usr/bin/kdesktop_lock
 		;;
 esac
 
 #DEBHELPER#
+
+exit 0

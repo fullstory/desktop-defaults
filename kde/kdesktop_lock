@@ -1,0 +1,12 @@
+#!/bin/sh
+
+# desktop-defaults-kde must divert the desktop lock program so that
+# passwordless live-cd user cannot lock themselves from the desktop
+# without possibility to resume. This wrapper calls the real lock
+# program with the option to disable session locking.
+
+if [ -x /usr/bin/kdesktop_lock.real ]; then
+	exec /usr/bin/kdesktop_lock.real --dontlock "$@"
+fi
+
+exit 0

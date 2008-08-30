@@ -8,7 +8,7 @@ fi
 [ "${KDE_SERVICES_ENABLED}" = "false" ] && exit 0
 
 # Start krandrtray
-if [ -x /usr/bin/krandrtray ]; then
+if which krandrtray >/dev/null; then
 	pgrep -x krandrtray >/dev/null || krandrtray
 fi
 
@@ -18,7 +18,7 @@ if [ -e /usr/share/services/kded/knemod.desktop ]; then
 fi
 
 # Start kpowersave
-if [ -x /usr/bin/kpowersave ]; then
+if which kpowersave >/dev/null; then
 	if ! pgrep -x kpowersave >/dev/null; then
 		# allow kpowersave to autostart (disabled by default)
 		if grep -s -q '^Autostart=' ${HOME}/.kde/share/config/kpowersaverc; then
@@ -32,7 +32,7 @@ if [ -x /usr/bin/kpowersave ]; then
 fi
 
 # Start mixer
-if [ -x /usr/bin/kmix ]; then
+if which kmix >/dev/null; then
 	# kmix already started? sound system active?
 	if ! pgrep -x kmix >/dev/null && grep -q "^snd" /proc/modules; then
 		# be sure that kmix just starts in tray!

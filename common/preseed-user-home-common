@@ -3,7 +3,6 @@
 ###
 # F.U.L.L.S.T.O.R.Y init script
 #
-# Copyright: (C) 2007-2008 F.U.L.L.S.T.O.R.Y Project
 # Copyright: (C) 2007-2008 Kel Modderman <kel@otaku42.de>
 # Copyright: (C) 2007 Niall Walsh <niallwalsh@users.berlios.de>
 # Copyright: (C) 2008 Stefan Lippers-Hollmann <s.l-h@gmx.de>
@@ -32,50 +31,50 @@ if [ "${FLL_DISTRO_MODE}" != "live" ]; then
 	exit 0
 fi
 
-###
-## functions
-###
-. /usr/share/desktop-defaults-common/fll-desktop-func
+if [ ! -d "${HOME}/.mozilla/firefox/" ]; then
+	DEFAULT_PROFILE=$(mawk 'BEGIN{ printf("%d.%s\n", int(10000000 * rand()), "default") }')
+	mkdir -p "${HOME}/.mozilla/firefox/${DEFAULT_PROFILE}"
 
-cp_desktop_defaults_from /usr/share/desktop-defaults-common
+	###
+	# Create default pofiles.ini file
+	###
+	cat >"${HOME}/.mozilla/firefox/profiles.ini" <<EOF
+[General]
+StartWithLastProfile=1
 
-###
-# emulate firefox^iceweasel security via obscurity 
-###
-if [ -f "${HOME}/.mozilla/firefox/profiles.ini" ]; then
-	MOZPROFILE=$(awk '
-		/^\[Profile/ {
-			if (/Profile0/)
-				inprof=1
-			else
-				inprof=0
-		}
-		/^Path=/ {
-			if (inprof) {
-				sub("Path=", "", $0)
-				print
-			}
-		}' "${HOME}/.mozilla/firefox/profiles.ini")
-fi
+[Profile0]
+Name=default
+IsRelative=1
+Path=${DEFAULT_PROFILE}
+EOF
 
-if [ "${MOZPROFILE}" = "XXXX.default" ] && \
-	[ -d "${HOME}/.mozilla/firefox/${MOZPROFILE}" ]; then
-	# use mawk: rand() behaviour is different among awk variants
-	NEWMOZPROFILE=$(mawk '
-		BEGIN{
-			printf("%d.%s\n", int(10000000 * rand()), "default")
-	}')
+	###
+	# Create default preferences configuration
+	###
+	cat >"${HOME}/.mozilla/firefox/${DEFAULT_PROFILE}/prefs.js" <<EOF
+user_pref("font.name.sans-serif.x-western", "Bitstream Vera Sans");
+user_pref("font.name.serif.x-western", "Bitstream Vera Serif");
+user_pref("font.minimum-size.x-western", 12);
+user_pref("font.size.variable.x-western", 14);
+user_pref("ui.allow_platform_file_picker", false);
+user_pref("layout.css.dpi", 0);
+user_pref("browser.startup.homepage", "http://sidux.com/");
+user_pref("browser.tabs.closeButtons", 3);
+user_pref("browser.tabs.tabMinWidth", 5);
+user_pref("browser.visited_color", "#336666");
+EOF
 
-	mv "${HOME}/.mozilla/firefox/${MOZPROFILE}" \
-		"${HOME}/.mozilla/firefox/${NEWMOZPROFILE}"
-	sed -i 's|^Path='"${MOZPROFILE}"'|Path='"${NEWMOZPROFILE}"'|' \
-		"${HOME}/.mozilla/firefox/profiles.ini"
+	###
+	# Install default bookmarks.html
+	###
+	cp /usr/share/desktop-defaults-common/bookmarks.html \
+		"${HOME}/.mozilla/firefox/${DEFAULT_PROFILE}/"
 fi
 
 ###
 # su-to-root -> sudo
 ###
-if [ "$(which su-to-root 2>/dev/null)" ]; then
+if which su-to-root >/dev/null; then
 	touch "${HOME}/.su-to-rootrc"
 	if grep -q '^SU_TO_ROOT_SU=' "${HOME}/.su-to-rootrc"; then
 		sed -i 's|^SU_TO_ROOT_SU=.*|SU_TO_ROOT_SU=sudo|' \
@@ -88,7 +87,7 @@ fi
 ###
 # gksu -> sudo
 ###
-if [ "$(which gconftool-2 2>/dev/null)" ]; then
+if which gconftool-2 >/dev/null; then
 	gconftool-2 -s -t bool /apps/gksu/sudo-mode true
 	gconftool-2 -s -t bool /apps/gksu/display-no-pass-info false
 fi
@@ -96,7 +95,7 @@ fi
 ###
 # kdesu -> sudo
 ###
-if [ "$(which kdesu 2>/dev/null)" ]; then
+if which kdesu >/dev/null; then
 	if [ ! -d "${HOME}/.kde/share/config" ]; then
 		mkdir -p "${HOME}/.kde/share/config"
 	fi
@@ -147,7 +146,6 @@ if [ -f /usr/share/seminarix-samples/video/sidux-png-video.desktop ]; then
 			"${HOME}/Desktop/sidux-png-video.desktop"
 fi
 
-
 ###
 ## put a sidux-irc icon on the desktop
 ####
@@ -163,5 +161,3 @@ if [ ! -f "${HOME}/Desktop/install-gui.desktop" ] && \
 	[ -f /usr/share/applications/sidux/install-gui.desktop ]; then
 	ln -s /usr/share/applications/sidux/install-gui.desktop "${HOME}/Desktop/install-gui.desktop"
 fi
-
-

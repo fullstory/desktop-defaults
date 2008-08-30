@@ -80,7 +80,7 @@ if [ ! -d "${FLL_LIVE_USER_HOME}" ]; then
 	log_end_msg 1
 fi
 
-default_kdm_theme()
+set_default_kdm_theme()
 {
 	umask 0022
 
@@ -120,13 +120,14 @@ EOF
 do_start()
 {
 	su "${FLL_LIVE_USER}" -c /usr/share/desktop-defaults-kde/preseed-user-home-kde
+
+	set_default_kdm_theme
 }
 
 case "${1}" in
 	start)
 		log_daemon_msg "${NAME}"; log_action_begin_msg " preparing ${FLL_LIVE_USER} for kde"
 		do_start
-		default_kdm_theme
 		log_end_msg 0
 		;;
 	stop)

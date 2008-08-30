@@ -1,8 +1,0 @@
-[General]
-Initial_TZ=0
-RemoteZones=
-Type=Plain
-
-[Plain]
-Font=Bitstream Vera Sans,11,-1,5,75,0,0,0,0,0
-Show_Date=false
