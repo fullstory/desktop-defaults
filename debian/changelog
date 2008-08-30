@@ -1,9 +1,5 @@
-desktop-defaults (0.10.39) UNRELEASED; urgency=low
+desktop-defaults (0.10.39) unstable; urgency=low
 
-  [ Stefan Lippers-Hollmann ]
-  * NOT RELEASED YET
-
-  [ Bernard Gray ]
   * add laptop-detect to depends for desktop-defaults-xfce
 
  -- Bernard Gray <bernard.gray@gmail.com>  Fri, 29 Aug 2008 17:11:52 +1000
