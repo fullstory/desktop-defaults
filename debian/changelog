@@ -1,3 +1,9 @@
+desktop-defaults (0.10.41) UNRELEASED; urgency=low
+
+  * NOT RELEASED YET
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 31 Aug 2008 17:31:57 +0200
+
 desktop-defaults (0.10.40) unstable; urgency=low
 
   * Divert /usr/bin/kdesktop_lock and provide non-locking wrapper to protect
