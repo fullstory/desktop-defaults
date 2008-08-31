@@ -6,7 +6,7 @@
 # program with the option to disable session locking.
 
 if [ -x /usr/bin/kdesktop_lock.real ]; then
-	exec /usr/bin/kdesktop_lock.real --dontlock "$@"
+	exec /usr/bin/kdesktop_lock.real --dontlock
 fi
 
 exit 0
