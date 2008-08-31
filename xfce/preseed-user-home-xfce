@@ -128,7 +128,7 @@ fi
 ###
 # Add battmon plugin to panel
 ###
-if laptop-detect; then 
+if /usr/sbin/laptop-detect; then 
 	sed -i  -e "/<item name=\"battmon\"/d" \
 		-e "s|^\([ \t]*\)\(<item[ \t]*name\=\"systray\".*\)|\1<item name=\"battmon\" id=\"12198821920\"\/\>\n\1\2|" \
 		"${HOME}/.config/xfce4/panel/panels.xml"
