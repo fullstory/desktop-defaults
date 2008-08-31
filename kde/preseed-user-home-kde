@@ -211,13 +211,3 @@ elif [ -e "${HOME}/.kde/Autostart/${FLL_DISTRO_NAME}.desktop" ]; then
 	# toram + persistency
 	rm -f "${HOME}/.kde/Autostart/${FLL_DISTRO_NAME}.desktop"
 fi
-
-###
-# allow gtk2 apps to blend in with kde style
-###
-if [ ! -f "${HOME}/.gtkrc-2.0" ]; then
-	if [ "${GTK2_ENGINE}" ] && [ -f "/usr/share/themes/${GTK2_ENGINE}/gtk-2.0/gtkrc" ]; then
-		echo "include \"/usr/share/themes/${GTK2_ENGINE}/gtk-2.0/gtkrc\"" > \
-			"${HOME}/.gtkrc-2.0"
-	fi
-fi

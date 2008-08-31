@@ -10,6 +10,3 @@ KDE_KDM_WALLPAPER="${KDE_KDM_THEME}/background.png"
 
 # specify ksplash theme
 KDE_KSPLASH_THEME="sidux-ourea"
-
-# gtk2 theme to match KDE style - gtk2-engines-qtcurve
-GTK2_ENGINE="QtCurve"

@@ -1,8 +1,10 @@
 desktop-defaults (0.10.41) UNRELEASED; urgency=low
 
   * NOT RELEASED YET
+  * No longer handle gtkrc-2.0 configuration preseeding, this will be
+    handled by sidux-settings-kde.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 31 Aug 2008 17:31:57 +0200
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 01 Sep 2008 02:46:58 +1000
 
 desktop-defaults (0.10.40) unstable; urgency=low
 
