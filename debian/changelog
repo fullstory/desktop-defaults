@@ -9,7 +9,7 @@ desktop-defaults (0.10.40) UNRELEASED; urgency=low
   * Remove a whole lot of manual kde setting configuration in favour of new
     sidux-settings-kde.
 
- -- Kel Modderman <kel@otaku42.de>  Mon, 01 Sep 2008 00:51:03 +1000
+ -- Kel Modderman <kel@otaku42.de>  Mon, 01 Sep 2008 01:13:31 +1000
 
 desktop-defaults (0.10.39) unstable; urgency=low
 

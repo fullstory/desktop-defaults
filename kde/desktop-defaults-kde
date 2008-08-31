@@ -16,18 +16,3 @@ fi
 if [ -e /usr/share/services/kded/knemod.desktop ]; then
 	dcop kded kded loadModule knemod >/dev/null
 fi
-
-# Start mixer
-if which kmix >/dev/null; then
-	# kmix already started? sound system active?
-	if ! pgrep -x kmix >/dev/null && grep -q "^snd" /proc/modules; then
-		# be sure that kmix just starts in tray!
-		if grep -s '^Visible=' ${HOME}/.kde/share/config/kmixrc; then
-			sed -i 's/^Visible=.*/Visible=false/' ${HOME}/.kde/share/config/kmixrc
-		else
-			echo "Visible=false" > ${HOME}/.kde/share/config/kmixrc
-		fi
-		
-		kmix
-	fi
-fi
