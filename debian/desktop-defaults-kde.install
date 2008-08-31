@@ -1,4 +1,2 @@
-kde/desktop-defaults-kde		usr/bin/
 kde/kdesktop_lock			usr/bin/
-kde/desktop-defaults-kde.desktop	usr/share/autostart/
 kde/preseed-user-home-kde		usr/share/desktop-defaults-kde/
