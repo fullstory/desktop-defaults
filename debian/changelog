@@ -6,8 +6,10 @@ desktop-defaults (0.10.40) UNRELEASED; urgency=low
     desktop-defaults-kde, rework them.
   * Add /sbin:/usr/sbin to PATH so that user can call some programs without
     full path in preseed scripts.
+  * Remove a whole lot of manual kde setting configuration in favour of new
+    sidux-settings-kde.
 
- -- Kel Modderman <kel@otaku42.de>  Sun, 31 Aug 2008 23:58:49 +1000
+ -- Kel Modderman <kel@otaku42.de>  Mon, 01 Sep 2008 00:51:03 +1000
 
 desktop-defaults (0.10.39) unstable; urgency=low
 

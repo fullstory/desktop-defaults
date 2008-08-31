@@ -17,27 +17,12 @@ if [ -e /usr/share/services/kded/knemod.desktop ]; then
 	dcop kded kded loadModule knemod >/dev/null
 fi
 
-# Start kpowersave
-if which kpowersave >/dev/null; then
-	if ! pgrep -x kpowersave >/dev/null; then
-		# allow kpowersave to autostart (disabled by default)
-		if grep -s -q '^Autostart=' ${HOME}/.kde/share/config/kpowersaverc; then
-			sed -i 's/^Autostart=.*/Autostart=true/' ${HOME}/.kde/share/config/kpowersaverc
-		else
-			echo "Autostart=true" > ${HOME}/.kde/share/config/kpowersaverc
-		fi
-
-		kpowersave
-	fi
-fi
-
 # Start mixer
 if which kmix >/dev/null; then
 	# kmix already started? sound system active?
 	if ! pgrep -x kmix >/dev/null && grep -q "^snd" /proc/modules; then
 		# be sure that kmix just starts in tray!
-		touch ${HOME}/.kde/share/config/kmixrc
-		if grep -q '^Visible=' ${HOME}/.kde/share/config/kmixrc; then
+		if grep -s '^Visible=' ${HOME}/.kde/share/config/kmixrc; then
 			sed -i 's/^Visible=.*/Visible=false/' ${HOME}/.kde/share/config/kmixrc
 		else
 			echo "Visible=false" > ${HOME}/.kde/share/config/kmixrc

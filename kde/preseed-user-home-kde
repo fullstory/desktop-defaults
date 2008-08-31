@@ -3,7 +3,6 @@
 ###
 # F.U.L.L.S.T.O.R.Y init script
 #
-# Copyright: (C) 2007-2008 F.U.L.L.S.T.O.R.Y Project
 # Copyright: (C) 2007-2008 Kel Modderman <kel@otaku42.de>
 # Copyright: (C) 2008 Stefan Lippers-Hollmann <s.l-h@gmx.de>
 # License:   GPLv2
@@ -121,7 +120,7 @@ EOF
 fi
 
 ###
-# disable first time login wizard, set icon sizes
+# disable first time login wizard
 ###
 if grep -s '^FirstLogin=' "${HOME}/.kde/share/config/kpersonalizerrc"; then
 	sed -i 's|^FirstLogin=.*|FirstLogin=false|' \
@@ -131,20 +130,6 @@ else
 <<EOF
 [General]
 FirstLogin=false
-EOF
-fi
-
-###
-# konsole defaults
-###
-if grep -s '^RunOnStart=' "${HOME}/.kde/share/config/konsolerc"; then
-	sed -i 's|^RunOnStart=.*|RunOnStart=false|' \
-		"${HOME}/.kde/share/config/konsolerc"
-else
-	cat > "${HOME}/.kde/share/config/konsolerc" \
-<<EOF
-[TipOfDay]
-RunOnStart=false
 EOF
 fi
 
@@ -163,96 +148,6 @@ fi
 if [ -f /usr/share/apps/konsole/su.desktop ]; then
 	sed -e 's|^Exec=su.*$|Exec=sudo -i|' /usr/share/apps/konsole/su.desktop > \
 		"${HOME}/.kde/share/apps/konsole/su.desktop"
-fi
-
-# while here, fix #381659 until patch is applied
-if [ -f /usr/share/apps/konsole/python.desktop ] && [ -e /usr/share/pixmaps/python.xpm ]; then
-	sed -e 's|^Icon=.*|Icon=/usr/share/pixmaps/python.xpm|' /usr/share/apps/konsole/python.desktop > \
-		"${HOME}/.kde/share/apps/konsole/python.desktop"
-fi
-
-###
-# keep these disabled by default for clean desktop startup
-###
-for krc in kbluetoothdrc klipperrc; do
-	touch "${HOME}/.kde/share/config/${krc}"
-	if grep -q '^AutoStart=' "${HOME}/.kde/share/config/${krc}"; then
-		sed -i 's|^AutoStart=.*|AutoStart=false|' \
-			"${HOME}/.kde/share/config/${krc}"
-	else
-		cat > "${HOME}/.kde/share/config/${krc}" \
-<<EOF
-[General]
-AutoStart=false
-EOF
-	fi
-done
-
-###
-# korganizer
-###
-if grep -s '^Autostart' "${HOME}/.kde/share/config/korgacrc"; then
-	sed -i 's|^Autostart=.*|Autostart=false|' \
-		"${HOME}/.kde/share/config/korgacrc"
-else
-	cat > "${HOME}/.kde/share/config/korgacrc" \
-<<EOF
-[General]
-Autostart=false
-EOF
-fi
-
-###
-# kpowersave is the odd one out, stop it from starting by default, avoid first time wizard
-###
-if [ -x /usr/bin/kpowersave ]; then
-	if grep -s '^Autostart' "${HOME}/.kde/share/config/kpowersaverc"; then
-		sed -i 's|^Autostart=.*|Autostart=false|' \
-			"${HOME}/.kde/share/config/kpowersaverc"
-	else
-		cat > "${HOME}/.kde/share/config/kpowersaverc" \
-<<EOF
-[General]
-Autostart=false
-AlreadyStarted=true
-lockOnLidClose=false
-lockOnSuspend=false
-EOF
-	fi
-
-	###
-	# disable kcmlaptop when kpowersave is installed
-	###
-	cat > "${HOME}/.kde/share/config/kcmlaptoprc" \
-<<EOF
-[BatteryDefault]
-Enable=false
-EOF
-fi
-
-###
-# disable ktip
-###
-if grep -s '^RunOnStart=' "${HOME}/.kde/share/config/ktiprc"; then
-	sed -i 's|^RunOnStart=.*|RunOnStart=false|' \
-		"${HOME}/.kde/share/config/ktiprc"
-else
-	cat > "${HOME}/.kde/share/config/ktiprc" \
-<<EOF
-[TipOfDay]
-RunOnStart=false
-EOF
-fi
-	
-###
-# disable arts
-###
-if [ ! -f "${HOME}/.kde/share/config/kcmartsrc" ]; then
-	cat > "${HOME}/.kde/share/config/kcmartsrc" \
-<<EOF
-[Arts]
-StartServer=false
-EOF
 fi
 
 ###
