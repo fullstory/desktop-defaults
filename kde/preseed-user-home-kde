@@ -12,6 +12,8 @@
 # http://developer.berlios.de/projects/fullstory
 ###
 
+PATH=/sbin:/usr/sbin:$PATH
+
 # set default umask
 umask 0022
 
@@ -70,7 +72,7 @@ fi
 # set wallpaper, kdesktoprc is provided by our dot.kde
 ###
 if [ "${FLL_WALLPAPER}" ]; then
-	if grep -s -q '^Wallpaper=' "${HOME}/.kde/share/config/kdesktoprc"; then
+	if grep -s '^Wallpaper=' "${HOME}/.kde/share/config/kdesktoprc"; then
 		sed -i 's|^Wallpaper=.*|Wallpaper='"${FLL_WALLPAPER}"'|' \
 			"${HOME}/.kde/share/config/kdesktoprc"
 	else
@@ -86,8 +88,7 @@ fi
 # set Ksplash theme
 ###
 if [ "${KDE_KSPLASH_THEME}" ]; then
-	touch "${HOME}/.kde/share/config/ksplashrc"
-	if grep -q '^Theme=' "${HOME}/.kde/share/config/ksplashrc"; then
+	if grep -s '^Theme=' "${HOME}/.kde/share/config/ksplashrc"; then
 		sed -i 's|^Theme=.*|Theme='"${KDE_KSPLASH_THEME}"'|' \
 			"${HOME}/.kde/share/config/ksplashrc"
 	else
@@ -103,8 +104,7 @@ fi
 # setup keyboard chooser
 ###
 if [ "${XKBLAYOUT}" ]; then
-	touch "${HOME}/.kde/share/config/kxkbrc"
-	if grep -q '^LayoutList=' "${HOME}/.kde/share/config/kxkbrc"; then
+	if grep -s '^LayoutList=' "${HOME}/.kde/share/config/kxkbrc"; then
 		sed -i 's|^LayoutList=.*|LayoutList='"${XKBLAYOUT}"'|' \
 			"${HOME}/.kde/share/config/kxkbrc"
 	else
@@ -123,8 +123,7 @@ fi
 ###
 # disable first time login wizard, set icon sizes
 ###
-touch "${HOME}/.kde/share/config/kpersonalizerrc"
-if grep -q '^FirstLogin=' "${HOME}/.kde/share/config/kpersonalizerrc"; then
+if grep -s '^FirstLogin=' "${HOME}/.kde/share/config/kpersonalizerrc"; then
 	sed -i 's|^FirstLogin=.*|FirstLogin=false|' \
 		"${HOME}/.kde/share/config/kpersonalizerrc"
 else
@@ -138,8 +137,7 @@ fi
 ###
 # konsole defaults
 ###
-touch "${HOME}/.kde/share/config/konsolerc"
-if grep -q '^RunOnStart=' "${HOME}/.kde/share/config/konsolerc"; then
+if grep -s '^RunOnStart=' "${HOME}/.kde/share/config/konsolerc"; then
 	sed -i 's|^RunOnStart=.*|RunOnStart=false|' \
 		"${HOME}/.kde/share/config/konsolerc"
 else
@@ -193,8 +191,7 @@ done
 ###
 # korganizer
 ###
-touch "${HOME}/.kde/share/config/korgacrc"
-if grep -q '^Autostart' "${HOME}/.kde/share/config/korgacrc"; then
+if grep -s '^Autostart' "${HOME}/.kde/share/config/korgacrc"; then
 	sed -i 's|^Autostart=.*|Autostart=false|' \
 		"${HOME}/.kde/share/config/korgacrc"
 else
@@ -209,8 +206,7 @@ fi
 # kpowersave is the odd one out, stop it from starting by default, avoid first time wizard
 ###
 if [ -x /usr/bin/kpowersave ]; then
-	touch "${HOME}/.kde/share/config/kpowersaverc"
-	if grep -q '^Autostart' "${HOME}/.kde/share/config/kpowersaverc"; then
+	if grep -s '^Autostart' "${HOME}/.kde/share/config/kpowersaverc"; then
 		sed -i 's|^Autostart=.*|Autostart=false|' \
 			"${HOME}/.kde/share/config/kpowersaverc"
 	else
@@ -237,7 +233,7 @@ fi
 ###
 # disable ktip
 ###
-if grep -s -q '^RunOnStart=' "${HOME}/.kde/share/config/ktiprc"; then
+if grep -s '^RunOnStart=' "${HOME}/.kde/share/config/ktiprc"; then
 	sed -i 's|^RunOnStart=.*|RunOnStart=false|' \
 		"${HOME}/.kde/share/config/ktiprc"
 else

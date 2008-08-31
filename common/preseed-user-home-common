@@ -12,6 +12,8 @@
 # http://developer.berlios.de/projects/fullstory
 ###
 
+PATH=/sbin:/usr/sbin:$PATH
+
 # set default umask
 umask 0022
 

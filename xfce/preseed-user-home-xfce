@@ -12,6 +12,8 @@
 # http://developer.berlios.de/projects/fullstory
 ###
 
+PATH=/sbin:/usr/sbin:$PATH
+
 # set default umask
 umask 0022
 
@@ -128,7 +130,7 @@ fi
 ###
 # Add battmon plugin to panel
 ###
-if /usr/sbin/laptop-detect; then 
+if laptop-detect; then 
 	sed -i  -e "/<item name=\"battmon\"/d" \
 		-e "s|^\([ \t]*\)\(<item[ \t]*name\=\"systray\".*\)|\1<item name=\"battmon\" id=\"12198821920\"\/\>\n\1\2|" \
 		"${HOME}/.config/xfce4/panel/panels.xml"
@@ -138,7 +140,7 @@ fi
 ###
 # Start mixer
 ###
-if [ -x /usr/bin/xfce4-mixer ]; then
+if which xfce4-mixer >/dev/null; then
 	# sound system active?
 	if grep -q "^snd" /proc/modules; then
 		if [ -f "${HOME}/.config/xfce4/panel/panels.xml" ]; then
