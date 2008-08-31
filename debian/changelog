@@ -1,4 +1,4 @@
-desktop-defaults (0.10.40) UNRELEASED; urgency=low
+desktop-defaults (0.10.40) unstable; urgency=low
 
   * Divert /usr/bin/kdesktop_lock and provide non-locking wrapper to protect
     live session.
