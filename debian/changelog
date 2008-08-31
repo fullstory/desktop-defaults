@@ -1,6 +1,5 @@
-desktop-defaults (0.10.41) UNRELEASED; urgency=low
+desktop-defaults (0.10.41) unstable; urgency=low
 
-  * NOT RELEASED YET
   * No longer handle gtkrc-2.0 configuration preseeding, this will be
     handled by sidux-settings-kde.
 
