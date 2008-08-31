@@ -1,7 +1,5 @@
 desktop-defaults (0.10.40) UNRELEASED; urgency=low
 
-  [ Kel Modderman ]
-  * DO NOT RELEASE
   * Divert /usr/bin/kdesktop_lock and provide non-locking wrapper to protect
     live session.
   * Do not use cp_desktop_defaults_from() in desktop-defaults-common or
@@ -9,7 +7,7 @@ desktop-defaults (0.10.40) UNRELEASED; urgency=low
   * Add /sbin:/usr/sbin to PATH so that user can call some programs without
     full path in preseed scripts.
 
- -- Kel Modderman <kel@otaku42.de>  Sun, 31 Aug 2008 22:42:22 +1000
+ -- Kel Modderman <kel@otaku42.de>  Sun, 31 Aug 2008 23:58:49 +1000
 
 desktop-defaults (0.10.39) unstable; urgency=low
 
