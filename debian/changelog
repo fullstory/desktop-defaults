@@ -1,8 +1,10 @@
 desktop-defaults (0.10.42) UNRELEASED; urgency=low
 
   * NOT RELEASED YET
+  * No longer hack in iceweasel preferences for the live user, sidux-
+    browser will provide global defaults.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 31 Aug 2008 19:11:07 +0200
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 02 Sep 2008 00:06:15 +1000
 
 desktop-defaults (0.10.41) unstable; urgency=low
 

@@ -33,46 +33,6 @@ if [ "${FLL_DISTRO_MODE}" != "live" ]; then
 	exit 0
 fi
 
-if [ ! -d "${HOME}/.mozilla/firefox/" ]; then
-	DEFAULT_PROFILE=$(mawk 'BEGIN{ printf("%d.%s\n", int(10000000 * rand()), "default") }')
-	mkdir -p "${HOME}/.mozilla/firefox/${DEFAULT_PROFILE}"
-
-	###
-	# Create default pofiles.ini file
-	###
-	cat >"${HOME}/.mozilla/firefox/profiles.ini" <<EOF
-[General]
-StartWithLastProfile=1
-
-[Profile0]
-Name=default
-IsRelative=1
-Path=${DEFAULT_PROFILE}
-EOF
-
-	###
-	# Create default preferences configuration
-	###
-	cat >"${HOME}/.mozilla/firefox/${DEFAULT_PROFILE}/prefs.js" <<EOF
-user_pref("font.name.sans-serif.x-western", "Bitstream Vera Sans");
-user_pref("font.name.serif.x-western", "Bitstream Vera Serif");
-user_pref("font.minimum-size.x-western", 12);
-user_pref("font.size.variable.x-western", 14);
-user_pref("ui.allow_platform_file_picker", false);
-user_pref("layout.css.dpi", 0);
-user_pref("browser.startup.homepage", "http://sidux.com/");
-user_pref("browser.tabs.closeButtons", 3);
-user_pref("browser.tabs.tabMinWidth", 5);
-user_pref("browser.visited_color", "#336666");
-EOF
-
-	###
-	# Install default bookmarks.html
-	###
-	cp /usr/share/desktop-defaults-common/bookmarks.html \
-		"${HOME}/.mozilla/firefox/${DEFAULT_PROFILE}/"
-fi
-
 ###
 # su-to-root -> sudo
 ###
