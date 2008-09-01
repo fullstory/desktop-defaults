@@ -1,6 +1,5 @@
-desktop-defaults (0.10.42) UNRELEASED; urgency=low
+desktop-defaults (0.10.42) unstable; urgency=low
 
-  * NOT RELEASED YET
   * No longer hack in iceweasel preferences for the live user, sidux-
     browser will provide global defaults.
 
