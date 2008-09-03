@@ -63,28 +63,22 @@ done
 ###
 # set wallpaper and desktop defaults in desktop.xml
 ###
-FLL_CONF_PRESEED="${HOME}/.config/xfce4/mcs_settings/desktop.xml"
-if [ "${FLL_WALLPAPER}" ]; then
-	if [ ! -f "${FLL_CONF_PRESEED}" ]; then
-		mkdir -p "${HOME}/.config/xfce4/mcs_settings/"
-		cat >"${FLL_CONF_PRESEED}" <<EOF
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mcs-option SYSTEM "mcs-option.dtd">
+mkdir -p "${HOME}/.config/xfce4/mcs_settings/"
+XFCE_DESKTOP_XML="${HOME}/.config/xfce4/mcs_settings/desktop.xml"
+if [ "${FLL_WALLPAPER}" ] && [ ! -f "${XFCE_DESKTOP_XML}" ]; then
+	sed -e "/imagepath/s#value=\".*\"#value=\"${FLL_WALLPAPER}\"#" \
+		/etc/xdg/xfce4/mcs_settings/desktop.xml > "${XFCE_DESKTOP_XML}"
+fi
 
-<mcs-option>
-	<option name="brightness_0_0" type="int" value="0"/>
-	<option name="color1_0_0" type="color" value="		15104,		23296,		35072,		65535"/>
-	<option name="color2_0_0" type="color" value="		15872,		26624,		40448,		65535"/>
-	<option name="colorstyle_0_0" type="int" value="0"/>
-	<option name="desktopiconstyle" type="int" value="2"/>
-	<option name="icons_use_system_font_size" type="int" value="1"/>
-	<option name="imagepath_0_0" type="string" value="${FLL_WALLPAPER}"/>
-	<option name="imagestyle_0_0" type="int" value="3"/>
-	<option name="showdm" type="int" value="1"/>
-	<option name="showimage_0_0" type="int" value="1"/>
-	<option name="showwl" type="int" value="1"/>
-</mcs-option>
-EOF
+mkdir -p "${HOME}/.config/xfce4/panel/"
+XFCE_PANELS_XML="${HOME}/.config/xfce4/panel/panels.xml"
+if [ ! -f "${XFCE_PANELS_XML}" ]; then
+	cp /usr/share/sidux-settings-xfce/panel/* "${HOME}/.config/xfce4/panel/"
+
+	if grep -s -q Battery /sys/class/power_supply/*/type; then
+		sed -i  -e "/<item name=\"battmon\"/d" \
+		        -e "s|^\([ \t]*\)\(<item[ \t]*name\=\"systray\".*\)|\1<item name=\"battmon\" id=\"10\"\/\>\n\1\2|" \
+			"${XFCE_PANELS_XML}"
 	fi
 fi
 
@@ -97,7 +91,7 @@ mkdir -p "${HOME}/.config/autostart"
 # disable tips on startup
 ###
 FLL_CONF_PRESEED="${HOME}/.config/autostart/xfce4-tips-autostart.desktop"
-if grep -s '^Hidden=' "${FLL_CONF_PRESEED}"; then
+if grep -s -q '^Hidden=' "${FLL_CONF_PRESEED}"; then
 	sed -i 's|^Hidden=.*|Hidden=true|' "${FLL_CONF_PRESEED}"
 else
 	cat > "${FLL_CONF_PRESEED}" <<EOF
