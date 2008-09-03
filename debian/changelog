@@ -1,3 +1,9 @@
+desktop-defaults (0.10.44) UNRELEASED; urgency=low
+
+  * NOT RELEASED YET
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 04 Sep 2008 00:02:03 +0200
+
 desktop-defaults (0.10.43) unstable; urgency=low
 
   * Remove xfce/dot.xfce and depend on sidux-settings-xfce to provide sensible
