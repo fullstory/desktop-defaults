@@ -1,4 +1,4 @@
-desktop-defaults (0.10.43) UNRELEASED; urgency=low
+desktop-defaults (0.10.43) unstable; urgency=low
 
   * Remove xfce/dot.xfce and depend on sidux-settings-xfce to provide sensible
     defaults.
