@@ -1,8 +1,0 @@
-[Entry 0]
-Name=sidux-browser
-Exec=x-www-browser
-Terminal=false
-StartupNotify=true
-Comment=Generic Web Browser relying on x-www-browser
-Icon=/usr/share/icons/hicolor/scalable/apps/sidux-browser.svg
-

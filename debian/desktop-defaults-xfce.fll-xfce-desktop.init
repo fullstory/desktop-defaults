@@ -15,7 +15,6 @@
 ###
 # F.U.L.L.S.T.O.R.Y init script
 #
-# Copyright: (C) 2007-2008 F.U.L.L.S.T.O.R.Y Project
 # Copyright: (C) 2007-2008 Kel Modderman <kel@otaku42.de>
 # Copyright: (C) 2008 Stefan Lippers-Hollmann <s.l-h@gmx.de>
 # License:   GPLv2
@@ -73,14 +72,7 @@ for param in $(cat /proc/cmdline); do
 	esac
 done
 
-FLL_LIVE_USER_HOME=$(getent passwd ${FLL_LIVE_USER} | cut -d\: -f 6)
-
-if [ ! -d "${FLL_LIVE_USER_HOME}" ]; then
-	log_daemon_msg "${NAME}" "directory ${FLL_LIVE_USER_HOME} does not exist"
-	log_end_msg 1
-fi
-
-default_gdm_theme()
+set_default_gdm_theme()
 {
         umask 0022
 
@@ -98,6 +90,8 @@ default_gdm_theme()
 
 do_start()
 {
+	set_default_gdm_theme
+
 	su "${FLL_LIVE_USER}" -c /usr/share/desktop-defaults-xfce/preseed-user-home-xfce
 }
 
@@ -106,7 +100,6 @@ case "${1}" in
 		log_daemon_msg "${NAME}"
 		log_action_begin_msg " preparing ${FLL_LIVE_USER} for xfce"
 		do_start
-		default_gdm_theme
 		log_end_msg 0
 		;;
 	stop)

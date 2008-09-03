@@ -1,8 +1,11 @@
 desktop-defaults (0.10.43) UNRELEASED; urgency=low
 
-  * NOT RELEASED YET
+  * Remove xfce/dot.xfce and depend on sidux-settings-xfce to provide sensible
+    defaults.
+  * Cleanup of fll-desktop-xfce.init.
+  * No longer install /usr/share/desktop-defaults-common/fll-desktop-func.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 01 Sep 2008 22:49:13 +0200
+ -- Kel Modderman <kel@otaku42.de>  Thu, 04 Sep 2008 07:39:13 +1000
 
 desktop-defaults (0.10.42) unstable; urgency=low
 
