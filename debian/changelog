@@ -1,4 +1,4 @@
-desktop-defaults (0.10.44) UNRELEASED; urgency=low
+desktop-defaults (0.10.44) unstable; urgency=low
 
   * Make use of grep in kde/preseed-user-home-kde quiet again.
   * Tweak xfce/preseed-user-home-xfce.
