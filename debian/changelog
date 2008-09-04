@@ -1,3 +1,9 @@
+desktop-defaults (0.10.45) UNRELEASED; urgency=low
+
+  * NOT RELEASED YET
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Fri, 05 Sep 2008 01:33:07 +0200
+
 desktop-defaults (0.10.44) unstable; urgency=low
 
   * Make use of grep in kde/preseed-user-home-kde quiet again.
