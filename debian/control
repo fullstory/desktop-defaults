@@ -10,7 +10,7 @@ Vcs-Browser: http://svn.berlios.de/wsvn/fullstory/desktop-defaults/trunk/
 
 Package: desktop-defaults-common
 Architecture: all
-Depends: distro-defaults, fll-live-initscripts, sidux-art-wallpaper, sudo
+Depends: distro-defaults, fll-live-initscripts, sidux-art-wallpaper, sudo, laptop-detect
 Suggests: iceweasel
 Description: common user presets for various popular desktop applications
  This package provides required infrastructure to tweak various popular desktop

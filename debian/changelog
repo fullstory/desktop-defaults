@@ -2,8 +2,9 @@ desktop-defaults (0.10.44) UNRELEASED; urgency=low
 
   * Make use of grep in kde/preseed-user-home-kde quiet again.
   * Tweak xfce/preseed-user-home-xfce.
+  * Readd dependency on laptop-detect.
 
- -- Kel Modderman <kel@otaku42.de>  Thu, 04 Sep 2008 09:37:17 +1000
+ -- Kel Modderman <kel@otaku42.de>  Thu, 04 Sep 2008 10:07:13 +1000
 
 desktop-defaults (0.10.43) unstable; urgency=low
 
