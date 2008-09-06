@@ -71,10 +71,7 @@ fi
 # set wallpaper, kdesktoprc is provided by our dot.kde
 ###
 if [ "${FLL_WALLPAPER}" ]; then
-	if grep -s -q '^Wallpaper=' "${HOME}/.kde/share/config/kdesktoprc"; then
-		sed -i 's|^Wallpaper=.*|Wallpaper='"${FLL_WALLPAPER}"'|' \
-			"${HOME}/.kde/share/config/kdesktoprc"
-	else
+	if [ ! -f "${HOME}/.kde/share/config/kdesktoprc" ]; then
 		cat >"${HOME}/.kde/share/config/kdesktoprc" <<EOF
 [Desktop0]
 Wallpaper=${FLL_WALLPAPER}
@@ -87,10 +84,7 @@ fi
 # set Ksplash theme
 ###
 if [ "${KDE_KSPLASH_THEME}" ]; then
-	if grep -s -q '^Theme=' "${HOME}/.kde/share/config/ksplashrc"; then
-		sed -i 's|^Theme=.*|Theme='"${KDE_KSPLASH_THEME}"'|' \
-			"${HOME}/.kde/share/config/ksplashrc"
-	else
+	if [ ! -f "${HOME}/.kde/share/config/ksplashrc" ]; then
 		cat > "${HOME}/.kde/share/config/ksplashrc" \
 << EOF
 [KSplash]
@@ -117,20 +111,6 @@ SwitchMode=Global
 Use=true
 EOF
 	fi
-fi
-
-###
-# disable first time login wizard
-###
-if grep -s -q '^FirstLogin=' "${HOME}/.kde/share/config/kpersonalizerrc"; then
-	sed -i 's|^FirstLogin=.*|FirstLogin=false|' \
-		"${HOME}/.kde/share/config/kpersonalizerrc"
-else
-	cat > "${HOME}/.kde/share/config/kpersonalizerrc" \
-<<EOF
-[General]
-FirstLogin=false
-EOF
 fi
 
 ###
