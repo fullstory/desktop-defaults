@@ -1,3 +1,9 @@
+desktop-defaults (1.0.1) UNRELEASED; urgency=low
+
+  * NOT RELEASED YET
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 07 Sep 2008 18:29:24 +0200
+
 desktop-defaults (1.0.0) unstable; urgency=low
 
   * No longer need to create ~/.kde/share/config/kpersonalizerrc,
