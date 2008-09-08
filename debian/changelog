@@ -1,6 +1,5 @@
-desktop-defaults (1.0.1) UNRELEASED; urgency=low
+desktop-defaults (1.0.1) unstable; urgency=low
 
-  * NOT RELEASED YET
   * Revert a bit of r19964, manually disable kpersonalizer.
 
  -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 08 Sep 2008 20:54:03 +1000
