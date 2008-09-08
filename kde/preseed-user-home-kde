@@ -114,6 +114,20 @@ EOF
 fi
 
 ###
+# disable first time login wizard
+###
+if grep -s -q '^FirstLogin=' "${HOME}/.kde/share/config/kpersonalizerrc"; then
+	sed -i 's|^FirstLogin=.*|FirstLogin=false|' \
+		"${HOME}/.kde/share/config/kpersonalizerrc"
+else
+	cat > "${HOME}/.kde/share/config/kpersonalizerrc" \
+<<EOF
+[General]
+FirstLogin=false
+EOF
+fi
+
+###
 # root konsole's
 ###
 if [ ! -d "${HOME}/.kde/share/apps/konsole" ]; then
