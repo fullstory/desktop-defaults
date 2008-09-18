@@ -1,4 +1,4 @@
-desktop-defaults (1.0.2) UNRELEASED; urgency=low
+desktop-defaults (1.0.2) unstable; urgency=low
 
   * desktop-defaults-common:
     - preseed fluxbox profile
