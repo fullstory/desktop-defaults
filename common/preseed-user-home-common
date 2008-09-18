@@ -132,17 +132,23 @@ for dir in backgrounds styles pixmaps; do
 	mkdir -p ${HOME}/.fluxbox/${dir}
 done
 
-cp /usr/share/desktop-defaults-common/fll-flux-* \
-	${HOME}/.fluxbox/
+for menu in /usr/share/desktop-defaults-common/fll-flux-*; do
+	[ ! -f "${HOME}/.fluxbox/${menu##*/}" ] && \
+		cp ${menu} ${HOME}/.fluxbox/
+done
 
-cat >"${HOME}/.fluxbox/menu" <<EOF
+if [ ! -f "${HOME}/.fluxbox/menu" ]; then
+	cat >"${HOME}/.fluxbox/menu" <<EOF
 [begin] (${FLL_DISTRO_NAME} )
 [include] (~/.fluxbox/fll-flux-hi)
 [include] (/etc/X11/fluxbox/fluxbox-menu)
 [include] (~/.fluxbox/fll-flux-lo)
 [end]
 EOF
+fi
 
-cat >"${HOME}/.fluxbox/lastwallpaper" <<EOF
+if [ ! -f "${HOME}/.fluxbox/lastwallpaper" ]; then
+	cat >"${HOME}/.fluxbox/lastwallpaper" <<EOF
 \$full \$full|${FLL_WALLPAPER}|style|:0.0
 EOF
+fi
