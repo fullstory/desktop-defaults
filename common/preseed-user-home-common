@@ -146,9 +146,3 @@ if [ ! -f "${HOME}/.fluxbox/menu" ]; then
 [end]
 EOF
 fi
-
-if [ ! -f "${HOME}/.fluxbox/lastwallpaper" ]; then
-	cat >"${HOME}/.fluxbox/lastwallpaper" <<EOF
-\$full \$full|${FLL_WALLPAPER}|style|:0.0
-EOF
-fi
