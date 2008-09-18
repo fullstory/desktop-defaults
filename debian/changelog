@@ -1,8 +1,9 @@
 desktop-defaults (1.0.2) UNRELEASED; urgency=low
 
-  * NOT RELEASED YET
+  * desktop-defaults-common:
+    - preseed fluxbox profile
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 08 Sep 2008 23:25:11 +0200
+ -- Kel Modderman <kel@otaku42.de>  Fri, 19 Sep 2008 06:32:13 +1000
 
 desktop-defaults (1.0.1) unstable; urgency=low
 

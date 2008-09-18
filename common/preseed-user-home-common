@@ -123,3 +123,26 @@ if [ ! -f "${HOME}/Desktop/install-gui.desktop" ] && \
 	[ -f /usr/share/applications/sidux/install-gui.desktop ]; then
 	ln -s /usr/share/applications/sidux/install-gui.desktop "${HOME}/Desktop/install-gui.desktop"
 fi
+
+###
+# create .fluxbox, emulate a small amount of startflubox(1)
+###
+mkdir -p ${HOME}/.fluxbox
+for dir in backgrounds styles pixmaps; do
+	mkdir -p ${HOME}/.fluxbox/${dir}
+done
+
+cp /usr/share/desktop-defaults-common/fll-flux-* \
+	${HOME}/.fluxbox/
+
+cat >"${HOME}/.fluxbox/menu" <<EOF
+[begin] (${FLL_DISTRO_NAME} )
+[include] (~/.fluxbox/fll-flux-hi)
+[include] (/etc/X11/fluxbox/fluxbox-menu)
+[include] (~/.fluxbox/fll-flux-lo)
+[end]
+EOF
+
+cat >"${HOME}/.fluxbox/lastwallpaper" <<EOF
+\$full \$full|${FLL_WALLPAPER}|style|:0.0
+EOF
