@@ -1,9 +1,5 @@
-desktop-defaults (1.0.3) UNRELEASED; urgency=low
+desktop-defaults (1.0.3) unstable; urgency=low
 
-  [ Stefan Lippers-Hollmann ]
-  * NOT RELEASED YET
-
-  [ Bernard Gray ]
   * add lxde desktop-defaults patches provided by ModestUser
 
  -- Bernard Gray <bernard.gray@gmail.com>  Tue, 07 Oct 2008 13:29:06 +1100
