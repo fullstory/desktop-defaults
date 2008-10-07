@@ -1,8 +1,12 @@
 desktop-defaults (1.0.3) UNRELEASED; urgency=low
 
+  [ Stefan Lippers-Hollmann ]
   * NOT RELEASED YET
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 18 Sep 2008 23:11:08 +0200
+  [ Bernard Gray ]
+  * add lxde desktop-defaults patches provided by ModestUser
+
+ -- Bernard Gray <bernard.gray@gmail.com>  Tue, 07 Oct 2008 13:29:06 +1100
 
 desktop-defaults (1.0.2) unstable; urgency=low
 

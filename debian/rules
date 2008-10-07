@@ -9,4 +9,5 @@ binary:
 	dh_installinit --package=desktop-defaults-kde    --no-start --name=fll-kde-desktop    -- start 96 S .
 	dh_installinit --package=desktop-defaults-gnome  --no-start --name=fll-gnome-desktop  -- start 96 S .
 	dh_installinit --package=desktop-defaults-xfce   --no-start --name=fll-xfce-desktop   -- start 96 S .
+	dh_installinit --package=desktop-defaults-lxde   --no-start --name=fll-lxde-desktop   -- start 96 S .
 	dh $@ --remaining
