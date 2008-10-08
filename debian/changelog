@@ -1,4 +1,4 @@
-desktop-defaults (1.0.4) UNRELEASED; urgency=low
+desktop-defaults (1.0.4) unstable; urgency=low
 
   * preseed-user-home-common:
     - preseed mc so that it used it's builtin editor
