@@ -62,8 +62,7 @@ if which kdesu >/dev/null; then
 		mkdir -p "${HOME}/.kde/share/config"
 	fi
 
-	touch "${HOME}/.kde/share/config/kdesurc"
-	if grep -q '^super-user-command=' "${HOME}/.kde/share/config/kdesurc"; then
+	if grep -s -q '^super-user-command=' "${HOME}/.kde/share/config/kdesurc"; then
 		sed -i 's|^super-user-command=.*|super-user-command=sudo|' \
 			"${HOME}/.kde/share/config/kdesurc"
 	else
@@ -73,6 +72,19 @@ if which kdesu >/dev/null; then
 super-user-command=sudo
 EOF
 	fi
+fi
+
+###
+# let mc use its own editor
+###
+if which mc >/dev/null; then
+	if [ ! -f "${HOME}/.mc/ini" ]; then
+		mkdir -p "${HOME}/.mc/"
+		cat >"${HOME}/.mc/ini" <<EOF
+
+[Midnight-Commander]
+use_internal_edit=1
+EOF
 fi
 
 ###
