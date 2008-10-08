@@ -1,3 +1,9 @@
+desktop-defaults (1.0.5) UNRELEASED; urgency=low
+
+  * NOT RELEASED YET
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 08 Oct 2008 23:17:45 +0200
+
 desktop-defaults (1.0.4) unstable; urgency=low
 
   * preseed-user-home-common:
