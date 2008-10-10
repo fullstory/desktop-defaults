@@ -4,7 +4,7 @@ desktop-defaults (1.0.5) UNRELEASED; urgency=low
   * NOT RELEASED YET
 
   [ Kel Modderman ]
-  * preseed-user-home-common: fix sytax error
+  * preseed-user-home-common: fix syntax error
 
  -- Kel Modderman <kel@otaku42.de>  Fri, 10 Oct 2008 15:47:39 +1000
 
