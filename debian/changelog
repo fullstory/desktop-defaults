@@ -1,8 +1,15 @@
 desktop-defaults (1.0.6) UNRELEASED; urgency=low
 
+  [ Stefan Lippers-Hollmann ]
   * NOT RELEASED YET
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 11 Oct 2008 00:35:12 +0200
+  [ Michael Deelwater ]
+  * preseed-user-home-common:
+    - Preseed gpg.conf.
+    - Enable gpg-agent if installed. If gpg-agent is installed on the ISO, gpg
+      and pinentry work out of the box.
+
+ -- Michael Deelwater <michael.deelwater@googlemail.com>  Thu, 23 Oct 2008 20:02:01 +0200
 
 desktop-defaults (1.0.5) unstable; urgency=low
 
