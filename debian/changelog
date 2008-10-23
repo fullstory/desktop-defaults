@@ -1,9 +1,5 @@
-desktop-defaults (1.0.6) UNRELEASED; urgency=low
+desktop-defaults (1.0.6) unstable; urgency=low
 
-  [ Stefan Lippers-Hollmann ]
-  * NOT RELEASED YET
-
-  [ Michael Deelwater ]
   * preseed-user-home-common:
     - Preseed gpg.conf.
     - Enable gpg-agent if installed. If gpg-agent is installed on the ISO, gpg
