@@ -4,3 +4,4 @@
 
 # specify GDM theme to be used
 LXDE_GDM_THEME="sidux-ourea"
+LXDE_GDM_THEME_COLOR="#455459"

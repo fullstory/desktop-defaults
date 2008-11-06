@@ -1,8 +1,18 @@
 desktop-defaults (1.0.7) UNRELEASED; urgency=low
 
+  [ Stefan Lippers-Hollmann ]
   * NOT RELEASED YET
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 23 Oct 2008 21:10:23 +0200
+  [ Michael Deelwater ]
+  * debian/control:
+    - Lower desktop-defaults-lxde dependency from lxde to lxde-core.
+  * fll-lxde-desktop:
+    - Check for GDM before configuring it.
+    - Fix some space indenting to tabstops.
+  * fll-lxde-desktop.defaults:
+    - Add missing LXDE_GDM_THEME_COLOR.
+
+ -- Michael Deelwater <michael.deelwater@googlemail.com>  Thu, 06 Nov 2008 13:15:51 +0100
 
 desktop-defaults (1.0.6) unstable; urgency=low
 

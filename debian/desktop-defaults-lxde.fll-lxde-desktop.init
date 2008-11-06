@@ -74,23 +74,25 @@ done
 
 set_default_gdm_theme()
 {
-        umask 0022
+	umask 0022
 
-        ###
-        # setup GDM theme
-        ###
-        if [ "${LXDE_GDM_THEME}" ]; then
+	###
+	# setup GDM theme
+	###
+	if [ -n "${LXDE_GDM_THEME}" -a -n "${LXDE_GDM_THEME_COLOR}" ]; then
 		if ! grep -q "^GraphicalTheme=" /etc/gdm/gdm.conf ; then
-	                sed -i "s/\[greeter\]/\[greeter\]\nGraphicalTheme=${LXDE_GDM_THEME}\nGraphicalThemedColor=${LXDE_GDM_THEME_COLOR}/g" /etc/gdm/gdm.conf
+			sed -i "s/\[greeter\]/\[greeter\]\nGraphicalTheme=${LXDE_GDM_THEME}\nGraphicalThemedColor=${LXDE_GDM_THEME_COLOR}/g" /etc/gdm/gdm.conf
 		else
-			sed -i "s/GraphicalTheme=.*/GraphicalTheme=${LXDEE_GDM_THEME}/g" /etc/gdm/gdm.conf
-	        fi
+			sed -i "s/GraphicalTheme=.*/GraphicalTheme=${LXDE_GDM_THEME}/g" /etc/gdm/gdm.conf
+		fi
 	fi
 }
 
 do_start()
 {
-	set_default_gdm_theme
+	if [ -x "/usr/bin/gdm" ]; then
+		set_default_gdm_theme
+	fi
 
 	# set x-terminal to lxterminal
 	if [ -x '/usr/bin/lxterminal' ]; then
