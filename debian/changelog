@@ -1,9 +1,5 @@
-desktop-defaults (1.0.7) UNRELEASED; urgency=low
+desktop-defaults (1.0.7) unstable; urgency=low
 
-  [ Stefan Lippers-Hollmann ]
-  * NOT RELEASED YET
-
-  [ Michael Deelwater ]
   * debian/control:
     - Lower desktop-defaults-lxde dependency from lxde to lxde-core.
   * fll-lxde-desktop:
