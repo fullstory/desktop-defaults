@@ -1,9 +1,5 @@
-desktop-defaults (1.0.8) UNRELEASED; urgency=low
+desktop-defaults (1.0.8) unstable; urgency=low
 
-  [ Stefan Lippers-Hollmann ]
-  * NOT RELEASED YET
-
-  [ Bernard Gray ]
   * migrate debian *defaults to pontos release 
 
  -- Bernard Gray <bernard.gray@gmail.com>  Sun, 16 Nov 2008 23:12:40 +1100
