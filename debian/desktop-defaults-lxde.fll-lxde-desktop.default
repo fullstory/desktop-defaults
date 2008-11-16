@@ -3,5 +3,5 @@
 # installed at /etc/default/fll-lxde-desktop by the maintainer scripts
 
 # specify GDM theme to be used
-LXDE_GDM_THEME="sidux-ourea"
+LXDE_GDM_THEME="sidux-pontos"
 LXDE_GDM_THEME_COLOR="#455459"

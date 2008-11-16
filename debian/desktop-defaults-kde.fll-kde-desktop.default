@@ -3,10 +3,10 @@
 # installed at /etc/default/fll-kde-desktop by the maintainer scripts
 
 # specify KDM theme to be used
-KDE_KDM_THEME="/usr/share/apps/kdm/themes/sidux-ourea"
+KDE_KDM_THEME="/usr/share/apps/kdm/themes/sidux-pontos"
 
 # specify KDM wallpaper (usually background of theme)
 KDE_KDM_WALLPAPER="${KDE_KDM_THEME}/background.png"
 
 # specify ksplash theme
-KDE_KSPLASH_THEME="sidux-ourea"
+KDE_KSPLASH_THEME="sidux-pontos"
