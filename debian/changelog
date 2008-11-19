@@ -1,3 +1,9 @@
+desktop-defaults (1.0.10) UNRELEASED; urgency=low
+
+  * NOT RELEASED YET
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 19 Nov 2008 19:45:33 +0100
+
 desktop-defaults (1.0.9) unstable; urgency=low
 
   * add capability to disable kdm (incl ksplash) background
