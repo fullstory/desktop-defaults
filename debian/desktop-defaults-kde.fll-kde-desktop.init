@@ -103,7 +103,12 @@ EOF
 	###
 	# override fll-xdm if matching kdm walppaper is wanted
 	###
-	if [ "${KDE_KDM_WALLPAPER}" ]; then
+	if [ -n "${KDE_KDM_BG_DISABLE}" ]; then
+cat > /etc/default/kdm.d/wallpaper \
+<<EOF
+USEBACKGROUND=false
+EOF
+	elif [ "${KDE_KDM_WALLPAPER}" ]; then
 		if [ -s /etc/default/kdm.d/wallpaper ]; then
 			sed -i 's|^WALLPAPER=.*|WALLPAPER='"${KDE_KDM_WALLPAPER}"'|' \
 				/etc/default/kdm.d/wallpaper
