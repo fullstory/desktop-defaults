@@ -1,9 +1,5 @@
-desktop-defaults (1.0.9) UNRELEASED; urgency=low
+desktop-defaults (1.0.9) unstable; urgency=low
 
-  [ Stefan Lippers-Hollmann ]
-  * NOT RELEASED YET
-
-  [ Bernard Gray ]
   * add capability to disable kdm (incl ksplash) background
   * disable kdm bg for pontos (ksplash looks better with black bg)
 
