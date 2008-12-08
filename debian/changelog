@@ -1,3 +1,9 @@
+desktop-defaults (1.0.11) UNRELEASED; urgency=low
+
+  * NOT RELEASED YET
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 08 Dec 2008 21:24:44 +0100
+
 desktop-defaults (1.0.10) unstable; urgency=low
 
   * make lintian happy and depend on ${misc:Depends}.
