@@ -98,10 +98,15 @@ USETHEME=true
 THEME=${KDE_KDM_THEME}
 EOF
 		fi
+		# add code to later check if chosen theme still exists
+		if ! egrep -q '\${THEME}' /etc/default/kdm.d/kdmtheme; then
+			echo '[ -f "${THEME}" ] || USETHEME=false' \
+			    >> /etc/default/kdm.d/kdmtheme
+		fi
 	fi
 
 	###
-	# override fll-xdm if matching kdm walppaper is wanted
+	# override fll-xdm if matching kdm wallpaper is wanted
 	###
 	if [ -n "${KDE_KDM_BG_DISABLE}" ]; then
 cat > /etc/default/kdm.d/wallpaper \
@@ -118,6 +123,11 @@ EOF
 USEBACKGROUND=true
 WALLPAPER=${KDE_KDM_WALLPAPER}
 EOF
+		fi
+		# add code to later check if chosen wallpaper still exists
+		if ! egrep -q '\${WALLPAPER}' /etc/default/kdm.d/wallpaper; then
+			echo '[ -f "${WALLPAPER}" ] || USEBACKGROUND=false' \
+			    >> /etc/default/kdm.d/wallpaper
 		fi
 	fi
 }
