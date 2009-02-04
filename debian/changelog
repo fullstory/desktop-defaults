@@ -1,8 +1,8 @@
-desktop-defaults (1.0.12) UNRELEASED; urgency=low
+desktop-defaults (1.0.12) unstable; urgency=low
 
-  * NOT RELEASED YET
+  * s/pontos/ouranos/g.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 31 Jan 2009 13:21:35 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 04 Feb 2009 23:47:35 +0100
 
 desktop-defaults (1.0.11) unstable; urgency=low
 
