@@ -99,8 +99,8 @@ THEME=${KDE_KDM_THEME}
 EOF
 		fi
 		# add code to later check if chosen theme still exists
-		if ! egrep -q '\${THEME}' /etc/default/kdm.d/kdmtheme; then
-			echo '[ -f "${THEME}" ] || USETHEME=false' \
+		if ! grep -Eq '\${THEME}' /etc/default/kdm.d/kdmtheme; then
+			echo '[ -d "${THEME}" ] || USETHEME=false' \
 			    >> /etc/default/kdm.d/kdmtheme
 		fi
 	fi
@@ -125,7 +125,7 @@ WALLPAPER=${KDE_KDM_WALLPAPER}
 EOF
 		fi
 		# add code to later check if chosen wallpaper still exists
-		if ! egrep -q '\${WALLPAPER}' /etc/default/kdm.d/wallpaper; then
+		if ! grep -Eq '\${WALLPAPER}' /etc/default/kdm.d/wallpaper; then
 			echo '[ -f "${WALLPAPER}" ] || USEBACKGROUND=false' \
 			    >> /etc/default/kdm.d/wallpaper
 		fi

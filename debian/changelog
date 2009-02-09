@@ -1,8 +1,14 @@
 desktop-defaults (1.0.13) UNRELEASED; urgency=low
 
+  [ Stefan Lippers-Hollmann ]
   * NOT RELEASED YET
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 04 Feb 2009 23:48:41 +0100
+  [ Michael Deelwater ]
+  * fll-kde-desktop:
+    - Fix bug checking for existing KDM themes. We test for a directory, not a
+      file.
+
+ -- Michael Deelwater <michael.deelwater@googlemail.com>  Tue, 10 Feb 2009 00:09:51 +0100
 
 desktop-defaults (1.0.12) unstable; urgency=low
 
