@@ -124,12 +124,12 @@ if [ ! -f "${HOME}/Desktop/sidux-manual.desktop" ] && \
 fi
 
 ###
-## put a sidux-edu (seminarix appstarter) icon on the desktop
+## put an eduversum (seminarix appstarter) icon on the desktop
 ####
-if [ -f /usr/share/applications/kde/sidux-edu.desktop ]; then
-	[ ! -f "${HOME}/Desktop/sidux-edu.desktop" ] && \
-		ln -s /usr/share/applications/kde/sidux-edu.desktop \
-			"${HOME}/Desktop/sidux-edu.desktop"
+if [ -f /usr/share/applications/eduversum.desktop ]; then
+	[ ! -f "${HOME}/Desktop/eduversum.desktop" ] && \
+		ln -s /usr/share/applications/eduversum.desktop \
+			"${HOME}/Desktop/eduversum.desktop"
 fi
 
 ###
