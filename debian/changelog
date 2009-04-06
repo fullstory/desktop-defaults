@@ -1,8 +1,9 @@
-desktop-defaults (1.0.15) UNRELEASED; urgency=low
+desktop-defaults (1.0.15) unstable; urgency=low
 
-  * NOT RELEASED YET
+  * drop /etc/default/kdm.d/kdmtheme for the time being, our current ones 
+    aren't kde4 compatible.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 14 Feb 2009 19:01:52 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 06 Apr 2009 20:53:51 +0200
 
 desktop-defaults (1.0.14) unstable; urgency=low
 
