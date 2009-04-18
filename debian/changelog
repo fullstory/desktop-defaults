@@ -1,3 +1,9 @@
+desktop-defaults (1.2.2) UNRELEASED; urgency=low
+
+  * NOT RELEASED YET
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 18 Apr 2009 18:10:20 +0200
+
 desktop-defaults (1.2.1) unstable; urgency=low
 
   * add kaboom stamp.
