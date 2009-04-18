@@ -28,7 +28,7 @@ Depends: ${misc:Depends},
          fll-live-initscripts,
          desktop-defaults-common,
          sidux-settings-kde,
-         kwin
+         kde-window-manager
 Conflicts: kde-services-sidux
 Description: user presets specific to the K desktop environment
  This package provides required infrastructure to tweak the KDE desktop

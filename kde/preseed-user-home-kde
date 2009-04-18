@@ -68,23 +68,6 @@ if [ ! -d "${HOME}/.kde/share/config" ]; then
 fi
 
 ###
-# trun off nepomuk server
-###
-cat >"${HOME}/.kde/share/config/nepomukserverrc" <<EOF
-[Basic Settings]
-Configured repositories=main
-Start Nepomuk=false
-
-[Service-nepomukstrigiservice]
-autostart=true
-
-[main Settings]
-Storage Dir[$e]=$HOME/.kde/share/apps/nepomuk/repository/main/
-Used Soprano Backend=redland
-rebuilt index for type indexing=true
-EOF
-
-###
 # set wallpaper, kdesktoprc is provided by our dot.kde
 ###
 if [ "${FLL_WALLPAPER}" ]; then

@@ -1,12 +1,8 @@
-desktop-defaults (1.0.16) UNRELEASED; urgency=low
+desktop-defaults (1.2.0) unstable; urgency=low
 
-  [ Stefan Lippers-Hollmann ]
-  * NOT RELEASED YET
+  * s/kwin/kde-window-manager/.
 
-  [ Andreas Weber ]
-  * Turning off Nepomukservice 
-
- -- Andreas Weber <andreas@it-weber.com>  Sat, 18 Apr 2009 16:33:25 +0200
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 18 Apr 2009 17:05:19 +0200
 
 desktop-defaults (1.0.15) unstable; urgency=low
 
