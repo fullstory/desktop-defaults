@@ -1,8 +1,12 @@
 desktop-defaults (1.0.16) UNRELEASED; urgency=low
 
+  [ Stefan Lippers-Hollmann ]
   * NOT RELEASED YET
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 06 Apr 2009 20:59:53 +0200
+  [ Andreas Weber ]
+  * Turning off Nepomukservice 
+
+ -- Andreas Weber <andreas@it-weber.com>  Sat, 18 Apr 2009 16:33:25 +0200
 
 desktop-defaults (1.0.15) unstable; urgency=low
 
