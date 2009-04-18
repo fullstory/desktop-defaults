@@ -61,11 +61,11 @@ for param in $(cat /proc/cmdline); do
 done
 
 ###
-# setup live user .kde/share/config
+# setup live user
 ###
-if [ ! -d "${HOME}/.kde/share/config" ]; then
-	mkdir -p "${HOME}/.kde/share/config"
-fi
+mkdir -p	"${HOME}/.kde/share/config" \
+		"${HOME}/.local"
+touch "${HOME}/.local/kaboom"
 
 ###
 # set wallpaper, kdesktoprc is provided by our dot.kde
