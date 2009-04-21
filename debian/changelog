@@ -5,8 +5,9 @@ desktop-defaults (1.2.2) UNRELEASED; urgency=low
 
   [ Bernard Gray ]
   * modify kde preseeding to handle wallpaper
+  * migrate *.default to use aether release theme 
 
- -- Bernard Gray <bernard.gray@gmail.com>  Tue, 21 Apr 2009 12:52:24 +1000
+ -- Bernard Gray <bernard.gray@gmail.com>  Tue, 21 Apr 2009 16:38:08 +1000
 
 desktop-defaults (1.2.1) unstable; urgency=low
 

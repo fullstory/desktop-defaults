@@ -3,5 +3,5 @@
 # installed at /etc/default/fll-lxde-desktop by the maintainer scripts
 
 # specify GDM theme to be used
-LXDE_GDM_THEME="sidux-ouranos"
-LXDE_GDM_THEME_COLOR="#455459"
+LXDE_GDM_THEME="sidux-aether"
+LXDE_GDM_THEME_COLOR="#000000"
