@@ -1,8 +1,12 @@
 desktop-defaults (1.2.2) UNRELEASED; urgency=low
 
+  [ Stefan Lippers-Hollmann ]
   * NOT RELEASED YET
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 18 Apr 2009 18:10:20 +0200
+  [ Bernard Gray ]
+  * modify kde preseeding to handle wallpaper
+
+ -- Bernard Gray <bernard.gray@gmail.com>  Tue, 21 Apr 2009 12:52:24 +1000
 
 desktop-defaults (1.2.1) unstable; urgency=low
 

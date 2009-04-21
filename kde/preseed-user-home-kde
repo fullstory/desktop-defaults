@@ -68,17 +68,15 @@ mkdir -p	"${HOME}/.kde/share/config" \
 touch "${HOME}/.local/kaboom"
 
 ###
-# set wallpaper, kdesktoprc is provided by our dot.kde
+# set wallpaper, plasma-appletsrc is provided by our system-settings-kde package
 ###
 if [ "${FLL_WALLPAPER}" ]; then
-	if [ ! -f "${HOME}/.kde/share/config/kdesktoprc" ]; then
-		cat >"${HOME}/.kde/share/config/kdesktoprc" <<EOF
-[Desktop0]
-Wallpaper=${FLL_WALLPAPER}
-WallpaperMode=Scaled
-EOF
+	
+	elif [ ! -f "${HOME}/.kde/share/config/plasma-appletsrc" ]; then
+		cat /usr/share/sidux-settings-kde/kde4/default/share/config/plasma-appletsrc | \
+			sed -e "s#wallpaper=.*#wallpaper=${FLL_WALLPAPER}#" > \
+			${HOME}/.kde/share/config/plasma-appletsrc
 	fi
-fi
 
 ###
 # set Ksplash theme
