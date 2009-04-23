@@ -1,8 +1,8 @@
-desktop-defaults (1.2.3) UNRELEASED; urgency=low
+desktop-defaults (1.2.3) unstable; urgency=low
 
-  * NOT RELEASED YET
+  * syntax fixes.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 23 Apr 2009 01:44:10 +0200
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 23 Apr 2009 02:13:25 +0200
 
 desktop-defaults (1.2.2) unstable; urgency=low
 
