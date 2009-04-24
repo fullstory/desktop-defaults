@@ -1,9 +1,5 @@
-desktop-defaults (1.2.4) UNRELEASED; urgency=low
+desktop-defaults (1.2.4) unstable; urgency=low
 
-  [ Stefan Lippers-Hollmann ]
-  * NOT RELEASED YET
-
-  [ Bernard Gray ]
   * fix path to kdm theme in kde defaults
 
  -- Bernard Gray <bernard.gray@gmail.com>  Fri, 24 Apr 2009 12:10:28 +1000
