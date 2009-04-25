@@ -85,6 +85,27 @@ set_default_kdm_theme()
 	umask 0022
 
 	###
+	# setup KDM theme
+	###
+	if [ "${KDE_KDM_THEME}" ]; then
+		if [ -s /etc/default/kdm.d/kdmtheme ]; then
+			sed -i 's|^THEME=.*|THEME='"${KDE_KDM_THEME}"'|' \
+				/etc/default/kdm.d/kdmtheme
+		else
+			cat > /etc/default/kdm.d/kdmtheme \
+<<EOF
+USETHEME=true
+THEME=${KDE_KDM_THEME}
+EOF
+		fi
+		# add code to later check if chosen theme still exists
+		if ! grep -Eq '\${THEME}' /etc/default/kdm.d/kdmtheme; then
+		        echo '[ -d "${THEME}" ] || USETHEME=false' \
+		            >> /etc/default/kdm.d/kdmtheme
+		fi
+	fi
+
+	###
 	# override fll-xdm if matching kdm wallpaper is wanted
 	###
 	if [ -n "${KDE_KDM_BG_DISABLE}" ]; then
