@@ -1,3 +1,9 @@
+desktop-defaults (1.2.6) UNRELEASED; urgency=low
+
+  * NOT RELEASED YET
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 26 Apr 2009 18:38:30 +0200
+
 desktop-defaults (1.2.5) unstable; urgency=low
 
   * reinstate /etc/default/kdm.d/kdmtheme for new kde4 theme
