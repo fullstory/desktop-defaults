@@ -1,8 +1,12 @@
 desktop-defaults (1.2.6) UNRELEASED; urgency=low
 
+  [ Stefan Lippers-Hollmann ]
   * NOT RELEASED YET
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 26 Apr 2009 18:38:30 +0200
+  [ Bernard Gray ]
+  * remove kdesktop_lock diverts - this program no longer exists
+
+ -- Bernard Gray <bernard.gray@gmail.com>  Wed, 06 May 2009 13:33:06 +1000
 
 desktop-defaults (1.2.5) unstable; urgency=low
 
