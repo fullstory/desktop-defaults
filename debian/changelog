@@ -1,9 +1,5 @@
-desktop-defaults (1.2.6) UNRELEASED; urgency=low
+desktop-defaults (1.2.6) unstable; urgency=low
 
-  [ Stefan Lippers-Hollmann ]
-  * NOT RELEASED YET
-
-  [ Bernard Gray ]
   * remove kdesktop_lock diverts - this program no longer exists
   * remove kdestop_lock entry in .install
 
