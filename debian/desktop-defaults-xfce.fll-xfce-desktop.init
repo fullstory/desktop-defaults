@@ -64,7 +64,8 @@ fi
 for param in $(cat /proc/cmdline); do
 	case "${param}" in
 		flldebug=*)
-			[ "${param#flldebug=}" = "${NAME}" ] && set -x
+			[ "${param#flldebug=}" = "${NAME#fll-}"  -o "${param#flldebug=}" = "all" ] && \
+                    		fll_redirect
 			;;
 		nointro)
 			NOINTRO="yes"

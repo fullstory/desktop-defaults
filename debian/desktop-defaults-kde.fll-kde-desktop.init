@@ -46,6 +46,11 @@ fi
 . /lib/lsb/init-functions
 
 ###
+# source fll functions
+###
+. /lib/init/fll
+
+###
 # read in variables from our default conffile
 ###
 if [ -s "/etc/default/${NAME}" ]; then
@@ -65,7 +70,8 @@ fi
 for param in $(cat /proc/cmdline); do
 	case "${param}" in
 		flldebug=*)
-			[ "${param#flldebug=}" = "${NAME}" ] && set -x
+			[ "${param#flldebug=}" = "${NAME#fll-}"  -o "${param#flldebug=}" = "all" ] && \
+                    		fll_redirect
 			;;
 		nointro)
 			NOINTRO="yes"
