@@ -1,8 +1,12 @@
 desktop-defaults (1.2.8) unstable; urgency=low
 
+  [ Bernard Gray ]
   * add kde4 style FLL_WALLPAPER handling in xfce desktop preseeding.
 
- -- Bernard Gray <bernard.gray@gmail.com>  Sun, 17 May 2009 10:48:47 +1000
+  [ Stefan Lippers-Hollmann ]
+  * bump standards version to 3.8.1, no changes necessary.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 17 May 2009 12:30:43 +0200
 
 desktop-defaults (1.2.7) unstable; urgency=low
 
