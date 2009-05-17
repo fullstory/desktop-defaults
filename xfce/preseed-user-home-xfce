@@ -65,6 +65,13 @@ done
 ###
 mkdir -p "${HOME}/.config/xfce4/mcs_settings/"
 XFCE_DESKTOP_XML="${HOME}/.config/xfce4/mcs_settings/desktop.xml"
+
+# handle case where FLL_WALLPAPER is defined in kde4 directory syntax
+# sidux-art-wallpaper-* provides a symlink in /usr/share/wallpapers/ to common res wallpaper
+if [ -d ${FLL_WALLPAPER} ]; then
+	FLL_WALLPAPER=$(find $(dirname ${FLL_WALLPAPER}) -maxdepth 1 -type l -iname $(basename ${FLL_WALLPAPER}).*)
+fi
+
 if [ "${FLL_WALLPAPER}" ] && [ ! -f "${XFCE_DESKTOP_XML}" ]; then
 	sed -e "/imagepath/s#value=\".*\"#value=\"${FLL_WALLPAPER}\"#" \
 		/etc/xdg/xfce4/mcs_settings/desktop.xml > "${XFCE_DESKTOP_XML}"
