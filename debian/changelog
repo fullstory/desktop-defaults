@@ -1,8 +1,12 @@
 desktop-defaults (1.2.9) UNRELEASED; urgency=low
 
+  [ Stefan Lippers-Hollmann ]
   * NOT RELEASED YET
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 17 May 2009 12:32:18 +0200
+  [ Joaquim Boura ]
+  * fixed bashisn
+
+ -- Joaquim Boura <x-un-i@sidux.com>  Sun, 17 May 2009 15:21:20 +0200
 
 desktop-defaults (1.2.8) unstable; urgency=low
 
