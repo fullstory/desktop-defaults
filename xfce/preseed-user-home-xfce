@@ -113,27 +113,24 @@ fi
 # set xfce splash login theme
 ###
 if [ "${XFCE_SPLASH_THEME}" ]; then
-	mkdir -p "${HOME}/.config/xfce4-session"
+	mkdir -p "${HOME}/.config/xfce4/xfconf/xfce-perchannel-xml"
 
-	if [ ! -f "${HOME}/.config/xfce4-session/xfce4-splash.rc" ]; then
-	        cat > "${HOME}/.config/xfce4-session/xfce4-splash.rc" << EOF
-
-[Engine: ${XFCE_SPLASH_ENGINE}]
-Theme=${XFCE_SPLASH_THEME}
-
+	if [ ! -f "${HOME}/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-session.xml" ]; then
+	        cat > "${HOME}/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-session.xml" << EOF
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+<channel name="xfce4-session" version="1.0">
+  <property name="splash" type="empty">
+    <property name="Engine" type="string" value="${XFCE_SPLASH_ENGINE}"/>
+    <property name="engines" type="empty">
+      <property name="balou" type="empty">
+        <property name="Theme" type="string" value="${XFCE_SPLASH_THEME}"/>
+      </property>
+    </property>
+  </property>
+</channel>
 EOF
 	fi
-
-	if [ ! -f "${HOME}/.config/xfce4-session/xfce4-session.rc" ]; then
-	        cat > "${HOME}/.config/xfce4-session/xfce4-session.rc" << EOF
-
-[Splash Screen]
-Theme=${XFCE_SPLASH_THEME}
-Engine=${XFCE_SPLASH_ENGINE}
-
-EOF
-	fi
-
 fi
 
 ###

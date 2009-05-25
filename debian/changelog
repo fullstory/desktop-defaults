@@ -1,8 +1,12 @@
 desktop-defaults (1.2.10) UNRELEASED; urgency=low
 
+  [ Stefan Lippers-Hollmann ]
   * NOT RELEASED YET
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 18 May 2009 00:15:29 +0200
+  [ Bernard Gray ]
+  * modify xfce splash preseeding for xfce 4.6
+
+ -- Bernard Gray <bernard.gray@gmail.com>  Mon, 25 May 2009 19:16:46 +1000
 
 desktop-defaults (1.2.9) unstable; urgency=low
 
