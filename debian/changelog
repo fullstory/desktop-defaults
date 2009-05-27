@@ -1,9 +1,5 @@
-desktop-defaults (1.2.10) UNRELEASED; urgency=low
+desktop-defaults (1.2.10) unstable; urgency=low
 
-  [ Stefan Lippers-Hollmann ]
-  * NOT RELEASED YET
-
-  [ Bernard Gray ]
   * modify xfce splash preseeding for xfce 4.6
   * modify preseeding for wallpaper, splash, panel, remove others
 
