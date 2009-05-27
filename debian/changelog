@@ -5,8 +5,9 @@ desktop-defaults (1.2.10) UNRELEASED; urgency=low
 
   [ Bernard Gray ]
   * modify xfce splash preseeding for xfce 4.6
+  * modify preseeding for wallpaper, splash, panel, remove others
 
- -- Bernard Gray <bernard.gray@gmail.com>  Mon, 25 May 2009 19:16:46 +1000
+ -- Bernard Gray <bernard.gray@gmail.com>  Wed, 27 May 2009 21:21:06 +1000
 
 desktop-defaults (1.2.9) unstable; urgency=low
 

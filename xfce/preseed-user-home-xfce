@@ -63,8 +63,8 @@ done
 ###
 # set wallpaper and desktop defaults in desktop.xml
 ###
-mkdir -p "${HOME}/.config/xfce4/mcs_settings/"
-XFCE_DESKTOP_XML="${HOME}/.config/xfce4/mcs_settings/desktop.xml"
+mkdir -p "${HOME}/.config/xfce4/xfconf/xfce-perchannel-xml"
+XFCE_DESKTOP_XML="${HOME}/.config/xfce4/xfconf/xfce-perchannel-xml/desktop.xml"
 
 # handle case where FLL_WALLPAPER is defined in kde4 directory syntax
 # sidux-art-wallpaper-* provides a symlink in /usr/share/wallpapers/ to common res wallpaper
@@ -73,20 +73,29 @@ if [ -d ${FLL_WALLPAPER} ]; then
 fi
 
 if [ "${FLL_WALLPAPER}" ] && [ ! -f "${XFCE_DESKTOP_XML}" ]; then
-	sed -e "/imagepath/s#value=\".*\"#value=\"${FLL_WALLPAPER}\"#" \
-		/etc/xdg/xfce4/mcs_settings/desktop.xml > "${XFCE_DESKTOP_XML}"
+
+	cat > "${XFCE_DESKTOP_XML}" << EOF
+<?xml version="1.0" encoding="UTF-8"?>
+
+<channel name="xfce4-desktop" version="1.0">
+  <property name="backdrop" type="empty">
+    <property name="screen0" type="empty">
+      <property name="monitor0" type="empty">
+        <property name="image-path" type="string" value="${FLL_WALLPAPER}"/>
+      </property>
+    </property>
+  </property>
+</channel>
+EOF
 fi
 
+###
+# set panel defaults
+###
 mkdir -p "${HOME}/.config/xfce4/panel/"
-XFCE_PANELS_XML="${HOME}/.config/xfce4/panel/panels.xml"
-if [ ! -f "${XFCE_PANELS_XML}" ]; then
-	cp /usr/share/sidux-settings-xfce/panel/* "${HOME}/.config/xfce4/panel/"
-
-	if grep -s -q Battery /sys/class/power_supply/*/type; then
-		sed -i  -e "/<item name=\"battmon\"/d" \
-		        -e "s|^\([ \t]*\)\(<item[ \t]*name\=\"systray\".*\)|\1<item name=\"battmon\" id=\"10\"\/\>\n\1\2|" \
-			"${XFCE_PANELS_XML}"
-	fi
+FLL_CONF_PRESEED="${HOME}/.config/xfce4/panel/panels.xml"
+if [ ! -f "${FLL_CONF_PRESEED}" ]; then
+	cp /usr/share/sidux-settings-xfce/xfce/panel/panels.xml "${FLL_CONF_PRESEED}"
 fi
 
 ###
@@ -112,11 +121,12 @@ fi
 ###
 # set xfce splash login theme
 ###
+FLL_CONF_PRESEED="${HOME}/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-session.xml"
 if [ "${XFCE_SPLASH_THEME}" ]; then
 	mkdir -p "${HOME}/.config/xfce4/xfconf/xfce-perchannel-xml"
 
-	if [ ! -f "${HOME}/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-session.xml" ]; then
-	        cat > "${HOME}/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-session.xml" << EOF
+	if [ ! -f "${FLL_CONF_PRESEED}" ]; then
+	        cat > "${FLL_CONF_PRESEED}" << EOF
 <?xml version="1.0" encoding="UTF-8"?>
  
 <channel name="xfce4-session" version="1.0">
