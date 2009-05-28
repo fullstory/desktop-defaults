@@ -5,8 +5,9 @@ desktop-defaults (1.2.12) UNRELEASED; urgency=low
 
   [ Bernard Gray ]
   * fix broken path to source panels.xml for xfce
+  * fix xfce wallpaper settings going into the wrong conf
 
- -- Bernard Gray <bernard.gray@gmail.com>  Fri, 29 May 2009 08:18:40 +1000
+ -- Bernard Gray <bernard.gray@gmail.com>  Fri, 29 May 2009 08:21:46 +1000
 
 desktop-defaults (1.2.11) unstable; urgency=low
 

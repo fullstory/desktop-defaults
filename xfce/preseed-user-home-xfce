@@ -64,7 +64,7 @@ done
 # set wallpaper and desktop defaults in desktop.xml
 ###
 mkdir -p "${HOME}/.config/xfce4/xfconf/xfce-perchannel-xml"
-XFCE_DESKTOP_XML="${HOME}/.config/xfce4/xfconf/xfce-perchannel-xml/desktop.xml"
+XFCE_DESKTOP_XML="${HOME}/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-desktop.xml"
 
 # handle case where FLL_WALLPAPER is defined in kde4 directory syntax
 # sidux-art-wallpaper-* provides a symlink in /usr/share/wallpapers/ to common res wallpaper
