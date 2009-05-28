@@ -81,7 +81,7 @@ fi
 # - currently sets desktop colors, icon sizes
 ###
 if [ ! -f "${HOME}/.kde/share/config/kdeglobals" ]; then
-	cp /usr/share/sidux-settings-kde/kde4/default/share/config/kdeglobals \
+	cat /usr/share/sidux-settings-kde/kde4/default/share/config/kdeglobals \
 			> "${HOME}/.kde/share/config/kdeglobals"
 fi
 
