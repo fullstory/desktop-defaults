@@ -1,8 +1,12 @@
 desktop-defaults (1.2.11) UNRELEASED; urgency=low
 
+  [ Stefan Lippers-Hollmann ]
   * NOT RELEASED YET
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 28 May 2009 00:43:21 +0200
+  [ Bernard Gray ]
+  * force kdeglobals usage which is (currently) ignored by kde4 preseeding
+
+ -- Bernard Gray <bernard.gray@gmail.com>  Thu, 28 May 2009 13:53:33 +1000
 
 desktop-defaults (1.2.10) unstable; urgency=low
 

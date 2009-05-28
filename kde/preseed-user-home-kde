@@ -77,6 +77,15 @@ if [ "${FLL_WALLPAPER}" ] &&  [ ! -f "${HOME}/.kde/share/config/plasma-appletsrc
 fi
 
 ###
+# hack in kdeglobals, kde4 seems to ignore it in our system-settings-kde package
+# - currently sets desktop colors, icon sizes
+###
+if [ ! -f "${HOME}/.kde/share/config/kdeglobals" ]; then
+	cp /usr/share/sidux-settings-kde/kde4/default/share/config/kdeglobals \
+			> "${HOME}/.kde/share/config/kdeglobals"
+fi
+
+###
 # set Ksplash theme
 ###
 if [ "${KDE_KSPLASH_THEME}" ]; then
