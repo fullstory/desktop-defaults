@@ -1,8 +1,12 @@
 desktop-defaults (1.2.12) UNRELEASED; urgency=low
 
+  [ Stefan Lippers-Hollmann ]
   * NOT RELEASED YET
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 28 May 2009 18:49:47 +0200
+  [ Bernard Gray ]
+  * fix broken path to source panels.xml for xfce
+
+ -- Bernard Gray <bernard.gray@gmail.com>  Fri, 29 May 2009 08:18:40 +1000
 
 desktop-defaults (1.2.11) unstable; urgency=low
 
