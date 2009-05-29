@@ -1,9 +1,5 @@
-desktop-defaults (1.2.12) UNRELEASED; urgency=low
+desktop-defaults (1.2.12) unstable; urgency=low
 
-  [ Stefan Lippers-Hollmann ]
-  * NOT RELEASED YET
-
-  [ Bernard Gray ]
   * fix broken path to source panels.xml for xfce
   * fix xfce wallpaper settings going into the wrong conf
 
