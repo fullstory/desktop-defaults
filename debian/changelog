@@ -1,8 +1,12 @@
 desktop-defaults (1.2.13) UNRELEASED; urgency=low
 
+  [ Stefan Lippers-Hollmann ]
   * NOT RELEASED YET
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 30 May 2009 00:22:42 +0200
+  [ Bernard Gray ]
+  * sidux-browser must be copied into home dir explicitly to appear on panel
+
+ -- Bernard Gray <bernard.gray@gmail.com>  Sat, 30 May 2009 13:04:39 +1000
 
 desktop-defaults (1.2.12) unstable; urgency=low
 

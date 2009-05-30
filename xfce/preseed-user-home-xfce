@@ -99,6 +99,12 @@ if [ ! -f "${FLL_CONF_PRESEED}" ]; then
 fi
 
 ###
+# make sure sidux-browser appears on the panel
+###
+cp /usr/share/sidux-settings-xfce/xfce4/panel/siduxbrowser-47823.rc \
+	"${HOME}/.config/xfce4/panel/"
+
+###
 # create .config/autostart dir
 ###
 mkdir -p "${HOME}/.config/autostart"
