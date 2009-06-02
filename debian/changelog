@@ -1,9 +1,5 @@
-desktop-defaults (1.2.13) UNRELEASED; urgency=low
+desktop-defaults (1.2.13) unstable; urgency=low
 
-  [ Stefan Lippers-Hollmann ]
-  * NOT RELEASED YET
-
-  [ Bernard Gray ]
   * sidux-browser must be copied into home dir explicitly to appear on panel
   * create xfce xsettings.xml to set desktop theme to "cadmium"
 
