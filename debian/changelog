@@ -1,10 +1,6 @@
-desktop-defaults (1.2.14) UNRELEASED; urgency=low
+desktop-defaults (1.2.14) unstable; urgency=low
 
-  [ Stefan Lippers-Hollmann ]
-  * NOT RELEASED YET
-
-  [ Bernard Gray ]
-  * comment out panel preseeding - it doesn't work, don't really have time to 
+  * comment out panel preseeding - it doesn't work, don't really have time to
     find out why
 
  -- Bernard Gray <bernard.gray@gmail.com>  Wed, 03 Jun 2009 13:52:29 +1000
