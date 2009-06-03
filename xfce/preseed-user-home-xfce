@@ -143,17 +143,18 @@ fi
 ###
 # set panel defaults
 ###
-mkdir -p "${HOME}/.config/xfce4/panel/"
-FLL_CONF_PRESEED="${HOME}/.config/xfce4/panel/panels.xml"
-if [ ! -f "${FLL_CONF_PRESEED}" ]; then
-	cp /usr/share/sidux-settings-xfce/xfce4/panel/panels.xml "${FLL_CONF_PRESEED}"
-fi
-
-###
-# make sure sidux-browser appears on the panel
-###
-cp /usr/share/sidux-settings-xfce/xfce4/panel/siduxbrowser-47823.rc \
-	"${HOME}/.config/xfce4/panel/"
+# temporarily disabled, not working as expected. cleary
+#mkdir -p "${HOME}/.config/xfce4/panel/"
+#FLL_CONF_PRESEED="${HOME}/.config/xfce4/panel/panels.xml"
+#if [ ! -f "${FLL_CONF_PRESEED}" ]; then
+#	cp /usr/share/sidux-settings-xfce/xfce4/panel/panels.xml "${FLL_CONF_PRESEED}"
+#fi
+#
+####
+## make sure sidux-browser appears on the panel
+####
+#cp /usr/share/sidux-settings-xfce/xfce4/panel/siduxbrowser-47823.rc \
+#	"${HOME}/.config/xfce4/panel/"
 
 ###
 # create .config/autostart dir

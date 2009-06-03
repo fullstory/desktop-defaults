@@ -1,8 +1,13 @@
 desktop-defaults (1.2.14) UNRELEASED; urgency=low
 
+  [ Stefan Lippers-Hollmann ]
   * NOT RELEASED YET
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 03 Jun 2009 00:17:34 +0200
+  [ Bernard Gray ]
+  * comment out panel preseeding - it doesn't work, don't really have time to 
+    find out why
+
+ -- Bernard Gray <bernard.gray@gmail.com>  Wed, 03 Jun 2009 13:52:29 +1000
 
 desktop-defaults (1.2.13) unstable; urgency=low
 
