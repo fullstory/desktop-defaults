@@ -57,7 +57,7 @@ fi
 ###
 # kdesu -> sudo
 ###
-if which kdesu >/dev/null; then
+if [ -x /usr/bin/kdesu ] || [ -x /usr/lib/kde4/libexec/kdesu ] >/dev/null; then
 	if [ ! -d "${HOME}/.kde/share/config" ]; then
 		mkdir -p "${HOME}/.kde/share/config"
 	fi

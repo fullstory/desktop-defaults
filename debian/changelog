@@ -1,8 +1,9 @@
-desktop-defaults (1.2.15) UNRELEASED; urgency=low
+desktop-defaults (1.2.15) unstable; urgency=low
 
-  * NOT RELEASED YET
+  * fix kdesu preseeding, the binary is now stored at /usr/lib/kde4/libexec/.
+  * bump standards version to 3.8.2, no changes necessary.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 03 Jun 2009 20:53:37 +0200
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 23 Jun 2009 01:26:52 +0200
 
 desktop-defaults (1.2.14) unstable; urgency=low
 
