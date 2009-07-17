@@ -1,8 +1,11 @@
-desktop-defaults (1.2.16) UNRELEASED; urgency=low
+desktop-defaults (1.2.16) unstable; urgency=low
 
-  * NOT RELEASED YET
+  * use SUSv3 compliant if clauses, thanks to fabschub for noticing.
+  * make set_default_gdm_theme() more robust.
+  * not having lxterminal installed on lxde isn't fatal, ignore its absence
+    instead of throwing an error, thanks to fabschub.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 23 Jun 2009 01:28:39 +0200
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 18 Jul 2009 01:32:26 +0200
 
 desktop-defaults (1.2.15) unstable; urgency=low
 

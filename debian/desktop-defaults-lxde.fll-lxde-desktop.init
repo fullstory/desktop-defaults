@@ -86,11 +86,14 @@ set_default_gdm_theme()
 	###
 	# setup GDM theme
 	###
-	if [ -n "${LXDE_GDM_THEME}" -a -n "${LXDE_GDM_THEME_COLOR}" ]; then
-		if ! grep -q "^GraphicalTheme=" /etc/gdm/gdm.conf ; then
-			sed -i "s/\[greeter\]/\[greeter\]\nGraphicalTheme=${LXDE_GDM_THEME}\nGraphicalThemedColor=${LXDE_GDM_THEME_COLOR}/g" /etc/gdm/gdm.conf
+	if [ -n "${LXDE_GDM_THEME}" ] && [ -n "${LXDE_GDM_THEME_COLOR}" ]; then
+		if ! grep -q "^GraphicalTheme=" /etc/gdm/gdm.conf && ! grep -q "^GraphicalThemedColor=" /etc/gdm/gdm.conf ; then
+			sed -i	-e "s/\[greeter\]/\[greeter\]\nGraphicalTheme=${LXDE_GDM_THEME}\nGraphicalThemedColor=${LXDE_GDM_THEME_COLOR}/" \
+				/etc/gdm/gdm.conf
 		else
-			sed -i "s/GraphicalTheme=.*/GraphicalTheme=${LXDE_GDM_THEME}/g" /etc/gdm/gdm.conf
+			sed -i	-e "s/\(GraphicalTheme=\).*/\1${LXDE_GDM_THEME}/g" \
+				-e "s/\(GraphicalThemedColor=\).*/\1${LXDE_GDM_THEME_COLOR}/" \
+					/etc/gdm/gdm.conf
 		fi
 	fi
 }
@@ -104,8 +107,6 @@ do_start()
 	# set x-terminal to lxterminal
 	if [ -x '/usr/bin/lxterminal' ]; then
 		update-alternatives --set x-terminal-emulator '/usr/bin/lxterminal' >/dev/null
-	else
-		return 1
 	fi
 	
 	su "${FLL_LIVE_USER}" -c /usr/share/desktop-defaults-lxde/preseed-user-home-lxde
