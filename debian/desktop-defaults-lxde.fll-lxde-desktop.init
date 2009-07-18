@@ -100,7 +100,7 @@ set_default_gdm_theme()
 
 do_start()
 {
-	if [ -x "/usr/bin/gdm" ]; then
+	if [ -x "/usr/sbin/gdm" ]; then
 		set_default_gdm_theme
 	fi
 

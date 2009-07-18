@@ -1,8 +1,9 @@
-desktop-defaults (1.2.17) UNRELEASED; urgency=low
+desktop-defaults (1.2.17) unstable; urgency=low
 
-  * NOT RELEASED YET
+  * gdm now resides in /usr/sbin/gdm, change it accordingly, thanks to
+    fabschub.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 18 Jul 2009 01:35:27 +0200
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 18 Jul 2009 16:05:43 +0200
 
 desktop-defaults (1.2.16) unstable; urgency=low
 
