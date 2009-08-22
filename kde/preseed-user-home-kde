@@ -187,6 +187,7 @@ done
 if [ -f "${INDEXFILE}" ] && [ ! -f "${HOME}/Desktop/${FLL_DISTRO_NAME}.desktop" ]; then
 	cat > "${HOME}/Desktop/${FLL_DISTRO_NAME}.desktop" \
 <<EOF
+#!/usr/bin/env xdg-open
 [Desktop Entry]
 Encoding=UTF-8
 Type=Application
