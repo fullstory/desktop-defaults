@@ -198,6 +198,7 @@ Terminal=0
 Name=${FLL_CDROM_INDEX}
 GenericName=${FLL_CDROM_INDEX}
 EOF
+chmod u+x "${HOME}/Desktop/${FLL_DISTRO_NAME}.desktop"
 
 	if [ "${NOINTRO}" != "yes" ]; then
 		if [ ! -d "${HOME}/.kde/Autostart" ]; then
