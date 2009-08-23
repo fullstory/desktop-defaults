@@ -1,3 +1,9 @@
+desktop-defaults (1.2.21) UNRELEASED; urgency=low
+
+  * NOT RELEASED YET
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 23 Aug 2009 03:12:02 +0200
+
 desktop-defaults (1.2.20) unstable; urgency=low
 
   * shut up the nagscreen less brutally.
