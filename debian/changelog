@@ -1,3 +1,9 @@
+desktop-defaults (1.2.20) UNRELEASED; urgency=low
+
+  * NOT RELEASED YET
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 23 Aug 2009 03:07:21 +0200
+
 desktop-defaults (1.2.19) unstable; urgency=low
 
   * really prevent nasty nagscreen for release notes.
