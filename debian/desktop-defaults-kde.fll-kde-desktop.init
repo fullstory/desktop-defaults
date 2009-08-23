@@ -143,6 +143,10 @@ do_start()
 {
 	su "${FLL_LIVE_USER}" -c /usr/share/desktop-defaults-kde/preseed-user-home-kde
 
+	# security by absurdity
+	[ -f "${HOME}/Desktop/${FLL_DISTRO_NAME}.desktop" ] && \
+		chown 0:0 "${HOME}/Desktop/${FLL_DISTRO_NAME}.desktop"
+
 	set_default_kdm_theme
 }
 
