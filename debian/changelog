@@ -1,8 +1,16 @@
+desktop-defaults (1.2.22) unstable; urgency=low
+
+  * fix lintian issues:
+    - invalid mail address in changelog.
+    - specify GPL-2+ to be the license and refer to it accordingly.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Fri, 25 Sep 2009 00:20:07 +0200
+
 desktop-defaults (1.2.21) unstable; urgency=low
 
   * migrate *.default to momos release
 
- -- Bernard Gray <bernie@ed>  Tue, 22 Sep 2009 22:23:58 +1000
+ -- Bernard Gray <bernard.gray@gmail.com>  Tue, 22 Sep 2009 22:23:58 +1000
 
 desktop-defaults (1.2.20) unstable; urgency=low
 
