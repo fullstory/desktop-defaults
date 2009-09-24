@@ -1,3 +1,9 @@
+desktop-defaults (1.2.23) UNRELEASED; urgency=low
+
+  * NOT RELEASED YET
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Fri, 25 Sep 2009 00:20:54 +0200
+
 desktop-defaults (1.2.22) unstable; urgency=low
 
   * fix lintian issues:
