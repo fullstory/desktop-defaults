@@ -90,7 +90,7 @@ EOF
 fi
 
 ###
-# set desktop theme defaults in xsettings.xml (cadmium theme)
+# set desktop theme defaults in xsettings.xml (smooth theme)
 ###
 mkdir -p "${HOME}/.config/xfce4/xfconf/xfce-perchannel-xml"
 XFCE_SETTINGS_XML="${HOME}/.config/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml"
@@ -101,7 +101,7 @@ if [ ! -f "${XFCE_SETTINGS_XML}" ]; then
 
 <channel name="xsettings" version="1.0">
   <property name="Net" type="empty">
-    <property name="ThemeName" type="string" value="Xfce-cadmium"/>
+    <property name="ThemeName" type="string" value="Xfce-smooth"/>
     <property name="IconThemeName" type="empty"/>
     <property name="DoubleClickTime" type="int" value="250"/>
     <property name="DoubleClickDistance" type="int" value="5"/>
