@@ -2,9 +2,5 @@
 # sourced by /usr/bin/desktop-defaults-lxde and /etc/init.d/fll-lxde-desktop
 # installed at /etc/default/fll-lxde-desktop by the maintainer scripts
 
-# specify GDM theme to be used
-LXDE_GDM_THEME="sidux-momos"
-LXDE_GDM_THEME_COLOR="#000000"
-
-# specify GDM theme to be used
+# specify SLIM theme to be used
 LXDE_SLIM_THEME="sidux-momos"

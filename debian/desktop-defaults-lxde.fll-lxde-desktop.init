@@ -79,44 +79,34 @@ for param in $(cat /proc/cmdline); do
 	esac
 done
 
-set_default_gdm_theme()
+set_default_slim_theme()
 {
 	umask 0022
 
 	###
-	# setup GDM theme
+	# setup SLIM theme
 	###
-	if [ -n "${LXDE_GDM_THEME}" ] && [ -n "${LXDE_GDM_THEME_COLOR}" ]; then
-		if ! grep -q "^GraphicalTheme=" /etc/gdm/gdm.conf && ! grep -q "^GraphicalThemedColor=" /etc/gdm/gdm.conf ; then
-			sed -i	-e "s/\[greeter\]/\[greeter\]\nGraphicalTheme=${LXDE_GDM_THEME}\nGraphicalThemedColor=${LXDE_GDM_THEME_COLOR}/" \
-				/etc/gdm/gdm.conf
-		else
-			sed -i	-e "s/\(GraphicalTheme=\).*/\1${LXDE_GDM_THEME}/g" \
-				-e "s/\(GraphicalThemedColor=\).*/\1${LXDE_GDM_THEME_COLOR}/" \
-					/etc/gdm/gdm.conf
-		fi
-	fi
-}
-
-set_default_slim_theme()
-{
 	if [ -n "${LXDE_SLIM_THEME}" ]; then
-		sed -i -e "s/^\(current_theme[ \t]*\).*/\1${LXDE_SLIM_THEME}/" \
-			/etc/slim.conf
+		# theme exists but is not active
+		if grep -q "^#current_theme" /etc/slim.conf ; then
+			sed -i -e "s/^#\(current_theme[ \t]*\).*/\1${LXDE_SLIM_THEME}/" \
+				/etc/slim.conf
+		elif ! grep -q "^current_theme" /etc/slim.conf ; then
+			# if no theme is set add it at the end of the file
+			echo >> /etc/slim.conf
+			echo "# current theme, use comma separated list to specify a set to" >> /etc/slim.conf
+			echo "# randomly choose from" >> /etc/slim.conf
+			echo "current_theme ${LXDE_SLIM_THEME}" >> /etc/slim.conf
+		else
+			sed -i -e "s/^\(current_theme[ \t]*\).*/\1${LXDE_SLIM_THEME}/" \
+				/etc/slim.conf
+		fi
 	fi
 }
 
 do_start()
 {
-	#if [ -x "/usr/sbin/gdm" ]; then
-	#	set_default_gdm_theme
-	#fi
-
-	if [ -x "/usr/sbin/gdm" ]; then
-		set_default_gdm_theme
-	else
-		set_default_slim_theme
-	fi
+	set_default_slim_theme
 
 	# set x-terminal to lxterminal
 	if [ -x '/usr/bin/lxterminal' ]; then
