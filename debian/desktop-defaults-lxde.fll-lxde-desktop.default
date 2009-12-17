@@ -5,3 +5,6 @@
 # specify GDM theme to be used
 LXDE_GDM_THEME="sidux-momos"
 LXDE_GDM_THEME_COLOR="#000000"
+
+# specify GDM theme to be used
+LXDE_SLIM_THEME="sidux-momos"

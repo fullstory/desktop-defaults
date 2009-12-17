@@ -1,8 +1,13 @@
 desktop-defaults (1.2.24) UNRELEASED; urgency=low
 
+  [ Stefan Lippers-Hollmann ]
   * NOT RELEASED YET
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 24 Oct 2009 22:43:52 +0200
+  [ Nikolas Poniros ]
+  * set LXDE_SLIM_THEME in fll-lxde-desktop
+  * added code to set slim theme in slim.conf
+
+ -- Nikolas Poniros <edhunter@sidux.com>  Thu, 17 Dec 2009 06:40:12 +0100
 
 desktop-defaults (1.2.23) unstable; urgency=low
 

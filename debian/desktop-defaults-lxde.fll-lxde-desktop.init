@@ -98,10 +98,24 @@ set_default_gdm_theme()
 	fi
 }
 
+set_default_slim_theme()
+{
+	if [ -n "${LXDE_SLIM_THEME}" ]; then
+		sed -i -e "s/^\(current_theme[ \t]*\).*/\1${LXDE_SLIM_THEME}/" \
+			/etc/slim.conf
+	fi
+}
+
 do_start()
 {
+	#if [ -x "/usr/sbin/gdm" ]; then
+	#	set_default_gdm_theme
+	#fi
+
 	if [ -x "/usr/sbin/gdm" ]; then
 		set_default_gdm_theme
+	else
+		set_default_slim_theme
 	fi
 
 	# set x-terminal to lxterminal
