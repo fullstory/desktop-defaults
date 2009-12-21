@@ -3,4 +3,4 @@
 # installed at /etc/default/fll-lxde-desktop by the maintainer scripts
 
 # specify SLIM theme to be used
-LXDE_SLIM_THEME="sidux-momos"
+LXDE_SLIM_THEME="sidux-moros"

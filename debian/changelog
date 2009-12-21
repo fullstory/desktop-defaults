@@ -9,7 +9,10 @@ desktop-defaults (1.2.24) UNRELEASED; urgency=low
   * removed gdm related settings
   * added code to set theme in case current_theme is not set or commented out
 
- -- Nikolas Poniros <edhunter@sidux.com>  Thu, 17 Dec 2009 07:36:42 +0100
+  [ Joaquim Boura ]
+  * migrate *.default to moros release
+
+ -- Joaquim Boura <x-un-i@sidux.com>  Mon, 21 Dec 2009 22:42:58 +0100
 
 desktop-defaults (1.2.23) unstable; urgency=low
 
