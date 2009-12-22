@@ -1,3 +1,9 @@
+desktop-defaults (1.2.25) UNRELEASED; urgency=low
+
+  * NOT RELEASED YET
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 22 Dec 2009 02:18:08 +0100
+
 desktop-defaults (1.2.24) unstable; urgency=low
 
   * migrate *.default to moros release
