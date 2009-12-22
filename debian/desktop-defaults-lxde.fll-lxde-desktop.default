@@ -4,3 +4,4 @@
 
 # specify SLIM theme to be used
 LXDE_SLIM_THEME="sidux-moros"
+LXDE_GDM_THEME_COLOR="#000000"

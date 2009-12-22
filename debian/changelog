@@ -1,15 +1,5 @@
-desktop-defaults (1.2.24) UNRELEASED; urgency=low
+desktop-defaults (1.2.24) unstable; urgency=low
 
-  [ Stefan Lippers-Hollmann ]
-  * NOT RELEASED YET
-
-  [ Nikolas Poniros ]
-  * set LXDE_SLIM_THEME in fll-lxde-desktop
-  * added code to set slim theme in slim.conf
-  * removed gdm related settings
-  * added code to set theme in case current_theme is not set or commented out
-
-  [ Joaquim Boura ]
   * migrate *.default to moros release
 
  -- Joaquim Boura <x-un-i@sidux.com>  Mon, 21 Dec 2009 22:42:58 +0100
