@@ -1,9 +1,5 @@
-desktop-defaults (1.2.25) UNRELEASED; urgency=low
+desktop-defaults (1.2.25) unstable; urgency=low
 
-  [ Stefan Lippers-Hollmann ]
-  * NOT RELEASED YET
-
-  [ Joaquim Boura ]
   * preseed the keyboard layout
 
  -- Joaquim Boura <x-un-i@sidux.com>  Tue, 29 Dec 2009 10:44:24 +0100
