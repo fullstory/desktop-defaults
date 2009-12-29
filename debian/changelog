@@ -1,3 +1,9 @@
+desktop-defaults (1.2.26) UNRELEASED; urgency=low
+
+  * NOT RELEASED YET
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 29 Dec 2009 13:24:54 +0100
+
 desktop-defaults (1.2.25) unstable; urgency=low
 
   * preseed the keyboard layout
