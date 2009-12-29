@@ -90,6 +90,30 @@ EOF
 fi
 
 ###
+# set keyboard defaults in keyboard-layout.xml"
+###
+mkdir -p "${HOME}/.config/xfce4/xfconf/xfce-perchannel-xml"
+XFCE_XKB_XML="${HOME}/.config/xfce4/xfconf/xfce-perchannel-xml/keyboard-layout.xml"
+if [ ! -f "${XFCE_XKB_XML}" ]; then
+	if [ $(echo ${XKBLAYOUT} | cut -d"," -f 1) = "de" ];then
+		XKBVARIANT="nodeadkeys,"
+	elif [ $(echo ${XKBLAYOUT} | cut -d"," -f 2) = "de" ];then
+		XKBVARIANT=",nodeadkeys"
+	fi
+	cat > "${XFCE_XKB_XML}" << EOF
+<?xml version="1.0" encoding="UTF-8"?>
+
+<channel name="keyboard-layout" version="1.0">
+  <property name="Default" type="empty">
+    <property name="XkbDisable" type="bool" value="false"/>
+    <property name="XkbLayout" type="string" value="${XKBLAYOUT}"/>
+    <property name="XkbVariant" type="string" value=",nodeadkeys"/>
+  </property>
+</channel>
+EOF
+fi
+
+###
 # set desktop theme defaults in xsettings.xml (smooth theme)
 ###
 mkdir -p "${HOME}/.config/xfce4/xfconf/xfce-perchannel-xml"
