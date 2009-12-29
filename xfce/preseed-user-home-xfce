@@ -107,7 +107,7 @@ if [ ! -f "${XFCE_XKB_XML}" ]; then
   <property name="Default" type="empty">
     <property name="XkbDisable" type="bool" value="false"/>
     <property name="XkbLayout" type="string" value="${XKBLAYOUT}"/>
-    <property name="XkbVariant" type="string" value=",nodeadkeys"/>
+    <property name="XkbVariant" type="string" value="${XKBVARIANT}"/>
   </property>
 </channel>
 EOF

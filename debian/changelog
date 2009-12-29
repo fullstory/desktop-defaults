@@ -1,8 +1,8 @@
-desktop-defaults (1.2.26) UNRELEASED; urgency=low
+desktop-defaults (1.2.26) unstable; urgency=low
 
-  * NOT RELEASED YET
+  * actually use XKBVARIANT instead of hardcoding it.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 29 Dec 2009 13:24:54 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 29 Dec 2009 16:03:42 +0100
 
 desktop-defaults (1.2.25) unstable; urgency=low
 
