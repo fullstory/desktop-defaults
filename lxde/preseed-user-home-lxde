@@ -79,6 +79,16 @@ EOF
 
 fi
 
+###
+# create ~/.language file for python keyboard switcher, if not available
+###
+if [ ! -f "${HOME}/.language" ]; then
+    cat > "${HOME}/.language" << EOF
+en,de
+EOF
+
+fi
+
 ## TODO: Trash, not available yet but schedules for 0.4
 
 

@@ -1,8 +1,13 @@
 desktop-defaults (1.2.27) UNRELEASED; urgency=low
 
+  [ Stefan Lippers-Hollmann ]
   * NOT RELEASED YET
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 29 Dec 2009 16:05:16 +0100
+  [ Dinko Sabo ]
+  * add myself to uploaders
+  * prepare settings for keyboard-switcher
+
+ -- Dinko Sabo <cobrasbyte@gmx.de>  Thu, 31 Dec 2009 09:22:00 +0100
 
 desktop-defaults (1.2.26) unstable; urgency=low
 
