@@ -6,11 +6,11 @@
 #XFCE_SERVICES_ENABLED="true"
 
 # specify GDM theme to be used
-XFCE_GDM_THEME="sidux-moros"
+XFCE_GDM_THEME="sidux-hypnos"
 
 # specify GDM theme color to be used
 XFCE_GDM_THEME_COLOR="#000000"
 
 # specify xfce splash theme and engine
-XFCE_SPLASH_THEME="sidux-moros"
+XFCE_SPLASH_THEME="sidux-hypnos"
 XFCE_SPLASH_ENGINE="balou"
