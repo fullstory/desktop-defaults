@@ -114,18 +114,19 @@ EOF
 fi
 
 ###
-# set desktop theme defaults in xsettings.xml (smooth theme)
+# set desktop theme defaults in xsettings.xml (sidux-$RELEASE theme)
 ###
 mkdir -p "${HOME}/.config/xfce4/xfconf/xfce-perchannel-xml"
 XFCE_SETTINGS_XML="${HOME}/.config/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml"
-if [ ! -f "${XFCE_SETTINGS_XML}" ]; then
-
+# currently distro defaults does not provide the release codename var - use part of gfxboot name
+XFCE_COLOURS="sidux-${FLL_GFXBOOT_THEME#*-*-}"
+if [ ! -f "${XFCE_SETTINGS_XML}" ] && [ ${XFCE_COLOURS} ]; then
 	cat > "${XFCE_SETTINGS_XML}" << EOF
 <?xml version="1.0" encoding="UTF-8"?>
 
 <channel name="xsettings" version="1.0">
   <property name="Net" type="empty">
-    <property name="ThemeName" type="string" value="Xfce-smooth"/>
+    <property name="ThemeName" type="string" value="${XFCE_COLOURS}"/>
     <property name="IconThemeName" type="empty"/>
     <property name="DoubleClickTime" type="int" value="250"/>
     <property name="DoubleClickDistance" type="int" value="5"/>
