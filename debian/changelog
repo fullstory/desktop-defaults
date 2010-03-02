@@ -1,8 +1,12 @@
 desktop-defaults (1.2.29) UNRELEASED; urgency=low
 
+  [ Stefan Lippers-Hollmann ]
   * NOT RELEASED YET
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 11 Feb 2010 13:46:50 +0100
+  [ Bernard Gray ]
+  * gdm theme setup - remove multiple theme and randomised theme options
+
+ -- Bernard Gray <bernard.gray@gmail.com>  Tue, 02 Mar 2010 22:11:18 +1100
 
 desktop-defaults (1.2.28) unstable; urgency=low
 

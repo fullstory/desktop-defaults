@@ -95,6 +95,12 @@ set_default_gdm_theme()
 				-e "s/\(GraphicalThemedColor=\).*/\1${LXDE_GDM_THEME_COLOR}/" \
 					/etc/gdm/gdm.conf
 		fi
+		if grep -q "^GraphicalThemes=" /etc/gdm/gdm.conf ; then
+			sed -i "s/GraphicalThemes=/#GraphicalThemes=/g" /etc/gdm/gdm.conf
+	        fi
+		if grep -q "^GraphicalThemeRand=" /etc/gdm/gdm.conf ; then
+			sed -i "s/GraphicalThemeRand=/#GraphicalThemeRand=/g" /etc/gdm/gdm.conf
+	        fi
 	fi
 }
 
