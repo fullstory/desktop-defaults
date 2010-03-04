@@ -1,3 +1,15 @@
+desktop-defaults (1.2.30) unstable; urgency=low
+
+  * fix lintian warnings:
+    - init.d-script-sourcing-without-test, by replacing unrecognized -s checks
+      with -r.
+    - init.d-script-missing-dependency-on-remote_fs, while (guaranteed) not an
+      issue in our environment, this is correct.
+  * switch to dpkg-source 3.0 (native) format.
+  * update copyrights.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 04 Mar 2010 01:33:43 +0100
+
 desktop-defaults (1.2.29) unstable; urgency=low
 
   * gdm theme setup - remove multiple theme and randomised theme options.

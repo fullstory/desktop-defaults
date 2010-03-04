@@ -2,7 +2,7 @@
 
 ### BEGIN INIT INFO
 # Provides:          fll-lxde-desktop
-# Required-Start:    $local_fs fll-adduser
+# Required-Start:    $local_fs $remote_fs fll-adduser
 # Required-Stop:
 # X-Start-Before:    fll-common-desktop
 # Default-Start:     S
@@ -16,7 +16,7 @@
 # F.U.L.L.S.T.O.R.Y init script
 #
 # Copyright: (C) 2007-2008 Kel Modderman <kel@otaku42.de>
-# Copyright: (C) 2008 Stefan Lippers-Hollmann <s.l-h@gmx.de>
+# Copyright: (C) 2008-2010 Stefan Lippers-Hollmann <s.l-h@gmx.de>
 # License:   GPLv2
 #
 # F.U.L.L.S.T.O.R.Y Project Homepage:
@@ -31,7 +31,7 @@ NAME="fll-lxde-desktop"
 ###
 FLL_DISTRO_MODE="installed"
 
-if [ -s /etc/default/distro ]; then
+if [ -r /etc/default/distro ]; then
 	. /etc/default/distro
 fi
 
@@ -52,14 +52,14 @@ fi
 ###
 # read in variables from our default conffile
 ###
-if [ -s "/etc/default/${NAME}" ]; then
+if [ -r "/etc/default/${NAME}" ]; then
 	. "/etc/default/${NAME}"
 fi
 
 ###
 # read in variables from /etc/default/fll-locales
 ###
-if [ -s /etc/default/fll-locales ]; then
+if [ -r /etc/default/fll-locales ]; then
 	. /etc/default/fll-locales
 fi
 
