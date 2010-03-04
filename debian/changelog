@@ -1,10 +1,6 @@
-desktop-defaults (1.2.29) UNRELEASED; urgency=low
+desktop-defaults (1.2.29) unstable; urgency=low
 
-  [ Stefan Lippers-Hollmann ]
-  * NOT RELEASED YET
-
-  [ Bernard Gray ]
-  * gdm theme setup - remove multiple theme and randomised theme options
+  * gdm theme setup - remove multiple theme and randomised theme options.
 
  -- Bernard Gray <bernard.gray@gmail.com>  Tue, 02 Mar 2010 22:11:18 +1100
 
