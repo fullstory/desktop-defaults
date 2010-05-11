@@ -79,13 +79,36 @@ for param in $(cat /proc/cmdline); do
 	esac
 done
 
-set_default_lxdm_theme()
+set_default_gdm_theme()
 {
 	umask 0022
 
-	###
-	# setup lxdm theme here later, we simply use our wallpaper in lxdm.conf for now
-	###
+###
+# setup GDM theme
+###
+if [ -n "${LXDE_GDM_THEME}" ] && [ -n "${LXDE_GDM_THEME_COLOR}" ]; then
+    if ! grep -q "^GraphicalTheme=" /etc/gdm/gdm.conf && ! grep -q "^GraphicalThemedColor=" /etc/gdm/gdm.conf ; then
+    sed -i -e "s/\[greeter\]/\[greeter\]\nGraphicalTheme=${LXDE_GDM_THEME}\nGraphicalThemedColor=${LXDE_GDM_THEME_COLOR}/" \
+/etc/gdm/gdm.conf
+    else
+    sed -i -e "s/\(GraphicalTheme=\).*/\1${LXDE_GDM_THEME}/g" \
+    -e "s/\(GraphicalThemedColor=\).*/\1${LXDE_GDM_THEME_COLOR}/" \
+    /etc/gdm/gdm.conf
+    fi
+    if grep -q "^GraphicalThemes=" /etc/gdm/gdm.conf ; then
+    sed -i "s/GraphicalThemes=/#GraphicalThemes=/g" /etc/gdm/gdm.conf
+    fi
+    if grep -q "^GraphicalThemeRand=" /etc/gdm/gdm.conf ; then
+    sed -i "s/GraphicalThemeRand=/#GraphicalThemeRand=/g" /etc/gdm/gdm.conf
+    fi
+fi
+}
+
+do_start()
+{
+if [ -x "/usr/sbin/gdm" ]; then
+set_default_gdm_theme
+fi
 }
 
 do_start()
@@ -98,7 +121,7 @@ do_start()
 	if [ -x '/usr/bin/lxterminal' ]; then
 		update-alternatives --set x-terminal-emulator '/usr/bin/lxterminal' >/dev/null
 	fi
-	
+
 	su "${FLL_LIVE_USER}" -c /usr/share/desktop-defaults-lxde/preseed-user-home-lxde
 }
 
