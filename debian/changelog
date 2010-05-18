@@ -1,10 +1,8 @@
 desktop-defaults (1.2.31) UNRELEASED; urgency=low
 
   * NOT RELEASED YET
-  * replace slim with lxdm and remove gdm cruft for lxde
-  * revert lxdm swift, reactivate gdm/slim
 
- -- Chris Hildebrandt <slam@sidux.com>  Tue, 11 May 2010 08:30:30 +0200
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 04 Mar 2010 01:34:27 +0100
 
 desktop-defaults (1.2.30) unstable; urgency=low
 

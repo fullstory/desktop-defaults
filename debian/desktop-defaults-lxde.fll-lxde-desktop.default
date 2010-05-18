@@ -5,6 +5,3 @@
 # specify SLIM theme to be used
 LXDE_SLIM_THEME="sidux-hypnos"
 LXDE_GDM_THEME_COLOR="#000000"
-
-# specify LXDM theme to be used
-# for now we simply use our wallpaper in lxdm.conf
