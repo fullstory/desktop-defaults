@@ -1,8 +1,9 @@
-desktop-defaults (1.2.31) UNRELEASED; urgency=low
+desktop-defaults (1.2.31) unstable; urgency=low
 
-  * NOT RELEASED YET
+  * bump standards version to 3.9.1, no changes necessary.
+  * drop no longer required conflict with kde-services-sidux.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 04 Mar 2010 01:34:27 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 03 Aug 2010 16:03:54 +0200
 
 desktop-defaults (1.2.30) unstable; urgency=low
 

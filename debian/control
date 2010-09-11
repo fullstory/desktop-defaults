@@ -4,7 +4,7 @@ Priority: optional
 Maintainer: Kel Modderman <kel@otaku42.de>
 Uploaders: Stefan Lippers-Hollmann <s.l-h@gmx.de>, Joaquim Boura <x-un-i@sidux.com>, Dinko Sabo <cobrasbyte@gmx.de>
 Build-Depends: debhelper (>= 7)
-Standards-Version: 3.8.4
+Standards-Version: 3.9.1
 Vcs-Svn: svn://svn.berlios.de/fullstory/desktop-defaults/trunk
 Vcs-Browser: http://svn.berlios.de/wsvn/fullstory/desktop-defaults/trunk/
 
@@ -29,7 +29,6 @@ Depends: ${misc:Depends},
  desktop-defaults-common,
  sidux-settings-kde,
  kde-window-manager
-Conflicts: kde-services-sidux
 Description: user presets specific to the K desktop environment
  This package provides required infrastructure to tweak the KDE desktop
  of the F.U.L.L.S.T.O.R.Y. live Linux media.
