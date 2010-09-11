@@ -1,8 +1,8 @@
-desktop-defaults (1.2.33) UNRELEASED; urgency=low
+desktop-defaults (1.2.33) unstable; urgency=low
 
-  * NOT RELEASED YET
+  * debian/control: emphasize that these packages are live-only.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 05 Aug 2010 04:38:38 +0200
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 05 Aug 2010 17:33:49 +0200
 
 desktop-defaults (1.2.32) unstable; urgency=low
 
@@ -227,7 +227,7 @@ desktop-defaults (1.2.3) unstable; urgency=low
 desktop-defaults (1.2.2) unstable; urgency=low
 
   * modify kde preseeding to handle wallpaper
-  * migrate *.default to use aether release theme 
+  * migrate *.default to use aether release theme
 
  -- Bernard Gray <bernard.gray@gmail.com>  Tue, 21 Apr 2009 16:38:08 +1000
 
@@ -245,7 +245,7 @@ desktop-defaults (1.2.0) unstable; urgency=low
 
 desktop-defaults (1.0.15) unstable; urgency=low
 
-  * drop /etc/default/kdm.d/kdmtheme for the time being, our current ones 
+  * drop /etc/default/kdm.d/kdmtheme for the time being, our current ones
     aren't kde4 compatible.
 
  -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 06 Apr 2009 20:53:51 +0200
@@ -293,7 +293,7 @@ desktop-defaults (1.0.9) unstable; urgency=low
 
 desktop-defaults (1.0.8) unstable; urgency=low
 
-  * migrate debian *defaults to pontos release 
+  * migrate debian *defaults to pontos release
 
  -- Bernard Gray <bernard.gray@gmail.com>  Sun, 16 Nov 2008 23:12:40 +1100
 
@@ -473,7 +473,7 @@ desktop-defaults (0.10.33) unstable; urgency=low
 
 desktop-defaults (0.10.32) unstable; urgency=low
 
-  * change the colour scheme in use to match that in sidux-art-erebos 
+  * change the colour scheme in use to match that in sidux-art-erebos
   * convert gtk-kde theme matching tool to generic gtk-qt-engine
 
  -- Bernard Gray <bernard.gray@gmail.com>  Wed, 11 Jun 2008 14:48:00 +1000
@@ -484,8 +484,8 @@ desktop-defaults (0.10.31) unstable; urgency=low
   * begin configuring domino based kde theme - kdeglobals setup
   * replace qtcurve with domino kde-style
   * remove qtcurve rc conf, add domino equivalent
-  * add extra domino config settings in ~/.qt/* 
-  * remove custom qt conf configs - see how it goes 
+  * add extra domino config settings in ~/.qt/*
+  * remove custom qt conf configs - see how it goes
 
  -- Bernard Gray <bernard.gray@gmail.com>  Mon, 09 Jun 2008 22:03:56 +1000
 
@@ -501,7 +501,7 @@ desktop-defaults (0.10.29) unstable; urgency=low
   [ Bernard Gray ]
   * add XFCE_SPLASH_ENGINE var to xfce default - req'd for conf files
   * add xfce splash conf file creation to preseed script
-  * xfce splash config failing due to non-existent dir - make sure dir exists 
+  * xfce splash config failing due to non-existent dir - make sure dir exists
 
   [ Stefan Lippers-Hollmann ]
   * bump standards version to 3.8.0, no changes necessary.
@@ -517,7 +517,7 @@ desktop-defaults (0.10.28) unstable; urgency=low
 desktop-defaults (0.10.27) unstable; urgency=low
 
   * configure defaults for erebos release
-  * modify xfce defaults for new xfce art package 
+  * modify xfce defaults for new xfce art package
 
  -- Bernard Gray <bernard.gray@gmail.com>  Mon, 26 May 2008 18:04:33 +1000
 
@@ -530,7 +530,7 @@ desktop-defaults (0.10.26) unstable; urgency=low
 desktop-defaults (0.10.25) unstable; urgency=low
 
   * remove reference to non-existent xkblayout plugin for xfce
-  * remove non-existent launcher id=8 from xfce panel 
+  * remove non-existent launcher id=8 from xfce panel
 
  -- Bernard Gray <bernard.gray@gmail.com>  Wed, 14 May 2008 14:24:19 +1000
 
@@ -559,7 +559,7 @@ desktop-defaults (0.10.21) unstable; urgency=low
   * the same for the xfce version
 
   [ Bernard Gray ]
-  * add sidux-browser to the panel  
+  * add sidux-browser to the panel
 
  -- Bernard Gray <bernard.gray@gmail.com>  Tue, 01 Apr 2008 19:22:38 +1100
 
@@ -638,7 +638,7 @@ desktop-defaults (0.10.12) unstable; urgency=low
     - pipe knemod stdout to /dev/null
 
   [ Bernard Gray ]
-  * modify xfce default gdm theme for nyx 
+  * modify xfce default gdm theme for nyx
 
  -- Bernard Gray <bernard.gray@gmail.com>  Wed, 19 Mar 2008 22:56:08 +1100
 
