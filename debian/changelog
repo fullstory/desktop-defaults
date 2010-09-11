@@ -1,8 +1,8 @@
-desktop-defaults (1.2.34) UNRELEASED; urgency=low
+desktop-defaults (1.2.34) unstable; urgency=low
 
-  * NOT RELEASED YET
+  * switch to compat level 8.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 05 Aug 2010 17:34:37 +0200
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 08 Aug 2010 03:34:34 +0200
 
 desktop-defaults (1.2.33) unstable; urgency=low
 
