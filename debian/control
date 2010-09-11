@@ -3,7 +3,7 @@ Section: x11
 Priority: optional
 Maintainer: Kel Modderman <kel@otaku42.de>
 Uploaders: Stefan Lippers-Hollmann <s.l-h@gmx.de>,
- Joaquim Boura <x-un-i@sidux.com>,
+ Joaquim Boura <x-un-i@aptosid.com>,
  Dinko Sabo <cobrasbyte@gmx.de>
 Build-Depends: debhelper (>= 7.9.3)
 Standards-Version: 3.9.1
@@ -15,7 +15,7 @@ Architecture: all
 Depends: ${misc:Depends},
  distro-defaults,
  fll-live-initscripts,
- sidux-art-wallpaper,
+ aptosid-art-wallpaper,
  sudo,
  laptop-detect
 Suggests: iceweasel
@@ -37,7 +37,7 @@ Depends: ${misc:Depends},
  distro-defaults,
  fll-live-initscripts,
  desktop-defaults-common,
- sidux-settings-kde,
+ aptosid-settings-kde,
  kde-window-manager
 Description: user presets specific to the K desktop environment
  This package provides required infrastructure to tweak the KDE desktop
@@ -78,7 +78,7 @@ Depends: ${misc:Depends},
  distro-defaults,
  fll-live-initscripts,
  desktop-defaults-common,
- sidux-settings-xfce,
+ aptosid-settings-xfce,
  xfwm4
 Description: user presets specific to the Xfce desktop environment
  This package provides required infrastructure to tweak the Xfce desktop

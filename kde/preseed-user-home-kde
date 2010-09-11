@@ -72,7 +72,7 @@ touch "${HOME}/.local/kaboom"
 ###
 if [ "${FLL_WALLPAPER}" ] &&  [ ! -f "${HOME}/.kde/share/config/plasma-appletsrc" ]; then
 	sed -e "s#wallpaper=.*#wallpaper=${FLL_WALLPAPER}#" \
-		 /usr/share/sidux-settings-kde/kde4/default/share/config/plasma-appletsrc \
+		 /usr/share/aptosid-settings-kde/kde4/default/share/config/plasma-appletsrc \
 			> "${HOME}/.kde/share/config/plasma-appletsrc"
 fi
 
@@ -81,7 +81,7 @@ fi
 # - currently sets desktop colors, icon sizes
 ###
 if [ ! -f "${HOME}/.kde/share/config/kdeglobals" ]; then
-	cat /usr/share/sidux-settings-kde/kde4/default/share/config/kdeglobals \
+	cat /usr/share/aptosid-settings-kde/kde4/default/share/config/kdeglobals \
 			> "${HOME}/.kde/share/config/kdeglobals"
 fi
 

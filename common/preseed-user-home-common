@@ -118,9 +118,9 @@ fi
 ###
 ## put a manual icon on the desktop
 ####
-if [ ! -f "${HOME}/Desktop/sidux-manual.desktop" ] && \
-	[ -f /usr/share/applications/sidux/sidux-manual.desktop ]; then
-	ln -s /usr/share/applications/sidux/sidux-manual.desktop "${HOME}/Desktop/sidux-manual.desktop"
+if [ ! -f "${HOME}/Desktop/aptosid-manual.desktop" ] && \
+	[ -f /usr/share/applications/aptosid/aptosid-manual.desktop ]; then
+	ln -s /usr/share/applications/aptosid/aptosid-manual.desktop "${HOME}/Desktop/aptosid-manual.desktop"
 fi
 
 ###
@@ -133,28 +133,28 @@ if [ -f /usr/share/applications/eduversum.desktop ]; then
 fi
 
 ###
-## put a sidux-png-video icon on the desktop
+## put a aptosid-png-video icon on the desktop
 ###
-if [ -f /usr/share/seminarix-samples/video/sidux-png-video.desktop ]; then
-	[ ! -f "${HOME}/Desktop/sidux-png-video.desktop" ] && \
-		ln -s /usr/share/seminarix-samples/video/sidux-png-video.desktop \
-			"${HOME}/Desktop/sidux-png-video.desktop"
+if [ -f /usr/share/seminarix-samples/video/aptosid-png-video.desktop ]; then
+	[ ! -f "${HOME}/Desktop/aptosid-png-video.desktop" ] && \
+		ln -s /usr/share/seminarix-samples/video/aptosid-png-video.desktop \
+			"${HOME}/Desktop/aptosid-png-video.desktop"
 fi
 
 ###
-## put a sidux-irc icon on the desktop
+## put a aptosid-irc icon on the desktop
 ####
-if [ ! -f "${HOME}/Desktop/sidux-irc.desktop" ] && \
-	[ -f /usr/share/applications/sidux/sidux-irc.desktop ]; then
-	ln -s /usr/share/applications/sidux/sidux-irc.desktop "${HOME}/Desktop/sidux-irc.desktop"
+if [ ! -f "${HOME}/Desktop/aptosid-irc.desktop" ] && \
+	[ -f /usr/share/applications/aptosid/aptosid-irc.desktop ]; then
+	ln -s /usr/share/applications/aptosid/aptosid-irc.desktop "${HOME}/Desktop/aptosid-irc.desktop"
 fi
 
 ###
 ## put a installer-gui-irc icon on the desktop
 ####
 if [ ! -f "${HOME}/Desktop/install-gui.desktop" ] && \
-	[ -f /usr/share/applications/sidux/install-gui.desktop ]; then
-	ln -s /usr/share/applications/sidux/install-gui.desktop "${HOME}/Desktop/install-gui.desktop"
+	[ -f /usr/share/applications/aptosid/install-gui.desktop ]; then
+	ln -s /usr/share/applications/aptosid/install-gui.desktop "${HOME}/Desktop/install-gui.desktop"
 fi
 
 ###
