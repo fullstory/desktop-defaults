@@ -19,7 +19,12 @@ Depends: ${misc:Depends},
 Suggests: iceweasel
 Description: common user presets for various popular desktop applications
  This package provides required infrastructure to tweak various popular desktop
- applications.
+ applications:
+ - fluxbox menu
+ - gksu/ kdesu/ su/ sudo/ su-to-rootrc
+ - use mcedit within mc
+ - GnuPG
+ - XDG desktop icons
 
 Package: desktop-defaults-kde
 Architecture: all
@@ -32,6 +37,12 @@ Depends: ${misc:Depends},
 Description: user presets specific to the K desktop environment
  This package provides required infrastructure to tweak the KDE desktop
  of the F.U.L.L.S.T.O.R.Y. live Linux media.
+ - set up artwork theme integration for KDE (kdm themes, ksplash, wallpaper)
+ - nuke kaboom
+ - keyboard layouts for kxkbrc
+ - disabling kpersonalizer wizard on first login
+ - populate live-only XDG desktop icons
+ - autostart release notes
 
 Package: desktop-defaults-xfce
 Architecture: all
@@ -44,6 +55,10 @@ Depends: ${misc:Depends},
 Description: user presets specific to the Xfce desktop environment
  This package provides required infrastructure to tweak the Xfce desktop
  of the F.U.L.L.S.T.O.R.Y. live Linux media.
+ - set up artwork theme integration for LXDE (gdm, wallpaper)
+ - prefer lxterminal as x-terminal-emulator
+ - configure python keyboard switcher
+ - populate live-only XDG desktop icons
 
 Package: desktop-defaults-lxde
 Architecture: all
@@ -55,3 +70,9 @@ Depends: ${misc:Depends},
 Description: user presets specific to the LXDE desktop environment
  This package provides required infrastructure to tweak the LXDE desktop
  of the F.U.L.L.S.T.O.R.Y. live Linux media.
+ - set up artwork theme integration for XFCE (gdm, splash, desktop, wallpaper)
+ - keyboard layouts
+ - disable tips on startup
+ - setup trash can
+ - autostart release notes
+ - populate live-only XDG desktop icons
