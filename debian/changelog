@@ -1,8 +1,8 @@
-desktop-defaults (1.3.2) UNRELEASED; urgency=low
+desktop-defaults (1.3.2) unstable; urgency=low
 
-  * NOT RELEASED YET
+  * fix x-un-i's mail address.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Fri, 24 Sep 2010 01:45:33 +0200
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 06 Oct 2010 14:41:02 +0200
 
 desktop-defaults (1.3.1) unstable; urgency=low
 
@@ -93,13 +93,13 @@ desktop-defaults (1.2.25) unstable; urgency=low
 
   * preseed the keyboard layout
 
- -- Joaquim Boura <x-un-i@sidux.com>  Tue, 29 Dec 2009 10:44:24 +0100
+ -- Joaquim Boura <x-un-i@berlios.de>  Tue, 29 Dec 2009 10:44:24 +0100
 
 desktop-defaults (1.2.24) unstable; urgency=low
 
   * migrate *.default to moros release
 
- -- Joaquim Boura <x-un-i@sidux.com>  Mon, 21 Dec 2009 22:42:58 +0100
+ -- Joaquim Boura <x-un-i@berlios.de>  Mon, 21 Dec 2009 22:42:58 +0100
 
 desktop-defaults (1.2.23) unstable; urgency=low
 
@@ -204,7 +204,7 @@ desktop-defaults (1.2.9) unstable; urgency=low
 
   * fixed bashism.
 
- -- Joaquim Boura <x-un-i@sidux.com>  Sun, 17 May 2009 15:21:20 +0200
+ -- Joaquim Boura <x-un-i@berlios.de>  Sun, 17 May 2009 15:21:20 +0200
 
 desktop-defaults (1.2.8) unstable; urgency=low
 
@@ -221,7 +221,7 @@ desktop-defaults (1.2.7) unstable; urgency=low
   * making usage of flldebug uniform.
     on debug redirect output to a log file in /tmp/${NAME}.log.
 
- -- Joaquim Boura <x-un-i@sidux.com>  Fri, 15 May 2009 21:51:54 +0200
+ -- Joaquim Boura <x-un-i@berlios.de>  Fri, 15 May 2009 21:51:54 +0200
 
 desktop-defaults (1.2.6) unstable; urgency=low
 
@@ -562,7 +562,7 @@ desktop-defaults (0.10.24) unstable; urgency=low
 
   * fixed homepage for epihany.
 
- -- Joaquim Boura <x-un-i@sidux.com>  Wed, 16 Apr 2008 17:34:28 +0200
+ -- Joaquim Boura <x-un-i@berlios.de>  Wed, 16 Apr 2008 17:34:28 +0200
 
 desktop-defaults (0.10.23) unstable; urgency=low
 
@@ -738,7 +738,7 @@ desktop-defaults (0.10.2) unstable; urgency=low
 
   * fixed set minimal settings for epiphany
 
- -- Joaquim Boura <x-un-i@sidux.com>  Sun, 27 Jan 2008 14:29:33 +0100
+ -- Joaquim Boura <x-un-i@berlios.de>  Sun, 27 Jan 2008 14:29:33 +0100
 
 desktop-defaults (0.10.1) unstable; urgency=low
 
@@ -746,7 +746,7 @@ desktop-defaults (0.10.1) unstable; urgency=low
   * code for creation of desktop icons for installer, sidux-irc and
     manual put together in the common part
 
- -- Joaquim Boura <x-un-i@sidux.com>  Sat, 26 Jan 2008 16:10:03 +0100
+ -- Joaquim Boura <x-un-i@berlios.de>  Sat, 26 Jan 2008 16:10:03 +0100
 
 desktop-defaults (0.10.0) unstable; urgency=low
 
@@ -916,7 +916,7 @@ desktop-defaults (0.9.37) unstable; urgency=low
 
   * Translation thanks to RoEn
 
- -- Joaquim Boura <x-un-i@sidux.com>  Tue, 18 Dec 2007 13:22:56 +0100
+ -- Joaquim Boura <x-un-i@berlios.de>  Tue, 18 Dec 2007 13:22:56 +0100
 
 desktop-defaults (0.9.36) unstable; urgency=low
 
