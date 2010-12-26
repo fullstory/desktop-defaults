@@ -1,9 +1,8 @@
-desktop-defaults (1.3.4) UNRELEASED; urgency=low
+desktop-defaults (1.3.4) unstable; urgency=low
 
-  * NOT RELEASED YET
-  * typo in desktop-default package description fixed
+  * typo in desktop-default package description fixed.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 06 Oct 2010 15:36:23 +0200
+ -- Chris Hildebrandt <slam@aptosid-com>  Sun, 19 Dec 2010 14:35:48 +0100
 
 desktop-defaults (1.3.3) unstable; urgency=low
 
