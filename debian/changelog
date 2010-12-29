@@ -1,8 +1,13 @@
 desktop-defaults (1.3.5) UNRELEASED; urgency=low
 
+  [ Stefan Lippers-Hollmann ]
   * NOT RELEASED YET
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 26 Dec 2010 15:39:29 +0100
+  [ Joaquim Boura ]
+  * Patch for an aptosid-gnome from Angelescu Ovidiu <mrhsaacdoh@gmail.com> aka convbsd
+    and William J. Henderson <tornado@tjtag.com> aka tjtag
+
+ -- Joaquim Boura <x-un-i@berlios.de>  Wed, 29 Dec 2010 23:57:38 +0100
 
 desktop-defaults (1.3.4) unstable; urgency=low
 

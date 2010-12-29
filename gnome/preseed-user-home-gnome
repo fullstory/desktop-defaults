@@ -1,0 +1,367 @@
+#!/bin/sh
+
+###
+# F.U.L.L.S.T.O.R.Y init script
+#
+# Copyright: (C) 2007-2008 Kel Modderman <kel@otaku42.de>
+# Copyright: (C) 2008 Stefan Lippers-Hollmann <s.l-h@gmx.de>
+# License:   GPLv2
+#
+# F.U.L.L.S.T.O.R.Y Project Homepage:
+# http://developer.berlios.de/projects/fullstory
+###
+
+PATH=/sbin:/usr/sbin:$PATH
+
+# set default umask
+umask 0022
+
+# this is only invoked from fll-kde-desktop, inherit its environment
+NAME="fll-gnome-desktop"
+
+###
+# source distro-defaults, no-op unless in live mode
+###
+FLL_DISTRO_MODE="installed"
+
+if [ -s /etc/default/distro ]; then
+	. /etc/default/distro
+fi
+
+if [ "${FLL_DISTRO_MODE}" != "live" ]; then
+	exit 0
+fi
+
+###
+# read in variables from our default conffile
+###
+if [ -s "/etc/default/${NAME}" ]; then
+	. "/etc/default/${NAME}"
+fi
+
+###
+# read in variables from /etc/default/fll-locales
+###
+if [ -s /etc/default/fll-locales ]; then
+	. /etc/default/fll-locales
+fi
+
+###
+# cheatcode handling
+###
+for param in $(cat /proc/cmdline); do
+	case "${param}" in
+		flldebug=*)
+			[ "${param#flldebug=}" = "${NAME}" ] && set -x
+			;;
+		nointro)
+			NOINTRO="yes"
+			;;
+	esac
+done
+
+####################
+# SETTINGS SECTION #
+####################
+
+###
+# set wallpaper defaults
+###
+if [ "${FLL_WALLPAPER}" ] ; then
+# sets for gnome background
+gconftool-2 -t string -s /desktop/gnome/background/picture_options ${GNOME_BKG_RENDERING_OPTION}
+gconftool-2 -t string -s /desktop/gnome/background/picture_filename  ${FLL_WALLPAPER}
+fi
+
+###
+# set theme
+###
+if [ -d "/usr/share/themes/Clearlooks" ] ; then
+gconftool-2 -t string -s /desktop/gnome/interface/gtk_theme  ${GNOME_THEME}
+fi
+
+###
+# set font_rendering"
+###
+gconftool-2 -s /desktop/gnome/font_rendering/hinting -t string ${GNOME_FONT_RENDERING}
+
+###
+# disable F10 shortcut key in gnome terminal for ${FLL_LIVE_USER}
+###
+gconftool-2 -s /apps/gnome-terminal/global/use_menu_accelerators -t boolean ${GNOME_F10_KEY}
+
+###
+# set remove autolock screensaver
+###
+gconftool-2 -s /apps/gnome-screensaver/lock_enabled -t boolean ${GNOME_SCREENSAVER_AUTOLOCK}
+
+###
+#  set icons for main menus
+###
+gconftool-2 -s /desktop/gnome/interface/menus_have_icons -t boolean  ${GNOME_MENUS_HAVE_ICONS}
+
+###
+#  set keyboard layout
+###
+if [ "${XKBLAYOUT}" ] ; then
+gconftool-2 -s /desktop/gnome/peripherals/keyboard/kbd/layouts -t string "${XKBLAYOUT}"
+gconftool-2 -s /desktop/gnome/peripherals/keyboard/kbd/model -t string "pc104"
+#gconftool-2 -s /desktop/gnome/peripherals/keyboard/kbd/options -t string "wellsee"
+fi
+
+# unused panels code because it's a matter of preferences
+#gconftool-2 --set "/apps/panel/toplevels/bottom_panel_screen0/background/opacity" --type int 45000
+#gconftool-2 --set "/apps/panel/toplevels/top_panel_screen0/background/opacity" --type int 45000
+#gconftool-2 --set "/apps/panel/toplevels/bottom_panel_screen0/background/type" --type string "color"
+#gconftool-2 --set "/apps/panel/toplevels/top_panel_screen0/background/type" --type string "color"
+
+###
+# osd if it's installed
+###
+gconftool-2 --set "/apps/gnome-osd/avoid_panels" --type bool ${GNOME_OSD_AVOID_PANELS}
+gconftool-2 --set "/apps/gnome-osd/animations" --type bool ${GNOME_OSD_ANIMATIONS}
+gconftool-2 --set "/apps/gnome-osd/drop_shadow" --type bool ${GNOME_OSD_DROP_SHADOWS}
+gconftool-2 --set "/apps/gnome-osd/osd_halignment" --type string  ${GNOME_OSD_HALIGNMENT}
+gconftool-2 --set "/apps/gnome-osd/osd_vposition" --type string ${GNOME_OSD_VPOSITION}
+#gconftool-2 --set "/apps/gnome-osd/plugins/gaim/enabled" --type bool ${GNOME_OSD_GAIM_ENABLED}
+
+###
+# sound if it's installed
+###
+gconftool-2 --set "/desktop/gnome/sound/enable_esd" --type bool ${GNOME_ESOUND_ENABLE}
+gconftool-2 --set "/desktop/gnome/sound/event_sounds" --type bool ${GNOME_SOUND_EVENTS_ENABLE}
+
+###
+# nautilus settings
+###
+gconftool-2 --set "/apps/nautilus/preferences/always_use_browser" --type bool ${NAUTILUS_ALWAYS_USE_BROWSER}
+gconftool-2 --set "/apps/nautilus/icon_view/default_zoom_level" --type string ${NAUTILUS_ICONS_ZOOM_LEVEL}
+
+##########################
+# MENU LAUNCHERS SECTION #
+##########################
+
+add_submenu_entries()
+# pass to add_menu_entry desired paramethers after parsing settings file
+{
+i="0"
+howmany=`fgrep SUBMENU= /etc/default/${NAME} | cut -d = -f 2 | cut -d '"' -f2 | wc -w`
+while [ "${i}" -lt "${howmany}" ]
+do
+i=`expr ${i} + 1`
+launcher_info=`fgrep SUBMENU= /etc/default/${NAME} | cut -d ',' -f$i| cut -d '"' -f2`
+submenu=`echo $launcher_info | cut -d "#" -f1`
+launcher=`echo $launcher_info | cut -d "#" -f2`
+action=`echo $launcher_info | cut -d "#"  -f3`
+add_menu_entry
+done
+}
+
+add_menu_entry()
+{
+# test if launcher exists
+if [ -f /usr/share/applications/$launcher.desktop ] ; then
+# makes ./local/share/applications dir to copy launchers there 
+	appsdir="/home/${FLL_LIVE_USER}/.local/share/applications"
+		if [ ! -d "${appsdir}" ]; then
+			mkdir -p $appsdir
+		fi
+# edit lauchers with NoDisplay=true and replace it with NoDisplay=false
+	gethide=`fgrep "NoDisplay=" /usr/share/applications/$launcher.desktop `
+	if [ "${gethide}" = "NoDisplay=true" ]; then
+		cp /usr/share/applications/$launcher.desktop $appsdir/
+	sed -i "s@${gethide}@NoDisplay=false@" $appsdir/$launcher.desktop
+	fi
+fi
+# add launcher entry in  ${menudir}/gnome-applications.menu
+printf "		<Menu>
+			<Name>${submenu}</Name>
+			<${action}>
+				<Filename>${launcher}.desktop</Filename> 
+			</${action}>
+		</Menu>\n" >> ${menudir}/gnome-applications.menu
+}
+
+make_menu_entry()
+{
+menudir="/home/${FLL_LIVE_USER}/.config/menus"
+	if [ ! -d "${menudir}" ] ; then
+		mkdir -p ${menudir}
+	fi
+# makes ${menudir}/gnome-applications.menu header
+cat > ${menudir}/gnome-applications.menu << EOF
+<!DOCTYPE Menu
+  PUBLIC '-//freedesktop//DTD Menu 1.0//EN'
+  'http://standards.freedesktop.org/menu-spec/menu-1.0.dtd'>
+<Menu>
+	<Name>Applications</Name>
+	<MergeFile type="parent">/etc/xdg/menus/gnome-applications.menu</MergeFile>
+EOF
+
+# add launchers in submenus
+add_submenu_entries
+
+# makes ${menudir}/gnome-applications.menu footer
+cat >> ${menudir}/gnome-applications.menu << EOF
+		<AppDir>/home/aptosid/.local/share/applications</AppDir>
+</Menu>
+EOF
+
+# makes ${menudir}/gnome-settings.menu file
+cat > ${menudir}/gnome-settings.menu << EOF
+<!DOCTYPE Menu
+  PUBLIC '-//freedesktop//DTD Menu 1.0//EN'
+  'http://standards.freedesktop.org/menu-spec/menu-1.0.dtd'>
+<Menu>
+	<Name>Desktop</Name>
+	<MergeFile type="parent">/etc/xdg/menus/gnome-settings.menu</MergeFile>
+</Menu>
+EOF
+}
+
+###
+# Add all changes to Applications menu at the and END OF MENU LAUNCHERS
+###
+make_menu_entry
+
+###########################
+# PANEL LAUNCHERS SECTION #
+###########################
+
+add_launcher()
+{
+# That's tjtag's ideea and an excellent one
+panel="top_panel_screen0"
+position="${pos}"
+right_stick="${right_position}"
+locked="${locked_status}"
+launcher_dir="${launcher_dir_loc}"
+launcher_path="${launcher_dir}${launcher}.desktop"
+launcher_id="${launcher}_launcher"
+
+# Apply the schemas
+for schema in $(gconftool-2 --all-entries /schemas/apps/panel/objects | awk -F '=' '{print $1}'); do
+    gconftool-2 --apply-schema /schemas/apps/panel/objects/$schema /apps/panel/objects/$launcher_id/$schema
+done
+
+# Tweak things
+gconftool-2 --set /apps/panel/objects/$launcher_id/object_type -t string launcher-object
+gconftool-2 --set /apps/panel/objects/$launcher_id/launcher_location -t string $launcher_path
+gconftool-2 --set /apps/panel/objects/$launcher_id/toplevel_id -t string $panel
+gconftool-2 --set /apps/panel/objects/$launcher_id/position -t int $position
+gconftool-2 --set /apps/panel/objects/$launcher_id/panel_right_stick -t bool $right_stick
+gconftool-2 --set /apps/panel/objects/$launcher_id/locked -t bool $locked
+object_id_list=$(gconftool-2 --get /apps/panel/general/object_id_list | sed -e "s|]|,$launcher_id]|")
+
+# Finally, add the applet once everything has been setup
+gconftool-2 --set /apps/panel/general/object_id_list --type list --list-type string $object_id_list
+}
+
+add_any_launcher()
+{
+# finds next available position in panel
+# offset it's nedded to make distinction betweeen left and right alignment in panel
+	how_many=`gconftool-2 --all-dirs /apps/panel/objects | grep launcher | wc -l`
+	start_pos=` expr ${how_many} + ${offset} `
+ 	pos=` expr ${start_pos} + 1 `
+# add launcher
+	add_launcher  "${launcher}" 
+}
+
+###
+# finds installed browser from chromium-browser iceweasell epiphany midori
+# finds installed default browser using update-alternatives and set it as default browser in gnome
+###
+launcher=`ls -l /etc/alternatives/x-www-browser | awk '{print $11}'| cut -d / -f 4`
+gconftool-2 -s /desktop/gnome/applications/browser -t string "${launcher}"
+# set as epiphany epihany-browser because in applications exsits only epiphany.desktop
+	if [ "${launcher}" = "epiphany-browser" ]; then
+	launcher="epiphany"
+	fi
+
+###
+# set homepage as ${FLL_DISTRO_URL} in browser
+###
+set_homepage()
+{
+case ${launcher} in
+	chromium-browser)
+		chromium_dir="/etc/chromium-browser"
+		homepage_ini=`cat ${chromium_dir}/master_preferences | grep homepage | awk '{print $2}'`
+		sudo chmod 777 ${chromium_dir}
+		sed -i "s@${homepage_ini}@\"${FLL_DISTRO_URL}\"@" ${chromium_dir}/master_preferences
+		sudo chmod 755 ${chromium_dir}
+		;;
+	epiphany)
+		gconftool-2 -s /apps/epiphany/general/homepage -t string "${FLL_DISTRO_URL}"
+		;;
+	midori)
+		midori_dir="/home/${FLL_LIVE_USER}/.config/midori"
+		if [ ! -d "${midori_dir}" ] ; then
+			mkdir -p ${midori_dir}
+		fi
+			cat > ${midori_dir}/config << EOF
+[settings]
+default-encoding=ISO-8859-1
+last-window-width=1044
+last-window-height=768
+last-web-search=1
+load-on-startup=MIDORI_STARTUP_HOMEPAGE
+speed-dial-in-new-tabs=false
+location-entry-search=http://search.yahoo.com/search?p=
+user-agent=Midori/0.2 (X11; Linux; U; en-us) WebKit/531.2+
+EOF
+echo "homepage=${FLL_DISTRO_URL}" >> ${midori_dir}/config
+	;;
+esac
+}
+set_homepage
+
+###
+# add browser launcher in top panel
+###
+browser_launcher_topanel()
+{
+pos="1"
+right_position="false"
+launcher_dir_loc="/usr/share/applications/"
+locked_status="true"
+case ${launcher} in
+		epiphany)
+			echo " epiphany is default browser"
+		;;
+		*)
+		add_launcher "${launcher}"
+		;;
+esac
+}
+browser_launcher_topanel
+
+###
+# removes  aptosid icons from desktop and add them to panel
+###
+aptosid_launchers_topanel()
+{
+launcher_dir_loc="/usr/share/applications/aptosid/"
+right_position="true"
+locked_status="false"
+offset="3"
+for launcher in ${APTOSID_LAUNCHERS} ; do
+add_any_launcher
+done
+}
+aptosid_launchers_topanel
+
+other_launchers_topanel()
+{
+launcher_dir_loc="/usr/share/applications/"
+right_position="false"
+locked_status="false"
+offset="0"
+for launcher in ${OTHER_LAUNCHERS} ; do
+if [ `which $launcher` ] ; then
+add_any_launcher
+fi
+done
+}
+other_launchers_topanel

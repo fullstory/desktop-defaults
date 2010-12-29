@@ -1,0 +1,228 @@
+#!/bin/sh
+
+### BEGIN INIT INFO
+# Provides:          fll-gnome-desktop
+# Required-Start:    $local_fs $remote_fs fll-adduser
+# Required-Stop:
+# X-Start-Before:    fll-common-desktop
+# Default-Start:     S
+# Default-Stop:
+# Short-Description: prepare live user for xfce desktop
+# Description:       The purpose of this script is to preseed the live users
+#                    settings for the xfce desktop.
+### END INIT INFO
+
+###
+# F.U.L.L.S.T.O.R.Y init script
+#
+# Copyright: (C) 2007-2008 Kel Modderman <kel@otaku42.de>
+# Copyright: (C) 2008-2010 Stefan Lippers-Hollmann <s.l-h@gmx.de>
+# License:   GPLv2
+#
+# F.U.L.L.S.T.O.R.Y Project Homepage:
+# http://developer.berlios.de/projects/fullstory
+###
+
+PATH=/sbin:/usr/sbin:/bin:/usr/bin
+NAME="fll-gnome-desktop"
+
+###
+# source distro-defaults, no-op unless in live mode
+###
+FLL_DISTRO_MODE="installed"
+
+if [ -r /etc/default/distro ]; then
+	. /etc/default/distro
+fi
+
+if [ "${FLL_DISTRO_MODE}" != "live" ]; then
+	exit 0
+fi
+
+###
+# source lsb functions
+###
+. /lib/lsb/init-functions
+
+###
+# source fll functions
+###
+. /lib/init/fll
+
+###
+# read in variables from our default conffile
+###
+if [ -r "/etc/default/${NAME}" ]; then
+	. "/etc/default/${NAME}"
+fi
+
+###
+# read in variables from /etc/default/fll-locales
+###
+if [ -r /etc/default/fll-locales ]; then
+	. /etc/default/fll-locales
+fi
+
+###
+# cheatcode handling
+###
+for param in $(cat /proc/cmdline); do
+	case "${param}" in
+		flldebug=*)
+			if [ "${param#flldebug=}" = "${NAME#fll-}" ] || [ "${param#flldebug=}" = "all" ]; then
+                    		fll_redirect
+			fi
+			;;
+		nointro)
+			NOINTRO="yes"
+			;;
+	esac
+done
+
+set_polkit_and_root_options()
+{
+	###
+	# enable polkit operations for users in sudo group
+	###
+	polkitdir="/var/lib/polkit-1/localauthority/10-vendor.d"
+	if [ ! -d "${polkitdir}" ] ; then
+		mkdir -p ${polkitdir}
+	fi
+		cat > ${polkitdir}/10-live-cd.pkla << EOF
+[Live CD user permissions]
+Identity=unix-group:sudo
+Action=*
+ResultAny=no
+ResultInactive=no
+ResultActive=yes
+EOF
+		cat > ${polkitdir}/com.aptosid.desktop.pkla << EOF
+[Mounting, checking, etc. of internal drives]
+Identity=unix-group:sudo
+Action=org.freedesktop.udisks.filesystem-*;org.freedesktop.udisks.drive-ata-smart*
+ResultActive=yes
+
+[Change CPU Frequency scaling]
+Identity=unix-group:sudo
+Action=org.gnome.cpufreqselector
+ResultActive=yes
+
+[Setting the clock]
+Identity=unix-group:sudo
+Action=org.gnome.clockapplet.mechanism.*
+ResultActive=yes
+
+[Adding or modifying users]
+Identity=unix-group:sudo
+Action=org.freedesktop.systemtoolsbackends.set
+ResultActive=yes
+
+[Live CD user permissions]
+Identity=unix-group:sudo
+Action=*
+ResultAny=no
+ResultInactive=no
+ResultActive=yes
+EOF
+
+	###
+	# disable F10 shortcut key in gnome-terminal for root user
+	# probably should be verifed also if exists metacity
+	###
+	if which gconftool-2 > /dev/null; then
+		gconftool-2 -s /apps/gnome-terminal/global/use_menu_accelerators -t boolean "false"
+	fi
+}
+
+set_gnome_resolution()
+{
+#sets for gnome wallpaper resolution to ${res} overwriting link to 1600x1200.png
+if [ "${FLL_WALLPAPER}" ] ; then
+	if [ -f "${wallpaper_res}" ] ; then
+    		rm -f ${FLL_WALLPAPER} > /dev/null
+    		ln -s ${wallpaper_res} ${FLL_WALLPAPER}
+	fi
+fi
+}
+
+
+set_default_gdm_theme()
+{
+        umask 0022
+
+        ###
+        # setup GDM background
+        ###
+bkgini=`fgrep  "/desktop/gnome/background/picture_filename" /etc/gdm3/greeter.gconf-defaults  | awk ' {print $2}'`
+# search if gdm3 background line it's commneted
+itstrue=`fgrep  "#/desktop/gnome/background/picture_filename" /etc/gdm3/greeter.gconf-defaults  | awk ' {print $1}'`
+        if [ "${itstrue}" ] ; then
+			sed -i "s@${itstrue}@/desktop/gnome/background/picture_filename@" /etc/gdm3/greeter.gconf-defaults
+        fi
+        if [ "${GNOME_GDM_BACKGROUND}" ]; then
+			sed -i "s@${bkgini}@${GNOME_GDM_BACKGROUND}@" /etc/gdm3/greeter.gconf-defaults
+	fi
+	
+	###
+	# setup GDM background rendering
+	###
+rendini=`fgrep  "/desktop/gnome/background/picture_options" /etc/gdm3/greeter.gconf-defaults  | awk ' {print $2}'`
+# search if gdm3 background rendering option it's commented
+comtrue=`fgrep  "/desktop/gnome/background/picture_options" /etc/gdm3/greeter.gconf-defaults  | awk ' {print $1}'`
+	if [ "${comtrue}" ] ; then
+			sed -i "s@${comtrue}@/desktop/gnome/background/picture_options@" /etc/gdm3/greeter.gconf-defaults
+        fi
+        if [ "${GNOME_GDM_BACKGROUND_OPTION}" ]; then
+			sed -i "s@${rendini}@${GNOME_GDM_BACKGROUND_OPTION}@" /etc/gdm3/greeter.gconf-defaults
+	fi
+
+}
+
+set_gdm3_greeter_defaults()
+{
+# Set gdm3 to show only recent logins and set metacity to false
+getvalue=`fgrep  "/apps/metacity/general/compositing_manager" /etc/gdm3/greeter.gconf-defaults  | awk ' {print $2}'`
+gdm3_daemon_greeter="[greeter]"
+addincludeall=`fgrep  "[greeter]" /etc/gdm3/daemon.conf  | awk ' {print $1}'`
+clean_addincludeall=$(printf "%s\n" "$addincludeall" | sed 's/[][]/\\&/g')
+
+        if [ "${addincludeall}" = "$gdm3_daemon_greeter" ] ; then
+			sed -i "/"${clean_addincludeall}"/a IncludeAll=${ALL_USERS_VISIBLE}"  /etc/gdm3/daemon.conf 
+			
+        fi
+
+        if [ "${getvalue}" ] ; then
+			sed -i "s@${getvalue}@${COMPOSITE_ENABLE}@"  /etc/gdm3/greeter.gconf-defaults
+        fi
+}
+
+do_start()
+{
+	set_polkit_and_root_options
+	set_gnome_resolution
+	set_default_gdm_theme
+	set_gdm3_greeter_defaults
+	su "${FLL_LIVE_USER}" -c /usr/share/desktop-defaults-gnome/preseed-user-home-gnome
+}
+
+case "${1}" in
+	start)
+		log_daemon_msg "${NAME}"
+		log_action_begin_msg " preparing ${FLL_LIVE_USER} for gnome"
+		do_start
+		log_end_msg 0
+		;;
+	stop)
+		;;
+	restart|force-reload)
+		echo "Error: argument '${1}' not supported" >&2
+		exit 3
+		;;
+	*)
+		echo "Usage: ${NAME} {start|stop}" >&2
+		exit 3
+		;;
+esac
+
+:
+
