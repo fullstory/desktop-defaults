@@ -6,6 +6,30 @@ desktop-defaults (1.3.5) UNRELEASED; urgency=low
   [ Joaquim Boura ]
   * Patch for an aptosid-gnome from Angelescu Ovidiu <mrhsaacdoh@gmail.com> aka convbsd
     and William J. Henderson <tornado@tjtag.com> aka tjtag
+  * moved some code from fll-common-desktop to fll-gnome-desktop as bfree's sugested
+  * minor changes to desktop-defaults
+  * moved some code in desktop-defaults to fix gdm3 background
+  * modified code to fix user permisions
+  * added support to autodetect resolution when GDM3 starts
+  * added support to overwrite aptosid default wallpaper resolution 
+  * moved all gnome settings from preseed-user-home-gnome to default gnome settings file  fll-gnome-desktop
+  * bumped version and new svn update because svn hasn't been updated proper 
+  * reverted wallpaper to aptosid-apate.png and use zoom option for it
+  * also defined the same rendering option to zoom for gdm3 background
+  * set gdm3 background as ${FLL_WALLPAPER}
+  * reverted wallpaper to aptosid-apate.png and use streched option for it
+  * reused code from fullstory svn revision 18900 ( unreleased Sidux Gnome )
+  * modified wallpaper to aptosid-apate-wide.png and use streched option for it
+  * added test to see if epiphany it's already in upper panel
+  * removed code for set of default browser since it's done in pyfll chroot
+  * code to add installed browser as launcher to upper panel and set default homepage.
+  * code to add installed browser as launcher to upper panel in gnome-lite.
+  * code to add iceweasel or chromium launcher to upper panel.
+  * code to add iceweasel launcher to upper panel.
+  * code to add iceweasell/chromium launcher in main upper panel.
+  * code to uncomment line for setting background.
+  * removed multiple logins via gdmflexiserver from System Tools menu in live mode.
+  * modified done to repair polkit permisions.
 
  -- Joaquim Boura <x-un-i@berlios.de>  Wed, 29 Dec 2010 23:57:38 +0100
 
