@@ -81,6 +81,7 @@ if which mc >/dev/null; then
 	if [ ! -f "${HOME}/.mc/ini" ]; then
 		mkdir -p "${HOME}/.mc/"
 		cat >"${HOME}/.mc/ini" <<EOF
+
 [Midnight-Commander]
 use_internal_edit=1
 EOF
@@ -178,17 +179,3 @@ if [ ! -f "${HOME}/.fluxbox/menu" ]; then
 [end]
 EOF
 fi
-
-###
-# If it is gnome flavour removes desktop symlinks because are already added to panel
-# chmod install-gui.desktop to 755 because of gnome style
-###
-if [ -f "/etc/default/fll-gnome-desktop" ]; then
-	 . /etc/default/fll-gnome-desktop
-	for launcher in ${APTOSID_LAUNCHERS}; do
-		rm ${HOME}/Desktop/${launcher}.desktop
-	done
-	sudo chown ${FLL_LIVE_USER} ${HOME}/Desktop/install-gui.desktop
-	sudo chmod 755 ${HOME}/Desktop/install-gui.desktop
-fi
- 
