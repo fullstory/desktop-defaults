@@ -79,14 +79,15 @@ for param in $(cat /proc/cmdline); do
 	esac
 done
 
-set_default_gdm_theme()
+set_default_gdm3_theme()
 {
 	umask 0022
 
 	###
 	# setup GDM theme
 	###
-	if [ -n "${LXDE_GDM_THEME}" ] && [ -n "${LXDE_GDM_THEME_COLOR}" ]; then
+	if [ -n "${LXDE_GDM_THEME}" ] && [ -n "${LXDE_GDM_THEME_COLOR}" ] && false; then
+		# XXX: port me to gdm3
 		if ! grep -q "^GraphicalTheme=" /etc/gdm/gdm.conf && ! grep -q "^GraphicalThemedColor=" /etc/gdm/gdm.conf ; then
 			sed -i	-e "s/\[greeter\]/\[greeter\]\nGraphicalTheme=${LXDE_GDM_THEME}\nGraphicalThemedColor=${LXDE_GDM_THEME_COLOR}/" \
 				/etc/gdm/gdm.conf
@@ -106,8 +107,8 @@ set_default_gdm_theme()
 
 do_start()
 {
-	if [ -x "/usr/sbin/gdm" ]; then
-		set_default_gdm_theme
+	if [ -x "/usr/sbin/gdm3" ]; then
+		set_default_gdm3_theme
 	fi
 
 	# set x-terminal to lxterminal
