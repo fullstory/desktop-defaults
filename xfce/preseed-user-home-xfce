@@ -168,18 +168,11 @@ fi
 ###
 # set panel defaults
 ###
-# temporarily disabled, not working as expected. cleary
-#mkdir -p "${HOME}/.config/xfce4/panel/"
-#FLL_CONF_PRESEED="${HOME}/.config/xfce4/panel/panels.xml"
-#if [ ! -f "${FLL_CONF_PRESEED}" ]; then
-#	cp /usr/share/aptosid-settings-xfce/xfce4/panel/panels.xml "${FLL_CONF_PRESEED}"
-#fi
-#
-####
-## make sure aptosid-browser appears on the panel
-####
-#cp /usr/share/aptosid-settings-xfce/xfce4/panel/aptosidbrowser-47823.rc \
-#	"${HOME}/.config/xfce4/panel/"
+mkdir -p "${HOME}/.config/xfce4/panel/"
+if [ -d /usr/share/aptosid-settings-xfce4 ]; then
+	cp -r /usr/share/aptosid-settings-xfce/xfce4 ${HOME}/.config
+	sed -i -e s/FLL_LIVE_USER/${FLL_LIVE_USER}/ ${HOME}/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-panel.xml
+fi
 
 ###
 # create .config/autostart dir
