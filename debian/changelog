@@ -1,8 +1,12 @@
 desktop-defaults (1.3.10) UNRELEASED; urgency=low
 
+  [ Stefan Lippers-Hollmann ]
   * NOT RELEASED YET
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 01 May 2011 00:32:58 +0200
+  [ Joaquim Boura ]
+  * fixed typo
+
+ -- Joaquim Boura <x-un-i@berlios.de>  Sun, 01 May 2011 13:06:26 +0200
 
 desktop-defaults (1.3.9) unstable; urgency=low
 
