@@ -1,8 +1,12 @@
 desktop-defaults (1.3.12) UNRELEASED; urgency=low
 
+  [ Stefan Lippers-Hollmann ]
   * NOT RELEASED YET
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 28 May 2011 00:24:50 +0200
+  [ Niall Walsh ]
+  * Don't set a kb model for kde
+
+ -- Niall Walsh <niallwalsh@users.berlios.de>  Fri, 03 Jun 2011 11:24:38 +0100
 
 desktop-defaults (1.3.11) unstable; urgency=low
 

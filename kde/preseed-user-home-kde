@@ -110,7 +110,6 @@ if [ "${XKBLAYOUT}" ]; then
 <<EOF
 [Layout]
 LayoutList=${XKBLAYOUT}
-Model=pc104
 ShowFlag=true
 SwitchMode=Global
 Use=true
