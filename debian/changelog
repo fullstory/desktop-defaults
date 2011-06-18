@@ -1,8 +1,16 @@
-desktop-defaults (1.3.13) UNRELEASED; urgency=low
+desktop-defaults (1.3.14) unstable; urgency=low
 
-  * NOT RELEASED YET
+  * simplify QSQLITE3 template, StartServer isn't honoured by this backend
+    anyways.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 08 Jun 2011 13:20:38 +0200
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 18 Jun 2011 23:03:43 +0200
+
+desktop-defaults (1.3.13) unstable; urgency=low
+
+  * no need to touch kaboom anymore.
+  * configure akonadi to use QSQLITE3, if available.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 18 Jun 2011 22:30:20 +0200
 
 desktop-defaults (1.3.12) unstable; urgency=low
 

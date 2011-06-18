@@ -63,9 +63,21 @@ done
 ###
 # setup live user
 ###
-mkdir -p	"${HOME}/.kde/share/config" \
+mkdir -p	"${HOME}/.config/akonadi" \
+		"${HOME}/.kde/share/config" \
 		"${HOME}/.local"
-touch "${HOME}/.local/kaboom"
+
+
+##
+# use sqlite3 backend for akonadi
+##
+if [ -r /usr/lib/qt4/plugins/sqldrivers/libqsqlite3.so ] && [ ! -f "${HOME}/.config/akonadi/akonadiserverrc" ]; then
+	cat > "${HOME}/.config/akonadi/akonadiserverrc" \
+<< EOF
+[%General]
+Driver=QSQLITE3
+EOF
+fi
 
 ###
 # set wallpaper, plasma-adesktop-appletsrc is provided by our system-settings-kde package
