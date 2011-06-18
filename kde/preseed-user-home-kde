@@ -76,9 +76,6 @@ if [ -r /usr/lib/qt4/plugins/sqldrivers/libqsqlite3.so ] && [ ! -f "${HOME}/.con
 << EOF
 [%General]
 Driver=QSQLITE3
-
-[QSQLITE3]
-StartServer=false
 EOF
 fi
 
