@@ -124,7 +124,7 @@ set_default_slim_theme()
 	# setup slim theme
 	###
 	if [ -n "${LXDE_SLIM_THEME}" ]; then
-			sed -i	-e "s/\(current_theme\).*/\1${LXDE_SLIM_THEME}/g" \
+			sed -i	-e "s/\(current_theme\).*/\1\t${LXDE_SLIM_THEME}/g" \
 					/etc/slim.conf
 		if grep -q "^current_theme" /etc/slim.conf ; then
 			sed -i "s/current_theme/#current_theme/g" /etc/slim.conf
