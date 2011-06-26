@@ -116,6 +116,23 @@ set_default_gdm_theme()
 	fi
 }
 
+set_default_slim_theme()
+{
+	umask 0022
+
+	###
+	# setup slim theme
+	###
+	if [ -n "${LXDE_SLIM_THEME}" ]; then
+			sed -i	-e "s/\(current_theme\).*/\1${LXDE_SLIM_THEME}/g" \
+					/etc/slim.conf
+		fi
+		if grep -q "^current_theme" /etc/slim.conf ; then
+			sed -i "s/current_theme/#current_theme/g" /etc/slim.conf
+	        fi
+	fi
+}
+
 do_start()
 {
 	set_lxde_background
