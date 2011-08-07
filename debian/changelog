@@ -1,8 +1,9 @@
-desktop-defaults (1.3.17) UNRELEASED; urgency=low
+desktop-defaults (1.3.17) unstable; urgency=low
 
-  * NOT RELEASED YET
+  * switch from deprecated --before --after --until and --remaining options
+    to override targets.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Fri, 15 Jul 2011 21:18:24 +0200
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 07 Aug 2011 03:14:35 +0200
 
 desktop-defaults (1.3.16) unstable; urgency=low
 
