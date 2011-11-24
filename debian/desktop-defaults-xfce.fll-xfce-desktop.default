@@ -7,6 +7,7 @@
 
 # specify GDM theme to be used
 XFCE_GDM_THEME="aptosid-ponos"
+GDM_BACKGROUND_OPTION="stretched"
 
 # specify GDM theme color to be used
 XFCE_GDM_THEME_COLOR="#000000"
