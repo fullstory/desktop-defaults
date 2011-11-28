@@ -1,13 +1,16 @@
 desktop-defaults (1.3.18) UNRELEASED; urgency=low
 
-  [ Stefan Lippers-Hollmann ]
   * NOT RELEASED YET
 
   [ Rick Battle ]
   * updated xfce for gdm3
   * added a check to see if the gdm3 background was already set
 
- -- Rick Battle <rick.battle@solmera.com>  Sat, 26 Nov 2011 04:30:27 -0800
+  [ Stefan Lippers-Hollmann ]
+  * fix indentation.
+  * revert to original method to disable gdm changes.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 28 Nov 2011 04:10:50 +0100
 
 desktop-defaults (1.3.17) unstable; urgency=low
 
