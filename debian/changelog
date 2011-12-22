@@ -1,6 +1,4 @@
-desktop-defaults (1.3.18) UNRELEASED; urgency=low
-
-  * NOT RELEASED YET
+desktop-defaults (1.3.18) unstable; urgency=low
 
   [ Rick Battle ]
   * updated xfce for gdm3
@@ -9,8 +7,10 @@ desktop-defaults (1.3.18) UNRELEASED; urgency=low
   [ Stefan Lippers-Hollmann ]
   * fix indentation.
   * revert to original method to disable gdm changes.
+  * disable gdm theme modifications, the initial conffile hacking is unsafe
+    for persistency or local modifications.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 28 Nov 2011 04:10:50 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 22 Dec 2011 22:31:37 +0100
 
 desktop-defaults (1.3.17) unstable; urgency=low
 
