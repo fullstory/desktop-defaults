@@ -83,9 +83,13 @@ set_default_gdm3_theme()
 {
 	umask 0022
 
+	# bail out early, this isn't implemented for gdm3 yet.
+	return
+
 	###
 	# setup GDM background and rendering option
 	###
+	# XXX: unsafe conffile hacking.
 	if ! grep -q "^picture-uri='file://${FLL_WALLPAPER}.png'" /etc/gdm3/greeter.gsettings; then
 
 		cat >> "/etc/gdm3/greeter.gsettings" <<EOF
@@ -94,7 +98,6 @@ set_default_gdm3_theme()
 picture-uri='file://${FLL_WALLPAPER}.png'
 picture-options='${GDM_BACKGROUND_OPTION}'
 EOF
-
 	fi
 
 	###
