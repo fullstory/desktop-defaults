@@ -1,3 +1,14 @@
+desktop-defaults (1.3.21) unstable; urgency=low
+
+  * make lintian a little happier:
+    - init.d-script-does-not-implement-optional-option:
+      - etc/init.d/fll-common-desktop status
+      - etc/init.d/fll-kde-desktop status
+      - etc/init.d/fll-lxde-desktop status
+      - etc/init.d/fll-xfce-desktop status
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 16 Jan 2012 00:48:46 +0100
+
 desktop-defaults (1.3.20) unstable; urgency=low
 
   * switch to compat level 9.
