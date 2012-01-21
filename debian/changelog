@@ -1,7 +1,14 @@
-desktop-defaults (1.3.22) UNRELEASED; urgency=low
+desktop-defaults (1.4.0) unstable; urgency=low
 
-  [ Stefan Lippers-Hollmann ]
-  * NOT RELEASED YET
+  * make lintian a little happier:
+    - desktop-defaults-gnome:
+      - capitalization-error-in-description Gnome GNOME
+      - init.d-script-does-not-implement-optional-option
+        etc/init.d/fll-gnome-desktop status
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 21 Jan 2012 23:33:10 +0100
+
+desktop-defaults (1.3.22) unstable; urgency=low
 
   [ Niall Walsh ]
   * initial bare gnome support thanks to #aptosid-gnome
@@ -9,7 +16,10 @@ desktop-defaults (1.3.22) UNRELEASED; urgency=low
   [ Rick Battle ]
   * fixed typo in comment
 
- -- Rick Battle <rick.battle@solmera.com>  Fri, 20 Jan 2012 23:46:13 -0800
+  [ Stefan Lippers-Hollmann ]
+  * fix svn settings.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 21 Jan 2012 23:30:46 +0100
 
 desktop-defaults (1.3.21) unstable; urgency=low
 
@@ -1044,8 +1054,8 @@ desktop-defaults (0.9.38) unstable; urgency=low
     desktop-defaults-gnome.fll-gnome-desktop.default now
 
   [ Andreas Weber ]
-  * Wallpaper changed to eros for Gnome Desktop.
-  * Gnome Settings changed to use gconftool-2.
+  * Wallpaper changed to eros for GNOME Desktop.
+  * GNOME Settings changed to use gconftool-2.
   * Old .gnome files removed.
   * Panel background changed for gnome.
   * Qoutes fixed for the gconftool-2 commands and Parameter fixed.
@@ -1629,7 +1639,7 @@ desktop-defaults (0.8.3) unstable; urgency=low
 
 desktop-defaults (0.8.2) unstable; urgency=low
 
-  * Initial Gnome init created
+  * Initial GNOME init created
 
  -- Andreas Weber <andreas@it-weber.com>  Mon, 04 Jun 2007 14:31:13 +0200
 
