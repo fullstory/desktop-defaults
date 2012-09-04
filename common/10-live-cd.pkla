@@ -1,0 +1,6 @@
+[Live CD user]
+Identity=unix-user:*
+Action=com.ubuntu.pkexec.gparted
+ResultAny=yes
+ResultInactive=no
+ResultActive=yes
