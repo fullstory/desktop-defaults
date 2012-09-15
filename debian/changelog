@@ -1,3 +1,9 @@
+desktop-defaults (1.4.3) UNRELEASED; urgency=low
+
+  * NOT RELEASED YET
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 15 Sep 2012 16:56:26 +0200
+
 desktop-defaults (1.4.2) unstable; urgency=low
 
   * give live user rights to launch gparted from the system menu,
