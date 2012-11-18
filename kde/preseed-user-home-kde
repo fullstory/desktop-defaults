@@ -97,6 +97,11 @@ if [ ! -f "${HOME}/.kde/share/config/kdeglobals" ]; then
 			> "${HOME}/.kde/share/config/kdeglobals"
 fi
 
+if [ ! -f "${HOME}/.kde/share/config/kwinrc" ]; then
+	cat /usr/share/aptosid-settings-kde/kde4/default/share/config/kwinrc \
+			> "${HOME}/.kde/share/config/kwinrc"
+fi
+
 ###
 # set Ksplash theme
 ###

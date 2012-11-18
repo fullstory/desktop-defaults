@@ -1,6 +1,10 @@
 desktop-defaults (1.4.3) UNRELEASED; urgency=low
 
+  [ Stefan Lippers-Hollmann ]
   * NOT RELEASED YET
+
+  [ Joaquim Boura ]
+  * we want a panel with four virtual desktops
 
  -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 15 Sep 2012 16:56:26 +0200
 
