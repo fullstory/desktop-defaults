@@ -69,7 +69,7 @@ mkdir -p "${HOME}/.config/autostart"
 # create ~/.config/pcmanfm with wallpaper settings
 ###
 PCMANFM_DIR="${HOME}/.config/pcmanfm"
-mkdir -p "${PCMANFM_DIR}"
+mkdir -p "${PCMANFM_DIR}/LXDE"
 if [ ! -f "${PCMANFM_DIR}/main.lxde" ]; then
     cat > "${PCMANFM_DIR}/main.lxde" << EOF
 [Desktop]
@@ -77,6 +77,25 @@ show_wallpaper=1
 wallpaper=${FLL_WALLPAPER}
 EOF
 
+fi
+if [ ! -f "${PCMANFM_DIR}/LXDE/pcmanfm.conf" ]; then
+cat > "${PCMANFM_DIR}/LXDE/pcmanfm.conf" << EOF
+[config]
+bm_open_method=0
+su_cmd=xdg-su -c '%s'
+
+[volume]
+mount_on_startup=1
+mount_removable=1
+autorun=1
+
+[desktop]
+wallpaper_mode=1
+wallpaper=${FLL_WALLPAPER}.png
+desktop_font=Sans 12
+show_wm_menu=0
+
+EOF
 fi
 
 ###
