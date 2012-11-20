@@ -89,20 +89,6 @@ if [ "${FLL_WALLPAPER}" ] &&  [ ! -f "${HOME}/.kde/share/config/plasma-desktop-a
 fi
 
 ###
-# hack in kdeglobals, kde4 seems to ignore it in our system-settings-kde package
-# - currently sets desktop colors, icon sizes
-###
-if [ ! -f "${HOME}/.kde/share/config/kdeglobals" ]; then
-	cat /usr/share/aptosid-settings-kde/kde4/default/share/config/kdeglobals \
-			> "${HOME}/.kde/share/config/kdeglobals"
-fi
-
-if [ ! -f "${HOME}/.kde/share/config/kwinrc" ]; then
-	cat /usr/share/aptosid-settings-kde/kde4/default/share/config/kwinrc \
-			> "${HOME}/.kde/share/config/kwinrc"
-fi
-
-###
 # set Ksplash theme
 ###
 if [ "${KDE_KSPLASH_THEME}" ]; then
