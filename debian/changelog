@@ -1,14 +1,10 @@
-desktop-defaults (1.4.3) UNRELEASED; urgency=low
+desktop-defaults (1.4.3) unstable; urgency=low
 
-  [ Stefan Lippers-Hollmann ]
-  * NOT RELEASED YET
-
-  [ Joaquim Boura ]
   * we want a panel with four virtual desktops
   * add default wallpaper to lxde
   * remove some statements from preseed-user-home-kde as they are not needed
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 15 Sep 2012 16:56:26 +0200
+ -- Joaquim Boura <x-un-i@berlios.de>  Tue, 20 Nov 2012 21:36:58 +0100
 
 desktop-defaults (1.4.2) unstable; urgency=low
 
