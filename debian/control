@@ -3,7 +3,7 @@ Section: x11
 Priority: optional
 Maintainer: Kel Modderman <kel@otaku42.de>
 Uploaders: Stefan Lippers-Hollmann <s.l-h@gmx.de>,
- Joaquim Boura <x-un-i@berlios.de>,
+ Joaquim Boura <x-un-i@sapo.pt>,
  Dinko Sabo <cobrasbyte@gmx.de>
 Build-Depends: debhelper (>= 9.20120115)
 Standards-Version: 3.9.3

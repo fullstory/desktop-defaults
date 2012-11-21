@@ -1,6 +1,10 @@
 desktop-defaults (1.4.4) UNRELEASED; urgency=low
 
+  [ Stefan Lippers-Hollmann ]
   * NOT RELEASED YET
+
+  [ Joaquim Boura ]
+  * fixed my email address
 
  -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 21 Nov 2012 05:47:32 +0100
 
