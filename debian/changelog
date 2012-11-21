@@ -1,3 +1,9 @@
+desktop-defaults (1.4.4) UNRELEASED; urgency=low
+
+  * NOT RELEASED YET
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 21 Nov 2012 05:47:32 +0100
+
 desktop-defaults (1.4.3) unstable; urgency=low
 
   * we want a panel with four virtual desktops
