@@ -1,12 +1,12 @@
-desktop-defaults (1.4.4) UNRELEASED; urgency=low
-
-  [ Stefan Lippers-Hollmann ]
-  * NOT RELEASED YET
+desktop-defaults (1.4.4) unstable; urgency=low
 
   [ Joaquim Boura ]
   * fixed my email address
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 21 Nov 2012 05:47:32 +0100
+  [ Stefan Lippers-Hollmann ]
+  * switch to Ἑσπερίδες.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 01 Dec 2012 22:53:24 +0100
 
 desktop-defaults (1.4.3) unstable; urgency=low
 
