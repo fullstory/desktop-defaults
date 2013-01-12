@@ -3,7 +3,7 @@ Sun, 03 Jun 2007 10:59:52 +1000.
 
 Copyright:
     Copyright © 2006-2008 Kel Modderman <kel@otaku42.de>
-    Copyright © 2006-2012 Stefan Lippers-Hollmann <s.l-h@gmx.de>
+    Copyright © 2006-2013 Stefan Lippers-Hollmann <s.l-h@gmx.de>
     Copyright © 2006-2008 Andreas Weber <andreas@it-weber.com>
     Copyright © 2006-2011 Joaquim Boura <x-un-i@berlios.de>
     Copyright © 2006-2008 Horst Tritremmel <hjt@users.berlios.de>
@@ -24,8 +24,7 @@ License:
     GNU General Public License for more details.
 
     You should have received a copy of the GNU General Public License
-    along with this package; if not, write to the Free Software
-    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
+    along with this package; if not, see <http://www.gnu.org/licenses>
 
 On Debian systems, the complete text of the GNU General
 Public License can be found in `/usr/share/common-licenses/GPL-2'.
