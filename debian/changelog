@@ -1,8 +1,8 @@
-desktop-defaults (1.4.6) UNRELEASED; urgency=low
+desktop-defaults (1.4.6) unstable; urgency=low
 
-  * NOT RELEASED YET
+  * switch to Νέμεσις.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 12 Jan 2013 01:29:43 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 05 May 2013 23:46:53 +0200
 
 desktop-defaults (1.4.5) unstable; urgency=low
 
