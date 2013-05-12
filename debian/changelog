@@ -1,3 +1,9 @@
+desktop-defaults (1.4.8) UNRELEASED; urgency=low
+
+  * NOT RELEASED YET
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 12 May 2013 17:08:11 +0200
+
 desktop-defaults (1.4.7) unstable; urgency=medium
 
   * switch to Driver=QSQLITE, as akonadi-server 1.9.2-1 fails to start with
