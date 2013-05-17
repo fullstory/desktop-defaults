@@ -75,7 +75,7 @@ if [ -r /usr/lib/qt4/plugins/sqldrivers/libqsqlite3.so ] && [ ! -f "${HOME}/.con
 	cat > "${HOME}/.config/akonadi/akonadiserverrc" \
 << EOF
 [%General]
-Driver=QSQLITE
+Driver=QSQLITE3
 EOF
 fi
 

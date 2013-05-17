@@ -1,8 +1,8 @@
-desktop-defaults (1.4.8) UNRELEASED; urgency=low
+desktop-defaults (1.4.8) unstable; urgency=low
 
-  * NOT RELEASED YET
+  * revert to Driver=QSQLITE3, akonadi 1.9.2-2 is fixed.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 12 May 2013 17:08:11 +0200
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Fri, 17 May 2013 23:51:35 +0200
 
 desktop-defaults (1.4.7) unstable; urgency=medium
 
