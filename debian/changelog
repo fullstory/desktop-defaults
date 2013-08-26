@@ -1,3 +1,9 @@
+desktop-defaults (1.4.10) UNRELEASED; urgency=low
+
+  * NOT RELEASED YET
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 26 Aug 2013 21:22:25 +0200
+
 desktop-defaults (1.4.9) unstable; urgency=low
 
   * switch dolphin into compact mode.
