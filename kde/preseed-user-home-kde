@@ -181,6 +181,20 @@ for icon in media.desktop trash.desktop; do
 done
 
 ###
+# hide hplip-gui tray-icon, if unused
+###
+
+if [ -x /usr/bin/hp-systray ]  && [ ! -d "${HOME}/.hplip" ]; then
+	mkdir -p "${HOME}/.hplip"
+	cat > "${HOME}/.hplip/hplip.conf" \
+<<EOF
+[settings]
+systray_visible=1
+systray_messages=0
+EOF
+fi
+
+###
 # scan for index.html in fll specific live mountpoint directories
 ###
 for mntpnt in /fll/*; do

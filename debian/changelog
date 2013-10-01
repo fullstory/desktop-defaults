@@ -1,8 +1,8 @@
-desktop-defaults (1.4.10) UNRELEASED; urgency=low
+desktop-defaults (1.4.10) unstable; urgency=low
 
-  * NOT RELEASED YET
+  * hide hplip-gui tray-icon, if unused.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 26 Aug 2013 21:22:25 +0200
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 01 Oct 2013 02:22:05 +0200
 
 desktop-defaults (1.4.9) unstable; urgency=low
 
