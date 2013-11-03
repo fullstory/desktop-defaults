@@ -81,7 +81,8 @@ EOF
 
 	if [ "${NOINTRO}" != "yes" ]; then
 		[ ! -d ${HOME}/.config/autostart ] && mkdir -p ${HOME}/.config/autostart
-		ln -sf "${HOME}/Desktop/${FLL_DISTRO_NAME}.desktop" \
+		install -o ${FLL_LIVE_USER} -g ${FLL_LIVE_USER} -m 0755 \
+			"${HOME}/Desktop/${FLL_DISTRO_NAME}.desktop" \
 			"${HOME}/.config/autostart/"
 	fi
 elif [ -e "${HOME}/.config/autostart/${FLL_DISTRO_NAME}.desktop" ]; then
