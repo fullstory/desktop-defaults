@@ -131,7 +131,7 @@ fi
 if [ ! -f "${HOME}/Desktop/aptosid-irc.desktop" ] && \
    [ -f /usr/share/applications/aptosid/aptosid-irc.desktop ]; then
 	install -o ${FLL_LIVE_USER} -g ${FLL_LIVE_USER} -m 0755 \
-		/usr/share/applications/aptosid/aptosid-irc.desktop
+		/usr/share/applications/aptosid/aptosid-irc.desktop \
 		"${HOME}/Desktop/"
 fi
 
