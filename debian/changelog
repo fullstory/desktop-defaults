@@ -1,3 +1,9 @@
+desktop-defaults (1.4.13) UNRELEASED; urgency=low
+
+  * NOT RELEASED YET
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 03 Nov 2013 18:57:09 +0100
+
 desktop-defaults (1.4.12) unstable; urgency=medium
 
   * fix up XDG desktop file creation for aptosid-irc.
