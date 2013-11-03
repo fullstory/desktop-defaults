@@ -119,42 +119,30 @@ fi
 ## put a manual icon on the desktop
 ####
 if [ ! -f "${HOME}/Desktop/aptosid-manual.desktop" ] && \
-	[ -f /usr/share/applications/aptosid/aptosid-manual.desktop ]; then
-	ln -s /usr/share/applications/aptosid/aptosid-manual.desktop "${HOME}/Desktop/aptosid-manual.desktop"
-fi
-
-###
-## put an eduversum (seminarix appstarter) icon on the desktop
-####
-if [ -f /usr/share/applications/eduversum.desktop ]; then
-	[ ! -f "${HOME}/Desktop/eduversum.desktop" ] && \
-		ln -s /usr/share/applications/eduversum.desktop \
-			"${HOME}/Desktop/eduversum.desktop"
-fi
-
-###
-## put a aptosid-png-video icon on the desktop
-###
-if [ -f /usr/share/seminarix-samples/video/aptosid-png-video.desktop ]; then
-	[ ! -f "${HOME}/Desktop/aptosid-png-video.desktop" ] && \
-		ln -s /usr/share/seminarix-samples/video/aptosid-png-video.desktop \
-			"${HOME}/Desktop/aptosid-png-video.desktop"
+   [ -f /usr/share/applications/aptosid/aptosid-manual.desktop ]; then
+	install -o ${FLL_LIVE_USER} -g ${FLL_LIVE_USER} -m 0755 \
+		/usr/share/applications/aptosid/aptosid-manual.desktop \
+		"${HOME}/Desktop/"
 fi
 
 ###
 ## put a aptosid-irc icon on the desktop
 ####
 if [ ! -f "${HOME}/Desktop/aptosid-irc.desktop" ] && \
-	[ -f /usr/share/applications/aptosid/aptosid-irc.desktop ]; then
-	ln -s /usr/share/applications/aptosid/aptosid-irc.desktop "${HOME}/Desktop/aptosid-irc.desktop"
+   [ -f /usr/share/applications/aptosid/aptosid-irc.desktop ]; then
+	install -o ${FLL_LIVE_USER} -g ${FLL_LIVE_USER} -m 0755 \
+		/usr/share/applications/aptosid/aptosid-irc.desktop
+		"${HOME}/Desktop/"
 fi
 
 ###
 ## put a installer-gui-irc icon on the desktop
 ####
 if [ ! -f "${HOME}/Desktop/install-gui.desktop" ] && \
-	[ -f /usr/share/applications/aptosid/install-gui.desktop ]; then
-	ln -s /usr/share/applications/aptosid/install-gui.desktop "${HOME}/Desktop/install-gui.desktop"
+   [ -f /usr/share/applications/aptosid/install-gui.desktop ]; then
+	install -o ${FLL_LIVE_USER} -g ${FLL_LIVE_USER} -m 0755 \
+		/usr/share/applications/aptosid/install-gui.desktop \
+		"${HOME}/Desktop/"
 fi
 
 ###

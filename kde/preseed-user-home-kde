@@ -234,7 +234,8 @@ chmod u+x "${HOME}/Desktop/${FLL_DISTRO_NAME}.desktop"
 			mkdir -p "${HOME}/.kde/Autostart"
 		fi
 
-		ln -sf "${HOME}/Desktop/${FLL_DISTRO_NAME}.desktop" \
+		install -o ${FLL_LIVE_USER} -g ${FLL_LIVE_USER} -m 0755 \
+			"${HOME}/Desktop/${FLL_DISTRO_NAME}.desktop" \
 			"${HOME}/.kde/Autostart/"
 	fi
 elif [ -e "${HOME}/.kde/Autostart/${FLL_DISTRO_NAME}.desktop" ]; then
