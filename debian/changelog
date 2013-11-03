@@ -1,3 +1,9 @@
+desktop-defaults (1.4.12) UNRELEASED; urgency=low
+
+  * NOT RELEASED YET
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 03 Nov 2013 15:42:31 +0100
+
 desktop-defaults (1.4.11) unstable; urgency=low
 
   * work around recent XFCE brain damage and derefer local desktop symlinks.
