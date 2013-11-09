@@ -1,6 +1,10 @@
 desktop-defaults (1.4.13) UNRELEASED; urgency=low
 
+  [ Stefan Lippers-Hollmann ]
   * NOT RELEASED YET
+
+  [ Roland Engert ]
+  * add preseed-user-home-razorqt
 
  -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 03 Nov 2013 18:57:09 +0100
 
