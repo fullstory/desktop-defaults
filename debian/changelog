@@ -5,6 +5,7 @@ desktop-defaults (1.4.13) UNRELEASED; urgency=low
 
   [ Roland Engert ]
   * add preseed-user-home-razorqt
+  * add missing debian/desktop-defaults-razorqt.fll-razorqt-desktop.init
 
  -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 03 Nov 2013 18:57:09 +0100
 

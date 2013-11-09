@@ -1,0 +1,122 @@
+#!/bin/sh
+
+### BEGIN INIT INFO
+# Provides:          fll-razorqt-desktop
+# Required-Start:    $local_fs $remote_fs fll-adduser
+# Required-Stop:
+# X-Start-Before:    fll-common-desktop
+# Default-Start:     S
+# Default-Stop:
+# Short-Description: prepare live user for razorqt desktop
+# Description:       The purpose of this script is to preseed the live users
+#                    settings for the razorqt desktop.
+### END INIT INFO
+
+###
+# F.U.L.L.S.T.O.R.Y init script
+#
+# Copyright: (C) 2007-2008 Kel Modderman <kel@otaku42.de>
+# Copyright: (C) 2008-2013 Stefan Lippers-Hollmann <s.l-h@gmx.de>
+# Copyright: (C) 2013 Roland Engert <Roland.Engert@web.de>
+# License:   GPLv2
+#
+# F.U.L.L.S.T.O.R.Y Project Homepage:
+# http://developer.berlios.de/projects/fullstory
+###
+
+PATH=/sbin:/usr/sbin:/bin:/usr/bin
+NAME="fll-razorqt-desktop"
+
+###
+# source distro-defaults, no-op unless in live mode
+###
+FLL_DISTRO_MODE="installed"
+
+if [ -r /etc/default/distro ]; then
+	. /etc/default/distro
+fi
+
+if [ "${FLL_DISTRO_MODE}" != "live" ]; then
+	exit 0
+fi
+
+###
+# source lsb functions
+###
+. /lib/lsb/init-functions
+
+###
+# source fll functions
+###
+. /lib/init/fll
+
+###
+# read in variables from our default conffile
+###
+if [ -r "/etc/default/${NAME}" ]; then
+	. "/etc/default/${NAME}"
+fi
+
+###
+# read in variables from /etc/default/fll-locales
+###
+if [ -r /etc/default/fll-locales ]; then
+	. /etc/default/fll-locales
+fi
+
+###
+# cheatcode handling
+###
+for param in $(cat /proc/cmdline); do
+	case "${param}" in
+		flldebug=*)
+			if [ "${param#flldebug=}" = "${NAME#fll-}" ] || [ "${param#flldebug=}" = "all" ]; then
+                    		fll_redirect
+			fi
+			;;
+		nointro)
+			NOINTRO="yes"
+			;;
+	esac
+done
+
+do_start()
+{
+	set_lxde_background
+
+	if [ -x "/usr/sbin/gdm" ]; then
+		set_default_gdm_theme
+	fi
+
+	# set x-terminal to lxterminal
+	if [ -x '/usr/bin/lxterminal' ]; then
+		update-alternatives --set x-terminal-emulator '/usr/bin/lxterminal' >/dev/null
+	fi
+	
+	su "${FLL_LIVE_USER}" -c /usr/share/desktop-defaults-lxde/preseed-user-home-lxde
+}
+
+case "${1}" in
+	start)
+		log_daemon_msg "${NAME}"
+		log_action_begin_msg " preparing ${FLL_LIVE_USER} for razorqt"
+		do_start
+		log_end_msg 0
+		;;
+	stop)
+		;;
+	restart|force-reload)
+		echo "Error: argument '${1}' not supported" >&2
+		exit 3
+		;;
+	status)
+		log_success_msg "${0} is no dæmon."
+		exit 0
+		;;
+	*)
+		echo "Usage: ${NAME} {start|stop}" >&2
+		exit 3
+		;;
+esac
+
+:
