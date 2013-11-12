@@ -1,13 +1,18 @@
-desktop-defaults (1.4.13) UNRELEASED; urgency=low
-
-  [ Stefan Lippers-Hollmann ]
-  * NOT RELEASED YET
+desktop-defaults (1.5.0) unstable; urgency=low
 
   [ Roland Engert ]
   * add preseed-user-home-razorqt
   * add missing debian/desktop-defaults-razorqt.fll-razorqt-desktop.init
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 03 Nov 2013 18:57:09 +0100
+  [ Stefan Lippers-Hollmann ]
+  * make files executable.
+  * drop dependency on the razorqt meta-package from desktop-defaults-razorqt.
+  * make lintian a littler happier:
+    - W: desktop-defaults-razorqt: extended-description-line-too-long
+    - W: desktop-defaults-razorqt: possible-unindented-list-in-extended-
+                                   -description
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 12 Nov 2013 23:43:14 +0100
 
 desktop-defaults (1.4.12) unstable; urgency=medium
 
