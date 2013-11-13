@@ -1,8 +1,13 @@
-desktop-defaults (1.5.1) UNRELEASED; urgency=low
+desktop-defaults (1.5.1) unstable; urgency=low
 
-  * NOT RELEASED YET
+  * use dh_installinit for razorqt.
+  * stop hardcoding init sequencing.
+  * drop lxde code snippets from razorqt init scripts.
+  * add RoEn to uploaders.
+  * use Terminal=false for release note XDG desktop files.
+  * razorqt: fix up wallpaper definition.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 12 Nov 2013 23:43:47 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 13 Nov 2013 23:48:32 +0100
 
 desktop-defaults (1.5.0) unstable; urgency=low
 

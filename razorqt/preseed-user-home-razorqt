@@ -74,12 +74,11 @@ if [ -d ${FLL_WALLPAPER} ]; then
 fi
 
 if [ "${FLL_WALLPAPER}" ] && [ ! -f "${DESKTOP_CONF}" ]; then
-
 	cat > "${DESKTOP_CONF}" << EOF
 [razor]
 screens\size=1
 screens\1\desktops\1\wallpaper_type=pixmap
-screens\1\desktops\1\wallpaper=/usr/share/wallpapers/${FLL_WALLPAPER}-wide.png
+screens\1\desktops\1\wallpaper=${FLL_WALLPAPER}
 screens\1\desktops\1\keep_aspect_ratio=false
 screens\1\desktops\1\size=1
 EOF
@@ -129,7 +128,7 @@ Encoding=UTF-8
 Type=Application
 Exec=x-www-browser ${INDEXFILE}
 Icon=${INDEXICON}
-Terminal=No
+Terminal=false
 Name=${FLL_CDROM_INDEX}
 GenericName=${FLL_CDROM_INDEX}
 EOF
