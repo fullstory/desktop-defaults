@@ -144,7 +144,7 @@ Encoding=UTF-8
 Type=Application
 Exec=x-www-browser ${INDEXFILE}
 Icon=${INDEXICON}
-Terminal=No
+Terminal=false
 Name=${FLL_CDROM_INDEX}
 GenericName=${FLL_CDROM_INDEX}
 EOF

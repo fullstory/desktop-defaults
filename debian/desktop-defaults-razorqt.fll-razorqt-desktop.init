@@ -82,18 +82,7 @@ done
 
 do_start()
 {
-	set_lxde_background
-
-	if [ -x "/usr/sbin/gdm" ]; then
-		set_default_gdm_theme
-	fi
-
-	# set x-terminal to lxterminal
-	if [ -x '/usr/bin/lxterminal' ]; then
-		update-alternatives --set x-terminal-emulator '/usr/bin/lxterminal' >/dev/null
-	fi
-	
-	su "${FLL_LIVE_USER}" -c /usr/share/desktop-defaults-lxde/preseed-user-home-lxde
+	su "${FLL_LIVE_USER}" -c /usr/share/desktop-defaults-razorqt/preseed-user-home-razorqt
 }
 
 case "${1}" in

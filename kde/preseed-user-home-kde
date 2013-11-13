@@ -222,7 +222,7 @@ Encoding=UTF-8
 Type=Application
 Exec=konqueror --geometry 950x700+35+20 file:${INDEXFILE}
 Icon=${INDEXICON}
-Terminal=0
+Terminal=false
 
 Name=${FLL_CDROM_INDEX}
 GenericName=${FLL_CDROM_INDEX}
