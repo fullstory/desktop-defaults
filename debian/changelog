@@ -1,8 +1,9 @@
-desktop-defaults (1.5.2) UNRELEASED; urgency=low
+desktop-defaults (1.5.2) unstable; urgency=low
 
-  * NOT RELEASED YET
+  * bump standards version to 3.9.5, no changes necessary.
+  * debian/control: switch Vcs tags to github.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 13 Nov 2013 23:49:04 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 13 Apr 2014 21:18:35 +0200
 
 desktop-defaults (1.5.1) unstable; urgency=low
 
