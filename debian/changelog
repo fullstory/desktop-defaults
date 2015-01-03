@@ -1,6 +1,7 @@
 desktop-defaults (1.5.3) UNRELEASED; urgency=medium
 
   * NOT RELEASED YET
+  * bump standards version to 3.9.6, no changes necessary.
 
  -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 13 Apr 2014 21:29:41 +0200
 
