@@ -71,12 +71,14 @@ mkdir -p	"${HOME}/.config/akonadi" \
 ##
 # use sqlite3 backend for akonadi
 ##
-if [ -r /usr/lib/qt4/plugins/sqldrivers/libqsqlite3.so ] && [ ! -f "${HOME}/.config/akonadi/akonadiserverrc" ]; then
-	cat > "${HOME}/.config/akonadi/akonadiserverrc" \
+if dpkg-query -W -f='${Status}' libsqlite3-0 2>/dev/null | grep -q "ok installed"; then
+	if [ ! -f "${HOME}/.config/akonadi/akonadiserverrc" ]; then
+		cat > "${HOME}/.config/akonadi/akonadiserverrc" \
 << EOF
 [%General]
 Driver=QSQLITE3
 EOF
+	fi
 fi
 
 ###
