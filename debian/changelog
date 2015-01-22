@@ -1,3 +1,9 @@
+desktop-defaults (1.5.6) UNRELEASED; urgency=medium
+
+  * NOT RELEASED YET
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 22 Jan 2015 05:53:03 +0100
+
 desktop-defaults (1.5.5) unstable; urgency=medium
 
   * slightly simplify sqlite detection.
