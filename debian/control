@@ -37,7 +37,9 @@ Depends: ${misc:Depends},
  fll-live-initscripts,
  desktop-defaults-common,
  aptosid-settings-kde,
- kde-window-manager
+ konqueror,
+ xdg-utils
+Recommends: plasma-desktop | plasma-netbook
 Description: user presets specific to the K desktop environment
  This package provides required infrastructure to tweak the KDE desktop
  of the F.U.L.L.S.T.O.R.Y. live Linux media.

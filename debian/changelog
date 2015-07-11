@@ -1,8 +1,9 @@
-desktop-defaults (1.5.6) UNRELEASED; urgency=medium
+desktop-defaults (1.6.0) unstable; urgency=medium
 
-  * NOT RELEASED YET
+  * fix dependencies for KDE5, drop kde-window-manager, add konqueror and
+    xdg-utils; merely recommend plasma-desktop | plasma-netbook.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 22 Jan 2015 05:53:03 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 12 Jul 2015 01:46:23 +0200
 
 desktop-defaults (1.5.5) unstable; urgency=medium
 
