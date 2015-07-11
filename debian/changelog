@@ -1,3 +1,9 @@
+desktop-defaults (1.6.1) UNRELEASED; urgency=medium
+
+  * NOT RELEASED YET
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 12 Jul 2015 01:47:26 +0200
+
 desktop-defaults (1.6.0) unstable; urgency=medium
 
   * fix dependencies for KDE5, drop kde-window-manager, add konqueror and
