@@ -1,8 +1,8 @@
-desktop-defaults (1.6.1) UNRELEASED; urgency=medium
+desktop-defaults (1.6.1) unstable; urgency=medium
 
-  * NOT RELEASED YET
+  * drop special handling for kdm themes, set_default_kdm_theme().
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 12 Jul 2015 01:47:26 +0200
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 21 Jul 2015 00:13:34 +0200
 
 desktop-defaults (1.6.0) unstable; urgency=medium
 
