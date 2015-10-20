@@ -57,16 +57,30 @@ fi
 ###
 # kdesu -> sudo
 ###
-if [ -x /usr/bin/kdesu ] || [ -x /usr/lib/kde4/libexec/kdesu ] >/dev/null; then
-	if [ ! -d "${HOME}/.kde/share/config" ]; then
-		mkdir -p "${HOME}/.kde/share/config"
-	fi
 
+# KDE4-kdesu, still needed...
+if [ -x /usr/lib/kde4/libexec/kdesu ]; then
+	mkdir -p "${HOME}/.kde/share/config"
 	if grep -s -q '^super-user-command=' "${HOME}/.kde/share/config/kdesurc"; then
 		sed -i 's|^super-user-command=.*|super-user-command=sudo|' \
 			"${HOME}/.kde/share/config/kdesurc"
 	else
 		cat > "${HOME}/.kde/share/config/kdesurc" \
+<<EOF
+[super-user-command]
+super-user-command=sudo
+EOF
+	fi
+fi
+
+# KDE5-kdesu, not complete without its KDE4 counterpart...
+if [ -x /usr/lib/*/libexec/kf5/kdesu ]; then	# XXX: nasty-nasty
+	mkdir -p "${HOME}/.config"
+        if grep -s -q '^super-user-command=' "${HOME}/.config/kdesurc"; then
+		sed -i 's|^super-user-command=.*|super-user-command=sudo|' \
+			"${HOME}/.config/kdesurc"
+	else
+		cat > "${HOME}/.config/kdesurc" \
 <<EOF
 [super-user-command]
 super-user-command=sudo
