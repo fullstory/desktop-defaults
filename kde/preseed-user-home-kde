@@ -4,7 +4,7 @@
 # F.U.L.L.S.T.O.R.Y init script
 #
 # Copyright: (C) 2007-2008 Kel Modderman <kel@otaku42.de>
-# Copyright: (C) 2008-2014 Stefan Lippers-Hollmann <s.l-h@gmx.de>
+# Copyright: (C) 2008-2015 Stefan Lippers-Hollmann <s.l-h@gmx.de>
 # License:   GPLv2
 #
 # F.U.L.L.S.T.O.R.Y Project Homepage:
@@ -64,7 +64,6 @@ done
 # setup live user
 ###
 mkdir -p	"${HOME}/.config/akonadi" \
-		"${HOME}/.kde/share/config" \
 		"${HOME}/.local"
 
 
@@ -81,90 +80,90 @@ EOF
 	fi
 fi
 
-###
-# set wallpaper, plasma-desktop-appletsrc is provided by our system-settings-kde package
-###
-if [ "${FLL_WALLPAPER}" ] &&  [ ! -f "${HOME}/.kde/share/config/plasma-desktop-appletsrc" ]; then
-	sed -e "s#wallpaper=.*#wallpaper=${FLL_WALLPAPER}#" \
-		 /usr/share/aptosid-settings-kde/kde4/default/share/config/plasma-desktop-appletsrc \
-			> "${HOME}/.kde/share/config/plasma-desktop-appletsrc"
-fi
+#!####
+#!## set wallpaper, plasma-desktop-appletsrc is provided by our system-settings-kde package
+#!####
+#!#if [ "${FLL_WALLPAPER}" ] &&  [ ! -f "${HOME}/.kde/share/config/plasma-desktop-appletsrc" ]; then
+#!#	sed -e "s#wallpaper=.*#wallpaper=${FLL_WALLPAPER}#" \
+#!#		 /usr/share/aptosid-settings-kde/kde4/default/share/config/plasma-desktop-appletsrc \
+#!#			> "${HOME}/.kde/share/config/plasma-desktop-appletsrc"
+#!#fi
 
-###
-# set Ksplash theme
-###
-if [ "${KDE_KSPLASH_THEME}" ]; then
-	if [ ! -f "${HOME}/.kde/share/config/ksplashrc" ]; then
-		cat > "${HOME}/.kde/share/config/ksplashrc" \
-<< EOF
-[KSplash]
-Theme=${KDE_KSPLASH_THEME}
-EOF
-	fi
-fi
+#!####
+#!## set Ksplash theme
+#!####
+#!#if [ "${KDE_KSPLASH_THEME}" ]; then
+#!#	if [ ! -f "${HOME}/.kde/share/config/ksplashrc" ]; then
+#!#		cat > "${HOME}/.kde/share/config/ksplashrc" \
+#!#<< EOF
+#!#[KSplash]
+#!#Theme=${KDE_KSPLASH_THEME}
+#!#EOF
+#!#	fi
+#!#fi
 
-###
-# setup keyboard chooser
-###
-if [ "${XKBLAYOUT}" ]; then
-	if grep -s -q '^LayoutList=' "${HOME}/.kde/share/config/kxkbrc"; then
-		sed -i 's|^LayoutList=.*|LayoutList='"${XKBLAYOUT}"'|' \
-			"${HOME}/.kde/share/config/kxkbrc"
-	else
-		cat > "${HOME}/.kde/share/config/kxkbrc" \
-<<EOF
-[Layout]
-LayoutList=${XKBLAYOUT}
-ShowFlag=true
-SwitchMode=Global
-Use=true
-EOF
-	fi
-fi
+#!####
+#!## setup keyboard chooser
+#!####
+#!#if [ "${XKBLAYOUT}" ]; then
+#!#	if grep -s -q '^LayoutList=' "${HOME}/.kde/share/config/kxkbrc"; then
+#!#		sed -i 's|^LayoutList=.*|LayoutList='"${XKBLAYOUT}"'|' \
+#!#			"${HOME}/.kde/share/config/kxkbrc"
+#!#	else
+#!#		cat > "${HOME}/.kde/share/config/kxkbrc" \
+#!#<<EOF
+#!#[Layout]
+#!#LayoutList=${XKBLAYOUT}
+#!#ShowFlag=true
+#!#SwitchMode=Global
+#!#Use=true
+#!#EOF
+#!#	fi
+#!#fi
 
-###
-# disable first time login wizard
-###
-if grep -s -q '^FirstLogin=' "${HOME}/.kde/share/config/kpersonalizerrc"; then
-	sed -i 's|^FirstLogin=.*|FirstLogin=false|' \
-		"${HOME}/.kde/share/config/kpersonalizerrc"
-else
-	cat > "${HOME}/.kde/share/config/kpersonalizerrc" \
-<<EOF
-[General]
-FirstLogin=false
-EOF
-fi
+#!####
+#!## disable first time login wizard
+#!####
+#!#if grep -s -q '^FirstLogin=' "${HOME}/.kde/share/config/kpersonalizerrc"; then
+#!#	sed -i 's|^FirstLogin=.*|FirstLogin=false|' \
+#!#		"${HOME}/.kde/share/config/kpersonalizerrc"
+#!#else
+#!#	cat > "${HOME}/.kde/share/config/kpersonalizerrc" \
+#!#<<EOF
+#!#[General]
+#!#FirstLogin=false
+#!#EOF
+#!#fi
 
-###
-# root konsole's
-###
-if [ ! -d "${HOME}/.kde/share/apps/konsole" ]; then
-	mkdir -p "${HOME}/.kde/share/apps/konsole"
-fi
+#!####
+#!## root konsole's
+#!####
+#!#if [ ! -d "${HOME}/.kde/share/apps/konsole" ]; then
+#!#	mkdir -p "${HOME}/.kde/share/apps/konsole"
+#!#fi
+#!#
+#!#if [ -f /usr/share/apps/konsole/sumc.desktop ]; then
+#!#	sed -e 's|^Exec=su.*$|Exec=sudo mc -c|' /usr/share/apps/konsole/sumc.desktop > \
+#!#		"${HOME}/.kde/share/apps/konsole/sumc.desktop"
+#!#fi
 
-if [ -f /usr/share/apps/konsole/sumc.desktop ]; then
-	sed -e 's|^Exec=su.*$|Exec=sudo mc -c|' /usr/share/apps/konsole/sumc.desktop > \
-		"${HOME}/.kde/share/apps/konsole/sumc.desktop"
-fi
+#!#if [ -f /usr/share/apps/konsole/su.desktop ]; then
+#!#	sed -e 's|^Exec=su.*$|Exec=sudo -i|' /usr/share/apps/konsole/su.desktop > \
+#!#		"${HOME}/.kde/share/apps/konsole/su.desktop"
+#!#fi
 
-if [ -f /usr/share/apps/konsole/su.desktop ]; then
-	sed -e 's|^Exec=su.*$|Exec=sudo -i|' /usr/share/apps/konsole/su.desktop > \
-		"${HOME}/.kde/share/apps/konsole/su.desktop"
-fi
-
-###
-# switch dolphin to compact mode
-###
-if [ ! -f "${HOME}/.kde/share/apps/dolphin/view_properties/global/.directory" ]; then
-	mkdir -p "${HOME}/.kde/share/apps/dolphin/view_properties/global/"
-	cat > "${HOME}/.kde/share/apps/dolphin/view_properties/global/.directory" \
-<<EOF
-[Dolphin]
-Version=3
-ViewMode=2
-EOF
-fi
+#!####
+#!## switch dolphin to compact mode
+#!####
+#!#if [ ! -f "${HOME}/.kde/share/apps/dolphin/view_properties/global/.directory" ]; then
+#!#	mkdir -p "${HOME}/.local/share/dolphin/view_properties/global"
+#!#	cat > "${HOME}/.local/share/dolphin/view_properties/global/.directory" \
+#!#<<EOF
+#!#[Dolphin]
+#!#Version=3
+#!#ViewMode=2
+#!#EOF
+#!#fi
 
 ###
 # create ~/Desktop if not present
@@ -232,15 +231,13 @@ EOF
 chmod u+x "${HOME}/Desktop/${FLL_DISTRO_NAME}.desktop"
 
 	if [ "${NOINTRO}" != "yes" ]; then
-		if [ ! -d "${HOME}/.kde/Autostart" ]; then
-			mkdir -p "${HOME}/.kde/Autostart"
-		fi
+		mkdir -p "${HOME}/.config/autostart"
 
-		install -o ${FLL_LIVE_USER} -g ${FLL_LIVE_USER} -m 0755 \
+		install -o ${FLL_LIVE_USER} -g ${FLL_LIVE_USER} -m 0744 \
 			"${HOME}/Desktop/${FLL_DISTRO_NAME}.desktop" \
-			"${HOME}/.kde/Autostart/"
+			"${HOME}/.config/autostart/"
 	fi
-elif [ -e "${HOME}/.kde/Autostart/${FLL_DISTRO_NAME}.desktop" ]; then
+elif [ -e "${HOME}/.config/autostart/${FLL_DISTRO_NAME}.desktop" ]; then
 	# toram + persistency
-	rm -f "${HOME}/.kde/Autostart/${FLL_DISTRO_NAME}.desktop"
+	rm -f "${HOME}/.config/autostart/${FLL_DISTRO_NAME}.desktop"
 fi
