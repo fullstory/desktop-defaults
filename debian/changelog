@@ -1,3 +1,9 @@
+desktop-defaults (1.6.5) UNRELEASED; urgency=medium
+
+  * NOT RELEASED YET
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 20 Oct 2015 04:59:49 +0200
+
 desktop-defaults (1.6.4) unstable; urgency=medium
 
   * port kdesu presseeding to KDE5, which still needs its KDE predecessor
