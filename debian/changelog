@@ -1,8 +1,8 @@
-desktop-defaults (1.6.3) UNRELEASED; urgency=medium
+desktop-defaults (1.6.3) unstable; urgency=medium
 
-  * NOT RELEASED YET
+  * fix up and enable dolphin preseeding for KDE5.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 20 Oct 2015 03:19:57 +0200
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 20 Oct 2015 03:53:20 +0200
 
 desktop-defaults (1.6.2) unstable; urgency=medium
 

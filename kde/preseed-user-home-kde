@@ -152,18 +152,18 @@ fi
 #!#		"${HOME}/.kde/share/apps/konsole/su.desktop"
 #!#fi
 
-#!####
-#!## switch dolphin to compact mode
-#!####
-#!#if [ ! -f "${HOME}/.kde/share/apps/dolphin/view_properties/global/.directory" ]; then
-#!#	mkdir -p "${HOME}/.local/share/dolphin/view_properties/global"
-#!#	cat > "${HOME}/.local/share/dolphin/view_properties/global/.directory" \
-#!#<<EOF
-#!#[Dolphin]
-#!#Version=3
-#!#ViewMode=2
-#!#EOF
-#!#fi
+###
+# switch dolphin to compact mode
+###
+if [ ! -f "${HOME}/.local/share/dolphin/view_properties/global/.directory" ]; then
+	mkdir -p "${HOME}/.local/share/dolphin/view_properties/global"
+	cat > "${HOME}/.local/share/dolphin/view_properties/global/.directory" \
+<<EOF
+[Dolphin]
+Version=3
+ViewMode=2
+EOF
+fi
 
 ###
 # create ~/Desktop if not present
