@@ -1,8 +1,8 @@
-desktop-defaults (1.6.5) UNRELEASED; urgency=medium
+desktop-defaults (1.6.5) unstable; urgency=medium
 
-  * NOT RELEASED YET
+  * s/iceweasel/firefox/, prefer the non-ESR version.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 20 Oct 2015 04:59:49 +0200
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Fri, 11 Mar 2016 21:04:37 +0100
 
 desktop-defaults (1.6.4) unstable; urgency=medium
 

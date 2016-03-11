@@ -79,11 +79,11 @@ fi
 do_start()
 {
 	###
-	# make iceweasel default browser if installed
+	# make firefox default browser if installed
 	###
-	ICEWEASEL=$(which iceweasel 2>/dev/null)
-	if [ -x "${ICEWEASEL}" ]; then
-		update-alternatives --set x-www-browser "${ICEWEASEL}" >/dev/null
+	FIREFOX=$(which firefox 2>/dev/null)
+	if [ -x "${FIREFOX}" ]; then
+		update-alternatives --set x-www-browser "${FIREFOX}" >/dev/null
 	fi
 
 	su "${FLL_LIVE_USER}" -c /usr/share/desktop-defaults-common/preseed-user-home-common

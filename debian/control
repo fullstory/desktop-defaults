@@ -17,7 +17,7 @@ Depends: ${misc:Depends},
  aptosid-art-wallpaper,
  sudo,
  laptop-detect
-Suggests: iceweasel
+Suggests: firefox
 Description: common user presets for various popular desktop applications
  This package provides required infrastructure to tweak various popular desktop
  applications:
