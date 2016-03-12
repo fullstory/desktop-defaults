@@ -1,3 +1,9 @@
+desktop-defaults (1.6.7) UNRELEASED; urgency=medium
+
+  * NOT RELEASED YET
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 12 Mar 2016 02:42:16 +0100
+
 desktop-defaults (1.6.6) unstable; urgency=medium
 
   * fix F.U.L.L.S.T.O.R.Y. homepage URL.
