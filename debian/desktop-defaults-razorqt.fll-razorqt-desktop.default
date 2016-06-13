@@ -1,6 +1,0 @@
-# Defaults for razorqt desktop
-# sourced by /usr/bin/desktop-defaults-razorqt and /etc/init.d/fll-razorqt-desktop
-# installed at /etc/default/fll-razorqt-desktop by the maintainer scripts
-
-# specify lightdm theme to be used
-

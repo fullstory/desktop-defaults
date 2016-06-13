@@ -10,5 +10,4 @@ override_dh_installinit:
 	dh_installinit --package=desktop-defaults-kde     --no-start --name=fll-kde-desktop
 	dh_installinit --package=desktop-defaults-lxde    --no-start --name=fll-lxde-desktop
 	dh_installinit --package=desktop-defaults-lxqt    --no-start --name=fll-lxqt-desktop
-	dh_installinit --package=desktop-defaults-razorqt --no-start --name=fll-razorqt-desktop
 	dh_installinit --package=desktop-defaults-xfce    --no-start --name=fll-xfce-desktop
