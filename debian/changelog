@@ -1,3 +1,9 @@
+desktop-defaults (1.7.3) UNRELEASED; urgency=medium
+
+  * NOT RELEASED YET
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 13 Jun 2016 04:26:39 +0200
+
 desktop-defaults (1.7.2) unstable; urgency=medium
 
   * drop support for razorqt.
