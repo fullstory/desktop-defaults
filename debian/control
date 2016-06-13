@@ -5,7 +5,7 @@ Maintainer: Stefan Lippers-Hollmann <s.l-h@gmx.de>
 Uploaders: Joaquim Boura <x-un-i@sapo.pt>,
  Roland Engert <Roland.Engert@web.de>
 Build-Depends: debhelper (>= 9.20120115)
-Standards-Version: 3.9.7
+Standards-Version: 3.9.8
 Vcs-git: git://github.com/fullstory/desktop-defaults.git
 Vcs-Browser: https://github.com/fullstory/desktop-defaults
 
