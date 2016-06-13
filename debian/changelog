@@ -3,8 +3,9 @@ desktop-defaults (1.7.1) unstable; urgency=medium
   * add bare minimum LXQt support.
   * sort debian/control.
   * harmonize debian/*.preinst.
+  * drop useless nointro cheatcode handling from debian/*.init.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 13 Jun 2016 03:53:35 +0200
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 13 Jun 2016 03:54:08 +0200
 
 desktop-defaults (1.7.0) unstable; urgency=medium
 
