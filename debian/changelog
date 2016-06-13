@@ -1,8 +1,9 @@
-desktop-defaults (1.6.7) UNRELEASED; urgency=medium
+desktop-defaults (1.7.0) unstable; urgency=medium
 
-  * NOT RELEASED YET
+  * move the release-note autostart into common code.
+  * bump standards version to 3.9.8, no changes necessary.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 12 Mar 2016 02:42:16 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 13 Jun 2016 02:51:54 +0200
 
 desktop-defaults (1.6.6) unstable; urgency=medium
 

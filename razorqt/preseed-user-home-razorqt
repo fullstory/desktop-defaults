@@ -4,7 +4,7 @@
 # F.U.L.L.S.T.O.R.Y init script
 #
 # Copyright: (C) 2007-2008 Kel Modderman <kel@otaku42.de>
-# Copyright: (C) 2008-2014 Stefan Lippers-Hollmann <s.l-h@gmx.de>
+# Copyright: (C) 2008-2016 Stefan Lippers-Hollmann <s.l-h@gmx.de>
 # Copyright: (C) 2013 Roland Engert <Roland.Engert@web.de>
 # License:   GPLv2
 #
@@ -55,9 +55,6 @@ for param in $(cat /proc/cmdline); do
 		flldebug=*)
 			[ "${param#flldebug=}" = "${NAME}" ] && set -x
 			;;
-		nointro)
-			NOINTRO="yes"
-			;;
 	esac
 done
 
@@ -95,49 +92,6 @@ mkdir -p "${HOME}/.config/autostart"
 #mkdir -p "${HOME}/.local/share/Trash/info/" "${HOME}/.local/share/Trash/files/"
 
 ###
-# scan for index.html in fll specific live mountpoint directories
-###
-for mntpnt in /fll/*; do
-	if [ -d "${mntpnt}" ] && [ -f "${mntpnt}/index.html" ]; then
-		INDEXFILE="${mntpnt}/index.html"
-		for ext in svg png gif ico; do
-			if [ -f "${mntpnt}/${FLL_CDROM_INDEX_ICON}.${ext}" ]; then
-				INDEXICON="${mntpnt}/${FLL_CDROM_INDEX_ICON}.${ext}"
-				break
-			fi
-		done
-		break
-	fi
-done
-
-###
 # create ~/Desktop if not present
 ###
 mkdir -p "${HOME}/Desktop"
-
-###
-# create desktop shortcut to index.html
-###
-
-if [ -f "${INDEXFILE}"  ] && \
-   [ ! -f "${HOME}/Desktop/${FLL_DISTRO_NAME}.desktop" ]; then
-	cat > "${HOME}/Desktop/${FLL_DISTRO_NAME}.desktop" \
-<<EOF
-[Desktop Entry]
-Encoding=UTF-8
-Type=Application
-Exec=x-www-browser ${INDEXFILE}
-Icon=${INDEXICON}
-Terminal=false
-Name=${FLL_CDROM_INDEX}
-GenericName=${FLL_CDROM_INDEX}
-EOF
-
-	if [ "${NOINTRO}" != "yes" ]; then
-		ln -sf "${HOME}/Desktop/${FLL_DISTRO_NAME}.desktop" \
-			"${HOME}/.config/autostart/"
-	fi
-elif [ -e "${HOME}/.config/autostart/${FLL_DISTRO_NAME}.desktop" ]; then
-	# toram + persistency
-	rm -f "${HOME}/.config/autostart/${FLL_DISTRO_NAME}.desktop"
-fi
