@@ -1,0 +1,6 @@
+# Defaults for lxqt desktop
+# sourced by /usr/bin/desktop-defaults-lxqt and /etc/init.d/fll-lxqt-desktop
+# installed at /etc/default/fll-lxqt-desktop by the maintainer scripts
+
+# specify lightdm theme to be used
+

@@ -1,8 +1,10 @@
-desktop-defaults (1.7.1) UNRELEASED; urgency=medium
+desktop-defaults (1.7.1) unstable; urgency=medium
 
-  * NOT RELEASED YET
+  * add bare minimum LXQt support.
+  * sort debian/control.
+  * harmonize debian/*.preinst.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 13 Jun 2016 02:52:20 +0200
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 13 Jun 2016 03:53:35 +0200
 
 desktop-defaults (1.7.0) unstable; urgency=medium
 
