@@ -24,7 +24,7 @@
 ###
 
 PATH=/sbin:/usr/sbin:/bin:/usr/bin
-NAME="fll-common-desktop"
+NAME="fll-desktop"
 
 ###
 # source distro-defaults, no-op unless in live mode
@@ -59,20 +59,8 @@ fi
 ###
 # read in variables from our default conffiles
 ###
-
-# kde
-if [ -r "/etc/default/fll-kde-desktop" ]; then
-	. "/etc/default/fll-kde-desktop"
-fi
-
-# lxde
-if [ -r "/etc/default/fll-lxde-desktop" ]; then
-	. "/etc/default/fll-lxde-desktop"
-fi
-
-# lxqt
-if [ -r "/etc/default/fll-lxqt-desktop" ]; then
-	. "/etc/default/fll-lxqt-desktop"
+if [ -r "/etc/default/${NAME}" ]; then
+	. "/etc/default/${NAME}"
 fi
 
 ###

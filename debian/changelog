@@ -6,6 +6,7 @@ desktop-defaults (1.7.3) UNRELEASED; urgency=medium
   * reduce everything into one binary package, desktop-defaults.
   * consolidate all preseeding in one single initscript.
   * rename common initscript to fll-desktop.
+  * consolidate custom configuration into /etc/default/fll-desktop.
 
  -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 13 Jun 2016 04:26:39 +0200
 
