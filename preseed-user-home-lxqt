@@ -56,10 +56,3 @@ for param in $(cat /proc/cmdline); do
 			;;
 	esac
 done
-
-###
-# create ~/Desktop if not present
-###
-if [ ! -d "${HOME}/Desktop" ]; then
-	mkdir -p "${HOME}/Desktop"
-fi

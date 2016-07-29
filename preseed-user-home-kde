@@ -163,13 +163,6 @@ EOF
 fi
 
 ###
-# create ~/Desktop if not present
-###
-if [ ! -d "${HOME}/Desktop" ]; then
-	mkdir -p "${HOME}/Desktop"
-fi
-
-###
 # kio shortcuts: media:/ , trash:/
 ###
 for icon in media.desktop trash.desktop; do

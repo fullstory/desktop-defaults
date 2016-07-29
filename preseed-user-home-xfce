@@ -197,8 +197,3 @@ fi
 # take care of the trash can
 ###
 mkdir -p "${HOME}/.local/share/Trash/info/" "${HOME}/.local/share/Trash/files/"
-
-###
-# create ~/Desktop if not present
-###
-mkdir -p "${HOME}/Desktop"

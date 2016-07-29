@@ -105,9 +105,4 @@ EOF
 
 fi
 
-## TODO: Trash, not available yet but schedules for 0.4
-
-###
-# create ~/Desktop if not present
-###
-mkdir -p "${HOME}/Desktop"
+## TODO: Trash, not available yet but scheduled for 0.4
