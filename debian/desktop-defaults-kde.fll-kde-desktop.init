@@ -85,7 +85,7 @@ fi
 
 do_start()
 {
-	su "${FLL_LIVE_USER}" -c /usr/share/desktop-defaults-kde/preseed-user-home-kde
+	su "${FLL_LIVE_USER}" -c /usr/share/desktop-defaults/preseed-user-home-kde
 }
 
 case "${1}" in

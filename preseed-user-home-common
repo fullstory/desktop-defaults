@@ -228,7 +228,7 @@ for dir in backgrounds styles pixmaps; do
 	mkdir -p ${HOME}/.fluxbox/${dir}
 done
 
-for menu in /usr/share/desktop-defaults-common/fll-flux-*; do
+for menu in /usr/share/desktop-defaults/fll-flux-*; do
 	[ ! -f "${HOME}/.fluxbox/${menu##*/}" ] && \
 		cp ${menu} ${HOME}/.fluxbox/
 done

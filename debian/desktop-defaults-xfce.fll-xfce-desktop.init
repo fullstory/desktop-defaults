@@ -122,7 +122,7 @@ do_start()
 {
 	set_default_gdm3_theme
 
-	su "${FLL_LIVE_USER}" -c /usr/share/desktop-defaults-xfce/preseed-user-home-xfce
+	su "${FLL_LIVE_USER}" -c /usr/share/desktop-defaults/preseed-user-home-xfce
 }
 
 case "${1}" in

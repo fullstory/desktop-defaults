@@ -78,7 +78,7 @@ done
 
 do_start()
 {
-	su "${FLL_LIVE_USER}" -c /usr/share/desktop-defaults-lxqt/preseed-user-home-lxqt
+	su "${FLL_LIVE_USER}" -c /usr/share/desktop-defaults/preseed-user-home-lxqt
 }
 
 case "${1}" in

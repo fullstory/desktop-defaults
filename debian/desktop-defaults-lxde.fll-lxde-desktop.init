@@ -142,7 +142,7 @@ do_start()
 		update-alternatives --set x-terminal-emulator '/usr/bin/lxterminal' >/dev/null
 	fi
 	
-	su "${FLL_LIVE_USER}" -c /usr/share/desktop-defaults-lxde/preseed-user-home-lxde
+	su "${FLL_LIVE_USER}" -c /usr/share/desktop-defaults/preseed-user-home-lxde
 }
 
 case "${1}" in

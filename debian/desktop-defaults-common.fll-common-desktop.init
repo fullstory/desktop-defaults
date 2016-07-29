@@ -86,7 +86,7 @@ do_start()
 		update-alternatives --set x-www-browser "${FIREFOX}" >/dev/null
 	fi
 
-	su "${FLL_LIVE_USER}" -c /usr/share/desktop-defaults-common/preseed-user-home-common
+	su "${FLL_LIVE_USER}" -c /usr/share/desktop-defaults/preseed-user-home-common
 }
 
 case "${1}" in
