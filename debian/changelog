@@ -3,6 +3,7 @@ desktop-defaults (1.7.3) UNRELEASED; urgency=medium
   * NOT RELEASED YET
   * move desktop specific files into the top directory.
   * install all desktop specific files into /usr/share/desktop-defaults/.
+  * reduce everything into one binary package, desktop-defaults.
 
  -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 13 Jun 2016 04:26:39 +0200
 

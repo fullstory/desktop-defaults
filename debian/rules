@@ -5,9 +5,9 @@
 
 override_dh_installinit:
 	dh_installinit
-	dh_installinit --package=desktop-defaults-common  --no-start --name=fll-common-desktop
-	dh_installinit --package=desktop-defaults-gnome   --no-start --name=fll-gnome-desktop
-	dh_installinit --package=desktop-defaults-kde     --no-start --name=fll-kde-desktop
-	dh_installinit --package=desktop-defaults-lxde    --no-start --name=fll-lxde-desktop
-	dh_installinit --package=desktop-defaults-lxqt    --no-start --name=fll-lxqt-desktop
-	dh_installinit --package=desktop-defaults-xfce    --no-start --name=fll-xfce-desktop
+	dh_installinit --package=desktop-defaults --no-start --name=fll-common-desktop
+	dh_installinit --package=desktop-defaults --no-start --name=fll-gnome-desktop
+	dh_installinit --package=desktop-defaults --no-start --name=fll-kde-desktop
+	dh_installinit --package=desktop-defaults --no-start --name=fll-lxde-desktop
+	dh_installinit --package=desktop-defaults --no-start --name=fll-lxqt-desktop
+	dh_installinit --package=desktop-defaults --no-start --name=fll-xfce-desktop

@@ -1,0 +1,9 @@
+10-live-cd.pkla			etc/polkit-1/localauthority/10-vendor.d
+fll-flux-hi			usr/share/desktop-defaults/
+fll-flux-lo			usr/share/desktop-defaults/
+preseed-user-home-common	usr/share/desktop-defaults/
+preseed-user-home-gnome		usr/share/desktop-defaults/
+preseed-user-home-kde		usr/share/desktop-defaults/
+preseed-user-home-lxde		usr/share/desktop-defaults/
+preseed-user-home-lxqt		usr/share/desktop-defaults/
+preseed-user-home-xfce		usr/share/desktop-defaults/

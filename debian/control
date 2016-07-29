@@ -9,7 +9,7 @@ Standards-Version: 3.9.8
 Vcs-git: git://github.com/fullstory/desktop-defaults.git
 Vcs-Browser: https://github.com/fullstory/desktop-defaults
 
-Package: desktop-defaults-common
+Package: desktop-defaults
 Architecture: all
 Depends: ${misc:Depends},
  distro-defaults,
@@ -19,6 +19,13 @@ Depends: ${misc:Depends},
  laptop-detect
 Suggests: firefox
 Description: common user presets for various popular desktop applications
+ Supported desktop environments are:
+ - gnome
+ - kde
+ - lxde
+ - lxqt
+ - xfce
+ .
  This package provides required infrastructure to tweak various popular desktop
  applications:
   - fluxbox menu
@@ -26,97 +33,6 @@ Description: common user presets for various popular desktop applications
   - use mcedit within mc
   - GnuPG
   - XDG desktop icons
- .
- This is a FULLSTORY live-only package and must not be installed to an
- ordinary system.
-
-Package: desktop-defaults-gnome
-Architecture: all
-Depends: ${misc:Depends},
- distro-defaults,
- fll-live-initscripts,
- desktop-defaults-common
-Description: user presets specific to the GNOME desktop environment
- This package provides required infrastructure to tweak the GNOME desktop
- of the F.U.L.L.S.T.O.R.Y. live Linux media.
- .
- This is a FULLSTORY live-only package and must not be installed to an
- ordinary system.
-
-Package: desktop-defaults-kde
-Architecture: all
-Depends: ${misc:Depends},
- distro-defaults,
- fll-live-initscripts,
- desktop-defaults-common,
- aptosid-settings-kde,
- konqueror,
- xdg-utils
-Recommends: plasma-desktop | plasma-netbook
-Description: user presets specific to the K desktop environment
- This package provides required infrastructure to tweak the KDE desktop
- of the F.U.L.L.S.T.O.R.Y. live Linux media.
-  - set up artwork theme integration for KDE (kdm themes, ksplash, wallpaper)
-  - nuke kaboom
-  - keyboard layouts for kxkbrc
-  - disabling kpersonalizer wizard on first login
-  - populate live-only XDG desktop icons
-  - autostart release notes
- .
- This is a FULLSTORY live-only package and must not be installed to an
- ordinary system.
-
-Package: desktop-defaults-lxde
-Architecture: all
-Depends: ${misc:Depends},
- distro-defaults,
- fll-live-initscripts,
- desktop-defaults-common,
- lxde-core
-Description: user presets specific to the LXDE desktop environment
- This package provides required infrastructure to tweak the LXDE desktop
- of the F.U.L.L.S.T.O.R.Y. live Linux media.
-  - set up artwork theme integration for LXDE (gdm3, splash, desktop, wallpaper)
-  - keyboard layouts
-  - disable tips on startup
-  - setup trash can
-  - autostart release notes
-  - populate live-only XDG desktop icons
- .
- This is a FULLSTORY live-only package and must not be installed to an
- ordinary system.
-
-Package: desktop-defaults-lxqt
-Architecture: all
-Depends: ${misc:Depends},
- distro-defaults,
- fll-live-initscripts,
- desktop-defaults-common
-Description: user presets specific to the LXQt desktop environment
- This package provides required infrastructure to tweak the LXQt desktop
- of the F.U.L.L.S.T.O.R.Y. live Linux media.
-  - set up artwork theme integration for LXQt (lightdm, desktop, wallpaper)
-  - autostart release notes
-  - populate live-only XDG desktop icons
- .
- This is a FULLSTORY live-only package and must not be installed to an
- ordinary system.
-
-Package: desktop-defaults-xfce
-Architecture: all
-Depends: ${misc:Depends},
- distro-defaults,
- fll-live-initscripts,
- desktop-defaults-common,
- aptosid-settings-xfce,
- xfwm4
-Description: user presets specific to the Xfce desktop environment
- This package provides required infrastructure to tweak the Xfce desktop
- of the F.U.L.L.S.T.O.R.Y. live Linux media.
-  - set up artwork theme integration for Xfce (gdm3, wallpaper)
-  - prefer lxterminal as x-terminal-emulator
-  - configure Python keyboard switcher
-  - populate live-only XDG desktop icons
  .
  This is a FULLSTORY live-only package and must not be installed to an
  ordinary system.
