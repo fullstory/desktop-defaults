@@ -20,11 +20,11 @@ Depends: ${misc:Depends},
 Suggests: firefox
 Description: common user presets for various popular desktop applications
  Supported desktop environments are:
- - gnome
- - kde
- - lxde
- - lxqt
- - xfce
+  - GNOME
+  - KDE
+  - LXDE
+  - LXQt
+  - Xfce
  .
  This package provides required infrastructure to tweak various popular desktop
  applications:
