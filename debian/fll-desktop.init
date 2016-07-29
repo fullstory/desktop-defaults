@@ -152,11 +152,6 @@ do_start()
 	setup_firefox()
 	su "${FLL_LIVE_USER}" -c /usr/share/desktop-defaults/preseed-user-home-common
 
-	# gnome
-	if [ -x /usr/bin/metacity ]; then
-		su "${FLL_LIVE_USER}" -c /usr/share/desktop-defaults/preseed-user-home-gnome
-	fi
-
 	# kde
 	if [ -x /usr/bin/startkde ]; then
 		su "${FLL_LIVE_USER}" -c /usr/share/desktop-defaults/preseed-user-home-kde
