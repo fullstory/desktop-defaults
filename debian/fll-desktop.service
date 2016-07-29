@@ -1,0 +1,14 @@
+[Unit]
+Description=preseed common desktop settings
+Requires=fll-adduser.service
+After=fll-adduser.service
+Before=systemd-user-sessions.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/share/desktop-defaults/fll_desktop
+Restart=no
+
+[Install]
+WantedBy=graphical.target

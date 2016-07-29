@@ -5,3 +5,4 @@ preseed-user-home-common	usr/share/desktop-defaults/
 preseed-user-home-kde		usr/share/desktop-defaults/
 preseed-user-home-lxde		usr/share/desktop-defaults/
 preseed-user-home-xfce		usr/share/desktop-defaults/
+fll_desktop			usr/share/desktop-defaults/
