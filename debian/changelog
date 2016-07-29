@@ -4,6 +4,7 @@ desktop-defaults (1.7.4) UNRELEASED; urgency=medium
   * stop trying to preseed GnuPG, v1 of the package is obsolete, keyservers
     are pretty volatile and UTF-8 is default anyways.
   * create ${HOME}/Desktop only from common code.
+  * drop now empty lxqt preseeding.
 
  -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Fri, 29 Jul 2016 21:22:06 +0200
 
