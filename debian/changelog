@@ -8,6 +8,7 @@ desktop-defaults (1.7.3) UNRELEASED; urgency=medium
   * rename common initscript to fll-desktop.
   * consolidate custom configuration into /etc/default/fll-desktop.
   * use secure git URI.
+  * drop no longer required prefix for initscripts and defaults.
 
  -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 13 Jun 2016 04:26:39 +0200
 
