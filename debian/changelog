@@ -1,3 +1,9 @@
+desktop-defaults (1.8.1) unstable; urgency=medium
+
+  * add dh-systemd to build dependencies.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Fri, 29 Jul 2016 23:44:55 +0200
+
 desktop-defaults (1.8.0) unstable; urgency=medium
 
   [ Stefan Lippers-Hollmann ]
