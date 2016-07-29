@@ -117,26 +117,6 @@ EOF
 fi
 
 ###
-# configure GnuPG if installed
-###
-GNUPG_CONF="${HOME}/.gnupg/gpg.conf"
-KEY_SERVER='hkp://keyserver.noreply.org:80'
-if [ ! -f "${GNUPG_CONF}" ]; then
-	if which gpg >/dev/null; then
-		gpg -k >/dev/null 2>&1
-		if [ -f "${GNUPG_CONF}" ]; then
-            		sed -ri -e 's/^#.*keyserver-options auto-key-retrieve/keyserver-options auto-key-retrieve/' \
-		    		-e 's/^#.*charset utf-8/charset utf-8/' \
-		    		-e 's/^keyserver /#keyserver/' "${GNUPG_CONF}"
-			echo "keyserver ${KEY_SERVER}" >> "${GNUPG_CONF}"
-			if which gpg-agent >/dev/null; then
-				sed -ri 's/^#.*use-agent/use-agent/' "${GNUPG_CONF}"
-			fi
-		fi
-	fi
-fi
-
-###
 ## create ~/Desktop if not present
 ####
 if [ ! -d "${HOME}/Desktop" ]; then
