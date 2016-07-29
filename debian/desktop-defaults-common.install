@@ -1,2 +1,4 @@
-common/*.pkla etc/polkit-1/localauthority/10-vendor.d
-common/* usr/share/desktop-defaults-common/
+10-live-cd.pkla			etc/polkit-1/localauthority/10-vendor.d
+fll-flux-hi			usr/share/desktop-defaults-common/
+fll-flux-lo			usr/share/desktop-defaults-common/
+preseed-user-home-common	usr/share/desktop-defaults-common/
