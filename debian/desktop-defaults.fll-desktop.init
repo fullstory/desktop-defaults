@@ -1,7 +1,7 @@
 #!/bin/sh
 
 ### BEGIN INIT INFO
-# Provides:          fll-common-desktop
+# Provides:          fll-desktop
 # Required-Start:    $local_fs $remote_fs fll-adduser
 # Required-Stop:
 # Default-Start:     S
