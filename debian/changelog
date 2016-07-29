@@ -1,8 +1,9 @@
-desktop-defaults (1.8.2) UNRELEASED; urgency=medium
+desktop-defaults (1.8.2) unstable; urgency=medium
 
-  * NOT RELEASED YET
+  * make sure to actually install the systemd unit into the binary package,
+    by using dh --with=systemd.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Fri, 29 Jul 2016 23:45:12 +0200
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 30 Jul 2016 01:01:14 +0200
 
 desktop-defaults (1.8.1) unstable; urgency=medium
 
