@@ -1,17 +1,18 @@
-desktop-defaults (1.7.4) UNRELEASED; urgency=medium
+desktop-defaults (1.8.0) unstable; urgency=medium
 
   [ Stefan Lippers-Hollmann ]
-  * NOT RELEASED YET
   * stop trying to preseed GnuPG, v1 of the package is obsolete, keyservers
     are pretty volatile and UTF-8 is default anyways.
   * create ${HOME}/Desktop only from common code.
   * drop now empty LXQt preseeding.
   * drop now empty GNOME preseeding.
+  * drop fluxbox preseeding, it's been broken since Debian policy 3.9.8 and
+    its mandate to remove Debian menu files.
 
   [ Niall Walsh ]
-  * switch fll-dekstop to systemd .service
+  * switch fll-desktop to systemd .service.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Fri, 29 Jul 2016 21:22:06 +0200
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Fri, 29 Jul 2016 23:42:37 +0200
 
 desktop-defaults (1.7.3) unstable; urgency=medium
 

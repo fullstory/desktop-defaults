@@ -200,25 +200,3 @@ elif [ -e "${HOME}/.config/autostart/${FLL_DISTRO_NAME}.desktop" ]; then
 	rm -f "${HOME}/.config/autostart/${FLL_DISTRO_NAME}.desktop"
 fi
 
-###
-# create .fluxbox, emulate a small amount of startflubox(1)
-###
-mkdir -p ${HOME}/.fluxbox
-for dir in backgrounds styles pixmaps; do
-	mkdir -p ${HOME}/.fluxbox/${dir}
-done
-
-for menu in /usr/share/desktop-defaults/fll-flux-*; do
-	[ ! -f "${HOME}/.fluxbox/${menu##*/}" ] && \
-		cp ${menu} ${HOME}/.fluxbox/
-done
-
-if [ ! -f "${HOME}/.fluxbox/menu" ]; then
-	cat >"${HOME}/.fluxbox/menu" <<EOF
-[begin] (${FLL_DISTRO_NAME} )
-[include] (~/.fluxbox/fll-flux-hi)
-[include] (/etc/X11/fluxbox/fluxbox-menu)
-[include] (~/.fluxbox/fll-flux-lo)
-[end]
-EOF
-fi
