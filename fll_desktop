@@ -120,31 +120,31 @@ setup_firefox()
 	fi
 }
 
-setup_firefox()
-su "${FLL_LIVE_USER}" -c /usr/share/desktop-defaults/preseed-user-home-common
+#ROOT#setup_firefox()
+/usr/share/desktop-defaults/preseed-user-home-common
 
 # kde
 if [ -x /usr/bin/startkde ]; then
-	su "${FLL_LIVE_USER}" -c /usr/share/desktop-defaults/preseed-user-home-kde
+	/usr/share/desktop-defaults/preseed-user-home-kde
 fi
 
 # lxde
 if [ -x "/usr/bin/startlxde" ] && [ -x "/usr/bin/openbox" ]; then
-	set_lxde_background
+#ROOT#	set_lxde_background
 
-	if [ -x "/usr/sbin/gdm" ]; then
-		set_default_gdm_theme
-	fi
+#ROOT#	if [ -x "/usr/sbin/gdm" ]; then
+#ROOT#		set_default_gdm_theme
+#ROOT#	fi
 
-	# set x-terminal to lxterminal
-	if [ -x '/usr/bin/lxterminal' ]; then
-		update-alternatives --set x-terminal-emulator '/usr/bin/lxterminal' >/dev/null
-	fi
+#ROOT#	# set x-terminal to lxterminal
+#ROOT#	if [ -x '/usr/bin/lxterminal' ]; then
+#ROOT#		update-alternatives --set x-terminal-emulator '/usr/bin/lxterminal' >/dev/null
+#ROOT#	fi
 
-	su "${FLL_LIVE_USER}" -c /usr/share/desktop-defaults/preseed-user-home-lxde
+	/usr/share/desktop-defaults/preseed-user-home-lxde
 fi
 
 # xfce
 if [ -x "/usr/bin/xfwm4" ]; then
-	su "${FLL_LIVE_USER}" -c /usr/share/desktop-defaults/preseed-user-home-xfce
+	/usr/share/desktop-defaults/preseed-user-home-xfce
 fi

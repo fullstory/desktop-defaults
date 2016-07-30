@@ -1,8 +1,9 @@
-desktop-defaults (1.8.3) UNRELEASED; urgency=medium
+desktop-defaults (1.8.3) unstable; urgency=medium
 
-  * NOT RELEASED YET
+  * hardcode preseeding to run under numeric UIDs/ GIDs (1000:1000) and omit
+    uid=0 operations for the time being.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 30 Jul 2016 01:02:01 +0200
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 30 Jul 2016 03:53:34 +0200
 
 desktop-defaults (1.8.2) unstable; urgency=medium
 

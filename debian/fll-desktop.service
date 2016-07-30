@@ -7,6 +7,8 @@ Before=systemd-user-sessions.service
 [Service]
 Type=oneshot
 RemainAfterExit=yes
+User=1000
+Group=1000
 ExecStart=/usr/share/desktop-defaults/fll_desktop
 Restart=no
 
