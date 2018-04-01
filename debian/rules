@@ -4,4 +4,4 @@
 	dh ${@}
 
 override_dh_installsystemd:
-	dh_installsystemd --package=desktop-defaults --name=fll-desktop --no-enable --no-start
+	dh_installsystemd --package=desktop-defaults --name=fll-desktop --no-start
