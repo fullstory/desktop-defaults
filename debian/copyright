@@ -1,11 +1,11 @@
-Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: desktop-defaults
 Upstream-Contact: Stefan Lippers-Hollmann <s.l-h@gmx.de>
-Source: git://github.com/fullstory/desktop-defaults.git
+Source: https://github.com/fullstory/desktop-defaults.git
 
 Files: *
 Copyright: 2006-2008, Kel Modderman <kel@otaku42.de>
-           2006-2016, Stefan Lippers-Hollmann <s.l-h@gmx.de>
+           2006-2018, Stefan Lippers-Hollmann <s.l-h@gmx.de>
            2006-2008, Andreas Weber <andreas@it-weber.com>
            2006-2011, Joaquim Boura <x-un-i@berlios.de>
            2006-2008, Horst Tritremmel <hjt@users.berlios.de>
@@ -23,7 +23,7 @@ License: GPL-2.0
  GNU General Public License for more details.
  .
  You should have received a copy of the GNU General Public License
- along with this program. If not, see <http://www.gnu.org/licenses/>
+ along with this program. If not, see <https://www.gnu.org/licenses/>
  .
  On Debian systems, the complete text of the GNU General
  Public License version 2 can be found in "/usr/share/common-licenses/GPL-2".

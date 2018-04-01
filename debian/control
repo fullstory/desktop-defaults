@@ -2,11 +2,10 @@ Source: desktop-defaults
 Section: x11
 Priority: optional
 Maintainer: Stefan Lippers-Hollmann <s.l-h@gmx.de>
-Uploaders: Joaquim Boura <x-un-i@sapo.pt>,
- Roland Engert <Roland.Engert@web.de>
-Build-Depends: debhelper (>= 9.20120115),
- dh-systemd
-Standards-Version: 3.9.8
+Uploaders: Roland Engert <Roland.Engert@web.de>
+Rules-Requires-Root: no
+Build-Depends: debhelper (>= 11~)
+Standards-Version: 4.1.3
 Vcs-git: https://github.com/fullstory/desktop-defaults.git
 Vcs-Browser: https://github.com/fullstory/desktop-defaults
 
@@ -30,7 +29,7 @@ Description: common user presets for various popular desktop applications
  This package provides required infrastructure to tweak various popular desktop
  applications:
   - fluxbox menu
-  - gksu/ kdesu/ su/ sudo/ su-to-rootrc
+  - kdesu/ su/ sudo/ su-to-rootrc
   - use mcedit within mc
   - GnuPG
   - XDG desktop icons
