@@ -1,3 +1,9 @@
+desktop-defaults (1.9.1) UNRELEASED; urgency=medium
+
+  * NOT RELEASED YET
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 02 Apr 2018 00:48:04 +0200
+
 desktop-defaults (1.9.0) unstable; urgency=medium
 
   * bump standards version to 4.1.3:
