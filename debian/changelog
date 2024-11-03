@@ -1,6 +1,7 @@
-desktop-defaults (1.9.1) UNRELEASED; urgency=medium
+desktop-defaults (1.9.1) ORPHANED; urgency=medium
 
   * NOT RELEASED YET
+  * ORPHAN PACKAGE.
 
  -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 02 Apr 2018 00:48:04 +0200
 
